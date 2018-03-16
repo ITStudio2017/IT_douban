@@ -5,6 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from .conf import settings
 from .fields import HoneyPotField, PasswordField, UsersEmailField
+from captcha.fields import CaptchaField
 
 
 class UserCreationForm(forms.ModelForm):
@@ -19,6 +20,7 @@ class UserCreationForm(forms.ModelForm):
     password2 = PasswordField(
         label=_('Password Confirmation'),
         help_text=_('Enter the same password as above, for verification.'))
+    captcha = CaptchaField(error_messages={"invalid":u"验证码错误"})
 
     class Meta:
         model = get_user_model()

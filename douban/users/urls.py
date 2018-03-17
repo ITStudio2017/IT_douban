@@ -7,6 +7,7 @@ from django.contrib.auth.views import (login, logout, password_change,
 
 from .views import (activate, activation_complete, register,
                     registration_closed, registration_complete)
+from .forms import AuthenticationForm,PasswordResetForm
 
 urlpatterns = [
     url(r'^register/$', register, name='users_register'),
@@ -16,7 +17,7 @@ urlpatterns = [
     url(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
         activate, name='users_activate'),
 
-    url(r'^login/$', login, {'template_name': 'users/login.html'}, name='users_login'),
+    url(r'^login/$', login, {'template_name': 'users/login.html','authentication_form':AuthenticationForm}, name='users_login'),
     url(r'^logout/$', logout, {'template_name': 'users/logout.html'}, name='users_logout'),
     url(r'^password_change/$', password_change,
         {
@@ -29,6 +30,7 @@ urlpatterns = [
         name='users_password_change_done'),
     url(r'^password_reset/$', password_reset,
         {
+            'password_reset_form':PasswordResetForm,
             'template_name': 'users/password_reset_form.html',
             'email_template_name': 'users/password_reset_email.html',
             'subject_template_name': 'users/password_reset_subject.html',

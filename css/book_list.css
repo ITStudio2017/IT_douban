@@ -114,6 +114,7 @@
 	width: 100%;
 	height: 81px;
 	background-color: #EDF4ED;
+	/*position: fixed;*/
 }
 .body_top_inner{
 	width: 1006px;
@@ -244,6 +245,7 @@
 	padding-left: 60px;
 	padding-top: 31px;
 }
+
 .body_middle_book_right_1,.body_middle_book_right_2,.body_middle_book_right_3,.body_middle_book_right_4,.body_middle_book_right_5{
 	float: left;
 }
@@ -296,6 +298,10 @@
 	right: 212px;
 	bottom: 47px;
 }
+.body_middle_book_like_1 img,.body_middle_book_like_2 img,.body_middle_book_like_3 img,.body_middle_book_like_4 img,.body_middle_book_like_5 img{
+	width: 22px;
+	height: 19px;
+}
 .body_middle_book_detail_1,.body_middle_book_detail_2,.body_middle_book_detail_3,.body_middle_book_detail_4,.body_middle_book_detail_5{
 	width: 97px;
 	height: 57px;
@@ -319,3 +325,17 @@
 	width: 135px;
 	height: 18px;
 }
+/*.tipstutorials {  
+ background: url('../images/arrow_1_down.png') no-repeat;  
+ width: 180px;  
+ height: 68px;  
+ position: absolute;  
+ line-height:30px;  
+ font-size:12px;  
+ text-align: center;  
+ vertical-align:middle;  
+ font-style: normal;  
+ z-index: 100;  
+ color:red;  
+ display: none;  
+}  */

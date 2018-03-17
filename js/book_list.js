@@ -96,3 +96,76 @@ function star(){
 	}
 }
 star();
+
+//点赞变红
+$(".body_middle_book_like_1").click(function(){
+
+
+	$(".body_middle_book_like_1 img").attr('src','../images/love_red.png');
+});
+$(".body_middle_book_like_2").click(function(){
+	
+
+	$(".body_middle_book_like_2 img").attr('src','../images/love_red.png');
+});
+$(".body_middle_book_like_3").click(function(){
+
+
+	$(".body_middle_book_like_3 img").attr('src','../images/love_red.png');
+});
+$(".body_middle_book_like_4").click(function(){
+	
+
+	$(".body_middle_book_like_4 img").attr('src','../images/love_red.png');
+});
+$(".body_middle_book_like_5").click(function(){
+	
+
+
+	$(".body_middle_book_like_5 img").attr('src','../images/love_red.png');
+});
+
+// $(document).ready(function() {  
+//     $(".tipsClass3").hover(function() {  
+//         $(this).find(".tipstutorials").animate({  
+//             opacity: "show",  
+//             top: "280",//此处可以设置弹窗属性  
+//         width:"180",  
+//             height:"68",   
+//             left: "50"  
+//         }, "slow");  
+//     }, function() {  
+//         $(this).find(".tipstutorials").animate({  
+//             opacity: "hide",  
+//             top: "160"  
+//         }, "fast");  
+//     });  
+// }); 
+
+//头部固定
+$(document).ready(function(){  
+    var a,b,c;  
+    a = $(window).height();    //浏览器窗口高度  
+    var group = $(".body_middle_book_list");  
+    $(window).scroll(function(){  
+        b = $(this).scrollTop();   //页面滚动的高度  
+        c = group.offset().top;
+
+          //元素距离文档（document）顶部的高度
+          // console.log("a="+a);
+          // console.log("b="+b);
+          // console.log("c="+c);  
+        if(b>c){  
+           $(".body_top").css("position","fixed");
+           $(".body_top").css("top","0");
+           $(".body_top").css("z-index","99");
+           $(".container").height(1916);
+
+
+        }else{  
+           $(".body_top").css("position","static"); 
+           $(".container").height(2000);
+           $(".body_top").css("z-index","auto");
+        }  
+    });  
+}); 

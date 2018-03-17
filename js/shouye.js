@@ -1,0 +1,16 @@
+//手风琴
+$(".body_top_sfq_pic_1").hover(function(){
+	$(this).stop(true).animate({width:"572px"},1000).siblings().stop(true).animate({width:"106px"},1000);
+});
+$(".body_top_sfq_pic_2").hover(function(){
+	$(this).stop(true).animate({width:"572px"},1000).siblings().stop(true).animate({width:"106px"},1000);
+});
+$(".body_top_sfq_pic_3").hover(function(){
+	$(this).stop(true).animate({width:"572px"},1000).siblings().stop(true).animate({width:"106px"},1000);
+});
+$(".body_top_sfq_pic_4").hover(function(){
+	$(this).stop(true).animate({width:"572px"},1000).siblings().stop(true).animate({width:"106px"},1000);
+});
+$(".body_top_sfq_pic_5").hover(function(){
+	$(this).stop(true).animate({width:"572px"},1000).siblings().stop(true).animate({width:"106px"},1000);
+});

@@ -127,6 +127,37 @@ src: url('../font/Gagalin-Regular.eot?#iefix') format('embedded-opentype'),
 }
 .body_top_inner{
 	width: 1006px;
+	margin:0px auto;
+}
+.body_top_sfq_pic_1{
+	width: 106px;
+	background-color: purple;
+	float: left;
+	height: 327px;
+}
+.body_top_sfq_pic_2{
+	width: 106px;
+	background-color: green;
+	float: left;
+	height: 327px;
+}
+.body_top_sfq_pic_3{
+	width: 572px;
+	background-color: pink;
+	float: left;
+	height: 327px;
+}
+.body_top_sfq_pic_4{
+	width: 106px;
+	background-color: yellow;
+	float: left;
+	height: 327px;
+}
+.body_top_sfq_pic_5{
+	width: 106px;
+	background-color: grey;
+	float: left;
+	height: 327px;
 }
 .body_hotessey{
 	width: 100%;
@@ -403,4 +434,26 @@ src: url('../font/Gagalin-Regular.eot?#iefix') format('embedded-opentype'),
 	letter-spacing: 2px;
 	font-weight: 300;
 	margin-top: 37px;
+}
+.footer_nav_middle_xinlang{
+	float: left;
+	margin-top: 29px;
+	margin-left: 358px;
+}
+.footer_nav_middle_wechat{
+	float: left;
+	margin-left: 85px;
+	margin-top: 31px;
+}
+.footer_nav_middle_chrome{
+	float: left;
+	margin-left: 92px;
+	margin-top: 29px;
+}
+.footer_bottom_address{
+	margin-top: 13px;
+	clear: both;
+	text-align: center;
+	color: white;
+	font-size: 16px;
 }

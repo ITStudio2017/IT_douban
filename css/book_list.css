@@ -231,22 +231,30 @@
 	background-color: white;
 	position: relative;
 }
-.body_middle_book_left_1{
+.body_middle_book_2,.body_middle_book_3,.body_middle_book_4,.body_middle_book_5{
+	width: 1004px;
+	height: 271px;
+	margin-top: 31px;
+	list-style-type: none;
+	background-color: white;
+	position: relative;
+}
+.body_middle_book_left_1,.body_middle_book_left_2,.body_middle_book_left_3,.body_middle_book_left_4,.body_middle_book_left_5{
 	float: left;
 	padding-left: 60px;
 	padding-top: 31px;
 }
-.body_middle_book_right_1{
+.body_middle_book_right_1,.body_middle_book_right_2,.body_middle_book_right_3,.body_middle_book_right_4,.body_middle_book_right_5{
 	float: left;
 }
-.body_middle_book_title_1{
+.body_middle_book_title_1,.body_middle_book_title_2,.body_middle_book_title_3,.body_middle_book_title_4,.body_middle_book_title_5{
 	width: 125px;
 	text-align: center;
 	margin-top: 13px;
 	color: #187B8C;
 	font-size: 18px;
 }
-.body_middle_book_info_1{
+.body_middle_book_info_1,.body_middle_book_info_2,.body_middle_book_info_3,.body_middle_book_info_4,.body_middle_book_info_5{
 	width: 696px;
 	height: 45px;
 	margin-left: 32px;
@@ -256,26 +264,58 @@
 	line-height: 24px;
 	color: #333333;
 }
-.body_middle_book_author_1{
+.body_middle_book_author_1,.body_middle_book_author_2,.body_middle_book_author_3,.body_middle_book_author_4,.body_middle_book_author_5{
 	margin-top: 53px;
 	margin-left: 32px;
 	font-size: 16px;
 	color: #333333;
 	letter-spacing: 1px;
 }
-.body_middle_book_grade_1{
+.body_middle_book_grade_1,.body_middle_book_grade_2,.body_middle_book_grade_3,.body_middle_book_grade_4,.body_middle_book_grade_5{
+	width: 110px;
+	height: 17px;
 	position: absolute;
 	left:217px;
 	top: 205px;
 }
-.body_middle_book_grade_word_1{
+.body_middle_book_grade_word_1,.body_middle_book_grade_word_2,.body_middle_book_grade_word_3,.body_middle_book_grade_word_4,.body_middle_book_grade_word_5{
 	color: #333333;
 	font-size: 16px;
 	letter-spacing: 1px;
 }
-.body_middle_book_grade_num_1{
+.body_middle_book_grade_num_1,.body_middle_book_grade_num_2,.body_middle_book_grade_num_3,.body_middle_book_grade_num_4,.body_middle_book_grade_num_5{
 	color: #187B8C;
 	font-size: 16px;
 	letter-spacing: 1px;
 	margin-left: 5px;
+}
+.body_middle_book_like_1,.body_middle_book_like_2,.body_middle_book_like_3,.body_middle_book_like_4,.body_middle_book_like_5{
+	width: 22px;
+	height: 19px;
+	position: absolute;
+	right: 212px;
+	bottom: 47px;
+}
+.body_middle_book_detail_1,.body_middle_book_detail_2,.body_middle_book_detail_3,.body_middle_book_detail_4,.body_middle_book_detail_5{
+	width: 97px;
+	height: 57px;
+	line-height: 57px;
+	border-radius: 7px;
+	color: white;
+	font-size: 16px;
+	text-align: center;
+	background-color: #02C39A;
+	position: absolute;
+	right: 73px;
+	bottom: 31px;
+}
+.body_middle_book_grade_star_inside{
+	float: left;
+}
+.body_middle_book_grade_star_1,.body_middle_book_grade_star_2,.body_middle_book_grade_star_3,.body_middle_book_grade_star_4,.body_middle_book_grade_star_5{
+	position: absolute;
+	left: 125px;
+	bottom: 0px;
+	width: 135px;
+	height: 18px;
 }

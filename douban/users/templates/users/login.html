@@ -15,7 +15,7 @@
 		<div class="button-wrapper submit">
 			<input class="btn btn-primary"  type="submit" value="{% trans 'Log in' %}" />
 		</div>
-		<input type="hidden" name="next" value="{{ next }}" />
+		<input type="hidden" name="next" value="/index" />
 		<p><a href="{% url 'users_password_reset' %}">{% trans "Forgot password" %}</a></p>
 		<p><a href="{% url 'users_register' %}">{% trans "Register" %}</a></p>
 	</form>

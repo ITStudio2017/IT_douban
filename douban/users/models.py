@@ -64,9 +64,9 @@ class User(AbstractUser):
     Concrete class of AbstractUser.
     Use this if you don't need to extend User.
     """
-    name = models.CharField(max_length=20,default="姓名")
+    name = models.CharField(max_length=20,default="用户")
     sex = models.CharField(max_length=3,default="男")
-
+    first_login = models.BooleanField(default=True)
 
 
     class Meta(AbstractUser.Meta):

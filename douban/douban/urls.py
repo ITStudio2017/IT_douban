@@ -19,6 +19,8 @@ from main import views as main_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$',main_views.index),
+    url(r'^index/',main_views.userPage),
     url(r'^accounts/', include('users.urls')),
     url(r'^captcha/', include('captcha.urls')),
+    url(r'^informationChange/',main_views.userInformation),
 ]

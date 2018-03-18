@@ -7,6 +7,9 @@
   a{
     text-decoration: none;
 }
+	li{
+		list-style-type: none;
+	}
 .container{
 	width: 1920px;
 	height: 2000px;
@@ -83,16 +86,23 @@
 	font-family: myFont2; 
 	float: left;
 }
-.login{
+.login_a{
 	margin-right: 18px;
 	font-size: 21px;
-	font-family: myFont2;
+	color: #B4D2BA;
+	font-family: myFont2; 
 }
-.registration{
+.login:hover{
+	cursor: pointer;
+}
+.registration_a{
 	font-size: 21px;
-	font-family: myFont2;
+	color: #B4D2BA;
+	font-family: myFont2; 
 }
-
+.registration:hover{
+	cursor: pointer;
+}
 .nav_menu{
 	float: left;
 	width: 144px;
@@ -315,6 +325,13 @@
 	right: 73px;
 	bottom: 31px;
 }
+.body_middle_book_detail_1:hover,.body_middle_book_detail_2:hover,.body_middle_book_detail_3:hover,.body_middle_book_detail_4:hover,.body_middle_book_detail_5:hover{
+	cursor: pointer;
+	}
+.body_middle_book_detail_a_1,.body_middle_book_detail_a_2,.body_middle_book_detail_a_3,.body_middle_book_detail_a_4,.body_middle_book_detail_a_5{
+	color: white;
+}
+
 .body_middle_book_grade_star_inside{
 	float: left;
 }

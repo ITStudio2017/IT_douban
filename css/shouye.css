@@ -7,6 +7,9 @@
 a{
     text-decoration: none;
 }
+li{
+	list-style-type: none;
+}
 .container{
 	width: 1920px;
 	height: 2403px;
@@ -22,7 +25,10 @@ a{
 	margin-top: 30px;
 	width: 102px;
 }
-.nav_book{
+.logo_1:hover{
+	cursor: pointer;
+}
+.nav_book_a{
 	float: left;
 	font-family: myFont2;
 	color: #02C39A;
@@ -31,7 +37,10 @@ a{
 	margin-top: 88px;
 	letter-spacing: 3px;
 }
-.nav_essey{
+.nav_book:hover{
+	cursor: pointer;
+}
+.nav_essey_a{
 	font-family: myFont2;
 	color: #02C39A;
 	float: left;
@@ -39,6 +48,9 @@ a{
 	margin-left: 105px;
 	margin-top: 88px;
 	letter-spacing: 3px;
+}
+.nav_essey:hover{
+	cursor: pointer;
 }
 .search_box{
 	width: 257px;
@@ -75,6 +87,9 @@ a{
 	top: 0px;
 	background-color: white;
 }
+.search_box_button:hover{
+	cursor:pointer;
+}
 .nav_log_reg{
 	width: 90px;
 	height: 20px;
@@ -84,14 +99,22 @@ a{
 	font-family: myFont2; 
 	float: left;
 }
-.login{
+.login_a{
 	margin-right: 18px;
 	font-size: 21px;
+	color: #B4D2BA;
 	font-family: myFont2; 
 }
-.registration{
+.login:hover{
+	cursor: pointer;
+}
+.registration_a{
 	font-size: 21px;
+	color: #B4D2BA;
 	font-family: myFont2; 
+}
+.registration:hover{
+	cursor: pointer;
 }
 .body{
 	width: 100%;
@@ -149,6 +172,9 @@ a{
 	float: left;
 	height: 327px;
 }
+.body_top_sfq_pic_1:hover,.body_top_sfq_pic_2:hover,.body_top_sfq_pic_3:hover,.body_top_sfq_pic_4:hover,.body_top_sfq_pic_5:hover{
+	cursor: pointer;
+}
 .body_hotessey{
 	width: 100%;
 	height: 848px;
@@ -176,8 +202,8 @@ a{
 	width: 795px;
 	height: auto;
 }
-.hotessey_title_more{
-	margin-left: 37px;
+.hotessey_title_more_a{
+	margin-left: 32px;
 	color: #05668D;
 	font-size: 21px;
 	font-family: myFont2;
@@ -191,10 +217,23 @@ a{
 	height: 344px;
 	background-color: white;
 }
+.hotessey_photoalbum_1:hover{
+	cursor: pointer;
+}
 .hotessey_photoalbum_name_1{
 	margin-top: 18px;
 	font-size: 16px;
 	letter-spacing: 2px;
+	
+}
+.hotessey_photoalbum_name_1_a{
+	
+	color: #333333;
+
+}
+.hotessey_photoalbum_name_1:hover{
+	cursor: pointer;
+	text-decoration: underline;
 }
 .hotessey_photoalbum_2{
 	width: 457px;
@@ -202,10 +241,20 @@ a{
 	background-color: white;
 	margin-top: 28px;
 }
+.hotessey_photoalbum_2:hover{
+	cursor: pointer;
+}
 .hotessey_photoalbum_name_2{
 	margin-top: 18px;
 	font-size: 16px;
 	letter-spacing: 2px;
+}
+.hotessey_photoalbum_name_2_a{
+	color: #333333;
+}
+.hotessey_photoalbum_name_2_a:hover{
+	cursor: pointer;
+	text-decoration: underline;
 }
 .hotessey_essay_1{
 	width: 495px;
@@ -245,6 +294,13 @@ a{
 	letter-spacing: 3px;
 	line-height: 34px;
 	margin:10px 25px 0px 15px;
+}
+.hotessey_essay_title_1_a,.hotessey_essay_title_2_a,.hotessey_essay_title_3_a,.hotessey_essay_title_4_a{
+	color: #333333;
+}
+.hotessey_essay_title_1_a:hover,.hotessey_essay_title_2_a:hover,.hotessey_essay_title_3_a:hover,.hotessey_essay_title_4_a:hover{
+	cursor: pointer;
+	text-decoration: underline;
 }
 .hotessey_essay_user_pic_1,.hotessey_essay_user_pic_2,.hotessey_essay_user_pic_3,.hotessey_essay_user_pic_4{
 	width: 40px;
@@ -303,8 +359,8 @@ a{
 	width: 795px;
 	height: auto;
 }
-.hotbook_title_more{
-	margin-left: 37px;
+.hotbook_title_more_a{
+	margin-left: 32px;
 	color: #05668D;
 	font-size: 21px;
 	font-family: myFont2;
@@ -353,6 +409,7 @@ a{
 	text-decoration: none;
 	color: #05668D;
 }
+
 .body_hotbook_book_want_1,.body_hotbook_book_want_2,.body_hotbook_book_want_3,.body_hotbook_book_want_4,.body_hotbook_book_want_5,.body_hotbook_book_want_6,.body_hotbook_book_want_7,.body_hotbook_book_want_8{
 	position: absolute;
 	bottom: 2px;

@@ -56,6 +56,9 @@
 	font-weight: 300;
 	margin-top: 37px;
 }
+.footer_nav_content_a_1:hover,.footer_nav_content_a_2:hover,.footer_nav_content_a_3:hover,.footer_nav_content_a_4:hover,.footer_nav_content_a_5:hover{
+	text-decoration: underline;
+}
 .footer_nav_middle_xinlang{
 	float: left;
 	margin-top: 29px;

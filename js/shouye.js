@@ -14,3 +14,8 @@ $(".body_top_sfq_pic_4").click(function(){
 $(".body_top_sfq_pic_5").click(function(){
 	$(this).stop(true).animate({width:"572px"},1000).siblings().stop(true).animate({width:"106px"},1000);
 });
+
+//搜索框
+$(".search_box_input").click(function(){
+	$(this).attr("value","");
+});

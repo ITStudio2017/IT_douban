@@ -7,6 +7,9 @@
   a{
     text-decoration: none;
 }
+li{
+	list-style-type: none;
+}
 .container{
 	width: 1920px;
 	height: 1633px;
@@ -37,7 +40,7 @@ h3{
 }
 .regist_form{
 	width: 800px;
-	height: 544px;
+	height: 550px;
 	
 	background-color: white;
 	margin:0px auto;
@@ -161,7 +164,7 @@ h3{
 	text-align: center;
 	background-color: #02C39A;
 	margin: 0px auto;
-	margin-top: 55px;
+	margin-top: 51px;
 	font-size: 20px;
 	letter-spacing: 1px;
 	color: white;

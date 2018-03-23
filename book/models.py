@@ -57,6 +57,25 @@ def get_fatherlabel():
     return Label.objects.filter(labelNum__range=(1, 100))
 
 
+def get_label_by_int(label: int=0):
+    fLabel = None
+    sLabel = None
+    if label:
+        if label in range(1, 100):
+            try:
+                fLabel = Label.objects.get(labelNum=label).labelName
+            except:
+                fLabel = None
+        elif label > 100:
+            try:
+                fLabel = Label.objects.get(labelNum=label / 100).labelName
+                sLabel = Label.objects.get(labelNum=label).labelName
+            except:
+                fLabel = None
+                sLabel = None
+    return fLabel, sLabel
+
+
 def get_alllabel():
     back = {}
     fatherlabel = get_fatherlabel()

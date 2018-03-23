@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Book, Label, get_alllabel
+from .models import Book, Label, get_alllabel, get_label_by_int
 from .forms import BookFrom
 import logging
 
@@ -17,9 +17,11 @@ def book_list(request, label: int=None, search: str=""):
 
     bookSet = Book.objects
     if label:
+        label = int(label)
         if label in range(1, 100):
-            label = label*100
+            label = label * 100
             bookSet = bookSet.filter(label__range=(label, label + 100))
+            logging.debug(label)
         else:
             bookSet = bookSet.filter(label=label)
     if search:
@@ -33,6 +35,29 @@ def book_list(request, label: int=None, search: str=""):
         back['message'] = u"没有书籍"
 
     return render(request, 'book_index.html', back)
+
+
+def book_show(request, bookId: int = None):
+    back = {
+        'message': "",
+        'book': None,
+        'fLabel': "",
+        "sLabel": "",
+    }
+    book = None
+    try:
+        book = Book.objects.get(id=bookId)
+        try:
+            label = book.label
+            (fLabel, sLabel) = get_label_by_int(label)
+            back['fLabel'] = fLabel
+            back['sLabel'] = sLabel
+        except:
+            back['message'] = u"标签错误"
+    except:
+        back['message'] = u"没有找到这本书"
+    back['book'] = book
+    return render(request, 'book_show.html', back)
 
 
 def book_new(request):

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% if book %}
+        <img src="{{ book.cover.url }}">
+        <br>
+        作者：{{ book.author }}<br>
+        简介：{{ book.introduction }}<br>
+        {% if fLabel %}
+            来自标签{{ fLabel }}
+            {% if sLabel %}
+                ，子标签{{ sLabel }}
+            {% endif %}
+        {% endif %}
+        最后编辑时间{{ book.lastEditTime }}
+    {% endif %}
+    {{ message }}
+    <br>
+    <a href="{% url 'book_list' "" "" %}">返回</a>
+</body>
+</html>

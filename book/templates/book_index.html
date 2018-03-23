@@ -8,10 +8,10 @@
     {% load myfilter %}
     {% if labelAll %}
         {% for fLabelNum, fDict in labelAll.items %}
-            <a href="{% url 'list' fLabelNum search %}">{{ fDict|key:"fatherLabelInfo"|get_labelname }}</a>
+            <a href="{% url 'book_list' fLabelNum search %}">{{ fDict|key:"fatherLabelInfo"|get_labelname }}</a>
             <br>
           {% for sLabelNum, sLabel in fDict|key:"secondaryLabel"|get_items %}
-                <a href="{% url 'list' sLabelNum search %}">{{ sLabel.labelName }}</a>
+                <a href="{% url 'book_list' sLabelNum search %}">{{ sLabel.labelName }}</a>
           {% endfor %}
           <br>
         {% endfor %}
@@ -20,8 +20,8 @@
     {% if books %}
         {% for book in books %}
             <div onclick="">
-                <img src="{{ book.cover }}">
-                {{ book.bookname }}
+                <img src="{{ book.cover.url }}">
+                <a href="{% url 'book_show' book.id %}">{{ book.bookname }}</a>
             </div>
         {% endfor %}
     {% endif %}

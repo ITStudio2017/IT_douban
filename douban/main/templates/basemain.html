@@ -1,12 +1,7 @@
 <!DOCTYPE>
 <html>
     <head>
-        <!--bootstrap-->
-            <link href="/static/css/bootstrap.css" rel="stylesheet">
-            <link  href="/static/css/font-awesome.min.css" rel="stylesheet">
-            <link href="/static/css/bootstrap-theme.css" rel="stylesheet">
             <script src="/static/js/jquery.js"></script>
-            <script src="/static/js/bootstrap.js"></script>
         <!--vue-->
             <script src="/static/js/vue.js"></script>
         <!--csrf token-->
@@ -19,12 +14,13 @@
     <body>
         {% if request.user.is_authenticated %}
         {{ request.user.name }}
+        <a href="/accounts/logout">注销</a>
         {% else %}
         <a class='btn btn-primary' href="/accounts/login/">登录</a>
         <a class='btn btn-primary' href="/accounts/register/">注册</a>
         {% endif %}
         {% block content %}
-                                                                {% endblock %}
+         {% endblock %}
     {% block vuejs %}
     {% endblock %}
     </body>

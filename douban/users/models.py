@@ -1,4 +1,4 @@
-from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
+from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin,Group
 from django.contrib.contenttypes.models import ContentType
 from django.core.mail import send_mail
 from django.db import models
@@ -15,7 +15,7 @@ class AbstractUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(
         _('email address'), max_length=255, unique=True, db_index=True)
     is_staff = models.BooleanField(
-        _('staff status'), default=False,
+        _('staff status'), default=True,
         help_text=_('Designates whether the user can log into this admin site.'))
 
     is_active = models.BooleanField(
@@ -67,6 +67,7 @@ class User(AbstractUser):
     name = models.CharField(max_length=20,default="用户")
     sex = models.CharField(max_length=3,default="男")
     first_login = models.BooleanField(default=True)
+    
 
 
     class Meta(AbstractUser.Meta):

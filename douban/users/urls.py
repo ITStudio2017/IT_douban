@@ -10,6 +10,7 @@ from .views import (activate, activation_complete, register,
 from .forms import AuthenticationForm,PasswordResetForm
 
 urlpatterns = [
+    
     url(r'^register/$', register, name='users_register'),
     url(r'^register/closed/$', registration_closed, name='users_registration_closed'),
     url(r'^register/complete/$', registration_complete, name='users_registration_complete'),

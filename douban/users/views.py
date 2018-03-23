@@ -11,6 +11,8 @@ from .compat import urlsafe_base64_decode
 from .conf import settings
 from .signals import user_activated, user_registered
 from .utils import EmailActivationTokenGenerator, send_activation_email
+from django.http import JsonResponse
+from captcha.models import CaptchaStore
 
 try:
     from django.contrib.sites.shortcuts import get_current_site
@@ -167,3 +169,16 @@ def activation_complete(request,
     if extra_context is not None:  # pragma: no cover
         context.update(extra_context)
     return TemplateResponse(request, template_name, context)
+
+
+def ajax_val(request):
+     if  request.is_ajax():
+         cs = CaptchaStore.objects.filter(response=request.GET['response'], hashkey=request.GET['hashkey'])
+         if cs:
+             json_data = {'status':1}
+         else:
+             json_data = {"status":0}
+         return JsonResponse(json_data)
+     else:
+         json_data = {"status":0}
+         return JsonResponse(json_data)

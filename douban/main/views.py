@@ -2,11 +2,12 @@ from django.shortcuts import render
 import json
 from users.models import User
 
-def index(request):
-    return render(request,'basemain.html')
-
 def userPage(request):
-	first = request.user.first_login;
+	try:
+		first = request.user.first_login;
+	except:
+		return render(request,'main/index.html')
+	
 	if(first == True):
 		return render(request,'main/account_profile.html')
 	else:

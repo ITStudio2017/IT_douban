@@ -16,9 +16,12 @@ Including another URLconf
 from django.conf.urls import url,include
 from django.contrib import admin
 from main import views as main_views
+from users.views import ajax_val
+
 urlpatterns = [
+    url(r'^ajax_val/', ajax_val, name='ajax_val'),
     url(r'^admin/', admin.site.urls),
-    url(r'^$',main_views.index),
+    url(r'^$',main_views.userPage),
     url(r'^index/',main_views.userPage),
     url(r'^accounts/', include('users.urls')),
     url(r'^captcha/', include('captcha.urls')),

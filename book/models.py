@@ -5,13 +5,13 @@ import logging
 class Book(models.Model):
     # id
     bookname = models.CharField(max_length=20)
-    introduction = models.CharField(max_length=500)
+    introduction = models.TextField(max_length=500)
     createTime = models.DateTimeField(auto_now_add=True)
     lastEditTime = models.DateTimeField(auto_now=True)
     author = models.CharField(max_length=30, default="")
     owner = models.IntegerField()
     label = models.IntegerField(null=True)
-    cover = models.CharField(max_length=30)
+    cover = models.ImageField(upload_to='book_img')
 
     def get_father_labelname(self):
         try:

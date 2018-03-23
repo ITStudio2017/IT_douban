@@ -5,6 +5,17 @@
     <title>Title</title>
 </head>
 <body>
-
+    新书发布
+    <br>
+    <br>
+     <form enctype="multipart/form-data" method="POST">
+         {% csrf_token %}
+         书名：{{ form.bookname }}
+         作者：{{ form.author }}
+         简介：{{ form.introduction }}
+         点击上传封面图片：{{ form.cover }}
+         <input type="submit" value="提交">
+     </form>
+    {{ message }}
 </body>
 </html>

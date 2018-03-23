@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Book, Label, get_alllabel
+from .forms import BookFrom
 import logging
 
 
@@ -35,12 +36,28 @@ def book_list(request, label: int=None, search: str=""):
 
 
 def book_new(request):
-    back = {}
-    if request.method == 'GET':
-        return render(request, 'book_edit.html', back)
-    if request.method == 'POST':
+    back = {
+        'message': "",
+        'form': None,
+    }
 
-        return render(request, 'book_edit.html', back)
+    form = None
+    if request.method == 'GET':
+        form = BookFrom()
+    if request.method == 'POST':
+        form = BookFrom(request.POST, request.FILES)
+        if form.is_valid():
+            bookname = form.cleaned_data['bookname']
+            introduction = form.cleaned_data['introduction']
+            author = form.cleaned_data['author']
+            label = 101
+            cover = form.cleaned_data['cover']
+            newBook = Book(bookname=bookname, introduction=introduction, author=author, label=label, cover=cover, owner=1)
+            newBook.save()
+        else:
+            back['message'] = u"错误"
+
+    back['form'] = form
     return render(request, 'book_edit.html', back)
 
 

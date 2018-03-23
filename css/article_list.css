@@ -25,7 +25,7 @@
 	margin-top: 30px;
 	width: 102px;
 }
-.nav_book{
+.nav_article{
 	float: left;
 	font-family: myFont2;
 	color: #02C39A;
@@ -218,14 +218,15 @@
 	font-size: 18px;
 }
 .body_top_nav_arrow{
-	position: absolute;
-	bottom: -25px;
-	left: 43%;
+
+/*	bottom: -25px;
+	left: 43%;*/
+	margin-top: -55px;
 
 }
 .body_middle{
 	width: 100%;
-	height: 1590px;
+	height: 1633px;
 	background-color: #F7F7F7;
 }
 .body_middle_inner{
@@ -234,85 +235,125 @@
 	border:1px solid #F7F7F7;
 
 }
-.body_middle_book_1{
+.body_middle_article_1{
 	width: 1004px;
-	height: 271px;
+	height: 247px;
 	margin-top: 52px;
 	list-style-type: none;
 	background-color: white;
 	position: relative;
 }
-.body_middle_book_2,.body_middle_book_3,.body_middle_book_4,.body_middle_book_5{
+.body_middle_article_2,.body_middle_article_3,.body_middle_article_4,.body_middle_article_5{
 	width: 1004px;
-	height: 271px;
-	margin-top: 31px;
+	height: 247px;
+	margin-top: 54px;
 	list-style-type: none;
 	background-color: white;
 	position: relative;
 }
-.body_middle_book_left_1,.body_middle_book_left_2,.body_middle_book_left_3,.body_middle_book_left_4,.body_middle_book_left_5{
+.body_middle_article_left_1,.body_middle_article_left_2,.body_middle_article_left_3,.body_middle_article_left_4,.body_middle_article_left_5{
+/*	position: absolute;
+	top: 20px;
+	left: 39px;*/
+	width: 325px;
+	height: 201px;
 	float: left;
-	padding-left: 60px;
-	padding-top: 31px;
+	margin-left: 39px;
+	margin-top: 20px;
+	margin-right: 44px;
+
 }
 
-.body_middle_book_right_1,.body_middle_book_right_2,.body_middle_book_right_3,.body_middle_book_right_4,.body_middle_book_right_5{
+.body_middle_article_right_1,.body_middle_article_right_2,.body_middle_article_right_3,.body_middle_article_right_4,.body_middle_article_right_5{
 	float: left;
+	width: 563px;
 }
-.body_middle_book_title_1,.body_middle_book_title_2,.body_middle_book_title_3,.body_middle_book_title_4,.body_middle_book_title_5{
-	width: 125px;
-	text-align: center;
-	margin-top: 13px;
-	color: #187B8C;
-	font-size: 18px;
+.body_middle_article_title_1,.body_middle_article_title_2,.body_middle_article_title_3,.body_middle_article_title_4,.body_middle_article_title_5{
+	width: 139px;
+	height: 20px;
+	font-size: 20px;
+	letter-spacing: 2px;
+	color: #333333;
+	margin-top: 20px;
+	margin-bottom: 20px;
+
 }
-.body_middle_book_info_1,.body_middle_book_info_2,.body_middle_book_info_3,.body_middle_book_info_4,.body_middle_book_info_5{
-	width: 696px;
-	height: 45px;
-	margin-left: 32px;
-	margin-top: 33px;
+.body_middle_article_info_1,.body_middle_article_info_2,.body_middle_article_info_3,.body_middle_article_info_4,.body_middle_article_info_5{
+	width: 562px;
+	height: 73px;
 	font-size: 16px;
 	letter-spacing: 1px;
-	line-height: 24px;
 	color: #333333;
+	margin-top: 26px;
 }
-.body_middle_book_author_1,.body_middle_book_author_2,.body_middle_book_author_3,.body_middle_book_author_4,.body_middle_book_author_5{
-	margin-top: 53px;
-	margin-left: 32px;
+.body_middle_article_author_1,.body_middle_article_author_2,.body_middle_article_author_3,.body_middle_article_author_4,.body_middle_article_author_5{
+	width: 86px;
+	height: 17px;
 	font-size: 16px;
-	color: #333333;
+
 	letter-spacing: 1px;
+	color: #187b8c;
+
+
 }
-.body_middle_book_grade_1,.body_middle_book_grade_2,.body_middle_book_grade_3,.body_middle_book_grade_4,.body_middle_book_grade_5{
+.body_middle_article_publishtime_1{
+	width: 126px;
+	height: 15px;
+	font-size: 16px;
+	letter-spacing: 1px;
+	color: #666666;
+	margin-left: 10px;
+}
+.body_middle_article_grade_1,.body_middle_article_grade_2,.body_middle_article_grade_3,.body_middle_article_grade_4,.body_middle_article_grade_5{
 	width: 110px;
 	height: 17px;
 	position: absolute;
 	left:217px;
 	top: 205px;
 }
-.body_middle_book_grade_word_1,.body_middle_book_grade_word_2,.body_middle_book_grade_word_3,.body_middle_book_grade_word_4,.body_middle_book_grade_word_5{
+.body_middle_article_grade_word_1,.body_middle_article_grade_word_2,.body_middle_article_grade_word_3,.body_middle_article_grade_word_4,.body_middle_article_grade_word_5{
 	color: #333333;
 	font-size: 16px;
 	letter-spacing: 1px;
 }
-.body_middle_book_grade_num_1,.body_middle_book_grade_num_2,.body_middle_book_grade_num_3,.body_middle_book_grade_num_4,.body_middle_book_grade_num_5{
+.body_middle_article_grade_num_1,.body_middle_article_grade_num_2,.body_middle_article_grade_num_3,.body_middle_article_grade_num_4,.body_middle_article_grade_num_5{
 	color: #187B8C;
 	font-size: 16px;
 	letter-spacing: 1px;
 	margin-left: 5px;
 }
-.body_middle_book_like_1,.body_middle_book_like_2,.body_middle_book_like_3,.body_middle_book_like_4,.body_middle_book_like_5{
-	width: 22px;
-	height: 19px;
+.body_middle_article_like_1,.body_middle_article_like_2,.body_middle_article_like_3,.body_middle_article_like_4,.body_middle_article_like_5{
+	width: 25px;
+	height: 22px;
 	position: absolute;
-	right: 212px;
-	bottom: 47px;
+	right: 86px;
+	bottom: 26px;
 }
-.body_middle_book_like_1 img,.body_middle_book_like_2 img,.body_middle_book_like_3 img,.body_middle_book_like_4 img,.body_middle_book_like_5 img{
-	width: 22px;
-	height: 19px;
+.body_middle_article_like_1 img,.body_middle_article_like_2 img,.body_middle_article_like_3 img,.body_middle_article_like_4 img,.body_middle_article_like_5 img{
+	width: 25px;
+	height: 22px;
+
 }
-.body_middle_book_detail_1,.body_middle_book_detail_2,.body_middle_book_detail_3,.body_middle_book_detail_4,.body_middle_book_detail_5{
+.body_middle_article_like_1:hover,.body_middle_article_like_2:hover,.body_middle_article_like_3:hover,.body_middle_article_like_4:hover,.body_middle_article_like_4:hover{
+cursor: pointer;
+}
+
+.body_middle_article_share_1,.body_middle_article_share_2,.body_middle_article_share_3,.body_middle_article_share_4,.body_middle_article_share_5{
+	position: absolute;
+	right: 38px;
+	bottom: 26px;
+	width: 24px;
+	height: 25px;
+}
+.body_middle_article_share_1:hover,.body_middle_article_share_2:hover,.body_middle_article_share_3:hover,.body_middle_article_share_4:hover,.body_middle_article_share_5:hover{
+cursor: pointer;
+}
+.body_middle_article_share_1 img,.body_middle_article_share_2 img,.body_middle_article_share_3 img,.body_middle_article_share_4 img,.body_middle_article_share_5 img{
+	width: 24px;
+	height: 25px;
+}
+
+.body_middle_article_detail_1,.body_middle_article_detail_2,.body_middle_article_detail_3,.body_middle_article_detail_4,.body_middle_article_detail_5{
 	width: 97px;
 	height: 57px;
 	line-height: 57px;
@@ -325,34 +366,33 @@
 	right: 73px;
 	bottom: 31px;
 }
-.body_middle_book_detail_1:hover,.body_middle_book_detail_2:hover,.body_middle_book_detail_3:hover,.body_middle_book_detail_4:hover,.body_middle_book_detail_5:hover{
+.body_middle_article_detail_1:hover,.body_middle_article_detail_2:hover,.body_middle_article_detail_3:hover,.body_middle_article_detail_4:hover,.body_middle_article_detail_5:hover{
 	cursor: pointer;
 	}
-.body_middle_book_detail_a_1,.body_middle_book_detail_a_2,.body_middle_book_detail_a_3,.body_middle_book_detail_a_4,.body_middle_book_detail_a_5{
+.body_middle_article_detail_a_1,.body_middle_article_detail_a_2,.body_middle_article_detail_a_3,.body_middle_article_detail_a_4,.body_middle_article_detail_a_5{
 	color: white;
 }
 
-.body_middle_book_grade_star_inside{
+.body_middle_article_grade_star_inside{
 	float: left;
 }
-.body_middle_book_grade_star_1,.body_middle_book_grade_star_2,.body_middle_book_grade_star_3,.body_middle_book_grade_star_4,.body_middle_book_grade_star_5{
+.body_middle_article_grade_star_1,.body_middle_article_grade_star_2,.body_middle_article_grade_star_3,.body_middle_article_grade_star_4,.body_middle_article_grade_star_5{
 	position: absolute;
 	left: 125px;
 	bottom: 0px;
 	width: 135px;
 	height: 18px;
 }
-/*.tipstutorials {  
- background: url('../images/arrow_1_down.png') no-repeat;  
- width: 180px;  
- height: 68px;  
- position: absolute;  
- line-height:30px;  
- font-size:12px;  
- text-align: center;  
- vertical-align:middle;  
- font-style: normal;  
- z-index: 100;  
- color:red;  
- display: none;  
-}  */
+.body_bottom_page{
+	width: 351px;
+	margin:0px auto;
+	font-size: 20px;
+	line-height: 36px;
+	letter-spacing: 2px;
+	color: #347898;
+	margin-top: 59px;
+}
+.first_page{
+	margin-left: 78px;
+	margin-right: 78px;
+}

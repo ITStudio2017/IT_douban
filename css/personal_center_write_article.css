@@ -19,7 +19,7 @@ li{
 }
 .container_inner{
 	width: 1000px;
-	height: 1422px;
+	height: 1239px;
 	margin:0px auto;
 }
 .personal_nav_logo{
@@ -64,7 +64,7 @@ li{
 .personal_body_arrow_1{
 	position: absolute;
 	top: 410px;
-	left: 257px;
+	left: 258px;
 }
 .personal_bofy_perinfo_pic{
 	width: 34px;
@@ -225,6 +225,9 @@ li{
 	width: 716px;
 	height: 100px;
 }
+.personal_body_write_title:hover{
+	cursor: pointer;
+}
 .personal_body_write_title_input{
 	width: 536px;
 	height: 100px;
@@ -242,12 +245,15 @@ li{
 	background-color: #f7f7f7;
 	position: relative;
 }
+.personal_body_write_add_img:hover{
+	cursor: pointer;
+}
 .personal_body_write_add_img_tip{
 	position: absolute;
-	top: 59px;
+	top: 50px;
 	left: 90px;
-	width: 250px;
-	height: 29px;
+	
+
 	font-size: 30px;
 	letter-spacing: 3px;
 	color: rgba(191, 191, 191, 0.68);
@@ -257,6 +263,9 @@ li{
 	width: 716px;
 	position: relative;
 
+}
+.personal_body_write_content:hover{
+	cursor: pointer;
 }
 .personal_body_write_content_text{
 	height: 637px;

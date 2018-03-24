@@ -9,3 +9,7 @@ class BookFrom(forms.Form):
     # flabel = forms.ChoiceField()
     # slabel = forms.ChoiceField()
     cover = forms.ImageField()
+
+
+class CommentForm(forms.Form):
+    content = forms.CharField(max_length=100, widget=forms.Textarea)

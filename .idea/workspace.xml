@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef070562-4d69-42d1-a3a4-b27fee2e0879" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/book/forms.py" afterPath="$PROJECT_DIR$/book/forms.py" />
       <change beforePath="$PROJECT_DIR$/book/models.py" afterPath="$PROJECT_DIR$/book/models.py" />
-      <change beforePath="$PROJECT_DIR$/book/urls.py" afterPath="$PROJECT_DIR$/book/urls.py" />
+      <change beforePath="$PROJECT_DIR$/book/templates/book_show.html" afterPath="$PROJECT_DIR$/book/templates/book_show.html" />
       <change beforePath="$PROJECT_DIR$/book/views.py" afterPath="$PROJECT_DIR$/book/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,7 +19,7 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/douban/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3013">
+            <state relative-caret-position="731">
               <caret line="132" column="21" lean-forward="false" selection-start-line="132" selection-start-column="21" selection-end-line="132" selection-end-column="21" />
               <folding />
             </state>
@@ -29,7 +29,7 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/book/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
+            <state relative-caret-position="184">
               <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
@@ -38,21 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="book_edit.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/book/templates/book_edit.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/book/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="129" column="0" lean-forward="true" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+            <state relative-caret-position="731">
+              <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -60,11 +50,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="book_show.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/book/templates/book_show.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="575">
+              <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/book/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="1" column="14" lean-forward="false" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+            <state relative-caret-position="524">
+              <caret line="94" column="8" lean-forward="false" selection-start-line="94" selection-start-column="6" selection-end-line="94" selection-end-column="8" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -75,8 +75,8 @@
       <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/book/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="322">
+              <caret line="14" column="67" lean-forward="false" selection-start-line="14" selection-start-column="67" selection-end-line="14" selection-end-column="67" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
@@ -107,11 +107,11 @@
         <option value="$PROJECT_DIR$/douban/urls.py" />
         <option value="$PROJECT_DIR$/book/templates/book_edit.html" />
         <option value="$PROJECT_DIR$/book/templates/book_index.html" />
-        <option value="$PROJECT_DIR$/book/templates/book_show.html" />
-        <option value="$PROJECT_DIR$/book/forms.py" />
-        <option value="$PROJECT_DIR$/book/models.py" />
         <option value="$PROJECT_DIR$/book/urls.py" />
+        <option value="$PROJECT_DIR$/book/models.py" />
+        <option value="$PROJECT_DIR$/book/forms.py" />
         <option value="$PROJECT_DIR$/book/views.py" />
+        <option value="$PROJECT_DIR$/book/templates/book_show.html" />
       </list>
     </option>
   </component>
@@ -653,7 +653,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/douban/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3013">
+        <state relative-caret-position="731">
           <caret line="132" column="21" lean-forward="false" selection-start-line="132" selection-start-column="21" selection-end-line="132" selection-end-column="21" />
           <folding />
         </state>
@@ -677,17 +677,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/book/templates/book_show.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="21" column="8" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/book/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
+        <state relative-caret-position="184">
           <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
@@ -705,8 +697,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/book/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="322">
+          <caret line="14" column="67" lean-forward="false" selection-start-line="14" selection-start-column="67" selection-end-line="14" selection-end-column="67" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
@@ -715,8 +707,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/book/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="14" lean-forward="false" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+        <state relative-caret-position="524">
+          <caret line="94" column="8" lean-forward="false" selection-start-line="94" selection-start-column="6" selection-end-line="94" selection-end-column="8" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
@@ -725,11 +717,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/book/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="129" column="0" lean-forward="true" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+        <state relative-caret-position="731">
+          <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/book/templates/book_show.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>

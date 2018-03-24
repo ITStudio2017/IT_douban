@@ -16,7 +16,17 @@
                 ，子标签{{ sLabel }}
             {% endif %}
         {% endif %}
-        最后编辑时间{{ book.lastEditTime }}
+        <br>
+        最后编辑时间{{ book.lastEditTime }}<br>
+        <form method="POST">
+            {% csrf_token %}
+            评论{{ form.content }}<br>
+            <input type="submit" value="提交"><br>
+        </form>
+        评论区：<br>
+        {% for comment in comments %}
+            {{ comment.owner }}:{{ comment.content }}
+        {% endfor %}
     {% endif %}
     {{ message }}
     <br>

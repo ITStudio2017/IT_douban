@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .models import Book, Label, get_alllabel, get_label_by_int
-from .forms import BookFrom
+from .models import Book, Label, Comment, get_alllabel, get_label_by_int
+from .forms import BookFrom, CommentForm
 import logging
 
 
@@ -42,11 +42,12 @@ def book_show(request, bookId: int = None):
         'message': "",
         'book': None,
         'fLabel': "",
-        "sLabel": "",
+        'sLabel': "",
+        'comments': None,
     }
-    book = None
     try:
         book = Book.objects.get(id=bookId)
+        back['book'] = book
         try:
             label = book.label
             (fLabel, sLabel) = get_label_by_int(label)
@@ -56,7 +57,23 @@ def book_show(request, bookId: int = None):
             back['message'] = u"标签错误"
     except:
         back['message'] = u"没有找到这本书"
-    back['book'] = book
+        return render(request, 'book_show.html', back)
+
+    try:
+        comments = Comment.objects.filter(book_id__exact=bookId)
+        back['comments'] = comments
+    except:
+        back['message'] = u"评论加载错误"
+
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            content = form.cleaned_data['content']
+            newComment = Comment(book=book, content=content, owner=1)
+            newComment.save()
+    else:
+        form = CommentForm()
+    back['form'] = form
     return render(request, 'book_show.html', back)
 
 

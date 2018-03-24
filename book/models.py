@@ -93,6 +93,7 @@ def get_alllabel():
 
 class Comment(models.Model):
     # id
+    book = models.ForeignKey(Book)
     owner = models.IntegerField()
     content = models.CharField(max_length=200)
     createTime = models.DateTimeField(auto_now_add=True)

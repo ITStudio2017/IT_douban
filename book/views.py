@@ -86,8 +86,46 @@ def book_new(request):
     return render(request, 'book_edit.html', back)
 
 
-def book_change(request):
-    return
+def book_change(request, bookId: int = None):
+    back = {
+        'message': "",
+        'form': None,
+    }
+
+    try:
+        book = Book.objects.get(id=bookId)
+    except:
+        back['message'] = u"没有找到这本书"
+        return render(request, 'book_edit.html', back)
+    form = None
+    if request.method == 'GET':
+        data = {
+            'bookname': book.bookname,
+            'introduction': book.introduction,
+            'author': book.author,
+            'label': 101,
+            'cover': book.cover,
+        }
+        form = BookFrom(data=data)
+    if request.method == 'POST':
+        form = BookFrom(request.POST, request.FILES)
+        if form.is_valid():
+            bookname = form.cleaned_data['bookname']
+            introduction = form.cleaned_data['introduction']
+            author = form.cleaned_data['author']
+            label = 101
+            cover = form.cleaned_data['cover']
+            book.bookname = bookname
+            book.introduction = introduction
+            book.author = author
+            book.label = label
+            book.cover = cover
+            book.save()
+        else:
+            back['message'] = u"错误"
+
+    back['form'] = form
+    return render(request, 'book_edit.html', back)
 
 
 def book_delete(request):

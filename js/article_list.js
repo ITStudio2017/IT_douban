@@ -153,14 +153,41 @@ $(".search_box_input").blur(function(){
   $(this).attr("value","请输入关键词");
 });
 
-var love_1=0;
+//点赞
+var time_set2=true;
+// var love_1=new Array(0,0,0,0,0,0,0,0,0,0);
 $(".body_middle_article_like_1").click(function(){
-  love_1+=1;
-  if(love_1%2!=0)
-  {
+  // var love_num=$(".body_middle_article_list li").index();
+  // console.log(love_num);
+  // love_1.push(0)
+  // love_1[love_num]=0;
+  // if(love_1[love_num]%2!=0)
+  // {
     $(this).find("img").attr({'src':'../images/grade_love.png'});
-  }
-  else{
-    $(this).find("img").attr({'src':'../images/article_love_white.png'});
-  }
+
+    // $(".article_save_tip").fadeIn();
+    // $(".article_save_tip").delay(1000).fadeOut();
+     if(time_set2==true)
+     {
+
+      time_set2=false;
+      $(".article_save_tip").fadeIn();
+      var time_3=setInterval(function(){
+        // time_set=true;
+
+        },2000) 
+      // $(".last_page").css({'disabled':'true'});
+      
+      $(".article_save_tip").delay(1000).fadeOut(function(){
+        clearInterval(time_3);
+        time_set2=true;
+
+        // console.log(time_set);
+      });
+    }
+  // }
+  // else{
+    // $(this).find("img").attr({'src':'../images/article_love_white.png'});
+  // }
 })
+

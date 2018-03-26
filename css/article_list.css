@@ -107,7 +107,7 @@
 	float: left;
 	width: 144px;
 	height: 30px;
-	margin-top: 92px;
+	margin-top: 91px;
 	margin-left: 256px;
 	vertical-align: middle;
 	/*display: inline-block;*/
@@ -436,6 +436,22 @@ cursor: pointer;
 	margin-left: -175px;
 	margin-top: -40px;
 }
+.article_save_tip{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 350px;
+	height: 80px;
+	color: #ffffff;
+	background-color: rgba(0,168,150,0.7);
+	text-align: center;
+	line-height: 80px;
+	font-size: 18px;
+	margin-left: -175px;
+	margin-top: -40px;
+	z-index: 99;
+}
+
 @media screen and (max-width: 1006px){
 	.nav_menu{
 		margin-left: 230px;

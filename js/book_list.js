@@ -106,33 +106,108 @@ star();
 // 	$(".body_middle_book_like_"+n).find("img").attr('src','../images/love_red.png');
 // });
 // }
-$(".body_middle_book_like_1").click(function(){
+// $(".body_middle_book_like_1").click(function(){
 	
 
-	$(".body_middle_book_like_1 img").attr('src','../images/love_red.png');
-});
-$(".body_middle_book_like_2").click(function(){
+// 	$(".body_middle_book_like_1 img").attr('src','../images/love_red.png');
+// });
+// $(".body_middle_book_like_2").click(function(){
 	
 
-	$(".body_middle_book_like_2 img").attr('src','../images/love_red.png');
-});
-$(".body_middle_book_like_3").click(function(){
+// 	$(".body_middle_book_like_2 img").attr('src','../images/love_red.png');
+// });
+// $(".body_middle_book_like_3").click(function(){
 
 
-	$(".body_middle_book_like_3 img").attr('src','../images/love_red.png');
-});
-$(".body_middle_book_like_4").click(function(){
+// 	$(".body_middle_book_like_3 img").attr('src','../images/love_red.png');
+// });
+// $(".body_middle_book_like_4").click(function(){
 	
 
-	$(".body_middle_book_like_4 img").attr('src','../images/love_red.png');
-});
-$(".body_middle_book_like_5").click(function(){
+// 	$(".body_middle_book_like_4 img").attr('src','../images/love_red.png');
+// });
+// $(".body_middle_book_like_5").click(function(){
 	
 
 
-	$(".body_middle_book_like_5 img").attr('src','../images/love_red.png');
-});
+// 	$(".body_middle_book_like_5 img").attr('src','../images/love_red.png');
+// });
+var love_2=new Array(0,0,0,0,0);
+// for(var i=0;i<5;i++)
+// {
+// 	$(".body_middle_book_like_"+).eq(0).click(function(){
+// 	// $(this).index();
 
+//   	love_2[0]+=1;
+//   if(love_2[0]%2!=0)
+//   {
+//     $(this).find("img").attr({'src':'../images/grade_love.png'});
+//   }
+//   else{
+//     $(this).find("img").attr({'src':'../images/love_white.png'});
+//   }
+// })
+// }
+$(".body_middle_book_like_1").eq(0).click(function(){
+	// $(this).index();
+
+  	love_2[0]+=1;
+  if(love_2[0]%2!=0)
+  {
+    $(this).find("img").attr({'src':'../images/grade_love.png'});
+  }
+  else{
+    $(this).find("img").attr({'src':'../images/love_white.png'});
+  }
+})
+$(".body_middle_book_like_2").eq(0).click(function(){
+	// $(this).index();
+	
+  	love_2[1]+=1;
+  if(love_2[1]%2!=0)
+  {
+    $(this).find("img").attr({'src':'../images/grade_love.png'});
+  }
+  else{
+    $(this).find("img").attr({'src':'../images/love_white.png'});
+  }
+})
+$(".body_middle_book_like_3").eq(0).click(function(){
+	// $(this).index();
+	
+  	love_2[3]+=1;
+  if(love_2[3]%2!=0)
+  {
+    $(this).find("img").attr({'src':'../images/grade_love.png'});
+  }
+  else{
+    $(this).find("img").attr({'src':'../images/love_white.png'});
+  }
+})
+$(".body_middle_book_like_4").eq(0).click(function(){
+	// $(this).index();
+	
+  	love_2[4]+=1;
+  if(love_2[4]%2!=0)
+  {
+    $(this).find("img").attr({'src':'../images/grade_love.png'});
+  }
+  else{
+    $(this).find("img").attr({'src':'../images/love_white.png'});
+  }
+})
+$(".body_middle_book_like_5").eq(0).click(function(){
+	// $(this).index();
+	
+  	love_2[2]+=1;
+  if(love_2[2]%2!=0)
+  {
+    $(this).find("img").attr({'src':'../images/grade_love.png'});
+  }
+  else{
+    $(this).find("img").attr({'src':'../images/love_white.png'});
+  }
+})
 // $(document).ready(function() {  
 //     $(".tipsClass3").hover(function() {  
 //         $(this).find(".tipstutorials").animate({  
@@ -187,4 +262,13 @@ $(".body_top_nav_list li").mouseenter(function(){
 $(".body_top_nav_list li").mouseleave(function(){
 	$(this).find("div").css('display','none');
 	$(".body_top_nav_1").find("div").css('display','block');
+});
+
+
+//搜索框
+$(".search_box_input").click(function(){
+  $(this).attr("value","");
+});
+$(".search_box_input").blur(function(){
+  $(this).attr("value","请输入关键词");
 });

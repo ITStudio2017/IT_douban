@@ -262,7 +262,10 @@
 	padding-left: 60px;
 	padding-top: 31px;
 }
-
+.body_middle_book_left_1 img,.body_middle_book_left_2 img,.body_middle_book_left_3 img,.body_middle_book_left_4 img,.body_middle_book_left_5 img{
+	width: 124px;
+	height: auto;
+}
 .body_middle_book_right_1,.body_middle_book_right_2,.body_middle_book_right_3,.body_middle_book_right_4,.body_middle_book_right_5{
 	float: left;
 }

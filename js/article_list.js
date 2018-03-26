@@ -35,6 +35,7 @@ $(document).ready(function(){
     });  
 }); 
 
+
 var time_set=true;
 var now_page=0;
 var total_page=2;

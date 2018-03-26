@@ -366,3 +366,27 @@
  color:red;  
  display: none;  
 }  */
+
+@media screen and (max-width: 1006px){
+	.nav_menu{
+		margin-left: 230px;
+	}
+	.body_top_inner{
+		width: 980px;
+	}
+	.body_top_nav_1,.body_top_nav_2,.body_top_nav_3,.body_top_nav_4,.body_top_nav_5,.body_top_nav_6{
+		width: 163px;
+	}
+	.body_middle_book_1,.body_middle_book_2,.body_middle_book_3,.body_middle_book_4,.body_middle_book_5{
+		width: 980px;
+	}
+	.body_middle_book_right_1, .body_middle_book_right_2, .body_middle_book_right_3, .body_middle_book_right_4, .body_middle_book_right_5{
+		margin-left: -10px;
+	}
+	.body_middle_inner{
+		width: 980px;
+	}
+	.header{
+		width: 980px;
+	}
+}

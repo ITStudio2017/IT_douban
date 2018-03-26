@@ -11,9 +11,14 @@ li{
 	list-style-type: none;
 }
 .container{
-	width: 1920px;
+	width: 100%;
 	height: 2403px;
 }
+/*.containner_inner{
+	width: 1006px;
+	height: 2403px;
+	margin:0px auto;
+}*/
 .header{
 	width: 1006px;
 	height: 139px;
@@ -423,4 +428,64 @@ li{
 	position: absolute;
 	right: 11px;
 	bottom: 2px;
+}
+
+@media screen and (max-width: 1023px){
+	.header{
+		width: 980px;
+	}
+	.nav_book_a,.nav_essey_a{
+		margin-left: 90px;
+	}
+	.body_hotessey_content{
+		width: 980px;
+	}
+	.body_hotessey_inner{
+		width: 980px;
+	}
+	.hotessey_title_more{
+		margin-left: -28px;
+	}
+	.body_top{
+		width: 980px;
+	}
+	.body_top_inner{
+		width: 980px;
+	}
+	.body_hotessey{
+		width: 980px;
+	}
+	.body_hotessey_inner{
+		width: 980px;
+	}
+	.body_hotbook{
+		width: 980px;
+	}
+	.body_hotbook_inner{
+		width: 980px;
+	}
+	.body_hotbook_1, .body_hotbook_2, .body_hotbook_3{
+		margin-right: 51px;
+	}
+	.body_hotbook_1{
+		margin-left: 15px;
+	}
+	.body_hotbook_5, .body_hotbook_7, .body_hotbook_6{
+		margin-right: 51px;
+	}
+	.body_hotbook_5{
+		margin-left: 15px;
+	}
+	.hotbook_title_more{
+		margin-left: -31px;
+	}
+	.hotbook_title_name{
+		margin-right: 13px;
+	}
+	.body{
+		width: 980px;
+	}
+	.containner_inner{
+		width: 980px;
+	}
 }

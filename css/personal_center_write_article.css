@@ -355,3 +355,15 @@ li{
 	letter-spacing: 2px;
 	/*display: none;*/
 }
+
+@media screen and (max-width: 1006px){
+	.personal_body{
+		width: 948px;
+	}
+	.personal_body_save_article_content{
+		width: 664px;
+	}
+	.container_inner{
+		width: 942px;
+	}
+}

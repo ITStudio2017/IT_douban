@@ -18,6 +18,7 @@ li{
 	width: 1006px;
 	height: 139px;
 	margin: 0px auto;
+	border-bottom: 1px solid rgb(228,228,228);
 
 }
 .logo_1{
@@ -126,6 +127,7 @@ li{
 	width: 1006px;
 	height: 431px;
 	margin:0px auto;
+	margin-top: 25px;
 }
 .body_book_info{
 	width: 537px;
@@ -458,12 +460,13 @@ li{
 	outline: none;
 	border:none;
 	margin-top: 32px;
+	font-size: 22px;
 }
 .book_comment_pinfen{
 	margin-top: 39px;
 	float: left;
 	position: relative;
-	width: 260px;
+	width: 265px;
 	height: 29px;
 }
 .book_comment_pinfen_span{
@@ -476,7 +479,7 @@ li{
 }
 .book_comment_pinfen_stars{
 	
-	width: 155px;
+	width: 166px;
 	height: 27px;
 	position: absolute;
 	right: 0px;
@@ -484,6 +487,13 @@ li{
 }
 .book_comment_pinfen_star{
 	float: left;
+	width: 33px;
+
+}
+.book_comment_pinfen_star img{
+	width: 28px;
+	height: 27px;
+	
 }
 .book_comment_publish{
 	width: 130px;
@@ -599,4 +609,35 @@ li{
 .first_page{
 	margin-left: 78px;
 	margin-right: 78px;
+}
+.first_page:hover,.last_page:hover,.next_page:hover{
+	cursor: pointer;
+}
+.last_page_tip{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 350px;
+	height: 80px;
+	color: #ffffff;
+	background-color: rgba(0,168,150,0.7);
+	text-align: center;
+	line-height: 80px;
+	font-size: 26px;
+	margin-left: -175px;
+	margin-top: -40px;
+}
+.first_page_tip{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 350px;
+	height: 80px;
+	color: #ffffff;
+	background-color: rgba(0,168,150,0.7);
+	text-align: center;
+	line-height: 80px;
+	font-size: 26px;
+	margin-left: -175px;
+	margin-top: -40px;
 }

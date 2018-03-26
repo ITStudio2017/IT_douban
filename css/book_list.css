@@ -217,10 +217,17 @@
 	text-decoration: none;
 	font-size: 18px;
 }
-.body_top_nav_arrow{
+/*.body_top_nav_arrow{
 	position: absolute;
 	bottom: -25px;
 	left: 43%;
+
+}*/
+.body_top_nav_arrow{
+
+/*	bottom: -25px;
+	left: 43%;*/
+	margin-top: -55px;
 
 }
 .body_middle{

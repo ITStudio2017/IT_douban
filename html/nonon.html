@@ -1,0 +1,76 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Document</title>  
+    <style>  
+        *{  
+            margin: 0;  
+            padding: 0;  
+            list-style: none;  
+        }  
+          
+         .box{  
+            width: 600px;  
+            height: 400px;  
+            margin: 200px auto;  
+            overflow: hidden;  
+            position: relative;  
+        }  
+         .box li{  
+            width: 600px;  
+            height: 400px;  
+            position: absolute;  
+            left: 0;  
+            top: 0;  
+        }  
+        .box li img{  
+            width: 100%;  
+            height: 100%;  
+        }  
+    </style>  
+</head>  
+<body>  
+        <ul class="box">  
+            <li><img src="../images/esssy_pic_1.png" alt=""></li>  
+            <li><img src="../images/esssy_pic_1.png" alt=""></li>  
+            <li><img src="../images/esssy_pic_1.png" alt=""></li>  
+            <li><img src="../images/esssy_pic_1.png" alt=""></li>  
+            <li><img src="../images/esssy_pic_1.png" alt=""></li>  
+            <li><img src="../images/esssy_pic_1.png" alt=""></li>  
+        </ul>  
+</body>  
+<script src="../js/jquery-3.2.1.min.js"></script> 
+<script>  
+;(function($){  
+        var num = 40;                   //设定li右侧剩余宽度  
+        var $li = $('.box li');           
+        var $box = $('.box');  
+        var w = $box.width()+($li.length-1)*num; //设定父级宽度  
+        $box.width(w);                          //修改父级原来宽度  
+        $li.each(function(index, el) {          //循环li  
+            $li.eq(index).css({                 //设定所有li的left值  
+                'left':$box.eq(0).width()-($li.length-index)*num  
+            });  
+            $li.eq(0).css('left',0);        //第一个li的left值设定为0；  
+        });  
+  
+        $li.mouseover(function(){               //添加事件  
+            var $index = $(this).index();       //获取当前li索引值  
+            $li.each(function(index, el) {      //循环li  
+                if($index>=index){               //判断当前li是第几个左侧向左  
+                    $li.eq(index).animate({  
+                        'left':index*num  
+                    });  
+                }else{  
+                    $li.eq(index).animate({     //右侧向右  
+                        'left':$box.eq(0).width()-($li.length-index)*num  
+                    });  
+                }     
+            });  
+        });  
+})(jQuery);  
+      
+  
+</script>  
+</html>

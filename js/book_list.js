@@ -106,7 +106,11 @@ star();
 // 	$(".body_middle_book_like_"+n).find("img").attr('src','../images/love_red.png');
 // });
 // }
+$(".body_middle_book_like_1").click(function(){
+	
 
+	$(".body_middle_book_like_1 img").attr('src','../images/love_red.png');
+});
 $(".body_middle_book_like_2").click(function(){
 	
 
@@ -176,8 +180,11 @@ $(document).ready(function(){
 
 
 $(".body_top_nav_list li").mouseenter(function(){
-	$(this).find("div").css('display', 'block');
+	$(this).find("div").css('display','block');
+	console.log("999");
+	$("body_top_nav_1").find("div").css('display','block');
 });
 $(".body_top_nav_list li").mouseleave(function(){
-	$(this).find("div").css('display', 'none');
+	$(this).find("div").css('display','none');
+	$(".body_top_nav_1").find("div").css('display','block');
 });

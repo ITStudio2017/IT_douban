@@ -13,6 +13,9 @@ class Book(models.Model):
     label = models.IntegerField(null=True)
     cover = models.ImageField(upload_to='book_img')
 
+    def __str__(self):
+        return self.bookname
+
     def get_father_labelname(self):
         try:
             return Label.objects.get(labelNum=self.label / 100).labelName
@@ -33,6 +36,14 @@ class Label(models.Model):
     # id
     labelName = models.CharField(max_length=10)
     labelNum = models.IntegerField()
+
+    def __str__(self):
+        f = self.get_fatherlabel_by_secondarylabel()
+        result = ""
+        if f:
+            result = str(f.labelName) + ":"
+        result = result + self.labelName
+        return result
 
     def count_secondarylabel_by_fatherlabel(self):
         if self.labelNum < 100:
@@ -97,3 +108,6 @@ class Comment(models.Model):
     owner = models.IntegerField()
     content = models.CharField(max_length=200)
     createTime = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.book.bookname + ":" + self.content

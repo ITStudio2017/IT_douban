@@ -147,11 +147,16 @@ $(".body_comment_content ul").eq(now_page).siblings().css({'display':'none'});
 
 
 //搜索框
-$(".search_box_input").click(function(){
+$(".search_box_input").focus(function(){
   $(this).attr("value","");
+  $(this).css('color','black');
+
+  
 });
 $(".search_box_input").blur(function(){
   $(this).attr("value","请输入关键词");
+  $(this).css('color','#C9C9C9');
+
 });
 
 //点赞

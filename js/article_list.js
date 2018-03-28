@@ -41,7 +41,6 @@ var now_page=0;
 var total_page=2;
 //下一页
 
-
 $(".next_page").click(function(){
   if(now_page<total_page){
 

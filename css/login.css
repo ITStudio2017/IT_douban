@@ -17,7 +17,9 @@ li{
 }
 .body{
 	width: 100%;
+
 	height: 960px;
+
 	background-image: url(../images/regist_and.png);
 	background-position: center;
 	background-repeat: no-repeat;
@@ -82,7 +84,10 @@ h3{
 }
 
 .login_form_name{
+
 	margin-bottom:12px;
+
+
 }
 .login_form_name_word{
 	width: 89px;
@@ -162,7 +167,10 @@ h3{
 	float: left;
 	background-image: url(../images/code.png);
 	background-repeat: no-repeat;
-	background-size: 106%;
+	background-size: cover;
+}
+.login_form_verify_image:hover{
+	cursor: pointer;
 }
 .login_form_verify_button{
 	width: 410px;
@@ -175,4 +183,7 @@ h3{
 	font-size: 20px;
 	letter-spacing: 1px;
 	color: white;
+}
+.login_form_verify_button:hover{
+	cursor: pointer;
 }

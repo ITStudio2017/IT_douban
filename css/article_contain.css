@@ -114,8 +114,17 @@ li{
 	float: left;
 	width: 144px;
 	height: 30px;
-	margin-top: 84px;
+	margin-top: 91px;
 	margin-left: 256px;
+	vertical-align: middle;
+	/*display: inline-block;*/
+}
+.nav_menu img{
+	/*margin-top: 10px;*/
+	vertical-align: middle;
+}
+.nav_menu span{
+	vertical-align: middle;
 }
 .nav_menu_word{
 	color: #02C39A;
@@ -504,4 +513,13 @@ li{
 	font-size: 26px;
 	margin-left: -175px;
 	margin-top: -40px;
+}
+@media screen and (max-width: 1006px){
+	.nav_menu{
+		margin-left: 230px;
+	}
+
+	.header{
+		width: 980px;
+	}
 }

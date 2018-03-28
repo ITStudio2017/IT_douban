@@ -177,3 +177,6 @@ h3{
 	letter-spacing: 1px;
 	color: white;
 }
+.login_form_verify_button:hover{
+	cursor: pointer;
+}

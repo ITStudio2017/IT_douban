@@ -62,6 +62,7 @@ li{
 	border: 1px solid white;
 	position: absolute;
 	left: 10px;
+	font-size: 17px;
 }
 .search_box_button{
 	width: 43px;

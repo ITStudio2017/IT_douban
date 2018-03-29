@@ -18,7 +18,7 @@ $(".regist_form_verify_input").blur(function(){
 
 });
 
-//input 2
+//input name
 $(".regist_form_name_input").focus(function(){
   $(this).attr("value","");
   $(this).css({'color':'black'});
@@ -26,12 +26,11 @@ $(".regist_form_name_input").focus(function(){
   
 });
 $(".regist_form_name_input").blur(function(){
-  // $(this).attr("value","请输入正确的邮箱地址");
-  // $(this).css({'color':'#C9C9C9'});
+
     var content=$(this).val();
-  if(content==""){
+  	if(content==""){
   		$(this).css({'color':'#C9C9C9'});
-  		$(this).attr("value","请输入正确的邮箱地址");
+  		$(this).attr("value","example@xxx.com");
 	}
 	else{
 		$(this).css({'color':'black'});
@@ -59,5 +58,36 @@ $(".regist_form_code_again_input").blur(function(){
 	else{
 		$(this).css({'color':'black'});
 	}
+
+});
+
+
+//错误提示
+var name_wrong = false;
+var code_wrong = false;
+var jump = true;
+if(name_wrong == true)
+{
+  $(".regist_form_name_input_tip").show();
+}
+else
+{
+  $(".regist_form_name_input_tip").hide();
+}
+
+if(code_wrong == true)
+{
+  $(".regist_form_code_again_input_tip").show();
+}
+else
+{
+  $(".regist_form_code_again_input_tip").hide();
+}
+
+$(".regist_form_verify_button").click(function(){
+  if(jump == true)
+{
+  window.location.href = "../html/login.html";
+}
 
 });

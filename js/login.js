@@ -32,3 +32,33 @@ $(".login_form_name_input").blur(function(){
 
 });
 
+
+//错误提示
+var name_wrong = false;
+var code_wrong = false;
+var jump = true;
+if(name_wrong == true)
+{
+  $(".login_form_name_tip").show();
+}
+else
+{
+  $(".login_form_name_tip").hide();
+}
+
+if(code_wrong == true)
+{
+  $(".login_form_code_tip").show();
+}
+else
+{
+  $(".login_form_code_tip").hide();
+}
+
+$(".login_form_verify_button").click(function(){
+  if(jump == true)
+{
+  window.location.href = "../html/shouye.html";
+}
+
+});

@@ -84,8 +84,18 @@ h3{
 .login_form_name{
 
 	margin-bottom:12px;
+	position: relative;
 
 
+
+}
+.login_form_name_tip{
+	position: absolute;
+	bottom: -19px;
+	left: 90px;
+	font-size: 16px;
+	color: #e81a33;
+	display: none;
 
 }
 .login_form_name_word{
@@ -118,6 +128,16 @@ h3{
 }
 .login_form_code{
 	margin-top: 9px;
+	position: relative;
+}
+.login_form_code_tip{
+	position: absolute;
+	bottom: -19px;
+	left: 90px;
+	font-size: 16px;
+	color: #e81a33;
+	display: none;
+
 }
 .login_form_code_word{
 	width: 89px;
@@ -159,7 +179,7 @@ h3{
 
 }
 .login_form_verify{
-	margin-top: 40px;
+	margin-top: 39px;
 }
 .login_form_verify_image{
 	width: 125px;

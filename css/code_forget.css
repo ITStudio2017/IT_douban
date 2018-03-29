@@ -83,6 +83,16 @@ h3{
 }
 .regist_form_name{
 	margin-top: 60px;
+	position: relative;
+}
+.regist_form_name_tip{
+	position: absolute;
+	bottom: -19px;
+	left: 90px;
+	font-size: 16px;
+	color: #e81a33;
+	display: none;
+
 }
 .regist_form_name_word{
 	width: 89px;
@@ -106,6 +116,16 @@ h3{
 }
 .regist_form_code{
 	margin-top: 36px;
+	position: relative;
+}
+.regist_form_code_again_input_tip{
+	position: absolute;
+	bottom: -19px;
+	left: 90px;
+	font-size: 16px;
+	color: #e81a33;
+	display: none;
+
 }
 .regist_form_code_word{
 	width: 87px;

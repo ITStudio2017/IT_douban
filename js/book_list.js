@@ -1,6 +1,8 @@
 //评分
-function star(){
-	var grade_1=$(".body_middle_book_grade_num_1").html();
+
+	$(".body_middle_book_grade_star").each(function(index){
+
+	var grade_1=$(".body_middle_book_grade_num").eq(index).html();
 	
 	grade_1=(grade_1-0)/2;
 	var grade_1_star1=Math.floor(grade_1)
@@ -8,222 +10,60 @@ function star(){
 	for(var i=0;i<grade_1_star1;i++)
 	{
 
-		$(".body_middle_book_grade_star_1").append("<li class='body_middle_book_grade_star_inside'><img src='../images/whole_star.png'/></li>");
+		$(".body_middle_book_grade_star").eq(index).append("<li class='body_middle_book_grade_star_inside'><img src='../images/whole_star.png'/></li>");
 
 	}
 
 	var grade_1_star2=grade_1-0-grade_1_star1;
 	
 	if(grade_1_star2!=0){
-		$(".body_middle_book_grade_star_1").append("<li class='body_middle_book_grade_star_inside'><img src='../images/half_star.png'/></li>");
+		$(".body_middle_book_grade_star").eq(index).append("<li class='body_middle_book_grade_star_inside'><img src='../images/half_star.png'/></li>");
 		
 	}
+	})
 	
-//////////////////////////////////////////////////
-	var grade_2=$(".body_middle_book_grade_num_2").html();
-	
-	grade_2=(grade_2-0)/2;
-	
-	var grade_2_star1=Math.floor(grade_2)
 
-	for(var i=0;i<grade_2_star1;i++)
-	{
 
-		$(".body_middle_book_grade_star_2").append("<li class='body_middle_book_grade_star_inside'><img src='../images/whole_star.png'/></li>");
-
-	}
-
-	var grade_2_star2=grade_2-0-grade_2_star1;
-	
-	if(grade_2_star2!=0){
-		$(".body_middle_book_grade_star_2").append("<li class='body_middle_book_grade_star_inside'><img src='../images/half_star.png'/></li>");
-		
-	}
-
-	//////////////////////////////////////////////////
-	var grade_3=$(".body_middle_book_grade_num_3").html();
-	
-	grade_3=(grade_3-0)/2;
-	var grade_3_star1=Math.floor(grade_3)
-	
-	for(var i=0;i<grade_3_star1;i++)
-	{
-
-		$(".body_middle_book_grade_star_3").append("<li class='body_middle_book_grade_star_inside'><img src='../images/whole_star.png'/></li>");
-
-	}
-
-	var grade_3_star2=grade_3-0-grade_3_star1;
-	if(grade_3_star2!=0){
-		$(".body_middle_book_grade_star_3").append("<li class='body_middle_book_grade_star_inside'><img src='../images/half_star.png'/></li>");
-		
-	}
-		//////////////////////////////////////////////////
-	var grade_4=$(".body_middle_book_grade_num_4").html();
-	
-	grade_4=(grade_4-0)/2;
-	var grade_4_star1=Math.floor(grade_4)
-	
-	for(var i=0;i<grade_4_star1;i++)
-	{
-
-		$(".body_middle_book_grade_star_4").append("<li class='body_middle_book_grade_star_inside'><img src='../images/whole_star.png'/></li>");
-
-	}
-
-	var grade_4_star2=grade_4-0-grade_4_star1;
-	if(grade_4_star2!=0){
-		$(".body_middle_book_grade_star_4").append("<li class='body_middle_book_grade_star_inside'><img src='../images/half_star.png'/></li>");
-		
-	}
-		//////////////////////////////////////////////////
-	var grade_5=$(".body_middle_book_grade_num_5").html();
-	
-	grade_5=(grade_5-0)/2;
-	var grade_5_star1=Math.floor(grade_5)
-	
-	for(var i=0;i<grade_5_star1;i++)
-	{
-
-		$(".body_middle_book_grade_star_5").append("<li class='body_middle_book_grade_star_inside'><img src='../images/whole_star.png'/></li>");
-
-	}
-
-	var grade_5_star2=grade_5-0-grade_5_star1;
-	if(grade_5_star2!=0){
-		$(".body_middle_book_grade_star_5").append("<li class='body_middle_book_grade_star_inside'><img src='../images/half_star.png'/></li>");
-		
-	}
-}
-star();
 
 //点赞变红
-// for(var n=1;n<=5;n++)
-// {
-// 	$(".body_middle_book_like_"+n).click(function(){
-
-// console.log(".body_middle_book_like_"+n);
-// 	$(".body_middle_book_like_"+n).find("img").attr('src','../images/love_red.png');
-// });
-// }
-// $(".body_middle_book_like_1").click(function(){
-	
-
-// 	$(".body_middle_book_like_1 img").attr('src','../images/love_red.png');
-// });
-// $(".body_middle_book_like_2").click(function(){
-	
-
-// 	$(".body_middle_book_like_2 img").attr('src','../images/love_red.png');
-// });
-// $(".body_middle_book_like_3").click(function(){
-
-
-// 	$(".body_middle_book_like_3 img").attr('src','../images/love_red.png');
-// });
-// $(".body_middle_book_like_4").click(function(){
-	
-
-// 	$(".body_middle_book_like_4 img").attr('src','../images/love_red.png');
-// });
-// $(".body_middle_book_like_5").click(function(){
-	
-
-
-// 	$(".body_middle_book_like_5 img").attr('src','../images/love_red.png');
-// });
-var love_2=new Array(0,0,0,0,0);
-// for(var i=0;i<5;i++)
-// {
-// 	$(".body_middle_book_like_"+).eq(0).click(function(){
-// 	// $(this).index();
-
-//   	love_2[0]+=1;
-//   if(love_2[0]%2!=0)
-//   {
-//     $(this).find("img").attr({'src':'../images/grade_love.png'});
-//   }
-//   else{
-//     $(this).find("img").attr({'src':'../images/love_white.png'});
-//   }
-// })
-// }
-$(".body_middle_book_like_1").eq(0).click(function(){
-	// $(this).index();
-
-  	love_2[0]+=1;
-  if(love_2[0]%2!=0)
+$(".body_middle_book_like").each(function(index){
+	var love=0;
+	// console.log("999");
+	$(this).click(function(index){
+		// console.log("666");
+  	love+=1;
+  if(love%2!=0)
   {
     $(this).find("img").attr({'src':'../images/grade_love.png'});
   }
   else{
     $(this).find("img").attr({'src':'../images/love_white.png'});
+
+    // $(".article_save_tip").html("您已取消收藏")
   }
 })
-$(".body_middle_book_like_2").eq(0).click(function(){
-	// $(this).index();
-	
-  	love_2[1]+=1;
-  if(love_2[1]%2!=0)
-  {
-    $(this).find("img").attr({'src':'../images/grade_love.png'});
-  }
-  else{
-    $(this).find("img").attr({'src':'../images/love_white.png'});
-  }
+});
+//点赞提示
+var time_set2 = true;
+$(".body_middle_book_like").click(function(){
+
+   
+    if(time_set2 == true)
+    {
+
+      time_set2 = false;
+      $(".article_save_tip").fadeIn();
+      var time_3 = setInterval(2000);
+      
+      $(".article_save_tip").delay(1000).fadeOut(function(){
+        clearInterval(time_3);
+        time_set2 = true;
+
+      	});
+    }
+
 })
-$(".body_middle_book_like_3").eq(0).click(function(){
-	// $(this).index();
-	
-  	love_2[3]+=1;
-  if(love_2[3]%2!=0)
-  {
-    $(this).find("img").attr({'src':'../images/grade_love.png'});
-  }
-  else{
-    $(this).find("img").attr({'src':'../images/love_white.png'});
-  }
-})
-$(".body_middle_book_like_4").eq(0).click(function(){
-	// $(this).index();
-	
-  	love_2[4]+=1;
-  if(love_2[4]%2!=0)
-  {
-    $(this).find("img").attr({'src':'../images/grade_love.png'});
-  }
-  else{
-    $(this).find("img").attr({'src':'../images/love_white.png'});
-  }
-})
-$(".body_middle_book_like_5").eq(0).click(function(){
-	// $(this).index();
-	
-  	love_2[2]+=1;
-  if(love_2[2]%2!=0)
-  {
-    $(this).find("img").attr({'src':'../images/grade_love.png'});
-  }
-  else{
-    $(this).find("img").attr({'src':'../images/love_white.png'});
-  }
-})
-// $(document).ready(function() {  
-//     $(".tipsClass3").hover(function() {  
-//         $(this).find(".tipstutorials").animate({  
-//             opacity: "show",  
-//             top: "280",//此处可以设置弹窗属性  
-//         width:"180",  
-//             height:"68",   
-//             left: "50"  
-//         }, "slow");  
-//     }, function() {  
-//         $(this).find(".tipstutorials").animate({  
-//             opacity: "hide",  
-//             top: "160"  
-//         }, "fast");  
-//     });  
-// }); 
+
 
 //头部固定
 $(document).ready(function(){  
@@ -254,6 +94,7 @@ $(document).ready(function(){
 }); 
 
 
+//导航栏鼠标时间
 $(".body_top_nav_list li").mouseenter(function(){
 	$(this).find("div").css('display','block');
 	console.log("999");
@@ -266,9 +107,19 @@ $(".body_top_nav_list li").mouseleave(function(){
 
 
 //搜索框
-$(".search_box_input").click(function(){
+$(".search_box_input").focus(function(){
   $(this).attr("value","");
+  $(this).css({'color':'black'});
 });
 $(".search_box_input").blur(function(){
-  $(this).attr("value","请输入关键词");
+	var content = $(this).val();
+	if(content == ""){
+		
+		 $(this).attr("value","请输入关键词");
+		// $(this).attr("value",);
+		$(this).css({'color':'#C9C9C9'});
+	}
+
 });
+
+

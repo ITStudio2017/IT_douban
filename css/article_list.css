@@ -62,7 +62,7 @@ li{
 	border: 1px solid white;
 	position: absolute;
 	left: 10px;
-	font-size: 17px;
+	font-size: 18px;
 }
 .search_box_button{
 	width: 43px;
@@ -77,6 +77,9 @@ li{
 	right: 6px;
 	top: 0px;
 	background-color: white;
+}
+.search_box_button:hover{
+	cursor: pointer;
 }
 .nav_log_reg{
 	width: 90px;
@@ -447,7 +450,7 @@ cursor: pointer;
 	background-color: rgba(0,168,150,0.7);
 	text-align: center;
 	line-height: 80px;
-	font-size: 18px;
+	font-size: 22px;
 	margin-left: -175px;
 	margin-top: -40px;
 	z-index: 99;

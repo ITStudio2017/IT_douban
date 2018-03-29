@@ -11,7 +11,7 @@ $(".body_top_nav_list li").mouseleave(function(){
 $(document).ready(function(){  
     var a,b,c;  
     a = $(window).height();    //浏览器窗口高度  
-    var group = $(".body_middle_article_list");  
+    var group = $(".body_middle_article_page_1");  
     $(window).scroll(function(){  
         b = $(this).scrollTop();   //页面滚动的高度  
         c = group.offset().top;
@@ -38,7 +38,7 @@ $(document).ready(function(){
 
 var time_set=true;
 var now_page=0;
-var total_page=2;
+var total_page=1;
 //下一页
 
 $(".next_page").click(function(){
@@ -46,20 +46,19 @@ $(".next_page").click(function(){
 
   now_page+=1;
 
-  $(".body_comment_content ul").eq(now_page).css({'display':'block'});
-  $(".body_comment_content ul").eq(now_page).siblings().css({'display':'none'});
+  $(".body_middle_inner ul").eq(now_page).css({'display':'block'});
+  $(".body_middle_inner ul").eq(now_page).siblings().css({'display':'none'});
   }
  else{
     
-    // console.log(total_page);
+
     if(time_set==true)
   {
 
     time_set=false;
-    // console.log(time_set);
     $(".last_page_tip").fadeIn();
       var time_1=setInterval(function(){
-      // time_set=true;
+
 
       },2000) 
 
@@ -67,7 +66,6 @@ $(".next_page").click(function(){
       clearInterval(time_1);
       time_set=true;
 
-      // console.log(time_set);
     });
     
   } 
@@ -80,8 +78,8 @@ $(".next_page").click(function(){
 $(".last_page").click(function(){
   if(now_page>0){ 
     now_page-=1;
-    $(".body_comment_content ul").eq(now_page).css({'display':'block'});
-    $(".body_comment_content ul").eq(now_page).siblings().css({'display':'none'});
+    $(".body_middle_inner ul").eq(now_page).css({'display':'block'});
+    $(".body_middle_inner ul").eq(now_page).siblings().css({'display':'none'});
   }
   else{
         if(time_set==true)
@@ -112,8 +110,8 @@ $(".first_page").click(function(){
 now_page=0;
  if(now_page>0){ 
     now_page-=1;
-    $(".body_comment_content ul").eq(now_page).css({'display':'block'});
-    $(".body_comment_content ul").eq(now_page).siblings().css({'display':'none'});
+    $(".body_middle_inner ul").eq(now_page).css({'display':'block'});
+    $(".body_middle_inner ul").eq(now_page).siblings().css({'display':'none'});
   }
   else{
         if(time_set==true)
@@ -153,46 +151,41 @@ $(".search_box_input").focus(function(){
   
 });
 $(".search_box_input").blur(function(){
-  $(this).attr("value","请输入关键词");
-  $(this).css('color','#C9C9C9');
+var content = $(this).val();
+  if( $(this).val() == ""){
+    
+    $(this).attr("value","请输入关键词");
+    $(this).css('color','#C9C9C9');
+  }
 
 });
 
 //点赞
 var time_set2=true;
-// var love_1=new Array(0,0,0,0,0,0,0,0,0,0);
+
 $(".body_middle_article_like_1").click(function(){
-  // var love_num=$(".body_middle_article_list li").index();
-  // console.log(love_num);
-  // love_1.push(0)
-  // love_1[love_num]=0;
-  // if(love_1[love_num]%2!=0)
-  // {
+
     $(this).find("img").attr({'src':'../images/grade_love.png'});
 
-    // $(".article_save_tip").fadeIn();
-    // $(".article_save_tip").delay(1000).fadeOut();
+   
      if(time_set2==true)
      {
 
       time_set2=false;
       $(".article_save_tip").fadeIn();
       var time_3=setInterval(function(){
-        // time_set=true;
+     
 
         },2000) 
-      // $(".last_page").css({'disabled':'true'});
+  
       
       $(".article_save_tip").delay(1000).fadeOut(function(){
         clearInterval(time_3);
         time_set2=true;
 
-        // console.log(time_set);
+       
       });
     }
-  // }
-  // else{
-    // $(this).find("img").attr({'src':'../images/article_love_white.png'});
-  // }
+
 })
 

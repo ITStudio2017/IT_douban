@@ -94,15 +94,17 @@ $(document).ready(function(){
 }); 
 
 
-//导航栏鼠标时间
+
+
+//导航栏鼠标
+var nav_now=0;
 $(".body_top_nav_list li").mouseenter(function(){
-	$(this).find("div").css('display','block');
-	console.log("999");
-	$("body_top_nav_1").find("div").css('display','block');
+  $(this).find("div").css('display', 'block');
+  $("body_top_nav").eq(nav_now).find("div").css('display', 'block');
 });
 $(".body_top_nav_list li").mouseleave(function(){
-	$(this).find("div").css('display','none');
-	$(".body_top_nav_1").find("div").css('display','block');
+  $(this).find("div").css('display', 'none');
+  $(".body_top_nav").eq(nav_now).find("div").css('display', 'block');
 });
 
 

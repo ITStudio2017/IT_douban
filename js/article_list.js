@@ -1,17 +1,19 @@
+//导航栏鼠标
+var nav_now=0;
 $(".body_top_nav_list li").mouseenter(function(){
 	$(this).find("div").css('display', 'block');
-	$("body_top_nav_1").find("div").css('display', 'block');
+	$("body_top_nav").eq(nav_now).find("div").css('display', 'block');
 });
 $(".body_top_nav_list li").mouseleave(function(){
 	$(this).find("div").css('display', 'none');
-	$(".body_top_nav_1").find("div").css('display', 'block');
+	$(".body_top_nav").eq(nav_now).find("div").css('display', 'block');
 });
 
 //头部固定
 $(document).ready(function(){  
     var a,b,c;  
     a = $(window).height();    //浏览器窗口高度  
-    var group = $(".body_middle_article_page_1");  
+    var group = $(".body_middle_article_page_"+(now_page+1));  
     $(window).scroll(function(){  
         b = $(this).scrollTop();   //页面滚动的高度  
         c = group.offset().top;
@@ -163,7 +165,7 @@ var content = $(this).val();
 //点赞
 var time_set2=true;
 
-$(".body_middle_article_like_1").click(function(){
+$(".body_middle_article_like").click(function(){
 
     $(this).find("img").attr({'src':'../images/grade_love.png'});
 
@@ -188,4 +190,6 @@ $(".body_middle_article_like_1").click(function(){
     }
 
 })
+
+
 

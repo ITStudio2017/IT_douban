@@ -11,8 +11,8 @@
 <body>
 	<div class="container">
 		<div class="body">
-			<div class="logo_2"><img src="../images/logo_2.png" alt=""></div>
-			<h3>在豆瓣，遇见生活的美好</h3>
+			<div class="logo_2" style="opacity: 0;margin-top: 98px;"><a style="display: block;" href="shouye.html"><img src="../images/logo_2.png" alt=""></a></div>
+			<h3 style="opacity: 0">在豆瓣，遇见生活的美好</h3>
 			<div class="regist_form">
 				<ul>
 					<li class="regist_form_login"><a class="regist_form_a_login" href="login.html">用户登录</a></li>
@@ -22,13 +22,13 @@
 				<div class="regist_form_inner">
 					<div class="regist_form_name">
 						<div class="regist_form_name_word">用户名</div>
-						<input value="" class="regist_form_name_input" type="text">
+						<input value="请输入正确的邮箱地址" class="regist_form_name_input" type="text">
 					</div>
-					<div class="regist_form_verify">
+					<!-- <div class="regist_form_verify">
 						<div class="regist_form_verify_word">验证码</div>
-						<input value="" class="regist_form_verify_input" type="text">
+						<input value="请输入正确的邮箱地址" class="regist_form_verify_input" type="text">
 						<div class="regist_form_verify_send">发送验证码</div>
-					</div>
+					</div> -->
 					<div style="clear: both;"></div>
 					
 					<div class="regist_form_code">
@@ -36,13 +36,17 @@
 						<div class="regist_form_code_word">密码</div>
 						<input value="" class="regist_form_code_input" type="text">
 					</div>
-					
+					<div class="regist_form_code">
+
+						<div class="regist_form_code_word">密码</div>
+						<input value="请再次输入密码" class="regist_form_code_again_input" type="text">
+					</div>
 					<div style="clear: both;"></div>
 					<div class="regist_form_verify_button">注册</div>
 				</div>
 			</div>
 		</div>
-		<div class="footer">
+		<!-- <div class="footer">
 			<div class="footer_inner">
 				<div class="footer_nav">
 					<ul class="footer_nav_list">
@@ -62,9 +66,11 @@
 					<div style="clear: both;"></div>
 				</div>
 				<div class="footer_bottom_address">© 2005－2018 douban.com, all rights reserved 北京豆网科技有限公司</div>
-			</div>
+			</div> -->
 
-		</div>
+		<!-- </div> -->
 	</div>
 </body>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/regist.js"></script>
 </html>

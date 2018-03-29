@@ -109,17 +109,11 @@ $(".last_page").click(function(){
   
 //首页
 $(".first_page").click(function(){
-now_page=0;
- if(now_page>0){ 
-    now_page-=1;
-    $(".body_middle_inner ul").eq(now_page).css({'display':'block'});
-    $(".body_middle_inner ul").eq(now_page).siblings().css({'display':'none'});
-  }
-  else{
+    
+  if(now_page == 0){
         if(time_set==true)
-     {
-
-      time_set=false;
+        {
+                time_set=false;
       $(".first_page_tip").fadeIn();
       var time_2=setInterval(function(){
         // time_set=true;
@@ -133,14 +127,13 @@ now_page=0;
 
         // console.log(time_set);
       });
-
-    }
-    else{
-      $(".body_comment_content ul").eq(now_page).css({'display':'block'});
-$(".body_comment_content ul").eq(now_page).siblings().css({'display':'none'});
-    }
+        }
 
 }
+now_page=0;
+    $(".body_middle_inner ul").eq(now_page).css({'display':'block'});
+    $(".body_middle_inner ul").eq(now_page).siblings().css({'display':'none'});
+    
 });
 
 

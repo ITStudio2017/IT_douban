@@ -1,19 +1,5 @@
 //手风琴
-// $(".body_top_sfq_pic_1").click(function(){
-// 	$(this).stop(true).animate({width:"572px"},60).siblings().stop(true).animate({width:"106px"},60);
-// });
-// $(".body_top_sfq_pic_2").click(function(){
-// 	$(this).stop(true).animate({width:"572px"},60).siblings().stop(true).animate({width:"106px"},60);
-// });
-// $(".body_top_sfq_pic_3").click(function(){
-// 	$(this).stop(true).animate({width:"572px"},60).siblings().stop(true).animate({width:"106px"},60);
-// });
-// $(".body_top_sfq_pic_4").click(function(){
-// 	$(this).stop(true).animate({width:"572px"},60).siblings().stop(true).animate({width:"106px"},60);
-// });
-// $(".body_top_sfq_pic_5").click(function(){
-// 	$(this).stop(true).animate({width:"572px"},60).siblings().stop(true).animate({width:"106px"},60);
-// });
+
 
 $(".body_top_inner ul li").click(function(){
 	$(".body_top_inner ul li").stop(true);

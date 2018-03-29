@@ -19,62 +19,92 @@ $(".body_book_comment").click(function(){
 });
 
 
-var now_page=0;
-var total_page=2;
-//下一页
-
-$(".next_page").click(function(){
-	if(now_page<total_page){
-
-	now_page+=1;
-
-	$(".body_comment_content ul").eq(now_page).css({'display':'block'});
-	$(".body_comment_content ul").eq(now_page).siblings().css({'display':'none'});
-	}
-	else{
-		$(".last_page_tip").fadeIn();
-		$(".last_page_tip").delay(1000).fadeOut(0);
-	}
-
-});
-
-//上一页
-
-$(".last_page").click(function(){
-	if(now_page>0){	
-		now_page-=1;
-		$(".body_comment_content ul").eq(now_page).css({'display':'block'});
-		$(".body_comment_content ul").eq(now_page).siblings().css({'display':'none'});
-	}
-	else{
-		$(".first_page_tip").fadeIn();
-		// $(".last_page").css({'disabled':'true'});
-		$(".first_page_tip").delay(1000).fadeOut(0);
-	}
-
-	});
-	
-//首页
-$(".first_page").click(function(){
-now_page=0;
-$(".body_comment_content ul").eq(now_page).css({'display':'block'});
-$(".body_comment_content ul").eq(now_page).siblings().css({'display':'none'});
-});
 
 
 //关于点赞
-var click_a=0;
+// var click_a=0;
+// $(".body_comment_good_pic").click(function(){
+// 	var index = $(".body_comment_good_pic").index(this);
+
+// 	click_a=click_a-0+1;
+// 	if((click_a-0)%2!=0){
+// 		$(this).find("img").attr('src','../images/good_red.png');
+// 		var pre=$(".body_comment_good_amount_1").html();
+// 		$(".body_comment_good_amount_1").html(pre-0+1);
+// 	}
+// 	else{
+// 		$(this).find("img").attr('src','../images/good_white.png');
+// 		var pre=$(".body_comment_good_amount_1").html();
+// 		$(".body_comment_good_amount_1").html(pre-0-1);
+// 	}
+	
+// })
 $(".body_comment_good_pic").click(function(){
-	click_a=click_a-0+1;
-	if((click_a-0)%2!=0){
+	var index = $(".body_comment_good_pic").index(this);
+
+	console.log(index);
+		var num = parseInt($(".body_comment_good_amount").html()); 
+	if($(this).find("img").attr('src') == ('../images/goog.png')){
 		$(this).find("img").attr('src','../images/good_red.png');
-		var pre=$(".body_comment_good_amount_1").html();
-		$(".body_comment_good_amount_1").html(pre-0+1);
+		var pre=$(".body_comment_good_amount").eq(index).html();
+		$(".body_comment_good_amount").eq(index).html(pre-0+1);
 	}
 	else{
-		$(this).find("img").attr('src','../images/good_white.png');
-		var pre=$(".body_comment_good_amount_1").html();
-		$(".body_comment_good_amount_1").html(pre-0-1);
+		$(this).find("img").attr('src','../images/goog.png');
+		var pre=$(".body_comment_good_amount").eq(index).html();
+		$(".body_comment_good_amount").eq(index).html(pre-0-1);
+	}
+})
+
+
+//收藏该书
+$(".body_book_grade_love").click(function(){
+	if($(this).find("img").attr('src') == ("../images/love.png")){
+		$(this).find("img").attr('src','../images/grade_love.png')
 	}
 	
-})
+	else{
+		$(this).find("img").attr('src','../images/love.png')
+	}
+
+});
+
+
+var time_set=true;
+var now_page=0;
+var total_page=2;
+//下一页
+// var time_set=true;
+// $(".next_page").click(function(){
+// 	if(now_page<total_page){
+
+// 	now_page+=1;
+// console.log($(".body_comment_content_list").eq(0).css('display'));
+// 	$(".body_comment_content_list").eq(0).css({'display':'none'});
+
+// 	// $(".body_comment_content_list").eq(now_page).siblings().css({'display':'none'});
+// 	}
+// 	else{
+		
+// 		if(time_set==true)
+// 		{
+
+// 			time_set=false;
+// 			$(".last_page_tip").fadeIn();
+
+// 			var time_1=setInterval(function(){
+// 				console.log(time_set);
+				
+// 			},2000)	
+	
+// 			$(".last_page_tip").delay(1000).fadeOut(function(){
+// 				clearInterval(time_1);
+// 				time_set=true;
+			
+// 			});
+		
+// 		}	
+	
+// 		}
+
+// });

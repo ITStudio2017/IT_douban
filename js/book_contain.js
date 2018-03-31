@@ -73,8 +73,102 @@ $(".body_book_grade_love").click(function(){
 var time_set=true;
 var now_page=0;
 var total_page=2;
+
+
 //下一页
-// var time_set=true;
+
+var time_set=true;
+$(".next_page").click(function(){
+	if(now_page<total_page){
+	now_page+=1;
+	$(".body_commit_content_list").eq(now_page).css('display','block');
+	$(".body_commit_content_list").eq(now_page).siblings().css('display','none');
+
+
+}
+else{
+		
+		if(time_set==true)
+		{
+
+			time_set=false;
+			$(".last_page_tip").fadeIn();
+
+			var time_1=setInterval(function(){
+				console.log(time_set);
+				
+			},2000)	
+	
+			$(".last_page_tip").delay(1000).fadeOut(function(){
+				clearInterval(time_1);
+				time_set=true;
+			
+			});
+		
+		}	
+	
+		}
+
+});
+
+//上一页
+
+$(".last_page").click(function(){
+	if(now_page>0){	
+		now_page-=1;
+		$(".body_commit_content_list").eq(now_page).css('display','block');
+		$(".body_commit_content_list").eq(now_page).siblings().css('display','none');
+	}
+	else{
+		
+		if(time_set==true)
+		{
+
+			time_set=false;
+			$(".first_page_tip").fadeIn();
+
+			var time_1=setInterval(function(){
+				console.log(time_set);
+				
+			},2000)	
+	
+			$(".first_page_tip").delay(1000).fadeOut(function(){
+				clearInterval(time_1);
+				time_set=true;
+			
+			});
+		
+		}	
+	
+		}
+
+	});
+
+//首页
+$(".first_page").click(function(){
+if(now_page == 0){
+		if(time_set==true)
+		{
+
+			time_set=false;
+			$(".first_page_tip").fadeIn(function(){
+			var time_1=setInterval(1500)	
+			});
+			$(".first_page_tip").delay(1000).fadeOut(function(){
+			time_set=true;
+			// console.log(time_set);
+			});
+		
+		}	
+
+}
+now_page=0;
+$(".body_commit_content_list").eq(now_page).css({'display':'block'});
+$(".body_commit_content_list").eq(now_page).siblings().css({'display':'none'});
+
+
+});
+
 // $(".next_page").click(function(){
 // 	if(now_page<total_page){
 

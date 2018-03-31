@@ -141,7 +141,7 @@ class AuthenticationForm(forms.Form):
         ),
         'inactive': _("This account is inactive."),
     }
-    captcha = CaptchaField(error_messages={"invalid": u"验证码错误"})
+    captcha = CaptchaField()
     
     def __init__(self, request=None, *args, **kwargs):
         """

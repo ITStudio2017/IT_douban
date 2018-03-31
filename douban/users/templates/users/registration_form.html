@@ -9,11 +9,12 @@
 		{% endif %}
 		{% csrf_token %}
 		{% for field in form %}
-			{% include "users/partials/field.html" %}
+			{{ field }}
+			<br/>
 		{% endfor %}
         
 		<div class="button-wrapper submit">
-			<input class="btn btn-primary" type="submit" value="{% trans 'Register' %}" />
+			<input type="submit" value="{% trans 'Register' %}" />
 		</div>
 	</form>
 </div>

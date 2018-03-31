@@ -8,7 +8,7 @@ class Article(models.Model):
     pub_date = models.DateTimeField('发表时间',auto_now_add=True)
     update_time = models.DateTimeField('更新时间',auto_now=True,null=True)
     content = UEditorField('内容',toolbars="full", imagePath="static/img/", filePath="main/static/img/", upload_settings={"imageMaxSize":1204000},settings={},)
-    author = models.ForeignKey(User)
+    author = models.ForeignKey(User, default=None)
     abstract = models.CharField('摘要',max_length=256,null=True,blank=True)
     article_cate = models.CharField('类别',max_length=5,choices=category,default='小说')
     views = models.PositiveIntegerField(default=0)

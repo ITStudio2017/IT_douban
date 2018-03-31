@@ -16,10 +16,18 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf.urls.static import static
+from main import views as main_views
+from users.views import ajax_val
 from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^book/', include('book.urls')),
-    url(r'^ueditor/', include('DjangoUeditor.urls'))
+    url(r'^ueditor/', include('DjangoUeditor.urls')),
+    url(r'^ajax_val/', ajax_val, name='ajax_val'),
+    url(r'^$',main_views.userPage),
+    url(r'^index/',main_views.userPage),
+    url(r'^accounts/', include('users.urls')),
+    url(r'^captcha/', include('captcha.urls')),
+    url(r'^informationChange/',main_views.userInformation),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

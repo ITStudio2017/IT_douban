@@ -19,10 +19,11 @@
 					<li class="regist_form_regist"><a class="regist_form_a_regist" href="regist.html">新用户注册</a></li>
 					<div style="clear: both;"></div>
 				</ul>
+				<form  name="regist_form" action="login.html " onsubmit="return mycheck()">
 				<div class="regist_form_inner">
 					<div class="regist_form_name">
 						<div class="regist_form_name_word">用户名</div>
-						<input value="example@xxx.com" class="regist_form_name_input" type="text">
+						<input value="example@xxx.com" class="regist_form_name_input" type="text" >
 						<div class="regist_form_name_input_tip">*请输入正确的邮箱地址</div>
 					</div>
 						
@@ -36,16 +37,19 @@
 					<div class="regist_form_code">
 
 						<div class="regist_form_code_word">密码</div>
-						<input value="" class="regist_form_code_input" type="text">
+						<input value="" class="regist_form_code_input" type="password">
+						<div class="regist_form_code_word_tip">*密码长度必须大于6位</div>
 					</div>
 					<div class="regist_form_code">
 
-						<div class="regist_form_code_word">密码</div>
-						<input value="请再次输入密码" class="regist_form_code_again_input" type="text">
+						<div class="regist_form_code_again_word">再次输入密码</div>
+						<input value="" class="regist_form_code_again_input" type="password">
+						<!-- <div class="input_code_tip">*请再次输入密码</div> -->
 						<div class="regist_form_code_again_input_tip">*两次密码不一致，请重新输入</div>
 					</div>
 					<div style="clear: both;"></div>
-					<div class="regist_form_verify_button">注册</div>
+					<button class="regist_form_verify_button" type="submit" >注册</button>
+					</form>
 				</div>
 			</div>
 		</div>

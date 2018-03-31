@@ -1,4 +1,5 @@
 from django.db import models
+from users.models import User
 import logging
 
 
@@ -9,7 +10,7 @@ class Book(models.Model):
     createTime = models.DateTimeField(auto_now_add=True)
     lastEditTime = models.DateTimeField(auto_now=True)
     author = models.CharField(max_length=30, default="")
-    owner = models.IntegerField()
+    owner = models.ForeignKey(User)
     label = models.IntegerField(null=True)
     cover = models.ImageField(upload_to='book_img')
 
@@ -105,7 +106,7 @@ def get_alllabel():
 class Comment(models.Model):
     # id
     book = models.ForeignKey(Book)
-    owner = models.IntegerField()
+    owner = models.ForeignKey(User)
     content = models.CharField(max_length=200)
     createTime = models.DateTimeField(auto_now_add=True)
 

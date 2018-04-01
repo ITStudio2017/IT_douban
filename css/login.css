@@ -186,9 +186,13 @@ h3{
 	height: 54px;
 	margin-left: 35px;
 	float: left;
-	background-image: url(../images/code.png);
+	/*background-image: url(../images/code.png);
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: cover;*/
+}
+.login_form_verify_image_img{
+	width: 125px;
+	height: 54px;
 }
 .login_form_verify_image:hover{
 	cursor: pointer;

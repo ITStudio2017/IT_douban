@@ -94,6 +94,16 @@ h3{
 	display: none;
 
 }
+.regist_form_name_input_tip{
+	position: absolute;
+	bottom: -19px;
+	left: 90px;
+	font-size: 16px;
+	color: #e81a33;
+	display: none;
+
+}
+
 .regist_form_name_word{
 	width: 89px;
 	height: 49px;
@@ -138,6 +148,17 @@ h3{
 	margin-left: 2px;
 	letter-spacing: 2px;
 }
+.regist_form_code_again_word{
+	width: 87px;
+	height: 49px;
+	line-height: 26px;
+	float: left;
+	margin-right: 2px;
+	font-size: 20px;
+	color: #00A896;
+	margin-left: 2px;
+	letter-spacing: 2px;
+}
 .regist_form_code_input{
 	height: 54px;
 	width: 310px;
@@ -145,6 +166,17 @@ h3{
 	border-radius: 10px;
 	font-size: 20px;
 	padding-left: 4px;
+}
+.regist_form_code_word_tip{
+	position: absolute;
+	bottom: -20px;
+	left: 95px;
+	font-size: 16px;
+	color: #e81a33;
+	display: none;
+	position: absolute;
+	/*top: 0px;*/
+	/*height: 0px;*/
 }
 .regist_form_code_again_input{
 	height: 54px;

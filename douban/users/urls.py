@@ -32,7 +32,7 @@ urlpatterns = [
     url(r'^password_reset/$', password_reset,
         {
             'password_reset_form':PasswordResetForm,
-            'template_name': 'users/password_reset_form.html',
+            'template_name': 'users/forget_code.html',
             'email_template_name': 'users/password_reset_email.html',
             'subject_template_name': 'users/password_reset_subject.html',
             'post_reset_redirect': 'users_password_reset_done'

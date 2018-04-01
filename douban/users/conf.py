@@ -3,7 +3,7 @@ from django.conf import settings
 
 
 class UsersAppConf(AppConf):
-    VERIFY_EMAIL = True
+    VERIFY_EMAIL = False
     CREATE_SUPERUSER = settings.DEBUG
     SUPERUSER_EMAIL = 'superuser@djangoproject.com'
     SUPERUSER_PASSWORD = 'django'

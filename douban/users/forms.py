@@ -3,6 +3,11 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.utils.translation import ugettext_lazy as _
 import unicodedata
+from django.contrib.sites.shortcuts import get_current_site
+from django.utils.http import urlsafe_base64_encode
+from django.utils.encoding import force_bytes
+from django.template import loader
+from django.core.mail import EmailMultiAlternatives
 
 from django.contrib.auth import (
     authenticate, get_user_model, password_validation,
@@ -12,6 +17,9 @@ from django.contrib.auth.tokens import default_token_generator
 from .fields import HoneyPotField, PasswordField, UsersEmailField
 from captcha.fields import CaptchaField
 from django.utils.text import capfirst
+from captcha.models import CaptchaStore
+from captcha.helpers import captcha_image_url
+
 
 UserModel = get_user_model()
 
@@ -210,7 +218,7 @@ class AuthenticationForm(forms.Form):
 
 class PasswordResetForm(forms.Form):
     email = forms.EmailField(label=_("Email"), max_length=254)
-    captcha = CaptchaField(error_messages={"invalid": u"验证码错误"})
+    
     
     def send_mail(self, subject_template_name, email_template_name,
                   context, from_email, to_email, html_email_template_name=None):

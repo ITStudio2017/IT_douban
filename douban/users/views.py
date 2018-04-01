@@ -516,7 +516,11 @@ def password_reset(request,
             return HttpResponseRedirect(post_reset_redirect)
     else:
         form = password_reset_form()
+    hashkey = CaptchaStore.generate_key()
+    image_url = captcha_image_url(hashkey)
     context = {
+        'image_url':image_url,
+        'hashkey':hashkey,
         'form': form,
         'title': _('Password reset'),
     }

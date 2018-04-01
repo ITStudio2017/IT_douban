@@ -8,10 +8,37 @@
 	<link rel="stylesheet" href="/static/css/footer.css">
 	<link rel="stylesheet" href="/static/css/font_csh.css">
 	<script src="/static/js/jquery-3.2.1.min.js"></script>
-	
 </head>
 <body>
+<script>
+    $(function(){
 
+        $('.captcha').click(function(){
+        console.log('click');
+         $.getJSON("/captcha/refresh/",
+                  function(result){
+             $('.captcha').attr('src', result['image_url']);
+             $('#id_captcha_0').val(result['key'])
+          });});
+
+    $('#id_captcha_1').blur(function(){
+  // #id_captcha_1为输入框的id，当该输入框失去焦点是触发函数
+        json_data={
+            'response':$('#id_captcha_1').val(), // 获取输入框和隐藏字段id_captcha_0的数值
+            'hashkey':$('#id_captcha_0').val()
+        }
+        $.getJSON('/ajax_val', json_data, function(data){
+ //ajax发送
+            $('#captcha_status').remove()
+            if(data['status']){ //status返回1为验证码正确， status返回0为验证码错误， 在输入框的后面写入提示信息
+                $('#id_captcha_1').after('<span id="captcha_status" ></span>')
+            }else{
+                 $('#id_captcha_1').after('<span id="captcha_status" ></span>')
+            }
+        });
+    });
+    })
+    </script>
 
 	<div class="container">
 		<div class="body">	
@@ -44,9 +71,7 @@
 						<div class="login_form_verify_word">验证码</div>
 
 
-						<div><img src="{{image_url}}" alt="captcha" class="login_form_verify_image" /><input type="hidden" name="captcha_0" id="id_captcha_0" value="{{hashkey}}">
-
-							
+						<div><img src="{{ image_url }}" alt="captcha" width="150px" height="50px" class="captcha" /><input type="hidden" name="captcha_0" id="id_captcha_0" value="{{hashkey}}">
 						<input  class="login_form_verify_input" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="id_captcha_1" name="captcha_1" type="text"></div>
 						<div style="clear: both;"></div>
 					</div>
@@ -57,35 +82,6 @@
 			</div>
 		</div>
 	</div>
-<script>
-    $(function(){
-
-        $('.captcha').click(function(){
-        console.log('click');
-         $.getJSON("/captcha/refresh/",
-                  function(result){
-             $('.captcha').attr('src', result['image_url']);
-             $('#id_captcha_0').val(result['key'])
-          });});
-
-    $('#id_captcha_1').blur(function(){
-  // #id_captcha_1为输入框的id，当该输入框失去焦点是触发函数
-        json_data={
-            'response':$('#id_captcha_1').val(), // 获取输入框和隐藏字段id_captcha_0的数值
-            'hashkey':$('#id_captcha_0').val()
-        }
-        $.getJSON('/ajax_val', json_data, function(data){
- //ajax发送
-            $('#captcha_status').remove()
-            if(data['status']){ //status返回1为验证码正确， status返回0为验证码错误， 在输入框的后面写入提示信息
-                $('#id_captcha_1').after('<span id="captcha_status" >验证码正确</span>')
-            }else{
-                 $('#id_captcha_1').after('<span id="captcha_status" >验证码错误</span>')
-            }
-        });
-    });
-    })
-    </script>
 	
 </body>
 <script src="/static/js/login.js"></script>

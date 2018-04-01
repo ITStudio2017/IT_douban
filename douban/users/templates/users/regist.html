@@ -15,10 +15,10 @@
 		<div class="body">
 			<div class="logo_2" style="opacity: 0;margin-top: 98px;"><a style="display: block;" href="/"><img src="/static/images/logo_2.png" alt=""></a></div>
 			<h3 style="opacity: 0">在豆瓣，遇见生活的美好</h3>
-			<div class="regist_form">
+			<div style="height: 600px" class="regist_form">
 				<ul>
 					<li class="regist_form_login"><a class="regist_form_a_login" href="/accounts/login/">用户登录</a></li>
-					<li class="regist_form_regist"><a class="regist_form_a_regist" href="regist.html">新用户注册</a></li>
+					<li class="regist_form_regist"><a class="regist_form_a_regist" href="/accounts/register/">新用户注册</a></li>
 					<div style="clear: both;"></div>
 				</ul>
 				<form method="post" action=".">
@@ -26,7 +26,7 @@
 				<div class="regist_form_inner">
 					<div class="regist_form_name">
 						<div class="regist_form_name_word">用户名</div>
-						<input maxlength="255" required id="id_email"  placeholder="example@xxx.com" class="regist_form_name_input" type="email">
+						<input maxlength="255" name="email" required id="id_email"  placeholder="example@xxx.com" class="regist_form_name_input" type="email">
 					</div>
 					<div style="clear: both;"></div>
 					
@@ -40,10 +40,11 @@
 						<div class="regist_form_code_word">密码</div>
 						<input name="password2" required id="id_password2" placeholder="请再次输入密码" class="regist_form_code_again_input" type="password">
 					</div>
-					<div class="login_form_verify">
-						<div class="login_form_verify_word">验证码</div>
-						<div><img src="{{ image_url }}" alt="captcha" width="150px" height="50px" class="captcha" /><input type="hidden" name="captcha_0" id="id_captcha_0" value="{{hashkey}}">
-						<input  class="login_form_verify_input" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="id_captcha_1" name="captcha_1" type="text"></div>
+					<div class="regist_form_code">
+						<div class="regist_form_code_word">验证码</div>
+						<div><input type="hidden" name="captcha_0" id="id_captcha_0" value="{{hashkey}}">
+						<input  class="regist_form_verify_input" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="id_captcha_1" name="captcha_1" type="text">
+						<img src="{{ image_url }}" alt="captcha" width="100px" height="50px" class="captcha" /></div>
 						<input type="hidden" type="checkbox" name="accept_terms" id="id_accept_terms">
 					<div style="clear: both;"></div>
 					<input type="submit" value="注册" class="regist_form_verify_button">
@@ -97,9 +98,9 @@
  //ajax发送
             $('#captcha_status').remove()
             if(data['status']){ //status返回1为验证码正确， status返回0为验证码错误， 在输入框的后面写入提示信息
-                $('#id_captcha_1').after('<span id="captcha_status" >*验证码正确</span>')
+                $('#id_captcha_1').after('<span id="captcha_status" ></span>')
             }else{
-                 $('#id_captcha_1').after('<span id="captcha_status" >*验证码错误</span>')
+                 $('#id_captcha_1').after('<span id="captcha_status" ></span>')
             }
         });
     });

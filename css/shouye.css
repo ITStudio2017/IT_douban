@@ -173,6 +173,20 @@ li{
 	bottom: 0;
 
 }
+.nav_choose{
+	position: absolute;
+	left: 50%;
+	bottom: 5px;
+	margin-left: -137.5px;
+	z-index: 99;
+}
+.nav_choose li{
+	float: left;
+	width: 11px;
+	height: 16px;
+	margin-left: 22px;
+	margin-right: 22px;
+}
 .body_top_inner_sfq{
 	width: 1200px;
 	height: 327px;
@@ -203,7 +217,7 @@ li{
 	width: 106px;
 	height: 327px;
 	background-color: black;
-	opacity: 0.5;
+	opacity: 0.7;
 	box-shadow: -10px 0px 10px 0px 
 		rgba(0, 0, 0, 0.25);
 }
@@ -237,6 +251,10 @@ li{
 	position: relative;
 	float: left;
 	overflow: hidden;
+	height: 327px;
+}
+.body_top_sfq_pic_5 img,.body_top_sfq_pic_5 img,.body_top_sfq_pic_5 img,.body_top_sfq_pic_5 img{
+	width: 572px;
 	height: 327px;
 }
 .body_top_sfq_pic_1:hover,.body_top_sfq_pic_2:hover,.body_top_sfq_pic_3:hover,.body_top_sfq_pic_4:hover,.body_top_sfq_pic_5:hover{
@@ -283,6 +301,12 @@ li{
 	width: 457px;
 	height: 344px;
 	background-color: white;
+}
+
+.hotessey_photoalbum_1 img,.hotessey_photoalbum_2 img{
+	width: 457px;
+	height: auto;
+
 }
 .hotessey_photoalbum_1:hover{
 	cursor: pointer;
@@ -383,6 +407,8 @@ li{
 	
 }
 .hotessey_essay_pic_1,.hotessey_essay_pic_2,.hotessey_essay_pic_3,.hotessey_essay_pic_4{
+	width: 169px;
+	height: auto;
 	position: absolute;
 	top: 0px;
 	right: 0px;
@@ -442,6 +468,10 @@ li{
 	margin-right: 67px;
 
 }
+.body_hotbook_a_1 img,.body_hotbook_a_2 img,.body_hotbook_a_3 img,.body_hotbook_a_4 img{
+	width: 199px;
+	height: auto;
+}
 .body_hotbook_4{
 	float: left;
 	height: 369px;
@@ -486,12 +516,18 @@ li{
 	letter-spacing: 2px;
 
 }
+.body_hotbook_book_love_1:hover{
+	cursor: pointer;
+}
 .body_hotbook_book_love_1{
 	position: absolute;
 	right: 11px;
 	bottom: 2px;
 }
-
+.body_hotbook_book_love_1 img{
+	width: 20px;
+	height:auto;
+}
 @media screen and (max-width: 1023px){
 	.header{
 		width: 980px;

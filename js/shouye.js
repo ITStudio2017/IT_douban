@@ -30,3 +30,18 @@ var mar_left = new Array();
 
 
 // (parseInt(this.parentNode.style.width) - this.width) /2 + 'px
+
+
+
+//加入收藏
+
+$(".body_hotbook_book_love_1").click(function(){
+	if($(this).find("img").attr('src') == ("../images/love.png")){
+		$(this).find("img").attr('src','../images/love_red2.png')
+	}
+	
+	else{
+		$(this).find("img").attr('src','../images/love.png')
+	}
+
+});

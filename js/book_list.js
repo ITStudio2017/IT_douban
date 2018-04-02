@@ -35,34 +35,36 @@ $(".body_middle_book_like").each(function(index){
   if(love%2!=0)
   {
     $(this).find("img").attr({'src':'../images/grade_love.png'});
+    var time_set2 = true;
+  
+       
+        if(time_set2 == true)
+        {
+
+          time_set2 = false;
+          $(".article_save_tip").fadeIn();
+          var time_3 = setInterval(2000);
+          
+          $(".article_save_tip").delay(1000).fadeOut(function(){
+            clearInterval(time_3);
+            time_set2 = true;
+
+            });
+        }
+
+    
   }
   else{
     $(this).find("img").attr({'src':'../images/love_white.png'});
+    
 
     // $(".article_save_tip").html("您已取消收藏")
+
   }
 })
 });
 //点赞提示
-var time_set2 = true;
-$(".body_middle_book_like").click(function(){
 
-   
-    if(time_set2 == true)
-    {
-
-      time_set2 = false;
-      $(".article_save_tip").fadeIn();
-      var time_3 = setInterval(2000);
-      
-      $(".article_save_tip").delay(1000).fadeOut(function(){
-        clearInterval(time_3);
-        time_set2 = true;
-
-      	});
-    }
-
-})
 
 
 //头部固定

@@ -100,7 +100,7 @@ $(".body_comment_contentout ul").eq(now_page).siblings().css({'display':'none'})
 $(".body_comment_good_pic").click(function(){
 	var index = $(".body_comment_good_pic").index(this);
 
-	console.log(index);
+		console.log(index);
 		var num = parseInt($(".body_comment_good_amount").html()); 
 	if($(this).find("img").attr('src') == ('../images/goog.png')){
 		$(this).find("img").attr('src','../images/good_red.png');
@@ -115,7 +115,17 @@ $(".body_comment_good_pic").click(function(){
 })
 	
 	
-
+//收藏
+$(".body_article_author_love").click(function(){
+	if($(".body_article_author_love").find("img").attr('src') == ('../images/author_article_love.png'))
+	{
+		$(this).find("img").attr('src','../images/love_red2.png');
+	}
+	else
+	{
+		$(this).find("img").attr('src','../images/author_article_love.png');
+	}
+})
 
 
 // })
@@ -151,7 +161,3 @@ $(".search_box_input").blur(function(){
 // 	$(".time").css('display','block');
 // })
 
-//收藏
-$(".body_article_author_love").click(function(){
-	$(this).find("img").attr('src','../images/love_red2.png')
-})

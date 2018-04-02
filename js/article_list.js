@@ -166,17 +166,6 @@ $(".body_middle_article_like").each(function(index){
   if(love%2!=0)
   {
     $(this).find("img").attr({'src':'../images/grade_love.png'});
-  }
-  else{
-    $(this).find("img").attr({'src':'../images/love_white.png'});
-
-    // $(".article_save_tip").html("您已取消收藏")
-  }
-})
-});
-$(".body_middle_article_like").click(function(){
-
-
     // $(this).find("img").attr({'src':'../images/grade_love.png'});
 
    
@@ -199,7 +188,40 @@ $(".body_middle_article_like").click(function(){
       });
     }
 
+  }
+  else{
+    $(this).find("img").attr({'src':'../images/love_white.png'});
+
+    // $(".article_save_tip").html("您已取消收藏")
+  }
 })
+});
+// $(".body_middle_article_like").click(function(){
+
+
+//     // $(this).find("img").attr({'src':'../images/grade_love.png'});
+
+   
+//      if(time_set2==true)
+//      {
+
+//       time_set2=false;
+//       $(".article_save_tip").fadeIn();
+//       var time_3=setInterval(function(){
+     
+
+//         },2000) 
+  
+      
+//       $(".article_save_tip").delay(1000).fadeOut(function(){
+//         clearInterval(time_3);
+//         time_set2=true;
+
+       
+//       });
+//     }
+
+// })
 
 
 

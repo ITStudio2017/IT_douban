@@ -70,9 +70,10 @@
 					<div class="login_form_verify">
 						<div class="login_form_verify_word">验证码</div>
 
-
-						<div><img src="{{ image_url }}" alt="captcha" width="150px" height="50px" class="captcha" /><input type="hidden" name="captcha_0" id="id_captcha_0" value="{{hashkey}}">
-						<input  class="login_form_verify_input" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="id_captcha_1" name="captcha_1" type="text"></div>
+							<input type="hidden" name="captcha_0" id="id_captcha_0" value="{{hashkey}}">
+						<input  class="login_form_verify_input" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="id_captcha_1" name="captcha_1" type="text">
+						<div class="login_form_verify_image">
+						<img src="{{ image_url }}" alt="captcha" width="150px" height="50px" class="captcha login_form_verify_image_img" /></div>
 						<div style="clear: both;"></div>
 					</div>
 					<div style="clear: both;"></div>

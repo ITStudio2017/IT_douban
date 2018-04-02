@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% if book %}
+        <img src="{{ book.cover.url }}">
+        <br>
+        作者：{{ book.author }}<br>
+        简介：{{ book.introduction }}<br>
+        {% if fLabel %}
+            来自标签{{ fLabel }}
+            {% if sLabel %}
+                ，子标签{{ sLabel }}
+            {% endif %}
+        {% endif %}
+        <br>
+        最后编辑时间{{ book.lastEditTime }}<br>
+        <form method="POST">
+            {% csrf_token %}
+            评论{{ form.content }}<br>
+            <input type="submit" value="提交"><br>
+        </form>
+        评论区：<br>
+        {% for comment in comments %}
+            {{ comment.owner }}:{{ comment.content }}
+        {% endfor %}
+    {% endif %}
+    {{ message }}
+    <br>
+    <a href="{% url 'book_list' "" "" %}">返回</a>
+</body>
+</html>

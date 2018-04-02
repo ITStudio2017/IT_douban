@@ -19,11 +19,20 @@ from main import views as main_views
 from users.views import ajax_val
 
 urlpatterns = [
-    url(r'^ajax_val/', ajax_val, name='ajax_val'),
-    url(r'^admin/', admin.site.urls),
+    # main 
+    url(r'^write/',main_views.WriteArticl,name='WriteArticl'),
+    url(r'^informationChange/',main_views.userInformation),
     url(r'^$',main_views.userPage),
     url(r'^index/',main_views.userPage),
+    url(r'^userArticleList/',main_views.userArticle,name='userArticle'),
+
+    # users
     url(r'^accounts/', include('users.urls')),
     url(r'^captcha/', include('captcha.urls')),
-    url(r'^informationChange/',main_views.userInformation),
+    url(r'^ajax_val/', ajax_val, name='ajax_val'),
+
+    # admin
+    url(r'^admin/', admin.site.urls),
+
+    
 ]

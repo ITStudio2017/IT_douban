@@ -216,3 +216,28 @@ $(".body_commit_content_list").eq(now_page).siblings().css({'display':'none'});
 // 	}
 
 // });
+
+
+
+$(".book_writecomment_input").keyup(function(){
+
+	var comment_length = $(".book_writecomment_input").val().length ;
+	if( comment_length >140){
+		$(this).val($(this).val().substring(0,140))
+	}
+	else{
+		$(".book_writecomment_count input").val(comment_length-0+1);
+	}
+
+	
+
+});
+
+//判断是否登陆
+if($(".book_writecomment_login").css('display') != 'none')
+{
+	$(".book_writecomment_input").attr('disabled','true');
+}
+else{
+	$(".book_writecomment_input").removeAttr('disabled')
+}

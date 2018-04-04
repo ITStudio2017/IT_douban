@@ -469,8 +469,11 @@ color: #C9C9C9;
 	font-size: 18px;
 }
 .book_writecomment_input{
-	width: 1000px;
-	height: 275px;
+	padding-top: 47px;
+	padding-left: 128px;
+	padding-right: 128px;
+	width: 744px;
+	height: 228px;
 	background-color: #ffffff;
 	box-shadow: 0px 2px 6px 0px 
 		rgba(0, 0, 0, 0.15);
@@ -512,6 +515,53 @@ color: #C9C9C9;
 	width: 28px;
 	height: 27px;
 	
+}
+.book_writecomment input{
+	width: 64px;
+	height: 34px;
+	outline: none;
+	background-color: white;
+	border: none;
+	position: absolute;
+	left: -18px;
+	top: 0px;
+	font-size: 35px;
+	color: #C9C9C9;
+	z-index: 99;
+	text-align: right;
+
+
+}
+.book_writecomment{
+	position: relative;
+}
+.book_writecomment span{
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	width:73px;
+	height:20px; 
+	font-size:20px;
+	
+	color:rgba(51,51,51,1);
+	line-height:36px;
+	display: block;
+}
+.book_writecomment_count{
+	width: 120px;
+	height: 30px;
+	position: absolute;
+	bottom: 36px;
+	right: 104px;
+}
+.book_writecomment_login{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	color: #C9C9C9;
+	font-size: 29px;
+	margin-left: -58px;
+	margin-top: -19px;
 }
 .book_comment_publish{
 	width: 130px;

@@ -132,20 +132,20 @@ $(".body_article_author_love").click(function(){
 // if(praise_img.attr("src") == ("Images/yizan.png")
 
 //搜索框
-$(".search_box_input").focus(function(){
-  $(this).attr("value","");
-  $(this).css({'color':'black'});
-});
-$(".search_box_input").blur(function(){
-	var content = $(this).val();
-	if(content == ""){
+// $(".search_box_input").focus(function(){
+//   $(this).attr("value","");
+//   $(this).css({'color':'black'});
+// });
+// $(".search_box_input").blur(function(){
+// 	var content = $(this).val();
+// 	if(content == ""){
 		
-		 $(this).attr("value","请输入图书名称/作者");
-		// $(this).attr("value",);
-		$(this).css({'color':'#C9C9C9'});
-	}
+// 		 $(this).attr("value","请输入图书名称/作者");
+// 		// $(this).attr("value",);
+// 		$(this).css({'color':'#C9C9C9'});
+// 	}
 
-});
+// });
 
 //时间热度标签的切换
 // $(".book_comment_nav_hot").click(function(){

@@ -13,11 +13,12 @@
 .search_box_input{
 	width: 211px;
 	height: 39px;
-	color: #C9C9C9;
+	/*color: #C9C9C9;*/
 	outline: none;
 	border: 1px solid white;
 	position: absolute;
 	left: 10px;
+	color: black;
 }
 .search_box_button{
 	width: 43px;

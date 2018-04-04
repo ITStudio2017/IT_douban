@@ -411,14 +411,16 @@ color: #C9C9C9;
 	width: 73px;
 	height: 73px;
 	border-radius: 36.5px;
-	background-color: #05668d;
+
 	position: absolute;
 	top: 32px;
 	left: 33px;
-	background-image: url(../images/head_pic.png);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
+	
+	overflow: hidden;
+}
+.body_comment_content_pic img{
+	width: 73px;
+	height: auto;
 }
 .body_comment_content_id{
 	font-size: 20px;

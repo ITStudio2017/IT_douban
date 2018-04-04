@@ -10,7 +10,7 @@ class Article(models.Model):
     pub_date = models.DateTimeField('发表时间',auto_now_add=True)
     update_time = models.DateTimeField('更新时间',auto_now=True,null=True)
     content = UEditorField('内容',toolbars="full", imagePath="static/img/", filePath="main/static/img/", upload_settings={"imageMaxSize":1204000},settings={},)
-    author = models.ForeignKey('users.User',default="")
+    author = models.ForeignKey(User,default="")
     abstract = models.CharField('摘要',max_length=256,null=True,blank=True)
     article_cate = models.CharField('类别',max_length=5,choices=category,default='小说')
     views = models.PositiveIntegerField(default=0)
@@ -28,11 +28,11 @@ class Article(models.Model):
         self.save(update_fields=['views'])
 
     
-
 class comment_article(models.Model):
     content = models.CharField('内容',max_length=1000)
     pub_date = models.DateTimeField('发表时间',auto_now_add=True)
-    owner = models.ForeignKey('users.User',default="")
-    article = models.ForeignKey('main.Article',default="")
+    author = models.ForeignKey(User,default="")
+    article = models.ForeignKey(Article,default="")
+    
 
 # Create your models here.

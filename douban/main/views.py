@@ -2,7 +2,7 @@ from django.shortcuts import render
 import json
 from django.shortcuts import redirect
 from users.models import User
-from .forms import ArticleForm
+from .forms import ArticleForm,Comment_Article_Form
 from .models import Article
 from django.http import HttpResponseRedirect 
 from django.template.loader import render_to_string
@@ -42,7 +42,7 @@ def WriteArticl(request):
         return render(request,'main/personal_center_write_article.html',{'form':form})
             
 def userArticle(request):
-	article_list = Article.objects.filter(author=request.user)
+	article_list = Article.objects.filter(author=request.user).order_by('-update_time')
 	return render(request,'main/personal_center_personal_article.html',{'article_list':article_list})
 
 def deleteArticle(request,id):
@@ -63,6 +63,17 @@ def changeArticle(request,id):
 		return render(request,'main/personal_change_article.html',{'article':article})
 
 def article_detail(request,id):
-    article = Article.objects.get(id=id)
-    return render(request,'main/article_contain.html',{'article':article})
+	art = Article.objects.get(id=id)
+	if request.method == 'POST':
+		commentForm = Comment_Article_Form(request.POST)
+		if commentForm.is_valid():
+			comment = commentForm.save(commit=False)
+			comment.author = request.user
+			comment.article = art
+			comment.save()
+			commentForm = Comment_Article_Form()
+			return render(request,'main/article_contain.html',{'article':art,'commentForm':commentForm})
+	else:
+		commentForm = Comment_Article_Form()
+		return render(request,'main/article_contain.html',{'article':art,'commentForm':commentForm})
 # Create your views here.

@@ -34,7 +34,7 @@
 		<!-- <div class=""></div> -->
 		<div class="body_article_middle">
 
-            <h2 class="body_article_title">{{articl.title}}</h2>
+            <h2 class="body_article_title">{{article.title}}</h2>
 			<div class="body_article_author">
 				<div class="body_article_author_pic"><img src="/static/images/author_picc.png" alt=""></div>
                 <span class="body_article_author_name">{{request.user.name}}</span>
@@ -66,14 +66,16 @@
 					<div class="book_comment_nav">
 						<div class="book_comment_nav_time"><a class="book_comment_nav_time_a" href="">时间</a></div>
 						<div class="book_comment_nav_hot"><a class="book_comment_nav_hot_a" href="">热度</a></div>
-						<!-- <div class="book_comment_nav_write"><a class="book_comment_nav_write_a" href="">我来写评论</a></div> -->
+						 <div class="book_comment_nav_write"><label class="book_comment_nav_write_a">我来写评论</label></div> 
 					</div>
+					<form action="." method="post">
+					{% csrf_token %}
 					<div class="book_writecomment">
-						<textarea class="book_writecomment_input" type="text"></textarea>
+						<textarea class="book_writecomment_input" name="content" maxlength="1000" required id="id_content" type="text"></textarea>
 						
-					</div>
-
-		<div class="book_comment_publish"><a class="book_comment_publish_a" href="">发布评论</a></div>
+					</div> 
+		<div class="book_comment_publish"><input type="submit" value="发表评论"></div>
+		</form>
 				<div style="clear: both;"></div>
 					<div class="body_comment_contentout time">
 						<ul class="body_comment_content_page_1">

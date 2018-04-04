@@ -192,6 +192,10 @@ color: #C9C9C9;
 	top: 50%;
 	margin-top: -25px;
 }
+。body_article_author_pic img{
+	width: 50px;
+	height: auto;
+}
 .body_article_author_name{
 
 	font-size: 16px;
@@ -243,6 +247,10 @@ color: #C9C9C9;
 	height: auto;
 	margin:0px auto;
 	display: block;
+}
+.body_article_middle_contain img{
+	width: 780px;
+	height: auto;
 }
 .body_article_middle_contain .article_copyright{
 	margin-top: 59px;

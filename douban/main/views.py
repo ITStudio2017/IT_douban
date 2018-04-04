@@ -1,8 +1,11 @@
 from django.shortcuts import render
 import json
+from django.shortcuts import redirect
 from users.models import User
 from .forms import ArticleForm
 from .models import Article
+from django.http import HttpResponseRedirect 
+from django.template.loader import render_to_string
 
 def userPage(request):
 	try:
@@ -41,4 +44,25 @@ def WriteArticl(request):
 def userArticle(request):
 	article_list = Article.objects.filter(author=request.user)
 	return render(request,'main/personal_center_personal_article.html',{'article_list':article_list})
+
+def deleteArticle(request,id):
+	article = Article.objects.get(id = id)
+	article.delete()
+	article_list = Article.objects.filter(author=request.user)
+	return render(request,'main/personal_center_personal_article.html',{'article_list':article_list})
+	
+def changeArticle(request,id):
+	article = Article.objects.get(id=id)
+	if request.method == 'POST':
+		form = ArticleForm(request.POST,instance=article)
+		if form.is_valid():
+			j = form.save(commit=False)
+			j.save()
+			return redirect('/userArticleList/')
+	else:
+		return render(request,'main/personal_change_article.html',{'article':article})
+
+def article_detail(request,id):
+    article = Article.objects.get(id=id)
+    return render(request,'main/article_contain.html',{'article':article})
 # Create your views here.

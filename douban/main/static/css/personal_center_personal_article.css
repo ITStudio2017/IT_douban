@@ -380,6 +380,7 @@ li{
 	border: 1px solid #ffffff;
 	margin:0px auto;
 	margin-top: 23px;
+	position: relative;
 }
 .personal_body_save_article_pic_1{
 	width: 272px;
@@ -412,7 +413,22 @@ li{
 	margin-left: 18px;
 	margin-top: 18px;
 }
-
+.personal_body_save_article_delete{
+	position: absolute;
+	bottom: 0px;
+	right: 30px;
+}
+.personal_body_save_article_delete:hover{
+	cursor: pointer;
+}
+.personal_body_save_article_modify{
+	position: absolute;
+	bottom: 0px;
+	right: 60px;
+}
+.personal_body_save_article_modify:hover{
+	cursor: pointer;
+}
 @media screen and (max-width: 1006px){
 	.personal_body{
 		width: 948px;
@@ -424,3 +440,4 @@ li{
 		width: 942px;
 	}
 }
+

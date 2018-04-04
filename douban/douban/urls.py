@@ -25,7 +25,9 @@ urlpatterns = [
     url(r'^$',main_views.userPage),
     url(r'^index/',main_views.userPage),
     url(r'^userArticleList/',main_views.userArticle,name='userArticle'),
-
+    url(r'^delete/(?P<id>[0-9]+)/$',main_views.deleteArticle,name='deleteArticle'),
+    url(r'^change/(?P<id>[0-9]+)/$',main_views.changeArticle,name='changeArticle'),
+    url(r'^detail/(?P<id>[0-9]+)/$',main_views.article_detail,name='article_detail'), 
     # users
     url(r'^accounts/', include('users.urls')),
     url(r'^captcha/', include('captcha.urls')),

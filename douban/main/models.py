@@ -29,5 +29,10 @@ class Article(models.Model):
 
     
 
-    
+class comment_article(models.Model):
+    content = models.CharField('内容',max_length=1000)
+    pub_date = models.DateTimeField('发表时间',auto_now_add=True)
+    owner = models.ForeignKey('users.User',default="")
+    article = models.ForeignKey('main.Article',default="")
+
 # Create your models here.

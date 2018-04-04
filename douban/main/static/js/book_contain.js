@@ -202,3 +202,17 @@ $(".body_commit_content_list").eq(now_page).siblings().css({'display':'none'});
 // 		}
 
 // });
+$(".search_box_input").focus(function(){
+  $(this).attr("value","");
+  $(this).css({'color':'black'});
+});
+$(".search_box_input").blur(function(){
+	var content = $(this).val();
+	if(content == ""){
+		
+		 $(this).attr("value","请输入图书名称/作者");
+		// $(this).attr("value",);
+		$(this).css({'color':'#C9C9C9'});
+	}
+
+});

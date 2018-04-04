@@ -70,13 +70,14 @@ li{
 	width: 34px;
 	height: 34px;
 	border-radius: 17px;
-	background-image: url(../images/head_pic.png);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
+	overflow: hidden;
 	position: absolute;
 	top: 24px;
 	left: 26px;
+}
+.personal_bofy_perinfo_pic img{
+	width: 34px;
+	height: auto;
 }
 .personal_body_perinfo_name{
 
@@ -101,6 +102,10 @@ li{
 	position: absolute;
 	top: 79px;
 	left: 27px;
+	/*display: none;*/
+}
+.personal_body_perinfo_write:hover{
+	cursor: pointer;
 }
 .personal_body_perinfo_words{
 	width: 123px;
@@ -328,23 +333,26 @@ li{
 	height: 657px;
 	width: 716px;
 	position: relative;
+	/*overflow: auto;*/
 
 }
 .personal_body_write_content:hover{
 	cursor: pointer;
 }
 .personal_body_write_content_text{
-	height: 637px;
-	width: 536px;
+	height: 634px;
+	width: 600px;
 	outline: none;
 	border:1px solid #ffffff;
 	border-radius: 10px;
 	font-size: 20px;
 	letter-spacing: 2px;
 	color: #333333;
-	margin-left: 90px;
+	margin-left: 55px;
+	/*margin:0px auto;*/
 	text-indent: 20px;
 	margin-top: 20px;
+	outline: none;
 
 }
 .personal_body_write_content_tip{

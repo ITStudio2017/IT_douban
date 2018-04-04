@@ -12,3 +12,21 @@ $(".search_box_input").click(function(){
 $(".search_box_input").blur(function(){
 	$(this).attr("value","请输入关键词");
 });
+
+
+
+// var mar_left = $(".body_top_inner ul li").each(function(index){
+// $(this).width();
+
+// })
+var mar_left = new Array();
+ mar_left[0] = $(".body_top_sfq_pic_1 ").width()/2;
+ mar_left[1] = $(".body_top_sfq_pic_2").width();
+ mar_left[2] = $(".body_top_sfq_pic_3").width();
+ mar_left[3] = $(".body_top_sfq_pic_4").width();
+ mar_left[4] = $(".body_top_sfq_pic_5").width();
+
+// $(".body_top_inner ul img").eq(0).css('margin-left',-mar_left[0]);
+
+
+// (parseInt(this.parentNode.style.width) - this.width) /2 + 'px

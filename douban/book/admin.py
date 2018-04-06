@@ -1,20 +1,54 @@
 from django.contrib import admin
 from .models import Book, Comment, Label
+import datetime
+import logging
 
 
-# Register your models here.
+class BookTimeModelFilter(admin.SimpleListFilter):
+    title = r'创建时间'
+    parameter_name = r'创建时间'
+
+    def lookups(self, request, model_admin):
+        now = datetime.datetime.now()
+        yearago = now - datetime.timedelta(days=365)
+        monthago = now - datetime.timedelta(days=30)
+        dayago = now - datetime.timedelta(days=1)
+        return [
+            (dayago, r"一天内"),
+            (monthago, r"一月内"),
+            (yearago, r"一年内"),
+        ]
+
+    def queryset(self, request, queryset):
+        now = datetime.datetime.now()
+        try:
+            value = self.value()
+        except:
+            value = None
+        if value:
+            return queryset.filter(lastEditTime__range=(value, now))
+        else:
+            return queryset
+
+
 class BookAdmin(admin.ModelAdmin):
-    list_display = ['bookname', 'author', 'fsLabel']
-    search_fields = ['bookname']
+    list_display = ['bookname', 'author', 'fsLabel', 'owner']
+    list_filter = (BookTimeModelFilter,)
+    search_fields = ['bookname', 'author']
 
     fieldsets = (
         [u'主要信息', {
-            'fields': ('bookname', 'author', 'introduction', 'owner'),
+            'fields': ('bookname', 'author', 'introduction'),
         }],
         [u'附加', {
             'fields': ('label', 'cover'),
         }]
     )
+
+    def save_model(self, request, obj, form, change):
+        obj.owner = request.user
+        logging.debug(request.user)
+        obj.save()
 
     def fsLabel(self, obj):
         fLabel = obj.get_father_labelname()
@@ -37,10 +71,10 @@ class LabelAdmin(admin.ModelAdmin):
     search_fields = ['labelName']
 
     def fLabel(self, obj):
-        fLabel = obj.get_fatherlabel_by_secondarylabel()
+        f = obj.get_fatherlabel_by_secondarylabel()
         retstr = ""
-        if fLabel:
-            retstr = retstr + fLabel.labelName
+        if f:
+            retstr = retstr + f.labelName
         return str(retstr)
     fLabel.short_description = "父标签"
 

@@ -5,14 +5,19 @@ import logging
 
 class Book(models.Model):
     # id
-    bookname = models.CharField(max_length=20)
-    introduction = models.TextField(max_length=500)
-    createTime = models.DateTimeField(auto_now_add=True)
-    lastEditTime = models.DateTimeField(auto_now=True)
-    author = models.CharField(max_length=30, default="")
-    owner = models.ForeignKey(User)
-    label = models.IntegerField(null=True)
-    cover = models.ImageField(upload_to='book_img')
+    bookname = models.CharField(verbose_name="书名", max_length=20)
+    introduction = models.TextField(verbose_name="简介", max_length=500)
+    createTime = models.DateTimeField(verbose_name="创建时间", auto_now_add=True)
+    lastEditTime = models.DateTimeField(verbose_name="最后修改时间", auto_now=True)
+    author = models.CharField(verbose_name="作者", max_length=30, default="")
+    owner = models.ForeignKey(User, verbose_name="编辑人", editable=False, null=True, on_delete=models.CASCADE)
+    label = models.IntegerField(verbose_name="标签", null=True)
+    cover = models.ImageField(verbose_name="封面", upload_to='book_img')
+
+    class Meta:
+        verbose_name = r'图书'
+        verbose_name_plural = r'图书'
+        get_latest_by = "lastEditTime"
 
     def __str__(self):
         return self.bookname
@@ -35,8 +40,13 @@ class Book(models.Model):
 
 class Label(models.Model):
     # id
-    labelName = models.CharField(max_length=10)
-    labelNum = models.IntegerField()
+    labelName = models.CharField(max_length=10, verbose_name="标签名")
+    labelNum = models.IntegerField(verbose_name="编号")
+
+    class Meta:
+        verbose_name = r'标签'
+        verbose_name_plural = r'标签'
+        get_latest_by = "labelNum"
 
     def __str__(self):
         f = self.get_fatherlabel_by_secondarylabel()
@@ -105,10 +115,16 @@ def get_alllabel():
 
 class Comment(models.Model):
     # id
-    book = models.ForeignKey(Book)
-    owner = models.ForeignKey(User)
-    content = models.CharField(max_length=200)
-    createTime = models.DateTimeField(auto_now_add=True)
+    book = models.ForeignKey(Book, verbose_name="所在书目")
+    owner = models.ForeignKey(User, verbose_name="评论人")
+    content = models.CharField(max_length=200, verbose_name="内容")
+    createTime = models.DateTimeField(auto_now_add=True, verbose_name="创建时间")
+
+    class Meta:
+        verbose_name = r'评论'
+        verbose_name_plural = r'评论'
+        get_latest_by = "createTime"
 
     def __str__(self):
         return self.book.bookname + ":" + self.content
+

@@ -3,7 +3,7 @@ import json
 from django.shortcuts import redirect
 from users.models import User
 from .forms import ArticleForm,Comment_Article_Form
-from .models import Article
+from .models import Article,comment_article
 from django.http import HttpResponseRedirect 
 from django.template.loader import render_to_string
 
@@ -64,6 +64,7 @@ def changeArticle(request,id):
 
 def article_detail(request,id):
 	art = Article.objects.get(id=id)
+	commentOfArticle = comment_article.objects.filter(article=art).order_by('-pub_date')
 	if request.method == 'POST':
 		commentForm = Comment_Article_Form(request.POST)
 		if commentForm.is_valid():
@@ -72,8 +73,8 @@ def article_detail(request,id):
 			comment.article = art
 			comment.save()
 			commentForm = Comment_Article_Form()
-			return render(request,'main/article_contain.html',{'article':art,'commentForm':commentForm})
+			return render(request,'main/article_contain.html',{'article':art,'commentForm':commentForm,'commentOfArticle':commentOfArticle})
 	else:
 		commentForm = Comment_Article_Form()
-		return render(request,'main/article_contain.html',{'article':art,'commentForm':commentForm})
+		return render(request,'main/article_contain.html',{'article':art,'commentForm':commentForm,'commentOfArticle':commentOfArticle})
 # Create your views here.

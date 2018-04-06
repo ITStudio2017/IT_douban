@@ -29,7 +29,7 @@ class Article(models.Model):
 
     
 class comment_article(models.Model):
-    content = models.CharField('内容',max_length=1000)
+    content = models.CharField('内容',max_length=145)
     pub_date = models.DateTimeField('发表时间',auto_now_add=True)
     author = models.ForeignKey(User,default="")
     article = models.ForeignKey(Article,default="")

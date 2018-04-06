@@ -202,17 +202,42 @@ $(".body_commit_content_list").eq(now_page).siblings().css({'display':'none'});
 // 		}
 
 // });
-$(".search_box_input").focus(function(){
-  $(this).attr("value","");
-  $(this).css({'color':'black'});
-});
-$(".search_box_input").blur(function(){
-	var content = $(this).val();
-	if(content == ""){
+// $(".search_box_input").focus(function(){
+//   $(this).attr("value","");
+//   $(this).css({'color':'black'});
+// });
+// $(".search_box_input").blur(function(){
+// 	var content = $(this).val();
+// 	if(content == ""){
 		
-		 $(this).attr("value","请输入图书名称/作者");
-		// $(this).attr("value",);
-		$(this).css({'color':'#C9C9C9'});
+// 		 $(this).attr("value","请输入图书名称/作者");
+// 		// $(this).attr("value",);
+// 		$(this).css({'color':'#C9C9C9'});
+// 	}
+
+// });
+
+
+
+$(".book_writecomment_input").keyup(function(){
+
+	var comment_length = $(".book_writecomment_input").val().length ;
+	if( comment_length >140){
+		$(this).val($(this).val().substring(0,140))
+	}
+	else{
+		$(".book_writecomment_count input").val(comment_length-0+1);
 	}
 
+	
+
 });
+
+//判断是否登陆
+if($(".book_writecomment_login").css('display') != 'none')
+{
+	$(".book_writecomment_input").attr('disabled','true');
+}
+else{
+	$(".book_writecomment_input").removeAttr('disabled')
+}

@@ -415,16 +415,20 @@ li{
 }
 .personal_body_save_article_delete{
 	position: absolute;
-	bottom: 0px;
-	right: 30px;
+	top: 28px;
+	right: 75px;
+	color:rgba(235,6,6,1);
+	font-size: 14px;
 }
 .personal_body_save_article_delete:hover{
 	cursor: pointer;
 }
 .personal_body_save_article_modify{
 	position: absolute;
-	bottom: 0px;
-	right: 60px;
+	top: 28px;
+	font-size: 14px;
+	color: #89D4DD;
+	right: 36px;
 }
 .personal_body_save_article_modify:hover{
 	cursor: pointer;

@@ -100,7 +100,7 @@ $(".body_comment_contentout ul").eq(now_page).siblings().css({'display':'none'})
 $(".body_comment_good_pic").click(function(){
 	var index = $(".body_comment_good_pic").index(this);
 
-	console.log(index);
+		console.log(index);
 		var num = parseInt($(".body_comment_good_amount").html()); 
 	if($(this).find("img").attr('src') == ('../images/goog.png')){
 		$(this).find("img").attr('src','../images/good_red.png');
@@ -115,27 +115,37 @@ $(".body_comment_good_pic").click(function(){
 })
 	
 	
-
+//收藏
+$(".body_article_author_love").click(function(){
+	if($(".body_article_author_love").find("img").attr('src') == ('../images/author_article_love.png'))
+	{
+		$(this).find("img").attr('src','../images/love_red2.png');
+	}
+	else
+	{
+		$(this).find("img").attr('src','../images/author_article_love.png');
+	}
+})
 
 
 // })
 // if(praise_img.attr("src") == ("Images/yizan.png")
 
 //搜索框
-$(".search_box_input").focus(function(){
-  $(this).attr("value","");
-  $(this).css({'color':'black'});
-});
-$(".search_box_input").blur(function(){
-	var content = $(this).val();
-	if(content == ""){
+// $(".search_box_input").focus(function(){
+//   $(this).attr("value","");
+//   $(this).css({'color':'black'});
+// });
+// $(".search_box_input").blur(function(){
+// 	var content = $(this).val();
+// 	if(content == ""){
 		
-		 $(this).attr("value","请输入图书名称/作者");
-		// $(this).attr("value",);
-		$(this).css({'color':'#C9C9C9'});
-	}
+// 		 $(this).attr("value","请输入图书名称/作者");
+// 		// $(this).attr("value",);
+// 		$(this).css({'color':'#C9C9C9'});
+// 	}
 
-});
+// });
 
 //时间热度标签的切换
 // $(".book_comment_nav_hot").click(function(){
@@ -151,7 +161,28 @@ $(".search_box_input").blur(function(){
 // 	$(".time").css('display','block');
 // })
 
-//收藏
-$(".body_article_author_love").click(function(){
-	$(this).find("img").attr('src','../images/love_red2.png')
-})
+//评论框字数统计
+
+
+$(".book_writecomment_input").keyup(function(){
+
+	var comment_length = $(".book_writecomment_input").val().length ;
+	if( comment_length >140){
+		$(this).val($(this).val().substring(0,140))
+	}
+	else{
+		$(".book_writecomment_count input").val(comment_length-0);
+	}
+
+	
+
+});
+
+//判断是否登陆
+if($(".book_writecomment_login").css('display') != 'none')
+{
+	$(".book_writecomment_input").attr('disabled','true');
+}
+else{
+	$(".book_writecomment_input").removeAttr('disabled')
+}

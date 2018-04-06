@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Book, Comment, Label
+from .models import Book, Comment, Label, Praise, Collection
 import datetime
 import logging
 
@@ -82,3 +82,5 @@ class LabelAdmin(admin.ModelAdmin):
 admin.site.register(Book, BookAdmin)
 admin.site.register(Label, LabelAdmin)
 admin.site.register(Comment, CommentAdmin)
+admin.site.register(Praise)
+admin.site.register(Collection)

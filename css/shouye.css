@@ -4,6 +4,11 @@
 	height: 50px;
 	background-color: red;
 }
+.blue{
+	width: 50px;
+	height: 50px;
+	background-color: blue;
+}
 *{
     margin: 0px;
     padding: 0px;
@@ -218,12 +223,37 @@ color: #C9C9C9;
 	z-index: 100;
 
 }
+.body_top_hover_right{
+	width:212px;
+	height:327px; 
+	background:rgba(255,255,255,1);
+	opacity:0.8;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	z-index: 100;
+
+}
 .body_top_inner_sfq{
 	width: 1200px;
 	height: 327px;
 }
 
+.body_top_sfq_word{
+	width:231px;
+	height:73px; 
+	background:rgba(255,255,255,1);
+	font-size:16px;
+	color:rgba(0,168,150,1);
+	line-height:0px;
+	text-align: center;
+	line-height: 73px;
+	position: absolute;
+	left: 0;
+	bottom: 27px;
+	z-index: 70;
 
+}
 .body_top_sfq_pic_1{
 	width: 106px;
 	background-color: purple;
@@ -235,6 +265,7 @@ color: #C9C9C9;
 	left: 0px;
 	top: 0px;
 
+
 }
 .body_top_sfq_pic_img{
 	position: absolute;
@@ -243,6 +274,7 @@ color: #C9C9C9;
 	top: 0px;
 	height: 327px;
 	margin-left: -286px;
+	z-index: 68;
 	
 }
 .body_top_sfq_pic_hover{

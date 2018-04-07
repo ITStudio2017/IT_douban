@@ -198,7 +198,7 @@ $(".body_top_hover_left,.body_top_hover_right").mouseover(function(){
 
 $(".body_top_hover_left,.body_top_hover_right").mouseout(function(){
 	time1 = setInterval(slash,2000);
-	console.log("666")
+	
 });
 
 
@@ -211,5 +211,11 @@ $(".body_top_inner").mouseover(function(){
 
 $(".body_top_inner").mouseout(function(){
 	time2 = setInterval(page_right,3500);
-	console.log("66666")
+	
 });
+
+
+// if($(".body_top_sfq_word").html().length>12)
+// {
+
+// }

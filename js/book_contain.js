@@ -287,3 +287,22 @@ for(var i = 0;i < 5;i ++)
 $(".body_book_grade_draw").eq(i).width( book_people[i] / total_people * 217 )
 
 }
+
+
+
+
+//评分
+
+	$(".body_comment_star").each(function(index){
+
+	var grade=$(".body_comment_star_word").eq(index).html();
+	
+	for(var i=0;i<grade;i++)
+	{
+
+		$(".body_comment_star_list").eq(index).append("<li class='body_comment_stars'><img src='../images/star——3.png' alt=''></li>");
+
+	}
+
+	
+	})

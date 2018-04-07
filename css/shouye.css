@@ -489,18 +489,21 @@ color: #C9C9C9;
 	cursor: pointer;
 	text-decoration: underline;
 }
-.hotessey_essay_user_pic_1,.hotessey_essay_user_pic_2,.hotessey_essay_user_pic_3,.hotessey_essay_user_pic_4{
+.hotessey_essay_user_pic{
 	width: 40px;
 	height: 40px;
 	border: 1px solid white;
 	border-radius: 21px;
-	background-image: url(../images/head_pic.png);
-	background-repeat: no-repeat;
-	background-position: center center;
+	
 	position: absolute;
 	left: 12px;
 	bottom: 4px;
+	overflow: hidden;
 	
+}
+.hotessey_essay_user_pic img{
+	width: 40px;
+	height: auto;
 }
 .hotessey_essay_pic_1,.hotessey_essay_pic_2,.hotessey_essay_pic_3,.hotessey_essay_pic_4{
 	width: 169px;

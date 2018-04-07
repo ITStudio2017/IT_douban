@@ -8,15 +8,17 @@ from django.http import HttpResponseRedirect
 from django.template.loader import render_to_string
 
 def userPage(request):
+	article_list= Article.objects.all().order_by('views')[:4]
+	length = [1,2,3,4]
 	try:
 		first = request.user.first_login;
 	except:
-		return render(request,'shouye.html')
+		return render(request,'shouye.html',{'article_list':article_list},)
 	
 	if(first == True):
 		return render(request,'main/account_profile.html')
 	else:
-		return render(request,'shouye.html')
+		return render(request,'shouye.html',{'article_list':article_list,'length':length})
 
 
 def userInformation(request):

@@ -46,28 +46,28 @@
 					<div class="body_top_hover_right"><img style="display: none" src="/static/images/sfq_arrow_right.png" alt=""></div>
 					<ul class="body_top_inner_sfq">
 						<li class="body_top_sfq_pic_1 sfq_pic">
-							<a href="article_contain.html">
+							<a href="">
 							<div style="display: none;" class="body_top_sfq_word">带你走进女孩的梦幻世界2222</div>
 			
 							<img class="body_top_sfq_pic_img" src="/static/images/article_contain_pic.png" alt="">
 							</a>
 						</li>
 						<li class="body_top_sfq_pic_2 sfq_pic">
-							<a href="article_contain.html">
+							<a href="">
 							<div style="display: none;" class="body_top_sfq_word">带你走进女孩的梦幻世界</div>
 
 							<img  class="body_top_sfq_pic_img" src="/static/images/error.png" alt="">
 							</a>
 						</li>
 						<li class="body_top_sfq_pic_3 sfq_pic">
-							<a href="article_contain.html">
+							<a href="">
 							<div class="body_top_sfq_word">带你走进女孩的梦幻世界</div>
 							<!-- <div class="body_top_sfq_pic_hover"></div> -->
 							<img class="body_top_sfq_pic_img" src="/static/images/article_contain_pic.png" alt="">
 							</a>
 						</li>
 						<li class="body_top_sfq_pic_4 sfq_pic">
-							<a href="article_contain.html">
+							<a href="">
 							<div  style="display: none;"  class="body_top_sfq_word">带你走进女孩的梦幻世界</div>
 							<!-- <div class="body_top_sfq_pic_hover"></div> -->
 
@@ -76,7 +76,7 @@
 						</li>
 
 						<li class="body_top_sfq_pic_5 sfq_pic">
-							<a href="article_contain.html">
+							<a href="">
 							<div style="display: none;"  class="body_top_sfq_word">带你走进女孩的梦幻世界</div>
 							<img class="body_top_sfq_pic_img" src="/static/images/photo_album_2.png" alt="">
 							</a>
@@ -105,57 +105,24 @@
 							<img src="/static/images/photo_album_2.png" alt=""></a>
 							<h6 class="hotessey_photoalbum_name_2"><a class="hotessey_photoalbum_name_2_a" href="">elviiiiiii的相册-Cristina Barcelona</a></h6>
 						</div>
+						
 						<ul class="hotessey_essay_list">
+							{% for article in  article_list %}
 							<li class="hotessey_essay_1">
 								<div class="hotessey_essay_word_1">
-									<div class="hotessey_essay_title_1"><a class="hotessey_essay_title_1_a" href="">我们何时能学会欣赏女性的独立之美？</a></div>
+									<div class="hotessey_essay_title_1"><a class="hotessey_essay_title_1_a" href="/detail/{{article.id}}">{{article.title}}</a></div>
 									<div class="hotessey_essay_user_pic"><img src="/static/images/author_picc.png" alt=""></div>
-									<span class="hotessey_essay_publish_time_1">7小时前</span>
+									<span class="hotessey_essay_publish_time_1">{{article.update_time}}</span>
 									<div class="hotessey_essay_scan_1">
 										<img src="/static/images/essey_scan.png" alt="">
-										<span class="hotessey_essay_scan_amount_1">999</span>
+										<span class="hotessey_essay_scan_amount_1">{{article.views}}</span>
 									</div>
 								</div>
 								<img class="hotessey_essay_pic_1" src="/static/images/esssy_pic_1.png" alt="">
 							</li>
-							<li class="hotessey_essay_2">
-								<div class="hotessey_essay_word_2">
-									<div class="hotessey_essay_title_2"><a class="hotessey_essay_title_2_a" href="">我们何时能学会欣赏女性的独立之美？</a></div>
-									<div class="hotessey_essay_user_pic"><img src="/static/images/author_picc.png" alt=""></div>
-									<span class="hotessey_essay_publish_time_2">7小时前</span>
-									<div class="hotessey_essay_scan_2">
-										<img src="/static/images/essey_scan.png" alt="">
-										<span class="hotessey_essay_scan_amount_2">999</span>
-									</div>
-								</div>
-								<img class="hotessey_essay_pic_2" src="/static/images/esssy_pic_1.png" alt="">
-							</li>
-							<li class="hotessey_essay_3">
-								<div class="hotessey_essay_word_3">
-									<div class="hotessey_essay_title_3"><a class="hotessey_essay_title_3_a" href="">我们何时能学会欣赏女性的独立之美？</a></div>
-									<div class="hotessey_essay_user_pic"><img src="/static/images/author_picc.png" alt=""></div>
-									<span class="hotessey_essay_publish_time_3">7小时前</span>
-									<div class="hotessey_essay_scan_3">
-										<img src="/static/images/essey_scan.png" alt="">
-										<span class="hotessey_essay_scan_amount_3">999</span>
-									</div>
-								</div>
-								<img class="hotessey_essay_pic_3" src="/static/images/esssy_pic_1.png" alt="">
-							</li>
-							<li class="hotessey_essay_4">
-								<div class="hotessey_essay_word_4">
-									<div class="hotessey_essay_title_4"><a class="hotessey_essay_title_4_a" href="">我们何时能学会欣赏女性的独立之美？</a></div>
-									<div class="hotessey_essay_user_pic"><img src="/static/images/author_picc.png" alt=""></div>
-									<span class="hotessey_essay_publish_time_4">7小时前</span>
-									<div class="hotessey_essay_scan_4">
-										<img src="/static/images/essey_scan.png" alt="">
-										<span class="hotessey_essay_scan_amount_4">999</span>
-									</div>
-								</div>
-								<img class="hotessey_essay_pic_4" src="/static/images/esssy_pic_1.png" alt="">
-							</li>
-							
+							{% endfor %}
 						</ul>
+						
 					</div>
 				</div>
 			</div>

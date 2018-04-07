@@ -24,7 +24,7 @@ color: #C9C9C9;
 } 
 .container{
 	width: 100%;
-	height: 2000px;
+	height: 2233px;
 }
 .header{
 	width: 1006px;
@@ -255,44 +255,8 @@ color: #C9C9C9;
 	letter-spacing: 1px;
 	color: #00a896;
 }
-.body_book_grade_5{
-	width: 135px;
-	height: 20px;
-	background-color: #ffd596;
-	position: absolute;
-	left: 42px;
-	top: 3px;
-
-}
-.body_book_grade_4{
-	width: 175px;
-	height: 20px;
-	background-color: #ffd596;
-	position: absolute;
-	left: 42px;
-	top: 3px;
-
-}
-.body_book_grade_3{
-	width: 105px;
-	height: 20px;
-	background-color: #ffd596;
-	position: absolute;
-	left: 42px;
-	top: 3px;
-
-}
-.body_book_grade_2{
-	width: 175px;
-	height: 20px;
-	background-color: #ffd596;
-	position: absolute;
-	left: 42px;
-	top: 3px;
-
-}
-.body_book_grade_1{
-	width: 175px;
+.body_book_grade_draw{
+	/*width: 135px;*/
 	height: 20px;
 	background-color: #ffd596;
 	position: absolute;
@@ -400,12 +364,12 @@ color: #C9C9C9;
 }
 .body_book_bottom{
 	width: 100%;
-	height: 1397px;
+	height: 1584px;
 	background-color: #edf4ed;
 }
 .body_book_bottom_inner{
 	width: 1006px;
-	height: 1351px;
+	height: 1584px;
 	margin: 0px auto;
 	padding-top: 46px;
 }
@@ -572,8 +536,10 @@ color: #C9C9C9;
 	margin-top: 28px;
 	line-height: 50px;
 	text-align: center;
+	font-size: 18px;
+	color:white;
 }
-..book_comment_publish:hover{
+.book_comment_publish:hover{
 	cursor: pointer;
 }
 .book_comment_publish_a{
@@ -584,7 +550,7 @@ color: #C9C9C9;
 }
 .body_comment_content{
 	width: 1000px;
-	height: 150px;
+	height: 200px;
 	background-color: #ffffff;
 	box-shadow: 0px 2px 6px 0px 
 		rgba(0, 0, 0, 0.15);
@@ -641,7 +607,7 @@ color: #C9C9C9;
 	color: #333333;
 	position: absolute;
 	top: 67px;
-	right: 47px;
+	right: 67px;
 }
 .body_comment_good{
 	width: 83px;

@@ -171,7 +171,7 @@ $(".book_writecomment_input").keyup(function(){
 		$(this).val($(this).val().substring(0,140))
 	}
 	else{
-		$(".book_writecomment_count input").val(comment_length-0);
+		$(".book_writecomment_count input").val(comment_length-0+1);
 	}
 
 	

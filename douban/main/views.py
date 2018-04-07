@@ -11,12 +11,12 @@ def userPage(request):
 	try:
 		first = request.user.first_login;
 	except:
-		return render(request,'main/index.html')
+		return render(request,'shouye.html')
 	
 	if(first == True):
 		return render(request,'main/account_profile.html')
 	else:
-		return render(request,'main/index.html')
+		return render(request,'shouye.html')
 
 
 def userInformation(request):
@@ -47,7 +47,9 @@ def userArticle(request):
 
 def deleteArticle(request,id):
 	article = Article.objects.get(id = id)
+	comment = comment_article.objects.filter(article=article)
 	article.delete()
+	comment.delete()
 	article_list = Article.objects.filter(author=request.user)
 	return render(request,'main/personal_center_personal_article.html',{'article_list':article_list})
 	
@@ -77,4 +79,8 @@ def article_detail(request,id):
 	else:
 		commentForm = Comment_Article_Form()
 		return render(request,'main/article_contain.html',{'article':art,'commentForm':commentForm,'commentOfArticle':commentOfArticle})
+
+def commentList(request):
+	commentList = comment_article.objects.filter(author=request.user).order_by('-pub_date')
+	return render(request,'main/personal_center_comment.html',{'commentList':commentList})
 # Create your views here.

@@ -31,9 +31,9 @@
  //ajax发送
             $('#captcha_status').remove()
             if(data['status']){ //status返回1为验证码正确， status返回0为验证码错误， 在输入框的后面写入提示信息
-                $('#id_captcha_1').after('<span id="captcha_status" ></span>')
+                $('#id_img_1').after('<span id="captcha_status" ></span>')
             }else{
-                 $('#id_captcha_1').after('<span id="captcha_status" ></span>')
+                 $('#id_img_1').after('<span id="captcha_status" >验证码错误</span>')
             }
         });
     });
@@ -47,7 +47,7 @@
 			<h3 style="opacity: 0">在豆瓣，遇见生活的美好</h3>
 			<div class="login_form">
 				<ul>
-					<li class="login_form_login"><a class="login_form_a_login" href="login.html">用户登录</a></li>
+					<li class="login_form_login"><a class="login_form_a_login" href="/accounts/login/">用户登录</a></li>
 					<li class="login_form_regist"><a class="login_form_a_regist" href="/accounts/register/">用户注册</a></li>
 					<div style="clear: both;"></div>
 				</ul>
@@ -73,7 +73,7 @@
 							<input type="hidden" name="captcha_0" id="id_captcha_0" value="{{hashkey}}">
 						<input  class="login_form_verify_input" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="id_captcha_1" name="captcha_1" type="text">
 						<div class="login_form_verify_image">
-						<img src="{{ image_url }}" alt="captcha" width="150px" height="50px" class="captcha login_form_verify_image_img" /></div>
+						<img src="{{ image_url }}" id="id_img_1" alt="captcha" width="150px" height="50px" class="captcha login_form_verify_image_img" /></div>
 						<div style="clear: both;"></div>
 					</div>
 					<div style="clear: both;"></div>

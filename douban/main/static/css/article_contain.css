@@ -460,7 +460,7 @@ color: #C9C9C9;
 }
 .body_comment_content{
 	width: 800px;
-	height: 150px;
+	height: 222px;
 	background-color: #ffffff;
 	box-shadow: 0px 2px 6px 0px 
 		rgba(0, 0, 0, 0.15);
@@ -556,7 +556,7 @@ color: #C9C9C9;
 	line-height: 36px;
 	letter-spacing: 2px;
 	color: #347898;
-	margin-top: 31px;
+	margin-top: 22px;
 }
 .first_page{
 	margin-left: 78px;

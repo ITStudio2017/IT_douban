@@ -1,9 +1,4 @@
 
-.red{
-	width: 50px;
-	height: 50px;
-	background-color: red;
-}
 *{
     margin: 0px;
     padding: 0px;
@@ -141,13 +136,6 @@ color: #C9C9C9;
 .registration:hover{
 	cursor: pointer;
 }
-.personal_center{
-	display: none;
-}
-.log_out{
-	display: none;
-}
-
 
 .personal_center_a{
 	font-size: 21px;
@@ -218,12 +206,57 @@ color: #C9C9C9;
 	z-index: 100;
 
 }
+.body_top_hover_left img{
+	width: 52px;
+	height: auto;
+	position: absolute;
+	right: 28px;
+	top: 131px;
+}
+
+.body_top_hover_right{
+	width:212px;
+	height:327px; 
+	background:rgba(255,255,255,1);
+	opacity:0.8;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	z-index: 100;
+
+}
+.body_top_hover_right img{
+	width: 52px;
+	height: auto;
+	position: absolute;
+	left: 28px;
+	top: 131px;
+}
+.body_top_hover_right :hover,.body_top_hover_left:hover{
+	cursor: pointer;
+}
+
 .body_top_inner_sfq{
 	width: 1200px;
 	height: 327px;
 }
 
+.body_top_sfq_word{
+	width:231px;
+	height:73px; 
+	background:rgba(255,255,255,1);
+	font-size:16px;
+	color:rgba(0,168,150,1);
+	line-height:0px;
+	text-align: center;
+	line-height: 73px;
+	position: absolute;
+	left: 0;
+	bottom: 27px;
+	z-index: 70;
+	opacity: 0.9;
 
+}
 .body_top_sfq_pic_1{
 	width: 106px;
 	background-color: purple;
@@ -235,6 +268,7 @@ color: #C9C9C9;
 	left: 0px;
 	top: 0px;
 
+
 }
 .body_top_sfq_pic_img{
 	position: absolute;
@@ -243,6 +277,7 @@ color: #C9C9C9;
 	top: 0px;
 	height: 327px;
 	margin-left: -286px;
+
 	
 }
 .body_top_sfq_pic_hover{
@@ -301,6 +336,11 @@ color: #C9C9C9;
 	position: absolute;
 	left: 890px;
 	top: 0px;
+}
+
+.sfq_pic a{
+	display: block;
+	height: 327px;
 }
 .body_top_sfq_pic_5 img,.body_top_sfq_pic_5 img,.body_top_sfq_pic_5 img,.body_top_sfq_pic_5 img{
 	width: 572px;
@@ -361,7 +401,7 @@ color: #C9C9C9;
 	cursor: pointer;
 }
 .hotessey_photoalbum_name_1{
-	margin-top: 18px;
+	margin-top: 8px;
 	font-size: 16px;
 	letter-spacing: 2px;
 	
@@ -385,7 +425,7 @@ color: #C9C9C9;
 	cursor: pointer;
 }
 .hotessey_photoalbum_name_2{
-	margin-top: 18px;
+	margin-top: 8px;
 	font-size: 16px;
 	letter-spacing: 2px;
 }
@@ -442,18 +482,21 @@ color: #C9C9C9;
 	cursor: pointer;
 	text-decoration: underline;
 }
-.hotessey_essay_user_pic_1,.hotessey_essay_user_pic_2,.hotessey_essay_user_pic_3,.hotessey_essay_user_pic_4{
+.hotessey_essay_user_pic{
 	width: 40px;
 	height: 40px;
 	border: 1px solid white;
 	border-radius: 21px;
-	background-image: url(../images/head_pic.png);
-	background-repeat: no-repeat;
-	background-position: center center;
+	
 	position: absolute;
 	left: 12px;
 	bottom: 4px;
+	overflow: hidden;
 	
+}
+.hotessey_essay_user_pic img{
+	width: 40px;
+	height: auto;
 }
 .hotessey_essay_pic_1,.hotessey_essay_pic_2,.hotessey_essay_pic_3,.hotessey_essay_pic_4{
 	width: 169px;

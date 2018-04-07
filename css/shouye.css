@@ -1,14 +1,4 @@
 
-.red{
-	width: 50px;
-	height: 50px;
-	background-color: red;
-}
-.blue{
-	width: 50px;
-	height: 50px;
-	background-color: blue;
-}
 *{
     margin: 0px;
     padding: 0px;
@@ -223,6 +213,14 @@ color: #C9C9C9;
 	z-index: 100;
 
 }
+.body_top_hover_left img{
+	width: 52px;
+	height: auto;
+	position: absolute;
+	right: 28px;
+	top: 131px;
+}
+
 .body_top_hover_right{
 	width:212px;
 	height:327px; 
@@ -234,6 +232,17 @@ color: #C9C9C9;
 	z-index: 100;
 
 }
+.body_top_hover_right img{
+	width: 52px;
+	height: auto;
+	position: absolute;
+	left: 28px;
+	top: 131px;
+}
+.body_top_hover_right :hover,.body_top_hover_left:hover{
+	cursor: pointer;
+}
+
 .body_top_inner_sfq{
 	width: 1200px;
 	height: 327px;
@@ -252,6 +261,7 @@ color: #C9C9C9;
 	left: 0;
 	bottom: 27px;
 	z-index: 70;
+	opacity: 0.9;
 
 }
 .body_top_sfq_pic_1{
@@ -274,7 +284,7 @@ color: #C9C9C9;
 	top: 0px;
 	height: 327px;
 	margin-left: -286px;
-	z-index: 68;
+
 	
 }
 .body_top_sfq_pic_hover{
@@ -333,6 +343,11 @@ color: #C9C9C9;
 	position: absolute;
 	left: 890px;
 	top: 0px;
+}
+
+.sfq_pic a{
+	display: block;
+	height: 327px;
 }
 .body_top_sfq_pic_5 img,.body_top_sfq_pic_5 img,.body_top_sfq_pic_5 img,.body_top_sfq_pic_5 img{
 	width: 572px;
@@ -393,7 +408,7 @@ color: #C9C9C9;
 	cursor: pointer;
 }
 .hotessey_photoalbum_name_1{
-	margin-top: 18px;
+	margin-top: 8px;
 	font-size: 16px;
 	letter-spacing: 2px;
 	
@@ -417,7 +432,7 @@ color: #C9C9C9;
 	cursor: pointer;
 }
 .hotessey_photoalbum_name_2{
-	margin-top: 18px;
+	margin-top: 8px;
 	font-size: 16px;
 	letter-spacing: 2px;
 }

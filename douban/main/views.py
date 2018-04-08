@@ -115,4 +115,19 @@ def newArticleList(request,page):
 	paginator = Paginator(article_list,5)
 	article_page = paginator.page(page)
 	return render(request,'main/article_list_new.html',{'article_page':article_page})
+
+def articleCate(request,cate,page):
+	if cate == '1':
+		article_list = Article.objects.filter(article_cate='小说')[:15]
+	if cate == '2':
+		article_list = Article.objects.filter(article_cate='散文')[:15] 
+	if cate == '3':
+		article_list = Article.objects.filter(article_cate='感悟')[:15]
+	if cate == '4':
+		article_list = Article.objects.filter(article_cate='新闻')[:15]
+	paginator = Paginator(article_list,5)
+	article_page = paginator.page(page)
+	content = {'article_page':article_page,'cate':cate}
+	return render(request,'main/article_list_cate.html',content)
+
 # Create your views here.

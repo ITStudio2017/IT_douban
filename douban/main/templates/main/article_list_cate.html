@@ -48,12 +48,12 @@
 			<div class="body_top">
 				<div class="body_top_inner">
 					<ul class="body_top_nav_list">
-						<li class="body_top_nav"><a class="body_top_nav_a" href="/articleList/hot/1/">热门读刊</a><div class="body_top_nav_arrow"><img src="/static/images/arrow_1_down.png" alt=""></div></li>
-						<li class="body_top_nav"><a class="body_top_nav_a" href="/articleList/new/1/">最新读物</a><div style="display: none;" class="body_top_nav_arrow"><img src="/static/images/arrow_1_down.png" alt=""></div></li>
-						<li class="body_top_nav"><a class="body_top_nav_a" href="/articleList/1/1/">小说</a><div style="display: none;" class="body_top_nav_arrow"><img src="/static/images/arrow_1_down.png" alt=""></div></li>
-						<li class="body_top_nav"><a class="body_top_nav_a" href="/articleList/2/1/">散文</a><div style="display: none;" class="body_top_nav_arrow"><img src="/static/images/arrow_1_down.png" alt=""></div></li>
-						<li class="body_top_nav"><a class="body_top_nav_a" href="/articleList/3/1/">感悟</a><div style="display: none;" class="body_top_nav_arrow"><img src="/static/images/arrow_1_down.png" alt=""></div></li>
-						<li class="body_top_nav"><a class="body_top_nav_a" href="/articleList/4/1/">新闻</a><div style="display: none;" class="body_top_nav_arrow"><img src="/static/images/arrow_1_down.png" alt=""></div></li>
+						<li class="body_top_nav"><a class="body_top_nav_a" href="/articleList/hot/1/">热门读刊</a><div style="display: none;" class="body_top_nav_arrow"></div></li>
+						<li class="body_top_nav"><a class="body_top_nav_a" href="/articleList/new/1/">最新读物</a><div class="body_top_nav_arrow"><img src="/static/images/arrow_1_down.png" alt=""></div></li>
+						<li class="body_top_nav"><a class="body_top_nav_a" href="">小说</a><div style="display: none;" class="body_top_nav_arrow"><img src="/static/images/arrow_1_down.png" alt=""></div></li>
+						<li class="body_top_nav"><a class="body_top_nav_a" href="">散文</a><div style="display: none;" class="body_top_nav_arrow"><img src="/static/images/arrow_1_down.png" alt=""></div></li>
+						<li class="body_top_nav"><a class="body_top_nav_a" href="">感悟</a><div style="display: none;" class="body_top_nav_arrow"><img src="/static/images/arrow_1_down.png" alt=""></div></li>
+						<li class="body_top_nav"><a class="body_top_nav_a" href="">新闻</a><div style="display: none;" class="body_top_nav_arrow"><img src="/static/images/arrow_1_down.png" alt=""></div></li>
 					</ul>
 				</div>
 
@@ -89,13 +89,13 @@
 				</div>
 				<div class="body_bottom_page">
 					{% if article_page.has_previous %}
-						<span class="last_page"><a href="/articleList/hot/{{article_page.previous_page_number}}/"> 上一页</a></span>
+						<span class="last_page"><a href="/articleList/new/{{article_page.previous_page_number}}/"> 上一页</a></span>
 						{% else %}
 						<span class="last_page"> 上一页</span>
 						{% endif %}
-						<span class="first_page"><a href="/articleList/hot/1/"> 首页</a></span>
+						<span class="first_page"><a href="/articleList/new/1/"> 首页</a></span>
 						{% if article_page.has_next %}
-						<span class="next_page"><a href="/articleList/hot/{{article_page.next_page_number}}"> 下一页</a></span>
+						<span class="next_page"><a href="/articleList/new/{{article_page.next_page_number}}"> 下一页</a></span>
 						{% else %}
 						<span class="next_page">下一页</span>
 						{% endif %}

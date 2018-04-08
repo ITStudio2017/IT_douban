@@ -19,6 +19,10 @@ from django.conf.urls.static import static
 from main import views as main_views
 from users.views import ajax_val
 from django.conf import settings
+import django.views.static
+from douban.settings import BASE_DIR
+import os
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -30,4 +34,8 @@ urlpatterns = [
     url(r'^accounts/', include('users.urls')),
     url(r'^captcha/', include('captcha.urls')),
     url(r'^informationChange/',main_views.userInformation),
+    url(r'/css/(?P<path>.*)', django.views.static.serve, {'document_root': os.path.join(BASE_DIR, 'static', 'css')}),
+    url(r'/images/(?P<path>.*)', django.views.static.serve, {'document_root': os.path.join(BASE_DIR, 'static', 'images')}),
+    url(r'/js/(?P<path>.*)', django.views.static.serve, {'document_root': os.path.join(BASE_DIR, 'static', 'js')}),
+    url(r'/font/(?P<path>.*)', django.views.static.serve, {'document_root': os.path.join(BASE_DIR, 'static', 'font')}),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

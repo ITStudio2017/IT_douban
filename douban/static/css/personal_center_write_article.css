@@ -72,8 +72,9 @@ li{
 	border-radius: 17px;
 	overflow: hidden;
 	position: absolute;
-	top: 24px;
+	top: 30px;
 	left: 26px;
+
 }
 .personal_bofy_perinfo_pic img{
 	width: 34px;
@@ -109,13 +110,16 @@ li{
 }
 .personal_body_perinfo_words{
 	width: 123px;
-	height: 38px;
-	font-size: 15px;
+	height: 40px;
+	font-size: 11px;
 	letter-spacing: 1px;
 	color: #333333;
 	position: absolute;
 	top: 78px;
 	right: 40px;
+	overflow: hidden;
+	background-color: white;
+	border: none;
 }
 
 .personal_body_save_books{
@@ -363,6 +367,22 @@ li{
 	letter-spacing: 2px;
 	/*display: none;*/
 }
+.personal_body_write_submit{
+	width:98px;
+	height:55px; 
+	background:rgba(0,168,150,1);
+	border-radius: 10px; 
+	/*box-shadow:2px 0px 6px rgba(0,0,0,0.15);*/
+	text-align: center;
+	line-height: 55px;
+	color: white;
+	outline: none;
+	border: 1px solid rgba(0,168,150,1);
+	position: absolute;
+	bottom: 33px;
+	right: 33px;
+	font-size: 18px;
+	}
 
 @media screen and (max-width: 1006px){
 	.personal_body{

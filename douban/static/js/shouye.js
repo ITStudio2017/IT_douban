@@ -35,7 +35,7 @@ var mar_left = new Array();
 
 //加入收藏
 
-$(".body_hotbook_book_love_1").click(function(){
+$(".body_hotbook_book_love").click(function(){
 	if($(this).find("img").attr('src') == ("../images/love.png")){
 		$(this).find("img").attr('src','../images/love_red2.png')
 	}
@@ -50,36 +50,35 @@ $(".body_hotbook_book_love_1").click(function(){
 
 
 
-var json0 = { "width":106, "height":327, "top":0, "left":0 ,"z-index":30 ,"opacity":0.6 };
+var json0 = { "width":106, "height":327, "top":0, "left":0 ,"z-index":0 ,"opacity":0.6 };
 
-var json1 = { "width":106, "height":327, "top":0, "left":106 ,"z-index":50 ,"opacity":0.6}
+var json1 = { "width":106, "height":327, "top":0, "left":106 ,"z-index":10 ,"opacity":0.6}
 
 var json2 = { "width":572, "height":327, "top":0, "left":212 ,"z-index":50 ,"opacity":1}
 
-var json3 = { "width":106, "height":327, "top":0, "left":784 ,"z-index":50 ,"opacity":0.6}
+var json3 = { "width":106, "height":327, "top":0, "left":784 ,"z-index":10 ,"opacity":0.6}
 
-var json4 = { "width":106, "height":327, "top":0, "left":890 ,"z-index":30 ,"opacity":0.6}
+var json4 = { "width":106, "height":327, "top":0, "left":890 ,"z-index":0 ,"opacity":0.6}
 
-// var json5 = { "width":80, "height":54, "top":71, "left":556}
+var json5 = { "width":106, "height":327, "top":0, "left":1000 ,"z-index":0 ,"opacity":0.6}
 
-// var json6 = { "width":48, "height":32, "top":93, "left":693 }
-var click_num=0;
 
-$(".red").click(function(){
+
+
 
 	
 	
-	
-	click_num+=1;
-	// if(click_num) (num)
-	$(".body_top_sfq_pic_2").animate(json0,400);
-	$(".body_top_sfq_pic_3").animate(json1,400);
-	$(".body_top_sfq_pic_4").animate(json2,400);
-	$(".body_top_sfq_pic_5").animate(json3,400);
-	$(".body_top_sfq_pic_1").animate(json4,400);
+	function page_left(){
+		// if(click_num) (num)
+	if(!$(".body_top_inner_sfq li").is(":animated")){
+	$(".body_top_sfq_pic_2").animate(json0,800);
+	$(".body_top_sfq_pic_3").animate(json1,800);
+	$(".body_top_sfq_pic_4").animate(json2,800);
+	$(".body_top_sfq_pic_5").animate(json3,800);
+	$(".body_top_sfq_pic_1").css(json4);
 	// $(".body_top_sfq_pic_1").animate(json0,400);
 	// $(".body_top_sfq_pic_1").attr("class","body_top_sfq_pic_5")
-	$(".body_top_sfq_pic_2").attr("class","body_top_sfq_pic_1")
+	$(".body_top_sfq_pic_2 ").attr("class","body_top_sfq_pic_1")
 	$(".body_top_sfq_pic_3").attr("class","body_top_sfq_pic_2")
 	$(".body_top_sfq_pic_4").attr("class","body_top_sfq_pic_3")
 	$(".body_top_sfq_pic_5").attr("class","body_top_sfq_pic_4")
@@ -92,9 +91,131 @@ $(".red").click(function(){
 		$(".body_top_inner_sfq li:first").attr("class","body_top_sfq_pic_5");
 		
 	}
+
+
+
+
+		$(".body_top_sfq_pic_3 div").fadeIn();
+		
+	
+
+		$(".body_top_sfq_pic_3").siblings().find("div").fadeOut();
+		$(".body_top_sfq_pic_3 img").css('z-index','51');
+		$(".body_top_sfq_pic_3").siblings().find("img").css('z-index','0');
+	
+	}
+	
+	
+	
+	}
+	$(".body_top_hover_left img").click(function(){
+		page_left();
+	})
+
+
+
+	
+
 	
 
 	// $(".body_top_inner_sfq li:first").attr("class","body_top_sfq_pic_5")
 	// $(".body_top_sfq_pic_2").attr("class","body_top_sfq_pic_1")
-})
+
 // $("")
+//向右翻页
+
+
+	
+		function page_right(){
+	
+
+	// if(click_num) (num)
+	if(!$(".body_top_inner_sfq li").is(":animated")){
+	$(".body_top_sfq_pic_1").animate(json1,800);
+	$(".body_top_sfq_pic_2").animate(json2,800);
+	$(".body_top_sfq_pic_3").animate(json3,800);
+	$(".body_top_sfq_pic_4").animate(json4,800);
+	$(".body_top_sfq_pic_5").css(json0);
+	// $(".body_top_sfq_pic_1").animate(json0,400);
+	// $(".body_top_sfq_pic_1").attr("class","body_top_sfq_pic_5")
+	$(".body_top_sfq_pic_4").attr("class","body_top_sfq_pic_5")
+	$(".body_top_sfq_pic_3").attr("class","body_top_sfq_pic_4")
+	$(".body_top_sfq_pic_2").attr("class","body_top_sfq_pic_3")
+	$(".body_top_sfq_pic_1").attr("class","body_top_sfq_pic_2")
+	if($(".body_top_sfq_pic_2").prev().length != 0)
+	{
+		$(".body_top_sfq_pic_2").prev().attr("class","body_top_sfq_pic_1")
+	}
+	else{
+		
+		$(".body_top_inner_sfq li:last").attr("class","body_top_sfq_pic_1");
+		
+	}
+	
+
+	$(".body_top_sfq_pic_3 div").fadeIn();
+		
+		$(".body_top_sfq_pic_3").siblings().find("div").fadeOut();
+		$(".body_top_sfq_pic_3 img").css('z-index','51');
+		$(".body_top_sfq_pic_3").siblings().find("img").css('z-index','0');
+	}
+
+	// $(".body_top_inner_sfq li:first").attr("class","body_top_sfq_pic_5")
+	// $(".body_top_sfq_pic_2").attr("class","body_top_sfq_pic_1")
+}
+
+	$(".body_top_hover_right img").click(function(){
+		page_right();
+	})
+
+
+//
+
+
+function slash(){
+	$(".body_top_hover_left,.body_top_hover_right").find("img").fadeIn().delay(100).fadeOut();
+	// $(".body_top_hover_left,.body_top_hover_right").de
+	// $(".body_top_hover_left,.body_top_hover_right").find("img");
+}
+	
+//
+
+
+//鼠标未移上去的时候闪烁
+
+
+var time1 = setInterval(slash,2000);
+
+
+$(".body_top_hover_left,.body_top_hover_right").mouseover(function(){
+
+		clearInterval(time1);
+
+
+	// console.log(sfq_in)
+	$(".body_top_hover_left,.body_top_hover_right").find("img").fadeIn()
+});
+
+$(".body_top_hover_left,.body_top_hover_right").mouseout(function(){
+	time1 = setInterval(slash,2000);
+	
+});
+
+
+//轮播
+var time2 = setInterval(page_right,3500);
+
+$(".body_top_inner").mouseover(function(){
+	clearInterval(time2);
+})
+
+$(".body_top_inner").mouseout(function(){
+	time2 = setInterval(page_right,3500);
+	
+});
+
+
+// if($(".body_top_sfq_word").html().length>12)
+// {
+
+// }

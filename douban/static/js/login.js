@@ -13,24 +13,24 @@ $(".body").find("h3").animate({'opacity':'1'},2000);
 
 
 //input 
-$(".login_form_name_input").focus(function(){
-  $(this).attr("value","");
-  $(this).css({'color':'black'});
+// $(".login_form_name_input").focus(function(){
+//   $(this).attr("value","");
+//   $(this).css({'color':'black'});
 
   
-});
-$(".login_form_name_input").blur(function(){
-  // $(this).attr("value","请输入正确的邮箱地址");
-   var content=$(this).val();
-  	if(content==""){
-  		$(this).css({'color':'#C9C9C9'});
-  		$(this).attr("value","example@xxx.com");
-	}
-	else{
-		$(this).css({'color':'black'});
-	}
+// });
+// $(".login_form_name_input").blur(function(){
+//   // $(this).attr("value","请输入正确的邮箱地址");
+//    var content=$(this).val();
+//   	if(content==""){
+//   		$(this).css({'color':'#C9C9C9'});
+//   		$(this).attr("value","example@xxx.com");
+// 	}
+// 	else{
+// 		$(this).css({'color':'black'});
+// 	}
 
-});
+// });
 
 
 //错误提示

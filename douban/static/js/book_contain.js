@@ -1,20 +1,47 @@
+var star_lock = false;
+var total_star = 0;
+var lock_click = 1;
 $(".book_comment_pinfen_star").hover(function(){
+	if(star_lock == false){
+
+	
 	var total=$(this).index();
 	for(var i=0;i<=total;i++)
 	{
 		$(".book_comment_pinfen_star").eq(i).find("img").attr('src','../images/star.png');
-console.log(i);
+
 	}
 	for(var j=4;j>total;j--)	
 	{
 		$(".book_comment_pinfen_star").eq(j).find("img").attr('src','../images/stra.png');
 // console.log(i);
 	}
+	}
 })
+//点击星星后记录个数
+$(".book_comment_pinfen_star").click(function(){
+	if( star_lock == false)
+{
+	total_star = $(this).index() - 0 + 1;
+	$(".total_star").html(total_star);
+	star_lock = true;
+
+}
+else{
+
+	star_lock = false;
+	for(var j=5;j>0;j--)	
+	{
+		$(".book_comment_pinfen_star").eq(j).find("img").attr('src','../images/stra.png');
+// console.log(i);
+	}
+
+}
+	
+});
 //点击后的页面定位
 $(".body_book_comment").click(function(){
 	// window.location.hash = "#abc";
-	 console.log("555");
 	 location.href = "#firstAnchor";      
 });
 
@@ -219,14 +246,14 @@ $(".body_commit_content_list").eq(now_page).siblings().css({'display':'none'});
 
 
 
-$(".book_writecomment_input").keyup(function(){
+$(".book_writecomment_input").keydown(function(){
 
 	var comment_length = $(".book_writecomment_input").val().length ;
 	if( comment_length >140){
 		$(this).val($(this).val().substring(0,140))
 	}
 	else{
-		$(".book_writecomment_count input").val(comment_length-0+1);
+		$(".book_writecomment_count input").val(comment_length-0);
 	}
 
 	
@@ -241,3 +268,41 @@ if($(".book_writecomment_login").css('display') != 'none')
 else{
 	$(".book_writecomment_input").removeAttr('disabled')
 }
+
+//关于各个星级评分的人数
+
+var total_people = 0;
+var book_people = [];
+
+
+// book_people[0]="2"
+$(".body_book_grade_word").each(function(index){
+	book_people[index] = $(".body_book_grade_word").eq(index).html();
+	total_people += $(".body_book_grade_word").eq(index).html()-0;
+});
+
+
+for(var i = 0;i < 5;i ++)
+{
+$(".body_book_grade_draw").eq(i).width( book_people[i] / total_people * 217 )
+
+}
+
+
+
+
+//评分
+
+	$(".body_comment_star").each(function(index){
+
+	var grade=$(".body_comment_star_word").eq(index).html();
+	
+	for(var i=0;i<grade;i++)
+	{
+
+		$(".body_comment_star_list").eq(index).append("<li class='body_comment_stars'><img src='../images/star——3.png' alt=''></li>");
+
+	}
+
+	
+	})

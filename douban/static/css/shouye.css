@@ -1,9 +1,4 @@
 
-.red{
-	width: 50px;
-	height: 50px;
-	background-color: red;
-}
 *{
     margin: 0px;
     padding: 0px;
@@ -218,12 +213,57 @@ color: #C9C9C9;
 	z-index: 100;
 
 }
+.body_top_hover_left img{
+	width: 52px;
+	height: auto;
+	position: absolute;
+	right: 28px;
+	top: 131px;
+}
+
+.body_top_hover_right{
+	width:212px;
+	height:327px; 
+	background:rgba(255,255,255,1);
+	opacity:0.8;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	z-index: 100;
+
+}
+.body_top_hover_right img{
+	width: 52px;
+	height: auto;
+	position: absolute;
+	left: 28px;
+	top: 131px;
+}
+.body_top_hover_right :hover,.body_top_hover_left:hover{
+	cursor: pointer;
+}
+
 .body_top_inner_sfq{
 	width: 1200px;
 	height: 327px;
 }
 
+.body_top_sfq_word{
+	width:231px;
+	height:73px; 
+	background:rgba(255,255,255,1);
+	font-size:16px;
+	color:rgba(0,168,150,1);
+	line-height:0px;
+	text-align: center;
+	line-height: 73px;
+	position: absolute;
+	left: 0;
+	bottom: 27px;
+	z-index: 70;
+	opacity: 0.9;
 
+}
 .body_top_sfq_pic_1{
 	width: 106px;
 	background-color: purple;
@@ -235,6 +275,7 @@ color: #C9C9C9;
 	left: 0px;
 	top: 0px;
 
+
 }
 .body_top_sfq_pic_img{
 	position: absolute;
@@ -243,6 +284,7 @@ color: #C9C9C9;
 	top: 0px;
 	height: 327px;
 	margin-left: -286px;
+
 	
 }
 .body_top_sfq_pic_hover{
@@ -301,6 +343,11 @@ color: #C9C9C9;
 	position: absolute;
 	left: 890px;
 	top: 0px;
+}
+
+.sfq_pic a{
+	display: block;
+	height: 327px;
 }
 .body_top_sfq_pic_5 img,.body_top_sfq_pic_5 img,.body_top_sfq_pic_5 img,.body_top_sfq_pic_5 img{
 	width: 572px;
@@ -361,7 +408,7 @@ color: #C9C9C9;
 	cursor: pointer;
 }
 .hotessey_photoalbum_name_1{
-	margin-top: 18px;
+	margin-top: 8px;
 	font-size: 16px;
 	letter-spacing: 2px;
 	
@@ -385,7 +432,7 @@ color: #C9C9C9;
 	cursor: pointer;
 }
 .hotessey_photoalbum_name_2{
-	margin-top: 18px;
+	margin-top: 8px;
 	font-size: 16px;
 	letter-spacing: 2px;
 }
@@ -396,80 +443,71 @@ color: #C9C9C9;
 	cursor: pointer;
 	text-decoration: underline;
 }
+.hotessey_essay{
+	width: 495px;
+	height: 148px;
+	background-color: white;
+	margin-top: 35px;
+	margin-bottom: 40px;
+	position: relative;
+	border:1px solid white;
+	margin-left: 30px;
+}
 .hotessey_essay_1{
-	width: 495px;
-	height: 148px;
-	position: absolute;
-	top: -2px;
-	right: 0px;
-	background-color: white;
+	margin-top: 0px;
 }
-.hotessey_essay_2{
-	width: 495px;
-	height: 148px;
-	position: absolute;
-	top: 189px;
-	right: 0px;
-	background-color: white;
+.hotessey_essay_list{
+	float: right;
 }
-.hotessey_essay_3{
-	width: 495px;
-	height: 148px;
-	position: absolute;
-	top: 380px;
-	right: 0px;
-	background-color: white;
+.hotessey_essay_list{
+	float: left;
 }
-.hotessey_essay_4{
-	width: 495px;
-	height: 148px;
-	position: absolute;
-	top: 571px;
-	right: 0px;
-	background-color: white;
-}
-.hotessey_essay_title_1,.hotessey_essay_title_2,.hotessey_essay_title_3,.hotessey_essay_title_4{
+
+.hotessey_essay_title{
 	width: 313px;
 	font-size: 20px;
 	letter-spacing: 3px;
 	line-height: 34px;
 	margin:10px 25px 0px 15px;
 }
-.hotessey_essay_title_1_a,.hotessey_essay_title_2_a,.hotessey_essay_title_3_a,.hotessey_essay_title_4_a{
+.hotessey_essay_title_a{
 	color: #333333;
 }
-.hotessey_essay_title_1_a:hover,.hotessey_essay_title_2_a:hover,.hotessey_essay_title_3_a:hover,.hotessey_essay_title_4_a:hover{
+.hotessey_essay_title_a:hover{
 	cursor: pointer;
 	text-decoration: underline;
 }
-.hotessey_essay_user_pic_1,.hotessey_essay_user_pic_2,.hotessey_essay_user_pic_3,.hotessey_essay_user_pic_4{
+.hotessey_essay_user_pic{
 	width: 40px;
 	height: 40px;
 	border: 1px solid white;
 	border-radius: 21px;
-	background-image: url(../images/head_pic.png);
-	background-repeat: no-repeat;
-	background-position: center center;
+	
 	position: absolute;
 	left: 12px;
 	bottom: 4px;
+	overflow: hidden;
 	
 }
-.hotessey_essay_pic_1,.hotessey_essay_pic_2,.hotessey_essay_pic_3,.hotessey_essay_pic_4{
+.hotessey_essay_user_pic img{
+	width: 40px;
+	height: auto;
+}
+.hotessey_essay_pic{
 	width: 169px;
 	height: auto;
 	position: absolute;
 	top: 0px;
 	right: 0px;
 }
-.hotessey_essay_publish_time_1,.hotessey_essay_publish_time_2,.hotessey_essay_publish_time_3,.hotessey_essay_publish_time_4{
+.hotessey_essay_publish_time{
 	letter-spacing: 2px;
 	position: absolute;
 	bottom: 16px;
 	left: 69px;
 	font-size: 14px;
 }
-.hotessey_essay_scan_1,.hotessey_essay_scan_2,.hotessey_essay_scan_3,.hotessey_essay_scan_4{
+.hotessey_essay_scan{
 	position: absolute;
 	bottom: 14px;
 	left:251px;
@@ -488,7 +526,7 @@ color: #C9C9C9;
 }
 .hotbook_title_h{
 	margin-top: 31px;
-	margin-bottom: 31px;
+	margin-bottom: -15px;
 }
 .hotbook_title_name{
 	font-family: myFont2;
@@ -510,37 +548,21 @@ color: #C9C9C9;
 .body_hotbook_content{
 	height: 814px;
 }
-.body_hotbook_1,.body_hotbook_2,.body_hotbook_3{
-	float: left;
-	height: 369px;
-	position: relative;
-	margin-right: 67px;
 
-}
 .body_hotbook_a_1 img,.body_hotbook_a_2 img,.body_hotbook_a_3 img,.body_hotbook_a_4 img{
 	width: 199px;
 	height: auto;
 }
-.body_hotbook_4{
-	float: left;
-	height: 369px;
-	position: relative;
-}
-.body_hotbook_5,.body_hotbook_7,.body_hotbook_6{
+.body_hotbook_book{
 	float: left;
 	height: 369px;
 	position: relative;
 	margin-top: 42px;
-	margin-right: 67px;
-}
-.body_hotbook_8{
-	float: left;
-	height: 369px;
-	position: relative;
-	margin-top: 42px;
+	margin-right: 51px;
 }
 
-.body_hotbook_book_title_1,.body_hotbook_book_title_2,.body_hotbook_book_title_3,.body_hotbook_book_title_4,.body_hotbook_book_title_5,.body_hotbook_book_title_6,.body_hotbook_book_title_7,.body_hotbook_book_title_8{
+
+.body_hotbook_book_title{
 	width: 179px;
 	height: 39px;
 	
@@ -551,12 +573,12 @@ color: #C9C9C9;
 	margin-top: 10px;
 
 }
-.body_hotbook_book_title_a_1,.body_hotbook_book_title_a_2,.body_hotbook_book_title_a_3,.body_hotbook_book_title_a_4,.body_hotbook_book_title_a_5,.body_hotbook_book_title_a_6,.body_hotbook_book_title_a_7,.body_hotbook_book_title_a_8{
+.body_hotbook_book_title_a{
 	text-decoration: none;
 	color: #05668D;
 }
 
-.body_hotbook_book_want_1,.body_hotbook_book_want_2,.body_hotbook_book_want_3,.body_hotbook_book_want_4,.body_hotbook_book_want_5,.body_hotbook_book_want_6,.body_hotbook_book_want_7,.body_hotbook_book_want_8{
+.body_hotbook_book_want{
 	position: absolute;
 	bottom: 2px;
 	left:11px;
@@ -565,15 +587,15 @@ color: #C9C9C9;
 	letter-spacing: 2px;
 
 }
-.body_hotbook_book_love_1:hover{
+.body_hotbook_book_love:hover{
 	cursor: pointer;
 }
-.body_hotbook_book_love_1{
+.body_hotbook_book_love{
 	position: absolute;
 	right: 11px;
 	bottom: 2px;
 }
-.body_hotbook_book_love_1 img{
+.body_hotbook_book_love img{
 	width: 20px;
 	height:auto;
 }

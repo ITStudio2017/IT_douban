@@ -1,149 +1,143 @@
-from django.shortcuts import render
-from .models import Book, Label, Comment, get_alllabel, get_label_by_int
+from django.core.serializers import json
+from django.shortcuts import render, HttpResponse
+from .models import Book, FLabel, SLabel, Comment, Praise
 from .forms import BookFrom, CommentForm
+import json
 import logging
 
 
-def book_list(request, label: int=None, search: str=""):
-    back = {}
-    back['labelAll'] = {}
-    back['books'] = None
-    back['message'] = ""
-    back['search'] = ""
-
-    back['search'] = search
-
-    back['labelAll'] = get_alllabel()
-
-    bookSet = Book.objects
-    if label:
-        label = int(label)
-        if label in range(1, 100):
-            label = label * 100
-            bookSet = bookSet.filter(label__range=(label, label + 100))
-            logging.debug(label)
-        else:
-            bookSet = bookSet.filter(label=label)
-    if search:
-        bookSet = bookSet.filter(bookname__contains=search)
-    bookSet = bookSet.order_by("lastEditTime")
-    back['books'] = bookSet
-
-    if bookSet:
-        pass
-    else:
-        back['message'] = u"没有书籍"
-
-    return render(request, 'book_index.html', back)
-
-
-def book_show(request, bookId: int = None):
+def book_list(request):
     back = {
-        'message': "",
-        'book': None,
-        'fLabel': "",
-        'sLabel': "",
-        'comments': None,
+        "bookList": {}
     }
-    try:
-        book = Book.objects.get(id=bookId)
-        back['book'] = book
-        try:
-            label = book.label
-            (fLabel, sLabel) = get_label_by_int(label)
-            back['fLabel'] = fLabel
-            back['sLabel'] = sLabel
-        except:
-            back['message'] = u"标签错误"
-    except:
-        back['message'] = u"没有找到这本书"
-        return render(request, 'book_show.html', back)
+    allBook = Book.objects.all().order_by('-score')
+    i = 0
+    bookList = {}
+    for book in allBook:
+        i = i + 1
+        bookList[str(i)] = {
+            "id": book.id,
+            "bookname": book.bookname,
+            "introduction": book.introduction,
+            "author": book.author,
+            "cover": book.cover.url,
+            "press": book.press,
+            "score": book.score,
+        }
+    back["bookList"] = bookList
+    return render(request, "book_list.html", back)
+
+
+def book_show(request, id):
+    back = {
+        "book": {},
+        "comment": {},
+        "form": None,
+        "message": "",
+    }
 
     try:
-        comments = Comment.objects.filter(book_id__exact=bookId)
-        back['comments'] = comments
+        getBook = Book.objects.get(id=id)
+        star = {
+            "1": Comment.objects.filter(score=1).count(),
+            "2": Comment.objects.filter(score=2).count(),
+            "3": Comment.objects.filter(score=3).count(),
+            "4": Comment.objects.filter(score=4).count(),
+            "5": Comment.objects.filter(score=5).count(),
+        }
+        allScoreComment = star["1"] + star["2"] + star["3"] + star["4"] + star["5"]
+        score = star["1"] * 1 + star["2"] * 2 + star["3"] * 3 + star["4"] * 4 + star["5"] * 5
+        if allScoreComment != 0:
+            score = score * 2.0 / allScoreComment
+        else:
+            score = 5
+        getBook.score = score
+        getBook.save()
     except:
-        back['message'] = u"评论加载错误"
+        return HttpResponse(404)
+    book = {
+        "bookname": getBook.bookname,
+        "originName": getBook.originName,
+        "introduction": getBook.introduction,
+        "author": getBook.author,
+        "authorInfo": getBook.authorInfo,
+        "authorPhoto": getBook.authorPhoto,
+        "translator": getBook.translator,
+        "press": getBook.press,
+        "pressTime": getBook.pressTime.year,
+        "page": getBook.page,
+        "price": getBook.price,
+        "label": getBook.label,
+        "cover": getBook.cover.url,
+        "star": star,
+        "score": score,
+        "all": allScoreComment
+    }
+    back["book"] = book
 
-    if request.method == 'POST':
+    try:
+        getComment = Comment.objects.filter(book=getBook).order_by("-praise")
+    except:
+        getComment = None
+    c = {}
+    if getComment:
+        i = 0
+        for comment in getComment:
+            details = {
+                "username": comment.owner.name,
+                "commentId": comment.id,
+                "content": comment.content,
+                "praise": comment.praise,
+                "time": comment.createTime
+            }
+            i = i + 1
+            c[str(i)] = details
+    back["comment"] = c
+
+    if request.method == "POST":
         form = CommentForm(request.POST)
         if form.is_valid():
-            content = form.cleaned_data['content']
-            newComment = Comment(book=book, content=content, owner=1)
+            content = form.cleaned_data["content"]
+            user = request.user
+            score = form.cleaned_data["score"]
+            newComment = Comment(book=getBook, owner=user, content=content, score=score)
             newComment.save()
-    else:
-        form = CommentForm()
-    back['form'] = form
-    return render(request, 'book_show.html', back)
+        # 下面是点赞的
+        k = request.POST["commentId"]
+        try:
+            opComment = Comment.objects.get(id=k)
+            user = request.user
+            try:
+                Praise.objects.get(comment=opComment, owner=user)
+            except:
+                Praise(comment=opComment, owner=user).save()
+                opComment.praise = opComment.praise + 1
+                opComment.save()
+        except:
+            pass
+    form = CommentForm()
+    back["form"] = form
+
+    return render(request, "book_contain.html", back)
 
 
 def book_new(request):
-    back = {
-        'message': "",
-        'form': None,
-    }
-
-    form = None
-    if request.method == 'GET':
-        form = BookFrom()
-    if request.method == 'POST':
-        form = BookFrom(request.POST, request.FILES)
-        if form.is_valid():
-            bookname = form.cleaned_data['bookname']
-            introduction = form.cleaned_data['introduction']
-            author = form.cleaned_data['author']
-            label = 101
-            cover = form.cleaned_data['cover']
-            newBook = Book(bookname=bookname, introduction=introduction, author=author, label=label, cover=cover, owner=1)
-            newBook.save()
-        else:
-            back['message'] = u"错误"
-
-    back['form'] = form
-    return render(request, 'book_edit.html', back)
+    return
 
 
-def book_change(request, bookId: int = None):
-    back = {
-        'message': "",
-        'form': None,
-    }
-
-    try:
-        book = Book.objects.get(id=bookId)
-    except:
-        back['message'] = u"没有找到这本书"
-        return render(request, 'book_edit.html', back)
-    form = None
-    if request.method == 'GET':
-        data = {
-            'bookname': book.bookname,
-            'introduction': book.introduction,
-            'author': book.author,
-            'label': 101,
-            'cover': book.cover,
-        }
-        form = BookFrom(data=data)
-    if request.method == 'POST':
-        form = BookFrom(request.POST, request.FILES)
-        if form.is_valid():
-            bookname = form.cleaned_data['bookname']
-            introduction = form.cleaned_data['introduction']
-            author = form.cleaned_data['author']
-            label = 101
-            cover = form.cleaned_data['cover']
-            book.bookname = bookname
-            book.introduction = introduction
-            book.author = author
-            book.label = label
-            book.cover = cover
-            book.save()
-        else:
-            back['message'] = u"错误"
-
-    back['form'] = form
-    return render(request, 'book_edit.html', back)
+def book_change(request):
+    return
 
 
 def book_delete(request):
     return
+
+
+# def twice_label_choice(request, fLabelNum):
+#     sLabel = Label.objects.filter(labelNum__range=(fLabelNum*100+1,fLabelNum*100+100))
+#     result = []
+#     for i in sLabel:
+#         # 对应的id和ip组成一个字典
+#         result.append({'id': i.labelNum, 'name': i.labelName})
+#     # 返回json数据
+#     return HttpResponse(json.dumps(result), content_type="application/json")

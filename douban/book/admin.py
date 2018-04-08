@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Book, Comment, Label, Praise, Collection
+from .models import Book, Comment, FLabel, SLabel, Praise, Collection
 import datetime
 import logging
 
@@ -32,25 +32,28 @@ class BookTimeModelFilter(admin.SimpleListFilter):
 
 
 class BookAdmin(admin.ModelAdmin):
-    list_display = ['bookname', 'author', 'fsLabel', 'owner']
+    change_form_template = 'admin/extras/record_change_form.html'
+    list_display = ['bookname', 'author', 'label', 'owner', 'score']
     list_filter = (BookTimeModelFilter,)
     search_fields = ['bookname', 'author']
 
     fieldsets = (
         [u'主要信息', {
-            'fields': ('bookname', 'author', 'introduction'),
+            'fields': ('bookname', 'introduction', 'author', 'page', 'price', 'score'),
         }],
         [u'附加', {
-            'fields': ('label', 'cover'),
+            # 'fields': ('formfLabel', 'formsLabel', 'cover'),
+            'fields': ('authorInfo', 'authorPhoto', 'translator', 'press', 'pressTime', 'originName', 'label', 'cover'),
         }]
     )
+    readonly_fields = ('score',)
 
     def save_model(self, request, obj, form, change):
         obj.owner = request.user
         logging.debug(request.user)
         obj.save()
 
-    def fsLabel(self, obj):
+    def label(self, obj):
         fLabel = obj.get_father_labelname()
         sLabel = obj.get_secondary_labelname()
         retstr = ""
@@ -59,28 +62,34 @@ class BookAdmin(admin.ModelAdmin):
             if sLabel:
                 retstr = retstr + ":" + sLabel
         return str(retstr)
-    fsLabel.short_description = "标签"
+    label.short_description = "标签"
 
 
 class CommentAdmin(admin.ModelAdmin):
     list_display = ['book', 'owner', 'createTime']
 
 
-class LabelAdmin(admin.ModelAdmin):
-    list_display = ['labelName', 'labelNum', 'fLabel']
+class FLabelAdmin(admin.ModelAdmin):
+    list_display = ['labelName', 'sLabelNum']
     search_fields = ['labelName']
 
-    def fLabel(self, obj):
-        f = obj.get_fatherlabel_by_secondarylabel()
-        retstr = ""
-        if f:
-            retstr = retstr + f.labelName
-        return str(retstr)
-    fLabel.short_description = "父标签"
+    def sLabelNum(self, obj):
+        return SLabel.objects.filter(fatherLabel=obj).count()
+    sLabelNum.short_description = "子标签数"
+
+
+class SLabelAdmin(admin.ModelAdmin):
+    list_display = ['labelName', 'fatherLabelName']
+    search_fields = ['labelName']
+
+    def fatherLabelName(self, obj):
+        return obj.fatherLabel.labelName
+    fatherLabelName.short_description = "父标签"
 
 
 admin.site.register(Book, BookAdmin)
-admin.site.register(Label, LabelAdmin)
+admin.site.register(FLabel, FLabelAdmin)
+admin.site.register(SLabel, SLabelAdmin)
 admin.site.register(Comment, CommentAdmin)
 admin.site.register(Praise)
 admin.site.register(Collection)

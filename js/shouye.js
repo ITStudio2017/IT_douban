@@ -219,3 +219,12 @@ $(".body_top_inner").mouseout(function(){
 // {
 
 // }
+//
+
+// $(".hotessey_essay_pic").each(function(){
+// 	if($(this).width() > $(this).height())
+// 	{
+// 		$(this).css({'height':''})
+
+// 	}
+// })

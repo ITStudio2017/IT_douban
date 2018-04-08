@@ -17,6 +17,11 @@ from django.conf.urls import url,include
 from django.contrib import admin
 from main import views as main_views
 from users.views import ajax_val
+from django.conf.urls.static import static
+from django.conf import settings
+import django.views.static
+from douban.settings import BASE_DIR
+import os
 
 urlpatterns = [
 
@@ -31,5 +36,7 @@ urlpatterns = [
     # admin
     url(r'^admin/', admin.site.urls),
 
+    url(r'^book/', include('book.urls')),
+    url(r'^ueditor/', include('DjangoUeditor.urls')),
     
 ]

@@ -1,5 +1,5 @@
 from django import forms
-from .models import Label
+from .models import SLabel, FLabel
 
 
 class BookFrom(forms.Form):
@@ -13,3 +13,4 @@ class BookFrom(forms.Form):
 
 class CommentForm(forms.Form):
     content = forms.CharField(max_length=100, widget=forms.Textarea)
+    score = forms.IntegerField()

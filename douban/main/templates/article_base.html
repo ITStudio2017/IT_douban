@@ -3,15 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}个人中心{% endblock %}</title>
-    <link rel="stylesheet" href="/static/css/font_csh.css">
-	<link rel="stylesheet" href="/static/css/personal_center_personal_article.css">
-	<link rel="shortcut icon" href="/static/images/bitbug_favicon.ico">
-	<link rel="stylesheet" href="/static/css/personal_center_write_article.css">
-	<link rel="shortcut icon" href="/static/images/bitbug_favicon.ico">
-	<link rel="stylesheet" href="/static/css/footer.css">
-	<link rel="stylesheet" href="/static/css/personal_center_comment.css">
-	<script type="text/javascript" src="/static/ueditor/ueditor.config.js"></script>
-    <script type="text/javascript" src="/static/ueditor/ueditor.all.min.js"></script>
+    {% block link %}
+    {% endblock %}
 </head>
 <body>
     <div class="container">
@@ -23,6 +16,9 @@
 			<div style="clear: both;"></div>
 			</div>
 			<div class="personal_body">
+
+				<div class="personal_body_arrow_1"><img src="/static/images/write_article_arrow.png" alt=""></div>
+			
 				
 				<div class="personal_body_perinfo">
 					<div class="personal_bofy_perinfo_pic"></div>
@@ -105,7 +101,7 @@
 		</div>
 	</div>
 </body>
-<script src="/static/js/jquery-3.2.1.min.js"></script>
-<script src="/static/js/personal_center_write_article.js"></script>
-<script src="/static/js/personal_center_save_book.js"></script>
+{% block script %}
+
+{% endblock %}
 </html>

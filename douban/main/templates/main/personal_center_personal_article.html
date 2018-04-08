@@ -1,5 +1,11 @@
 {% extends 'article_base.html' %}
 
+{% block link %}
+	<link rel="stylesheet" href="/static/css/font_csh.css">
+	<link rel="stylesheet" href="/static/css/personal_center_personal_article.css">
+	<link rel="shortcut icon" href="/static/images/bitbug_favicon.ico">
+	<link rel="stylesheet" href="/static/css/footer.css">
+{% endblock %}
 {% block content %}
 
 
@@ -9,7 +15,7 @@
 						<ul>
 							{% for article in article_list %}
 							<li class="personal_body_save_article_1">
-								<div class="personal_body_save_article_pic_1"><img src="/static/images/article_pic.png" alt=""></div>
+								<div class="personal_body_save_article_pic_1"><img src="/static/{{article.image}}" alt=""></div>
                                 <h5 class="personal_body_save_article_title_1"><a href="/detail/{{article.id}}/">{{article.title}}</a></h5>
 								<p class="personal_body_save_article_intro_1">{{article.abstract|safe}}……
 								</p>
@@ -20,3 +26,8 @@
 						</ul>
 									
 			{% endblock %}
+
+{% block script %}
+<script src="/static/js/jquery-3.2.1.min.js"></script>
+<script src="/static/js/personal_center_save_book.js"></script>
+{% endblock %}

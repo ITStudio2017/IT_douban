@@ -13,7 +13,7 @@ li{
 .container{
 	width: 100%;
 	height: 1080px;
-	background-image: url(../images/error.png);
+	background-image: url(/static/images/error.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	border: 1px solid white;

@@ -35,7 +35,7 @@ var mar_left = new Array();
 
 //加入收藏
 
-$(".body_hotbook_book_love_1").click(function(){
+$(".body_hotbook_book_love").click(function(){
 	if($(this).find("img").attr('src') == ("../images/love.png")){
 		$(this).find("img").attr('src','../images/love_red2.png')
 	}

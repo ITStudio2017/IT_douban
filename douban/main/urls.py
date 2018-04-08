@@ -1,9 +1,10 @@
 from django.conf.urls import url
-from .views import (WriteArticl,userInformation,userPage,userArticle,
-        deleteArticle,changeArticle,article_detail,commentList)
+from .views import (WriteArticle,userInformation,userPage,userArticle,
+        deleteArticle,changeArticle,article_detail,commentList,articleList
+        ,newArticleList)
 
 urlpatterns = [
-    url(r'^write/',WriteArticl,name='WriteArticl'),
+    url(r'^write/',WriteArticle,name='WriteArticl'),
     url(r'^informationChange/',userInformation),
     url(r'^$',userPage),
     url(r'^index/',userPage),
@@ -12,4 +13,7 @@ urlpatterns = [
     url(r'^change/(?P<id>[0-9]+)/$',changeArticle,name='changeArticle'),
     url(r'^detail/(?P<id>[0-9]+)/$',article_detail,name='article_detail'),
     url(r'^comment/$',commentList,name='commentList'),
+    url(r'^articleList/hot/(?P<page>[0-9]+)/$',articleList,name='articleList'),
+    url(r'^articleList/new/(?P<page>[0-9]+)/$',newArticleList,name='newArticleList'),
+    
 ]

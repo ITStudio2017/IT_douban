@@ -73,13 +73,15 @@ li{
 	width: 34px;
 	height: 34px;
 	border-radius: 17px;
-	background-image: url(../images/head_pic.png);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
+
 	position: absolute;
-	top: 24px;
+	top: 30px;
 	left: 26px;
+	overflow: hidden;
+}
+.personal_bofy_perinfo_pic img{
+	width: 34px;
+	height: auto;
 }
 .personal_body_perinfo_name{
 
@@ -108,14 +110,19 @@ li{
 .personal_body_perinfo_words{
 	width: 123px;
 	height: 38px;
-	font-size: 15px;
+	font-size: 11px;
 	letter-spacing: 1px;
 	color: #333333;
 	position: absolute;
 	top: 78px;
 	right: 40px;
+		overflow: hidden;
+	background-color: white;
+	border: none;
 }
-
+.personal_body_perinfo_words:hover{
+	cursor: pointer;
+}
 .personal_body_save_books{
 	width: 243px;
 	height: 33px;

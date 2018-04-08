@@ -6,19 +6,37 @@ from .forms import ArticleForm,Comment_Article_Form
 from .models import Article,comment_article
 from django.http import HttpResponseRedirect 
 from django.template.loader import render_to_string
+from django.core.files.base import ContentFile
+from django.core.paginator import Paginator
 
 def userPage(request):
-	article_list= Article.objects.all().order_by('views')[:4]
-	length = [1,2,3,4]
+	article_list= Article.objects.all().order_by('-views')[:11]
+	article_1 = article_list[:1]
+	article_2 = article_list[1:2]
+	article_3 = article_list[2:3]
+	article_4 = article_list[3:4]
+	article_5 = article_list[4:5]
+	article_photo = article_list[5:7]
+	article_list = article_list[7:11]
 	try:
 		first = request.user.first_login;
 	except:
-		return render(request,'shouye.html',{'article_list':article_list},)
+		return render(request,'shouye.html',{'article_list':article_list,'article_photo':article_photo,
+			'article_1':article_1,
+			'article_2':article_2,
+			'article_3':article_3,
+			'article_4':article_4,
+			'article_5':article_5})
 	
 	if(first == True):
 		return render(request,'main/account_profile.html')
 	else:
-		return render(request,'shouye.html',{'article_list':article_list,'length':length})
+		return render(request,'shouye.html',{'article_list':article_list,'article_photo':article_photo,
+			'article_1':article_1,
+			'article_2':article_2,
+			'article_3':article_3,
+			'article_4':article_4,
+			'article_5':article_5})
 
 
 def userInformation(request):
@@ -31,9 +49,9 @@ def userInformation(request):
 		b.save()
 	return render(request,'main/index.html')
 
-def WriteArticl(request):
+def WriteArticle(request):
     if request.method == 'POST':
-        form = ArticleForm(request.POST)
+        form = ArticleForm(request.POST,request.FILES)
         if form.is_valid():
         	article = form.save(commit=False)
         	article.author = request.user
@@ -85,4 +103,16 @@ def article_detail(request,id):
 def commentList(request):
 	commentList = comment_article.objects.filter(author=request.user).order_by('-pub_date')
 	return render(request,'main/personal_center_comment.html',{'commentList':commentList})
+
+def articleList(request,page):
+	article_list = Article.objects.all().order_by('-views')[:15]
+	paginator = Paginator(article_list,5)
+	article_page = paginator.page(page)
+	return render(request,'main/article_list.html',{'article_page':article_page})
+
+def newArticleList(request,page):
+	article_list = Article.objects.all().order_by('-update_time')[:15]
+	paginator = Paginator(article_list,5)
+	article_page = paginator.page(page)
+	return render(request,'main/article_list_new.html',{'article_page':article_page})
 # Create your views here.

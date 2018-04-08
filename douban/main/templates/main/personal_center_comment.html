@@ -1,4 +1,11 @@
 {% extends 'article_base.html' %}
+{% block link %}
+	<link rel="stylesheet" href="/static/css/font_csh.css">
+	<link rel="stylesheet" href="/static/css/personal_center_comment.css">
+	<link rel="shortcut icon" href="/static/images/bitbug_favicon.ico">
+	<link rel="stylesheet" href="/static/css/footer.css">
+{% endblock %}
+
 {% block content %}
 
 				<div class="personal_body_save_article_content">
@@ -27,8 +34,11 @@
 							
 						</ul>
 					{% endfor %}
-						</div>
-					
-					
-					
+						</div>	
 			{% endblock %}
+
+			{% block script %}
+
+			<script src="/static/js/jquery-3.2.1.min.js"></script>
+			<script src="/static/js/personal_center_save_book.js"></script>
+{% endblock %}

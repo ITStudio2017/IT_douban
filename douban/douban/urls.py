@@ -38,5 +38,9 @@ urlpatterns = [
 
     url(r'^book/', include('book.urls')),
     url(r'^ueditor/', include('DjangoUeditor.urls')),
+    url(r'^css/(?P<path>.*)', django.views.static.serve, {'document_root': os.path.join(BASE_DIR, 'static', 'css')}),
+    url(r'^images/(?P<path>.*)', django.views.static.serve, {'document_root': os.path.join(BASE_DIR, 'static', 'images')}),
+    url(r'^js/(?P<path>.*)', django.views.static.serve, {'document_root': os.path.join(BASE_DIR, 'static', 'js')}),
+    url(r'^font/(?P<path>.*)', django.views.static.serve, {'document_root': os.path.join(BASE_DIR, 'static', 'font')}),
     
 ]

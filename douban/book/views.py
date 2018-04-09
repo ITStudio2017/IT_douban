@@ -162,7 +162,7 @@ def book_collect(request, bookId):
         x = x / x
     except:
         Collection(book=book, collector=user).save()
-    return HttpResponse(0)
+    return HttpResponse('<script>window.location.href = document.referrer;</script>')
 
 
 def book_uncollect(request, bookId):
@@ -170,7 +170,7 @@ def book_uncollect(request, bookId):
     user = request.user
     Collection.objects.filter(book=book, collector=user).delete()
     logging.debug(user, book)
-    return HttpResponse(0)
+    return HttpResponse('<script>window.location.href = document.referrer;</script>')
 
 
 # def twice_label_choice(request, fLabelNum):

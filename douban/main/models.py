@@ -1,7 +1,6 @@
 from django.db import models
 from DjangoUeditor.models import UEditorField
 from users.models import User
-import markdown
 from django.utils.html import strip_tags
 from .storage import ImageStorage
 

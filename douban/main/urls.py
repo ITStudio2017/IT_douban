@@ -1,7 +1,7 @@
 from django.conf.urls import url
 from .views import (WriteArticle,userInformation,userPage,userArticle,
         deleteArticle,changeArticle,article_detail,commentList,articleCate,
-        article_shoucang,saveArticle,deleteSave)
+        article_shoucang,saveArticle,deleteSave,display_book_collect)
 
 urlpatterns = [
     url(r'^write/',WriteArticle,name='WriteArticle'),
@@ -16,6 +16,7 @@ urlpatterns = [
     url(r'^articleList/(?P<cate>[0-9]+)/(?P<page>[0-9]+)/$',articleCate,name='articleCate'),
     url(r'^shoucang/(?P<article_id>[0-9]+)/$',article_shoucang,name='article_shoucang'),
     url(r'^saveArticle/$',saveArticle,name='saveArticle'),
+    url(r'^saveBook/$',display_book_collect,name='saveBook'),
     url(r'^delete/save/(?P<article_id>[0-9]+)/$',deleteSave,name='deleteSave'),
     
 ]

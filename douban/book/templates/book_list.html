@@ -103,6 +103,7 @@
 
                         var Request = new GetRequest();
                         var page = Request['page'];
+                        var url = location.origin + location.pathname + location.search;
                         if (!isNum(page)) {
                             window.location.href = location.origin + location.pathname + "?page=1";
                         }

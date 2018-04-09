@@ -118,7 +118,7 @@
 					<span class="body_book_intro_dot_2"><img src="../images/many_dots_3.png" alt=""></span>
 					<div class="book_comment_nav">
 						<div class="book_comment_nav_time"><a class="book_comment_nav_time_a" href="">时间</a></div>
-						<div class="book_comment_nav_hot"><a class="book_comment_nav_hot_a" href="">热度</a></div>
+{#						<div class="book_comment_nav_hot"><a class="book_comment_nav_hot_a" href="">热度</a></div>#}
 						<div class="book_comment_nav_write"><a class="book_comment_nav_write_a" href="">我来写评论</a></div>
 					</div>
 
@@ -159,11 +159,11 @@
 									</ul>
 								</div>
 								<div class="body_comment_content_word">{{ value|key:"content" }}</div>
-								<div class="body_comment_good">
-									<div class="body_comment_good_pic"><img src="{% static "images/goog.png"%}" alt=""></div>
-									<span class="body_comment_good_amount">{{ value|key:"praise" }}</span>
-
-								</div>
+{#								<div class="body_comment_good">#}
+{#									<div class="body_comment_good_pic"><img src="{% static "images/goog.png"%}" alt=""></div>#}
+{#									<span class="body_comment_good_amount">{{ value|key:"praise" }}</span>#}
+{##}
+{#								</div>#}
 							</li>
 
 						</ul>

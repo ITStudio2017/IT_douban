@@ -15,7 +15,7 @@
 						<ul>
 							{% for article in article_list %}
 							<li class="personal_body_save_article_1">
-								<div class="personal_body_save_article_pic_1"><img src="/static/{{article.image}}" alt=""></div>
+								<div class="personal_body_save_article_pic_1"><img src="/{{article.image}}" alt=""></div>
                                 <h5 class="personal_body_save_article_title_1"><a href="/detail/{{article.id}}/">{{article.title}}</a></h5>
 								<p class="personal_body_save_article_intro_1">{{article.abstract|safe}}……
 								</p>

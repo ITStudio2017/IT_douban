@@ -82,8 +82,7 @@ def WriteArticle(request):
             article.save()
             return render(request, 'main/personal_center_write_article.html')
     else:
-        form = ArticleForm()
-        return render(request, 'main/personal_center_write_article.html', {'form': form})
+    	return render(request, 'main/personal_center_write_article.html')
 
 
 def userArticle(request):

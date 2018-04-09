@@ -1,5 +1,12 @@
 //手风琴
 
+//选中框
+// $("input").focus(function(){
+// 	$(this).css('border-color','rgba(0,0,0,0.4)')
+// });
+// $("input").blur(function(){
+// 	$(this).css('border-color','#D9D9D9')
+// })
 
 // $(".body_top_inner ul li").click(function(){
 // 	$(".body_top_inner ul li").stop(true);
@@ -227,4 +234,44 @@ $(".body_top_inner").mouseout(function(){
 // 		$(this).css({'height':''})
 
 // 	}
+// })
+//动态改变图片的大小
+$(".hotessey_essay_pic").each(function(){
+  if($(this).width()/$(this).height() <1.134)
+ {
+   $(this).css({'height':'146px','width':'auto'});
+ }
+ else{
+  $(this).css({'height':'auto','width':'169px'});
+ }
+})
+
+$(".hotessey_photoalbum_1_a_div img").each(function(){
+  if($(this).width()/$(this).height() >1.533)
+ {
+   $(this).css({'height':'298px','width':'auto'});
+ }
+ else{
+  $(this).css({'height':'auto','width':'457px'});
+ }
+})
+
+$(".body_hotbook_a_1_div img").each(function(){
+  if($(this).width()/$(this).height() >0.7107)
+ {
+   $(this).css({'height':'280px','width':'auto'});
+ }
+ else{
+  $(this).css({'height':'auto','width':'199px'});
+ }
+})
+
+// $(".body_top_sfq_pic_img").each(function(){
+//   if($(this).width()/$(this).height() > 1.611)
+//  {
+//    $(this).css({'height':'327px','width':'auto'});
+//  }
+//  else{
+//   $(this).css({'height':'auto','width':'527px'});
+//  }
 // })

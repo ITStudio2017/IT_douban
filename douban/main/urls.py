@@ -4,7 +4,7 @@ from .views import (WriteArticle,userInformation,userPage,userArticle,
         article_shoucang,saveArticle,deleteSave,display_book_collect)
 
 urlpatterns = [
-    url(r'^write/',WriteArticle,name='WriteArticl'),
+    url(r'^write/',WriteArticle,name='WriteArticle'),
     url(r'^informationChange/',userInformation),
     url(r'^$',userPage, name='userPage'),
     url(r'^index/',userPage),

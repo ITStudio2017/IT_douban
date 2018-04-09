@@ -1,9 +1,25 @@
 from django.core.serializers import json
 from django.shortcuts import render, HttpResponse
 from .models import Book, FLabel, SLabel, Comment, Praise
+from django.core.paginator import Paginator
 from .forms import BookFrom, CommentForm
 import json
 import logging
+
+
+def dividePage(reqGetList, input):
+    back = {}
+    back['pass'] = False
+    try:
+        p = Paginator(input, 4)
+        back['pageCount'] = p.num_pages
+        index = int(reqGetList['page'])
+        back['output'] = p.page(index).object_list
+        back['pass'] = True
+        back['index'] = index
+    except:
+        back['pass'] = False
+    return back
 
 
 def book_list(request):
@@ -34,6 +50,8 @@ def book_show(request, id):
         "comment": {},
         "form": None,
         "message": "",
+        "pageCount": 1,
+        "nowPage": 0,
     }
 
     try:
@@ -51,17 +69,19 @@ def book_show(request, id):
             score = score * 2.0 / allScoreComment
         else:
             score = 5
+        score = round(score, 1)
         getBook.score = score
         getBook.save()
     except:
         return HttpResponse(404)
     book = {
+        "id": getBook.id,
         "bookname": getBook.bookname,
         "originName": getBook.originName,
         "introduction": getBook.introduction,
         "author": getBook.author,
         "authorInfo": getBook.authorInfo,
-        "authorPhoto": getBook.authorPhoto,
+        "authorPhoto": getBook.authorPhoto.url,
         "translator": getBook.translator,
         "press": getBook.press,
         "pressTime": getBook.pressTime.year,
@@ -76,7 +96,12 @@ def book_show(request, id):
     back["book"] = book
 
     try:
-        getComment = Comment.objects.filter(book=getBook).order_by("-praise")
+        getComment = Comment.objects.filter(book=getBook).order_by("-createTime")
+        result = dividePage(request.GET, getComment)
+        if result['pass']:
+            back['pageCount'] = result['pageCount']
+            getComment = result['output']
+            back['nowPage'] = result['index'] - 1
     except:
         getComment = None
     c = {}
@@ -87,6 +112,7 @@ def book_show(request, id):
                 "username": comment.owner.name,
                 "commentId": comment.id,
                 "content": comment.content,
+                "score": comment.score,
                 "praise": comment.praise,
                 "time": comment.createTime
             }
@@ -99,22 +125,12 @@ def book_show(request, id):
         if form.is_valid():
             content = form.cleaned_data["content"]
             user = request.user
+            logging.debug(user.name)
             score = form.cleaned_data["score"]
+            logging.debug(score)
             newComment = Comment(book=getBook, owner=user, content=content, score=score)
             newComment.save()
         # 下面是点赞的
-        k = request.POST["commentId"]
-        try:
-            opComment = Comment.objects.get(id=k)
-            user = request.user
-            try:
-                Praise.objects.get(comment=opComment, owner=user)
-            except:
-                Praise(comment=opComment, owner=user).save()
-                opComment.praise = opComment.praise + 1
-                opComment.save()
-        except:
-            pass
     form = CommentForm()
     back["form"] = form
 

@@ -16,12 +16,12 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Dumping data for table `book_label`
+-- Dumping data for table `book_collection`
 --
 
-LOCK TABLES `book_label` WRITE;
-/*!40000 ALTER TABLE `book_label` DISABLE KEYS */;
-/*!40000 ALTER TABLE `book_label` ENABLE KEYS */;
+LOCK TABLES `book_collection` WRITE;
+/*!40000 ALTER TABLE `book_collection` DISABLE KEYS */;
+/*!40000 ALTER TABLE `book_collection` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -33,4 +33,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-08 21:05:47
+-- Dump completed on 2018-04-10  6:20:19

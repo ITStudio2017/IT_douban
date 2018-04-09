@@ -16,12 +16,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Dumping events for database 'douban'
+-- Dumping data for table `users_user_groups`
 --
 
---
--- Dumping routines for database 'douban'
---
+LOCK TABLES `users_user_groups` WRITE;
+/*!40000 ALTER TABLE `users_user_groups` DISABLE KEYS */;
+/*!40000 ALTER TABLE `users_user_groups` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -32,4 +33,4 @@
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-08 21:05:48
+-- Dump completed on 2018-04-10  6:20:19

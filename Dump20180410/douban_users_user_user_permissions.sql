@@ -16,13 +16,12 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Dumping data for table `users_user`
+-- Dumping data for table `users_user_user_permissions`
 --
 
-LOCK TABLES `users_user` WRITE;
-/*!40000 ALTER TABLE `users_user` DISABLE KEYS */;
-INSERT INTO `users_user` VALUES (1,'pbkdf2_sha256$36000$Gxc9XRJ9giwR$8RjpZ/4dcTAvJ/ktcBjBRGGgsKH/qKc+XbozNXoaXvY=','2018-04-04 22:08:25.666225',1,'superuser@djangoproject.com',1,1,'2018-04-04 22:08:25.666225','用户','男',1,1),(2,'pbkdf2_sha256$36000$YwvQlpLQlzJy$pA/GVHuLo/IMwLb7VAJ6hjC6mkNIZhUXv7KU8RmSNUI=','2018-04-07 22:38:31.965976',1,'330953853@qq.com',1,1,'2018-04-04 22:09:09.066642','Alex','男',0,1),(3,'pbkdf2_sha256$36000$mmiAgAHrCiYx$hUbuSM7TnHa3r5czBv5mR8qkgbFswVwhjJhJ9MKgi+Q=','2018-04-08 17:06:47.882980',0,'alex-zs@foxmail.com',1,1,'2018-04-04 22:14:46.802458','陈开拓','男',0,1);
-/*!40000 ALTER TABLE `users_user` ENABLE KEYS */;
+LOCK TABLES `users_user_user_permissions` WRITE;
+/*!40000 ALTER TABLE `users_user_user_permissions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `users_user_user_permissions` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -34,4 +33,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-08 21:05:47
+-- Dump completed on 2018-04-10  6:20:19

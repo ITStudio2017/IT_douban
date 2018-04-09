@@ -16,13 +16,12 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Dumping data for table `django_admin_log`
+-- Dumping data for table `book_slabel`
 --
 
-LOCK TABLES `django_admin_log` WRITE;
-/*!40000 ALTER TABLE `django_admin_log` DISABLE KEYS */;
-INSERT INTO `django_admin_log` VALUES (1,'2018-04-07 21:19:23.768587','11','Article object',2,'[{\"changed\": {\"fields\": [\"image\"]}}]',7,2),(2,'2018-04-07 21:38:15.515254','11','Article object',2,'[{\"changed\": {\"fields\": [\"image\"]}}]',7,2),(3,'2018-04-07 21:40:13.201518','11','Article object',2,'[{\"changed\": {\"fields\": [\"image\"]}}]',7,2);
-/*!40000 ALTER TABLE `django_admin_log` ENABLE KEYS */;
+LOCK TABLES `book_slabel` WRITE;
+/*!40000 ALTER TABLE `book_slabel` DISABLE KEYS */;
+/*!40000 ALTER TABLE `book_slabel` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -34,4 +33,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-08 21:05:46
+-- Dump completed on 2018-04-10  6:20:20

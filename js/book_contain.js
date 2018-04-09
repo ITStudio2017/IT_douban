@@ -27,7 +27,7 @@ $(".book_comment_pinfen_star").click(function(){
 	if( star_lock == false)
 {
 	total_star = $(this).index() - 0 + 1;
-	$(".total_star").html(total_star);
+	$(".total_star").val(total_star);
 	star_lock = true;
 
 }
@@ -43,7 +43,7 @@ else{
 }
 	
 });
-//点击后的页面定位
+//点击后的页body_book_grade_draw面定位
 $(".body_book_comment").click(function(){
 	// window.location.hash = "#abc";
 	 location.href = "#firstAnchor";      
@@ -101,104 +101,104 @@ $(".body_book_grade_love").click(function(){
 });
 
 
-var time_set=true;
-var now_page=0;
-var total_page=2;
+// var time_set=true;
+// var now_page=0;
+// var total_page=2;
 
 
-//下一页
+// //下一页
 
-var time_set=true;
-$(".next_page").click(function(){
-	if(now_page<total_page){
-	now_page+=1;
-	$(".body_commit_content_list").eq(now_page).css('display','block');
-	$(".body_commit_content_list").eq(now_page).siblings().css('display','none');
+// var time_set=true;
+// $(".next_page").click(function(){
+// 	if(now_page<total_page){
+// 	now_page+=1;
+// 	$(".body_commit_content_list").eq(now_page).css('display','block');
+// 	$(".body_commit_content_list").eq(now_page).siblings().css('display','none');
 
 
-}
-else{
+// }
+// else{
 		
-		if(time_set==true)
-		{
+// 		if(time_set==true)
+// 		{
 
-			time_set=false;
-			$(".last_page_tip").fadeIn();
+// 			time_set=false;
+// 			$(".last_page_tip").fadeIn();
 
-			var time_1=setInterval(function(){
-				console.log(time_set);
+// 			var time_1=setInterval(function(){
+// 				console.log(time_set);
 				
-			},2000)	
+// 			},2000)	
 	
-			$(".last_page_tip").delay(1000).fadeOut(function(){
-				clearInterval(time_1);
-				time_set=true;
+// 			$(".last_page_tip").delay(1000).fadeOut(function(){
+// 				clearInterval(time_1);
+// 				time_set=true;
 			
-			});
+// 			});
 		
-		}	
+// 		}	
 	
-		}
+// 		}
 
-});
+// });
 
-//上一页
+// //上一页
 
-$(".last_page").click(function(){
-	if(now_page>0){	
-		now_page-=1;
-		$(".body_commit_content_list").eq(now_page).css('display','block');
-		$(".body_commit_content_list").eq(now_page).siblings().css('display','none');
-	}
-	else{
+// $(".last_page").click(function(){
+// 	if(now_page>0){	
+// 		now_page-=1;
+// 		$(".body_commit_content_list").eq(now_page).css('display','block');
+// 		$(".body_commit_content_list").eq(now_page).siblings().css('display','none');
+// 	}
+// 	else{
 		
-		if(time_set==true)
-		{
+// 		if(time_set==true)
+// 		{
 
-			time_set=false;
-			$(".first_page_tip").fadeIn();
+// 			time_set=false;
+// 			$(".first_page_tip").fadeIn();
 
-			var time_1=setInterval(function(){
-				console.log(time_set);
+// 			var time_1=setInterval(function(){
+// 				console.log(time_set);
 				
-			},2000)	
+// 			},2000)	
 	
-			$(".first_page_tip").delay(1000).fadeOut(function(){
-				clearInterval(time_1);
-				time_set=true;
+// 			$(".first_page_tip").delay(1000).fadeOut(function(){
+// 				clearInterval(time_1);
+// 				time_set=true;
 			
-			});
+// 			});
 		
-		}	
+// 		}	
 	
-		}
+// 		}
 
-	});
+// 	});
 
-//首页
-$(".first_page").click(function(){
-if(now_page == 0){
-		if(time_set==true)
-		{
+// //首页
+// $(".first_page").click(function(){
+// if(now_page == 0){
+// 		if(time_set==true)
+// 		{
 
-			time_set=false;
-			$(".first_page_tip").fadeIn(function(){
-			var time_1=setInterval(1500)	
-			});
-			$(".first_page_tip").delay(1000).fadeOut(function(){
-			time_set=true;
-			// console.log(time_set);
-			});
+// 			time_set=false;
+// 			$(".first_page_tip").fadeIn(function(){
+// 			var time_1=setInterval(1500)	
+// 			});
+// 			$(".first_page_tip").delay(1000).fadeOut(function(){
+// 			time_set=true;
+// 			// console.log(time_set);
+// 			});
 		
-		}	
+// 		}	
 
-}
-now_page=0;
-$(".body_commit_content_list").eq(now_page).css({'display':'block'});
-$(".body_commit_content_list").eq(now_page).siblings().css({'display':'none'});
+// }
+// now_page=0;
+// $(".body_commit_content_list").eq(now_page).css({'display':'block'});
+// $(".body_commit_content_list").eq(now_page).siblings().css({'display':'none'});
 
 
-});
+// });
 
 // $(".next_page").click(function(){
 // 	if(now_page<total_page){

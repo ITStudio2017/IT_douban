@@ -37,4 +37,9 @@ class comment_article(models.Model):
     article = models.ForeignKey(Article,default="")
     
 
+class article_save(models.Model):
+    article = models.ForeignKey(Article,default="")
+    user = models.ForeignKey(User,default="")
+    time = models.DateTimeField('时间',auto_now_add=True)
+
 # Create your models here.

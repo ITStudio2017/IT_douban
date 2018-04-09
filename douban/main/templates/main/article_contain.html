@@ -14,7 +14,7 @@
 		<div class="header">
 			<div class="logo_1"><a href="/"><img src="/static/images/logo.png" alt=""></a></div>
 			<div class="nav_menu">
-				<a href="/articleList/hot/1/"><img src="/static/images/book_list_logo.png" alt="shouye.html">
+				<a href="/articleList/1/1/"><img src="/static/images/book_list_logo.png" alt="shouye.html">
 				<span class="nav_menu_word">豆瓣文章</span></a>
 <!-- 				<ul class="nav_menu_ul">
 					<li class="nav_book">豆瓣读书</li>
@@ -45,9 +45,16 @@
 				<span class="body_article_author_name">{{request.user.name}}</span>
 				<span class="body_article_author_time">{{article.update_time}}</span>
 				<div class="body_article_author_more">
-					<div class="body_article_author_love">
-						<img src="/static/images/author_article_love.png" alt="">
-					</div>
+					<form action="/shoucang/{{article.id}}/" method="post">
+						{% csrf_token %}
+						<input type="hidden" id="article_id" name="article_id" value="{{article.id}}">
+						<div class="body_article_author_love"><input  type="image" src="/static/images/author_article_love.png"  alt=""></div>
+					</form>
+					{% if message %}
+					<script>
+						alert('{{message}}');
+					</script>
+					{% endif %}
 					<div class="body_article_author_share"><img src="/static/images/author_article_share.png" alt=""></div>
 				</div>					
 			</div>
@@ -55,10 +62,10 @@
 				<img class="body_article_pic" src="/static/{{article.image}}" alt="">
 				{{article.content|safe}}
 				<p class="article_copyright">
-					© 本文版权归 阿浦爱曼联所有，任何形式转载请联系作者。
+					© 本文版权归 {{article.author.name}}所有，任何形式转载请联系作者。
 				</p>	
 				<p class="article_copyright_learn">
-					© 了解版权计划
+					<a href="http://www.wipo.int/copyright/zh/"> © 了解版权计划</a>
 				</p>
 
 
@@ -73,15 +80,17 @@
 						<div class="book_comment_nav_time"><a class="book_comment_nav_time_a" href="">时间</a></div>
 						<div class="book_comment_nav_hot"><a class="book_comment_nav_hot_a" href="">热度</a></div>
 					</div>
-					<form action="." method="post">
+					<form action="/detail/{{article.id}}/" method="post">
 						{% csrf_token %}
 					<div class="book_writecomment">
 						<textarea class="book_writecomment_input" name="content" maxlength="140" required id="id_content" type="text" placeholder="#请在此输入文字"></textarea>
 						<div class="book_writecomment_count"><input type="text" value="0"><span>/140</span></div>
-						<div class="book_writecomment_login" style="display: none;">请先登录</div>
-
+						{% if not request.user.is_authenticated %}
+						<div class="book_writecomment_login" >请先登录</div>
+						{% endif %}
 						
 					</div>
+					
 
 				<input class="book_comment_publish" value="发布评论" type="submit">
 			</form>

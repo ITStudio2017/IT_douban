@@ -2,20 +2,19 @@
 
 {% block ul %}
 					<ul class="body_top_nav_list">
-						<li class="body_top_nav"><a class="body_top_nav_a" href="/articleList/hot/1/">热门读刊</a><div class="body_top_nav_arrow"><img src="/static/images/arrow_1_down.png" alt=""></div></li>
-						<li class="body_top_nav"><a class="body_top_nav_a" href="/articleList/new/1/">最新读物</a><div style="display: none;" class="body_top_nav_arrow"><img src="/static/images/arrow_1_down.png" alt=""></div></li>
-						<li class="body_top_nav"><a class="body_top_nav_a" href="/articleList/1/1/">小说</a><div style="display: none;" class="body_top_nav_arrow"><img src="/static/images/arrow_1_down.png" alt=""></div></li>
-						<li class="body_top_nav"><a class="body_top_nav_a" href="/articleList/2/1/">散文</a><div style="display: none;" class="body_top_nav_arrow"><img src="/static/images/arrow_1_down.png" alt=""></div></li>
-						<li class="body_top_nav"><a class="body_top_nav_a" href="/articleList/3/1/">感悟</a><div style="display: none;" class="body_top_nav_arrow"><img src="/static/images/arrow_1_down.png" alt=""></div></li>
-						<li class="body_top_nav"><a class="body_top_nav_a" href="/articleList/4/1/">新闻</a><div style="display: none;" class="body_top_nav_arrow"><img src="/static/images/arrow_1_down.png" alt=""></div></li>
+						<li class="body_top_nav"><a class="body_top_nav_a" href="/articleList/1/1/">热门读刊</a><div style="display: none;" class="body_top_nav_arrow"></div></li>
+						<li class="body_top_nav"><a class="body_top_nav_a" href="/articleList/2/1/">最新读物</a><div style="display: none;" class="body_top_nav_arrow"><img src="/static/images/arrow_1_down.png" alt=""></div></li>
+						<li class="body_top_nav"><a class="body_top_nav_a" href="/articleList/3/1/">小说</a><div style="display: none;" class="body_top_nav_arrow"><img src="/static/images/arrow_1_down.png" alt=""></div></li>
+						<li class="body_top_nav"><a class="body_top_nav_a" href="/articleList/4/1/">散文</a><div style="display: none;" class="body_top_nav_arrow"><img src="/static/images/arrow_1_down.png" alt=""></div></li>
+						<li class="body_top_nav"><a class="body_top_nav_a" href="/articleList/5/1/">感悟</a><div style="display: none;" class="body_top_nav_arrow"><img src="/static/images/arrow_1_down.png" alt=""></div></li>
+						<li class="body_top_nav"><a class="body_top_nav_a" href="/articleList/6/1/">新闻</a><div style="display: none;" class="body_top_nav_arrow"><img src="/static/images/arrow_1_down.png" alt=""></div></li>
 					</ul>
 
-	{% endblock %}
+		{% endblock %}
 				</div>
 
 			</div>
-
-			{% block content %}
+		{% block content %}
 			<div class="body_middle">
 				<div class="body_middle_inner">
 					<ul class="body_middle_article_page_1">
@@ -34,26 +33,32 @@
 								<p class="body_middle_article_info">{{article.abstract}}……</p>
 								
 							</div>
-							
 							<div class="body_middle_article_more">
-								<div class="body_middle_article_like"><img src="/static/images/love_white.png" alt=""></div>
+								<form action="." method="post">
+									{% csrf_token %}
+									<input type="hidden" id="article_id" name="article_id" value="{{article.id}}">
+									<input class="body_middle_article_like" type="image" id="id_image" src="/static/images/love_white.png" alt="">
+									{% for shoucang in save_article %}
+									{% if shoucang.article == article %}
+									<input class="body_middle_article_like" type="image" id="id_image" src="/static/images/grade_love.png" alt="">
+									{% endif %}
+									{% endfor %}
+								</form>
 								<div class="body_middle_article_share"><img src="/static/images/article_share.png" alt=""></div>
-								
-								
 							</div>
-						</li>
+													</li>
 						{% endfor %}
 					</ul>
 				</div>
 				<div class="body_bottom_page">
 					{% if article_page.has_previous %}
-						<span class="last_page"><a href="/articleList/hot/{{article_page.previous_page_number}}/"> 上一页</a></span>
+						<span class="last_page"><a href="/articleList/{{cate}}/{{article_page.previous_page_number}}/"> 上一页</a></span>
 						{% else %}
 						<span class="last_page"> 上一页</span>
 						{% endif %}
-						<span class="first_page"><a href="/articleList/hot/1/"> 首页</a></span>
+						<span class="first_page"><a href="/articleList/{{cate}}/1/"> 首页</a></span>
 						{% if article_page.has_next %}
-						<span class="next_page"><a href="/articleList/hot/{{article_page.next_page_number}}"> 下一页</a></span>
+						<span class="next_page"><a href="/articleList/{{cate}}/{{article_page.next_page_number}}"> 下一页</a></span>
 						{% else %}
 						<span class="next_page">下一页</span>
 						{% endif %}

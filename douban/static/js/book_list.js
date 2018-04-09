@@ -1,3 +1,14 @@
+
+
+//选中框
+// $("input").focus(function(){
+//   $(this).css('border-color','rgba(0,0,0,0.4)')
+// });
+// $("input").blur(function(){
+//   $(this).css('border-color','#D9D9D9')
+// })
+
+
 //评分
 
 	$(".body_middle_book_grade_star").each(function(index){
@@ -109,6 +120,10 @@ $(".body_top_nav_list li").mouseleave(function(){
   $(".body_top_nav").eq(nav_now).find("div").css('display', 'block');
 });
 
+$(".body_top_nav_list li").click(function(){
+  $(this).find("div").css('display', 'block');
+  $(this).siblings('').find("div").css('display', 'none');
+})
 
 //搜索框
 $(".search_box_input").focus(function(){

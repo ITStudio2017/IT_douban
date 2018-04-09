@@ -320,10 +320,15 @@ li{
 
 	position: absolute;
 	top: 0px;
-	left: 0px;
-	width: 112px;
+	right: 0px;
+	width: 20px;
 	height: 157px;
-	background-color: rgba(255,255,255,0.7);
+	background-color: #00A896;
+	opacity: 0.6;
+}
+.personal_body_save_book_more_1 img{
+	width: 14px;
+	height: 14px;
 }
 .personal_body_save_book_del_1{
 	background-color: rgba(0,168,150,0.65);

@@ -407,6 +407,13 @@ li{
 	margin-top: 24px;
 	margin-left: 18px;
 }
+.personal_body_save_article_title_1 a{
+	color: black;
+}
+.personal_body_save_article_title_1 a:hover{
+
+	text-decoration: underline;
+}
 .personal_body_save_article_intro_1{
 	width: 262px;
 	height: auto;
@@ -432,4 +439,22 @@ li{
 }
 .personal_body_save_article_modify:hover{
 	cursor: pointer;
+}
+
+.personal_body_save_article_delete{
+	position: absolute;
+	top: 28px;
+	right: 75px;
+	color:rgba(235,6,6,1);
+	font-size: 14px;
+}
+.personal_body_save_article_delete:hover{
+	cursor: pointer;
+}
+.personal_body_save_article_modify{
+	position: absolute;
+	top: 28px;
+	font-size: 14px;
+	color: #89D4DD;
+	right: 36px;
 }

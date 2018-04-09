@@ -6,7 +6,7 @@ from .views import (WriteArticle,userInformation,userPage,userArticle,
 urlpatterns = [
     url(r'^write/',WriteArticle,name='WriteArticl'),
     url(r'^informationChange/',userInformation),
-    url(r'^$',userPage),
+    url(r'^$',userPage, name='userPage'),
     url(r'^index/',userPage),
     url(r'^userArticleList/',userArticle,name='userArticle'),
     url(r'^delete/(?P<id>[0-9]+)/$',deleteArticle,name='deleteArticle'),

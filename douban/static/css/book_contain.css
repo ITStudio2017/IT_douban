@@ -24,7 +24,7 @@ color: #C9C9C9;
 } 
 .container{
 	width: 100%;
-	height: 2233px;
+	
 }
 .header{
 	width: 1006px;
@@ -154,9 +154,13 @@ color: #C9C9C9;
 	position: absolute;
 	left: 0px;
 	top: 0px;
+	overflow: hidden;
 	
 }
-
+.body_book_pic img{
+	width: 281px;
+	height: auto;
+}
 .body_book_word{
 	
 
@@ -349,6 +353,7 @@ color: #C9C9C9;
 	height: 350px;
 	float: left;
 	margin-top: 47px;
+	overflow: hidden;
 }
 .book_author_info{
 	float: left;
@@ -364,14 +369,15 @@ color: #C9C9C9;
 }
 .body_book_bottom{
 	width: 100%;
-	height: 1584px;
+	/*height: 1584px;*/
 	background-color: #edf4ed;
 }
 .body_book_bottom_inner{
 	width: 1006px;
-	height: 1584px;
+	/*height: 1584px;*/
 	margin: 0px auto;
 	padding-top: 46px;
+	padding-bottom: 20px;
 }
 .book_comment_nav{
 	height: 40px;

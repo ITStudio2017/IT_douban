@@ -136,12 +136,6 @@ color: #C9C9C9;
 .registration:hover{
 	cursor: pointer;
 }
-.personal_center{
-	display: none;
-}
-.log_out{
-	display: none;
-}
 
 
 .personal_center_a{
@@ -493,12 +487,22 @@ color: #C9C9C9;
 	width: 40px;
 	height: auto;
 }
+.hotessey_essay_pic_div{
+	overflow: hidden;
+	width:169px;
+	height: 250px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+
+}
 .hotessey_essay_pic{
-	width: 169px;
+	width: auto;
 	height: auto;
 	position: absolute;
 	top: 0px;
 	right: 0px;
+	object-fit: cover;
 }
 .hotessey_essay_publish_time{
 	letter-spacing: 2px;
@@ -560,7 +564,12 @@ color: #C9C9C9;
 	margin-top: 42px;
 	margin-right: 51px;
 }
-
+.body_hotbook_book_1{
+	margin-left: 24px;
+}
+.body_hotbook_book_2{
+	margin-right: 0px;
+}
 
 .body_hotbook_book_title{
 	width: 179px;
@@ -618,18 +627,10 @@ color: #C9C9C9;
 		width: 980px;
 	}
 
-	.body_hotbook_1, .body_hotbook_2, .body_hotbook_3{
+	.body_hotbook_book{
 		margin-right: 51px;
 	}
-	.body_hotbook_1{
-		margin-left: 15px;
-	}
-	.body_hotbook_5, .body_hotbook_7, .body_hotbook_6{
-		margin-right: 51px;
-	}
-	.body_hotbook_5{
-		margin-left: 15px;
-	}
+	
 	.hotbook_title_more{
 		margin-left: -31px;
 	}
@@ -642,4 +643,15 @@ color: #C9C9C9;
 	.containner_inner{
 		width: 980px;
 	}
+	.hotessey_essay{
+		margin-left: 16px;
+	}
+	.body_hotbook_book_2{
+	margin-right: 0px;
+	}
+	.body_hotbook_book_1{
+	margin-right: 11px;
+}
+
+
 }

@@ -171,7 +171,7 @@ $(".book_writecomment_input").keyup(function(){
 		$(this).val($(this).val().substring(0,140))
 	}
 	else{
-		$(".book_writecomment_count input").val(comment_length-0+1);
+		$(".book_writecomment_count input").val(comment_length-0);
 	}
 
 	
@@ -186,3 +186,20 @@ if($(".book_writecomment_login").css('display') != 'none')
 else{
 	$(".book_writecomment_input").removeAttr('disabled')
 }
+
+//热门、时间切换
+$(".book_comment_nav div").each(function(){
+	$(this).click(function(){
+		$(this).addClass('comment_hot_time');
+		$(this).siblings('').removeClass('comment_hot_time')
+	})
+})
+
+
+//选中框
+// $("input").focus(function(){
+// 	$(this).css('border-color','rgba(0,0,0,0.4)')
+// });
+// $("input").blur(function(){
+// 	$(this).css('border-color','#D9D9D9')
+// })

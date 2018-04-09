@@ -23,13 +23,35 @@ def dividePage(reqGetList, input, cut=4):
     return back
 
 
-def book_list(request):
+def book_list(request, labelId = 0):
     back = {
         "bookList": {},
+        "labelOnTheTop": {},
         "pageCount": 1,
         "nowPage": 0,
     }
-    allBook = Book.objects.all().order_by('-score')
+
+    allFLabel = FLabel.objects.all()
+    labelSet = {}
+    i = 0
+    for label in allFLabel:
+        i = i + 1
+        labelSet[str(i)] = {
+            "id": label.id,
+            "name": label.labelName,
+        }
+    back["labelOnTheTop"] = labelSet
+
+    nowlabel = None
+    try:
+        nowlabel = FLabel.objects.get(id=labelId)
+    except:
+        nowlabel = None
+    if nowlabel:
+        allBook = Book.objects.filter(label__fatherLabel=nowlabel)
+    else:
+        allBook = Book.objects.all()
+    allBook = allBook.order_by('-score')
     i = 0
     bookList = {}
     for book in allBook:

@@ -179,7 +179,7 @@ $(".book_writecomment_input").keyup(function(){
 });
 
 //判断是否登陆
-if($(".book_writecomment_login").length > 0 )
+if($(".book_writecomment_login").css('display') != 'none')
 {
 	$(".book_writecomment_input").attr('disabled','true');
 }
@@ -194,3 +194,12 @@ $(".book_comment_nav div").each(function(){
 		$(this).siblings('').removeClass('comment_hot_time')
 	})
 })
+
+
+//选中框
+// $("input").focus(function(){
+// 	$(this).css('border-color','rgba(0,0,0,0.4)')
+// });
+// $("input").blur(function(){
+// 	$(this).css('border-color','#D9D9D9')
+// })

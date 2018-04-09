@@ -58,7 +58,7 @@
 							<a href="/detail/{{article.id}}">
 							<div style="display: none;" class="body_top_sfq_word">{{article.title}}</div>
 							<!-- <div class="body_top_sfq_pic_hover"></div> -->
-							<img class="body_top_sfq_pic_img" src="/static/{{article.image}}" alt="">
+							<img class="body_top_sfq_pic_img" src="/{{article.image}}" alt="">
 							</a>
 						</li>
 						{% endfor %}
@@ -67,7 +67,7 @@
 							<a href="/detail/{{article.id}}">
 							<div style="display: none;" class="body_top_sfq_word">{{article.title}}</div>
 							<!-- <div class="body_top_sfq_pic_hover"></div> -->
-							<img class="body_top_sfq_pic_img" src="/static/{{article.image}}" alt="">
+							<img class="body_top_sfq_pic_img" src="/{{article.image}}" alt="">
 							</a>
 						</li>
 						{% endfor %}
@@ -76,7 +76,7 @@
 							<a href="/detail/{{article.id}}">
 							<div style="display: none;" class="body_top_sfq_word">{{article.title}}</div>
 							<!-- <div class="body_top_sfq_pic_hover"></div> -->
-							<img class="body_top_sfq_pic_img" src="/static/{{article.image}}" alt="">
+							<img class="body_top_sfq_pic_img" src="/{{article.image}}" alt="">
 							</a>
 						</li>
 						{% endfor %}
@@ -85,7 +85,7 @@
 							<a href="/detail/{{article.id}}">
 							<div style="display: none;" class="body_top_sfq_word">{{article.title}}</div>
 							<!-- <div class="body_top_sfq_pic_hover"></div> -->
-							<img class="body_top_sfq_pic_img" src="/static/{{article.image}}" alt="">
+							<img class="body_top_sfq_pic_img" src="/{{article.image}}" alt="">
 							</a>
 						</li>
 						{% endfor %}
@@ -94,7 +94,7 @@
 							<a href="/detail/{{article.id}}">
 							<div style="display: none;" class="body_top_sfq_word">{{article.title}}</div>
 							<!-- <div class="body_top_sfq_pic_hover"></div> -->
-							<img class="body_top_sfq_pic_img" src="/static/{{article.image}}" alt="">
+							<img class="body_top_sfq_pic_img" src="/{{article.image}}" alt="">
 							</a>
 						</li>
 						{% endfor %}
@@ -120,7 +120,8 @@
 						<ul class="hotessey_essay_list">
 						{% for article in article_photo %}	
 							<li class="hotessey_photoalbum_1">
-								<a class="hotessey_photoalbum_1_a" href="/detail/{{article.id}}"><img src="/static/{{article.image}}" alt=""></a>
+								<div class="hotessey_photoalbum_1_a_div">
+								<a class="hotessey_photoalbum_1_a" href="/detail/{{article.id}}"><img src="/{{article.image}}" alt=""></a></div>
 								<h6 class="hotessey_photoalbum_name_1"><a class="hotessey_photoalbum_name_1_a" href="/detail/{{article.id}}">{{article.title}}</a></h6>
 							</li>
 							{% endfor %}
@@ -138,7 +139,9 @@
 										<span class="hotessey_essay_scan_amount_1">{{article.views}}</span>
 									</div>
 								</div>
-								<img class="hotessey_essay_pic" src="/static/{{article.image}}" alt="">
+								<div class="hotessey_essay_pic_div">
+								<img class="hotessey_essay_pic" src="/{{article.image}}" alt="">
+							</div>
 							</li>
 							{% endfor %}
 							<div style="clear: both;"></div>
@@ -158,7 +161,8 @@
 						<ul class="body_hotbook_content_list">
                             {% for key, value in book.items %}
 							<li class="body_hotbook_book">
-								<a  class="body_hotbook_a_1" href="{% url 'book_contain' value|key:"id" %}"><img src="{{ value|key:"cover" }}" alt=""></a>
+								<div class="body_hotbook_a_1_div">
+								<a  class="body_hotbook_a_1" href="{% url 'book_contain' value|key:"id" %}"><img src="{{ value|key:"cover" }}" alt=""></a></div>
 								<div class="body_hotbook_book_title"><a  class="body_hotbook_book_title_a" href="{% url 'book_contain' value|key:"id" %}">{{ value|key:"bookname" }}</a></div>
 								<div class="body_hotbook_book_want">{{ value|key:"loveCount" }}</div>
 								<div class="body_hotbook_book_love"><img src="/static/images/love.png" alt=""></div>

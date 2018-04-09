@@ -279,7 +279,11 @@ color: #C9C9C9;
 	height: 327px;
 	margin-left: -286px;
 
-	
+}
+.body_top_sfq_pic_img_div{
+	width: 527px;
+	height: 327px;
+	overflow: hidden;
 }
 .body_top_sfq_pic_hover{
 	position: absolute;
@@ -392,7 +396,11 @@ color: #C9C9C9;
 	height: 344px;
 	background-color: white;
 }
-
+.hotessey_photoalbum_1_a_div{
+	width: 457px;
+	height: 298px;
+	overflow: hidden;
+}
 .hotessey_photoalbum_1 img,.hotessey_photoalbum_2 img{
 	width: 457px;
 	height: auto;
@@ -552,11 +560,15 @@ color: #C9C9C9;
 .body_hotbook_content{
 	height: 814px;
 }
-
-.body_hotbook_a_1 img,.body_hotbook_a_2 img,.body_hotbook_a_3 img,.body_hotbook_a_4 img{
-	width: 199px;
-	height: auto;
+.body_hotbook_a_1{
+	display: block;
 }
+.body_hotbook_a_1_div{
+	width: 199px;
+	height: 280px;
+	overflow: hidden;
+}
+
 .body_hotbook_book{
 	float: left;
 	height: 369px;
@@ -589,7 +601,7 @@ color: #C9C9C9;
 
 .body_hotbook_book_want{
 	position: absolute;
-	bottom: 2px;
+	bottom: 6px;
 	left:11px;
 	color: #333333;
 	font-size: 14px;

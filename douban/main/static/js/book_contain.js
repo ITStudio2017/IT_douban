@@ -246,7 +246,7 @@ $(".body_commit_content_list").eq(now_page).siblings().css({'display':'none'});
 
 
 
-$(".book_writecomment_input").keydown(function(){
+$(".book_writecomment_input").keyup(function(){
 
 	var comment_length = $(".book_writecomment_input").val().length ;
 	if( comment_length >140){

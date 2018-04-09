@@ -171,7 +171,7 @@ $(".book_writecomment_input").keyup(function(){
 		$(this).val($(this).val().substring(0,140))
 	}
 	else{
-		$(".book_writecomment_count input").val(comment_length-0+1);
+		$(".book_writecomment_count input").val(comment_length-0);
 	}
 
 	
@@ -179,10 +179,18 @@ $(".book_writecomment_input").keyup(function(){
 });
 
 //判断是否登陆
-if($(".book_writecomment_login").css('display') != 'none')
+if($(".book_writecomment_login").length > 0 )
 {
 	$(".book_writecomment_input").attr('disabled','true');
 }
 else{
 	$(".book_writecomment_input").removeAttr('disabled')
 }
+
+//热门、时间切换
+$(".book_comment_nav div").each(function(){
+	$(this).click(function(){
+		$(this).addClass('comment_hot_time');
+		$(this).siblings('').removeClass('comment_hot_time')
+	})
+})

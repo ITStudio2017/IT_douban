@@ -9,6 +9,11 @@ $(".body_top_nav_list li").mouseleave(function(){
 	$(".body_top_nav").eq(nav_now).find("div").css('display', 'block');
 });
 
+$(".body_top_nav_list li").click(function(){
+  $(this).find("div").css('display', 'block');
+  $(this).siblings('').find("div").css('display', 'none');
+})
+
 //头部固定
 $(document).ready(function(){  
     var a,b,c;  
@@ -26,12 +31,12 @@ $(document).ready(function(){
            $(".body_top").css("position","fixed");
            $(".body_top").css("top","0");
            $(".body_top").css("z-index","99");
-           $(".container").height(1916);
+           // $(".container").height(1916);
 
 
         }else{  
            $(".body_top").css("position","static"); 
-           $(".container").height(2000);
+           // $(".container").height(2000);
            $(".body_top").css("z-index","auto");
         }  
     });  
@@ -165,8 +170,8 @@ $(".body_middle_article_like").each(function(index){
     love+=1;
   if(love%2!=0)
   {
-    $(this).find("img").attr({'src':'/static/images/grade_love.png'});
-    // $(this).find("img").attr({'src':'/static/images/grade_love.png'});
+    $(this).find("img").attr({'src':'../images/grade_love.png'});
+    // $(this).find("img").attr({'src':'../images/grade_love.png'});
 
    
      if(time_set2==true)
@@ -190,7 +195,7 @@ $(".body_middle_article_like").each(function(index){
 
   }
   else{
-    $(this).find("img").attr({'src':'/static/images/love_white.png'});
+    $(this).find("img").attr({'src':'../images/love_white.png'});
 
     // $(".article_save_tip").html("您已取消收藏")
   }
@@ -199,7 +204,7 @@ $(".body_middle_article_like").each(function(index){
 // $(".body_middle_article_like").click(function(){
 
 
-//     // $(this).find("img").attr({'src':'/static/images/grade_love.png'});
+//     // $(this).find("img").attr({'src':'../images/grade_love.png'});
 
    
 //      if(time_set2==true)
@@ -223,5 +228,13 @@ $(".body_middle_article_like").each(function(index){
 
 // })
 
-
+$(".body_middle_article_left img").each(function(){
+  if($(this).width()/$(this).height() >1.61)
+ {
+   $(this).css({'height':'201px','width':'auto'});
+ }
+ else{
+  $(this).css({'height':'auto','width':'325px'});
+ }
+})
 

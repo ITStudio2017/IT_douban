@@ -48,14 +48,18 @@
 					<form action="/shoucang/{{article.id}}/" method="post">
 						{% csrf_token %}
 						<input type="hidden" id="article_id" name="article_id" value="{{article.id}}">
+						{% if isSave %}
+						<div class="body_article_author_love"><input  type="image" src="/static/images/grade_love.png"  alt=""></div>
+						{% else %}
 						<div class="body_article_author_love"><input  type="image" src="/static/images/author_article_love.png"  alt=""></div>
+						{% endif %}
 					</form>
 					{% if message %}
 					<script>
 						alert('{{message}}');
 					</script>
 					{% endif %}
-					<div class="body_article_author_share"><img src="/static/images/author_article_share.png" alt=""></div>
+					
 				</div>					
 			</div>
 			<div class="body_article_middle_contain">

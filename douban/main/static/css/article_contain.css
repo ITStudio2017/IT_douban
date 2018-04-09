@@ -24,7 +24,7 @@ color: #C9C9C9;
 } 
 .container{
 	width: 100%;
-	height: 2097px;
+	/*height: 2097px;*/
 }
 .header{
 	width: 1006px;
@@ -84,7 +84,7 @@ color: #C9C9C9;
 .search_box_button{
 	width: 43px;
 	height: 42px;
-	background-image: url(/static/images/search_button.png);
+	background-image: url(../images/search_button.png);
 	background-repeat: no-repeat;
 	background-position: center;
 	outline: none;
@@ -192,7 +192,7 @@ color: #C9C9C9;
 	top: 50%;
 	margin-top: -25px;
 }
-。body_article_author_pic img{
+.body_article_author_pic img{
 	width: 50px;
 	height: auto;
 }
@@ -279,39 +279,36 @@ color: #C9C9C9;
 
 .body_book_bottom{
 	width: 100%;
-	height: 1397px;
+	/*height: 1397px;*/
 	background-color: #edf4ed;
 }
 .body_book_bottom_inner{
 	width: 800px;
-	height: 1351px;
+	/*height: 1351px;*/
 	margin: 0px auto;
 	padding-top: 46px;
+	padding-bottom: 20px;
 }
 .book_comment_nav{
 	height: 40px;
 	width: 800px;
 	margin-top: 20px;
 }
+
 .book_comment_nav_time{
+
 	width: 80px;
 	height: 40px;
-	background-color: #02c39a;
-	box-shadow: 0px 2px 6px 0px 
-		rgba(0, 0, 0, 0.15);
-	border-radius: 7px;
-	
 	line-height: 40px;
 	text-align: center;
 	letter-spacing: 1px;
 	float: left;
-	
 }
 .book_comment_nav_time:hover{
 	cursor: pointer;
 }
 .book_comment_nav_time_a{
-	color: #ffffff;
+	color:#333333;
 	font-size: 18px;
 
 }
@@ -330,6 +327,22 @@ color: #C9C9C9;
 	color: #333333;
 	font-size: 18px;
 
+}
+.comment_hot_time{
+	width: 80px;
+	height: 40px;
+	background-color: #02c39a;
+	box-shadow: 0px 2px 6px 0px 
+		rgba(0, 0, 0, 0.15);
+	border-radius: 7px;
+	color: white;
+	line-height: 40px;
+	text-align: center;
+	letter-spacing: 1px;
+	float: left;
+}
+.comment_hot_time a{
+	color:white;
 }
 .book_comment_nav_write{
 	width: 142px;

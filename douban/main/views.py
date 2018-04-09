@@ -71,8 +71,7 @@ def deleteArticle(request,id):
 	comment = comment_article.objects.filter(article=article)
 	article.delete()
 	comment.delete()
-	article_list = Article.objects.filter(author=request.user)
-	return render(request,'main/personal_center_personal_article.html',{'article_list':article_list})
+	return redirect('/userArticleList/')
 	
 def changeArticle(request,id):
 	article = Article.objects.get(id=id)
@@ -89,18 +88,23 @@ def article_detail(request,id):
 	art = Article.objects.get(id=id)
 	art.increase_views()
 	commentOfArticle = comment_article.objects.filter(article=art).order_by('-pub_date')
-	if request.method == 'POST':
-		commentForm = Comment_Article_Form(request.POST)
-		if commentForm.is_valid():
-			comment = commentForm.save(commit=False)
-			comment.author = request.user
-			comment.article = art
-			comment.save()
-			commentForm = Comment_Article_Form()
-			return render(request,'main/article_contain.html',{'article':art,'commentForm':commentForm,'commentOfArticle':commentOfArticle})
+	if request.user.is_authenticated():
+		shoucang_list = article_save.objects.filter(article=art)
+		isSave = False
+		for i in shoucang_list:
+			if i.user == request.user:
+				isSave = True
+
+		if request.method == 'POST':
+			commentForm = Comment_Article_Form(request.POST)
+			if commentForm.is_valid():
+				comment = commentForm.save(commit=False)
+				comment.author = request.user
+				comment.article = art
+				comment.save()
+		return render(request,'main/article_contain.html',{'isSave':isSave,'article':art,'commentOfArticle':commentOfArticle})
 	else:
-		commentForm = Comment_Article_Form()
-		return render(request,'main/article_contain.html',{'article':art,'commentForm':commentForm,'commentOfArticle':commentOfArticle})
+		return render(request,'main/article_contain.html',{'article':art,'commentOfArticle':commentOfArticle})
 
 def commentList(request):
 	commentList = comment_article.objects.filter(author=request.user).order_by('-pub_date')
@@ -124,9 +128,9 @@ def articleCate(request,cate,page):
 	article_page = paginator.page(page)
 	if not request.user.is_authenticated():
 		if request.method == 'POST':
-			message = '请登录后收藏！'
-			return render(request,'main/article_list.html',{'article_page':article_page,'message':message})
-		return render(request,'main/article_list.html',{'article_page':article_page})
+			message = '请登录后收藏!'
+			return render(request,'main/article_list.html',{'message':message,'cate':cate,'article_page':article_page})
+		return render(request,'main/article_list.html',{'cate':cate,'article_page':article_page})
 	else:
 		save_article = article_save.objects.filter(user=request.user)
 		if request.method == 'POST':
@@ -141,16 +145,15 @@ def articleCate(request,cate,page):
 				isSave.user = request.user
 				isSave.article = article
 				isSave.save()
-				message = '收藏成功！'
-				return render(request,'main/article_list.html',{'cate':cate,'article_page':article_page,'save_article':save_article,'message':message})
+				return render(request,'main/article_list.html',{'cate':cate,'article_page':article_page,'save_article':save_article})
 	return render(request,'main/article_list.html',{'cate':cate,'article_page':article_page,'save_article':save_article})
 
 def article_shoucang(request,article_id):
 	article = Article.objects.get(id=article_id)
 	commentOfArticle = comment_article.objects.filter(article=article).order_by('-pub_date')
 	if not request.user.is_authenticated():
-		message = '请登录后收藏！'
-		return render(request,'main/article_contain.html',{'article':article,'commentOfArticle':commentOfArticle,'message':message})
+		message = '请登录后收藏'
+		return redirect('/detail/'+article_id+'/')
 	else:
 		if request.method == 'POST':
 			article_id = request.POST['article_id']
@@ -158,15 +161,23 @@ def article_shoucang(request,article_id):
 			try:
 				article_save.objects.filter(article=article).get(user=request.user)
 				message = '请勿重复收藏！'
-				return render(request,'main/article_contain.html',{'article':article,'message':message})
+				return redirect('/detail/'+article_id+'/')
 			except:
 				isSave = article_save()
 				isSave.user = request.user
 				isSave.article = article
 				isSave.save()
-				message = '收藏成功！'
-				return render(request,'main/article_contain.html',{'article':article,'message':message})
+				return redirect('/detail/'+article_id+'/')
 
+def saveArticle(request):
+	save_list = article_save.objects.filter(user=request.user).order_by('time')
+	return render(request,'main/personal_center_save_article.html',{'save_list':save_list})
+
+def deleteSave(request,article_id):
+	article = Article.objects.get(id=article_id)
+	saveArticle = article_save.objects.get(article=article)
+	saveArticle.delete()
+	return redirect('/saveArticle/')
 
 
 # Create your views here.

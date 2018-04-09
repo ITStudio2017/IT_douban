@@ -235,9 +235,12 @@ $(".body_top_inner").mouseout(function(){
 
 // 	}
 // })
+$(document).ready(function(){
+
+
 //动态改变图片的大小
 $(".hotessey_essay_pic").each(function(){
-  if($(this).width()/$(this).height() <1.134)
+  if($(this).width()/$(this).height() >1.157)
  {
    $(this).css({'height':'146px','width':'auto'});
  }
@@ -264,6 +267,7 @@ $(".body_hotbook_a_1_div img").each(function(){
  else{
   $(this).css({'height':'auto','width':'199px'});
  }
+})
 })
 
 // $(".body_top_sfq_pic_img").each(function(){

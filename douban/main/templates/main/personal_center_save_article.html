@@ -13,7 +13,7 @@
 						<ul>
 							{% for save in save_list %}
 							<li class="personal_body_save_article_1">
-								<div class="personal_body_save_article_pic_1"><a href="/detail/{{save.article.id}}/"><img src="/static/{{save.article.image}}/" alt=""></a></div>
+								<div class="personal_body_save_article_pic_1"><a href="/detail/{{save.article.id}}/"><img src="/{{save.article.image}}/" alt=""></a></div>
 								<h5 class="personal_body_save_article_title_1"><a href="/detail/{{save.article.id}}/">{{save.article.title}}</a></h5>
 								<p class="personal_body_save_article_intro_1">{{save.article.abstract}}……
 								</p>

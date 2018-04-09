@@ -110,14 +110,19 @@ $(document).ready(function(){
 
 
 //导航栏鼠标
-var nav_now=0;
+if($(".body_top_nav_list li div").css('display') == 'block')
+{
+  var select_nav = $(".body_top_nav_list li div").index(".body_top_nav_arrow");
+}
+
 $(".body_top_nav_list li").mouseenter(function(){
-  $(this).find("div").css('display', 'block');
-  $("body_top_nav").eq(nav_now).find("div").css('display', 'block');
+  // var num = $(this).index();
+  $(this).find("div").css('display','block');
+  $("body_top_nav").eq(select_nav).find("div").css('display', 'block');
 });
 $(".body_top_nav_list li").mouseleave(function(){
-  $(this).find("div").css('display', 'none');
-  $(".body_top_nav").eq(nav_now).find("div").css('display', 'block');
+  $(this).find("div").css('display','none');
+  $(".body_top_nav").eq(select_nav).find("div").css('display', 'block');
 });
 
 $(".body_top_nav_list li").click(function(){

@@ -237,7 +237,7 @@ $(".body_top_inner").mouseout(function(){
 // })
 //动态改变图片的大小
 $(".hotessey_essay_pic").each(function(){
-  if($(this).width()/$(this).height() >1.134)
+  if($(this).width()/$(this).height() >1.157)
  {
    $(this).css({'height':'146px','width':'auto'});
  }

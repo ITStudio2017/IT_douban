@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from .views import book_list, book_show, book_collect, book_uncollect
+from .views import book_list, book_show, book_collect, book_uncollect, search, jump
 
 
 urlpatterns = [
@@ -8,5 +8,7 @@ urlpatterns = [
     url(r'^booklist/$', book_list, name='book_list'),
     url(r'^collect/(\d+)/$', book_collect, name='book_collect'),
     url(r'^uncollect/(\d+)/$', book_uncollect, name='book_uncollect'),
+    url(r'^search/(.*)/$',search,name='search'),
+    url(r'^jump/$',jump,name='jump'),
     # url(r'^get_label/(?P<obj_id>\d+)', twice_label_choice),
 ]

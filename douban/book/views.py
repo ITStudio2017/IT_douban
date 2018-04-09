@@ -1,8 +1,9 @@
 from django.core.serializers import json
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, reverse, redirect
 from .models import Book, FLabel, SLabel, Comment, Praise, Collection
 from django.core.paginator import Paginator
 from .forms import BookFrom, CommentForm
+from django.db.models import Q
 import json
 import logging
 
@@ -173,6 +174,47 @@ def book_uncollect(request, bookId):
     return HttpResponse('<script>window.location.href = document.referrer;</script>')
 
 
+def search(request, st):
+    back = {
+        "bookList": {},
+        "pageCount": 1,
+        "nowPage": 0,
+    }
+    s = ""
+    try:
+        s = st
+    except:
+        s = ""
+    allBook = Book.objects.filter(Q(bookname__contains=s) | Q(author__contains=s))
+    allBook = allBook.order_by('-score')
+    i = 0
+    bookList = {}
+    for book in allBook:
+        i = i + 1
+        bookList[str(i)] = {
+            "id": book.id,
+            "bookname": book.bookname,
+            "introduction": book.introduction,
+            "author": book.author,
+            "cover": book.cover.url,
+            "press": book.press,
+            "score": book.score,
+        }
+    result = dividePage(request.GET, bookList, 5)
+    if result["pass"]:
+        bookList = result['output']
+        nowPage = result['index']
+
+    back["bookList"] = bookList
+    return render(request, "book_list.html", back)
+
+
+def jump(request):
+    try:
+        s = request.GET['searchtxt']
+        return redirect(reverse('search', args=(s,)))
+    except:
+        return HttpResponse(404)
 # def twice_label_choice(request, fLabelNum):
 #     sLabel = Label.objects.filter(labelNum__range=(fLabelNum*100+1,fLabelNum*100+100))
 #     result = []

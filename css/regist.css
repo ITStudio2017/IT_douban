@@ -10,6 +10,9 @@
 li{
 	list-style-type: none;
 }
+input{
+	outline: none;
+}
 input::-webkit-input-placeholder { /* WebKit browsers */ 
 color: #C9C9C9; 
 } 

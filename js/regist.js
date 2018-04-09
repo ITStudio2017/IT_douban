@@ -1,6 +1,15 @@
+
+
+
+//选中框
+$("input").focus(function(){
+  $(this).css('border-color','rgba(0,0,0,0.4)')
+});
+$("input").blur(function(){
+  $(this).css('border-color','#D9D9D9')
+})
+
 //logo 变化
-
-
 $(".logo_2").animate({'opacity':'1','margin-top':'48'},2000);
 $(".body").find("h3").animate({'opacity':'1'},2000);
 //

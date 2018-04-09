@@ -214,6 +214,7 @@ color: #C9C9C9;
 	margin-left: 39px;
 	margin-top: 20px;
 	margin-right: 44px;
+	overflow: hidden;
 
 }
 .body_middle_article_left img{
@@ -225,7 +226,7 @@ color: #C9C9C9;
 	width: 563px;
 }
 .body_middle_article_title{
-	width: 139px;
+
 	height: 20px;
 	font-size: 20px;
 	letter-spacing: 2px;

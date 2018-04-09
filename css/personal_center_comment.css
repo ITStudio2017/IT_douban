@@ -420,10 +420,10 @@ input{
 	margin-left: 18px;
 	margin-top: 18px;
 }
-.body_comment_content_1,.body_comment_content_2,.body_comment_content_3,.body_comment_content_4{
+.body_comment_content_1{
 
 	width: 654px;
-	height: 128px;
+	height: 208px;
 	background-color: #ffffff;
 	box-shadow: 0px 2px 6px 0px 
 		rgba(0, 0, 0, 0.15);
@@ -435,7 +435,7 @@ input{
 }
 
 
-.body_comment_content_id_1,.body_comment_content_id_2,.body_comment_content_id_3,.body_comment_content_id_4 {
+.body_comment_content_id_1{
 	font-size: 20px;
 	line-height: 36px;
 	letter-spacing: 2px;
@@ -454,7 +454,7 @@ input{
 .body_comment_stars{
 	float: left;
 }
-.body_comment_content_time_1,.body_comment_content_time_2,.body_comment_content_time_3,.body_comment_content_time_4{
+.body_comment_content_time_1{
 	font-size: 20px;
 	letter-spacing: 2px;
 	color: #333333;
@@ -462,7 +462,7 @@ input{
 	right: 16px;
 	top: 29px;
 }
-.body_comment_content_word_1,.body_comment_content_word_2,.body_comment_content_word_3,.body_comment_content_word_4{
+.body_comment_content_word_1{
 	width: 615px;
 	height: 52px;
 	font-size: 16px;
@@ -473,7 +473,7 @@ input{
 	top: 58px;
 	right: 16px;
 }
-.body_comment_good_1,.body_comment_good_2,.body_comment_good_3,.body_comment_good_4{
+.body_comment_good_1{
 	width: 83px;
 	height: 27px;
 	position: absolute;
@@ -489,7 +489,7 @@ input{
 .body_comment_good_pic:hover{
 	cursor: pointer;
 }
-.body_comment_good_amount_1,.body_comment_good_amount_2,.body_comment_good_amount_3,.body_comment_good_amount_4{
+.body_comment_good_amount_1{
 	color: #eb0606;
 	letter-spacing: 1px;
 	font-size: 16px;

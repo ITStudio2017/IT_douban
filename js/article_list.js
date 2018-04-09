@@ -238,3 +238,11 @@ $(".body_middle_article_left img").each(function(){
  }
 })
 
+
+//选中框
+// $("input").focus(function(){
+//   $(this).css('border-color','rgba(0,0,0,0.4)')
+// });
+// $("input").blur(function(){
+//   $(this).css('border-color','#D9D9D9')
+// })

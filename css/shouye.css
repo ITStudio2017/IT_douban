@@ -136,12 +136,6 @@ color: #C9C9C9;
 .registration:hover{
 	cursor: pointer;
 }
-.personal_center{
-	display: none;
-}
-.log_out{
-	display: none;
-}
 
 
 .personal_center_a{

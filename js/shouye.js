@@ -1,5 +1,12 @@
 //手风琴
 
+//选中框
+// $("input").focus(function(){
+// 	$(this).css('border-color','rgba(0,0,0,0.4)')
+// });
+// $("input").blur(function(){
+// 	$(this).css('border-color','#D9D9D9')
+// })
 
 // $(".body_top_inner ul li").click(function(){
 // 	$(".body_top_inner ul li").stop(true);

@@ -1,3 +1,7 @@
+
+
+
+
 var star_lock = false;
 var total_star = 0;
 var lock_click = 1;
@@ -306,3 +310,32 @@ $(".body_book_grade_draw").eq(i).width( book_people[i] / total_people * 217 )
 
 	
 	})
+
+
+	
+//选中框
+// $("input").focus(function(){
+// 	$(this).css('border-color','rgba(0,0,0,0.4)')
+// });
+// $("input").blur(function(){
+// 	$(this).css('border-color','#D9D9D9')
+// })
+
+$(".body_book_pic img").each(function(){
+  if($(this).width()/$(this).height() >0.704)
+ {
+   $(this).css({'height':'399px','width':'auto'});
+ }
+ else{
+  $(this).css({'height':'auto','width':'281px'});
+ }
+})
+$(".book_author_pic img").each(function(){
+  if($(this).width()/$(this).height() >0.768)
+ {
+   $(this).css({'height':'350px','width':'auto'});
+ }
+ else{
+  $(this).css({'height':'auto','width':'269px'});
+ }
+})

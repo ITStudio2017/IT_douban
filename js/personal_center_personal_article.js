@@ -9,11 +9,11 @@ $(".personal_body_save_article_intro_1").each(function(){
 })
 
 
-$(".personal_body_save_article_title_1").each(function(){
+$(".personal_body_save_article_title_1 a").each(function(){
 
 	var comment_length = $(this).text().length ;
-	if( comment_length >12){
-		$(this).text($(this).text().substring(0,12))
+	if( comment_length >8){
+		$(this).text($(this).text().substring(0,8))
 		$(this).html($(this).html()+'...');
 	}
 })

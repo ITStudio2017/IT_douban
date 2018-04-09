@@ -86,6 +86,7 @@ def changeArticle(request,id):
 
 def article_detail(request,id):
 	art = Article.objects.get(id=id)
+	art.increase_views()
 	commentOfArticle = comment_article.objects.filter(article=art).order_by('-pub_date')
 	if request.method == 'POST':
 		commentForm = Comment_Article_Form(request.POST)

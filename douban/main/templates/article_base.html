@@ -1,82 +1,75 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>{% block title %}个人中心{% endblock %}</title>
-    {% block link %}
-    {% endblock %}
+	<meta charset="UTF-8">
+	<title>豆瓣文章</title>
+	<link rel="shortcut icon" href="/static/images/bitbug_favicon.ico">
+	<link rel="stylesheet" href="/static/css/font_csh.css">
+	<link rel="stylesheet" href="/static/css/article_list.css">
+	<link rel="stylesheet" href="/static/css/footer.css">
+	<link rel="stylesheet" href="/static/css/header.css">
+	<!-- 插件部分 -->
+
+	
 </head>
 <body>
-    <div class="container">
-		<div class="container_inner">
-			<div class="personal_nav">
-			<a href="/">
-			<img  class="personal_nav_logo" src="/static/images/logo_4.png" alt=""></a>
-			<h3 class="personal_nav_title">{{ request.user.name }}的个人主页</h3>
-			<div style="clear: both;"></div>
+	<div class="container">
+<!-- <div class="tipstutorials">建议图标尺寸：80×80px</div>  
+<em class="tipstutorials">建议图标尺寸：150×100px<br/>背景尺寸：640×200px</em>   -->
+		<div class="header">
+			<div class="logo_1"><a style="display: block;" href="/"><img src="/static/images/logo.png" alt=""></a></div>
+			<div class="nav_menu">
+				<a href="/articleList/hot/1/"><img src="/static/images/book_list_logo.png" alt="shouye.html">
+				<span class="nav_menu_word">豆瓣文章</span>
+				<div style="clear: both;"></div>
+				</a>
+<!-- 				<ul class="nav_menu_ul">
+					<li class="nav_book">豆瓣读书</li>
+					<li class="nav_essey">豆瓣文章</li>
+				</ul> -->
+
 			</div>
-			<div class="personal_body">
-
-				<div class="personal_body_arrow_1"><img src="/static/images/write_article_arrow.png" alt=""></div>
-			
-				
-				<div class="personal_body_perinfo">
-					<div class="personal_bofy_perinfo_pic"></div>
-					<h6 class="personal_body_perinfo_name">{{ request.user.name }}</h6>
-					<img class="personal_body_perinfo_sex" src="/static/images/sex_1.png" alt="">
-					<img class="personal_body_perinfo_write" src="/static/images/write_ar_2.png" alt="">
-					<div class="personal_body_perinfo_words">这个人很懒，什么都没留下哦！</div>
-					</div>
-					<div class="personal_body_menu">
-					<ul>
-						<li class="personal_body_save_books">
-							<a href="personal_center_save_book.html">
-								<span class="personal_body_save_books_span">我收藏的书籍</span>
-								
-								<img class="personal_body_save_books_img" src="/static/images/save_arrow_nochoose_1.png" alt="">
-							</a>
-						</li>
-							<li class="personal_body_save_articles">
-								<a href="personal_center_save_article.html">
-								<span class="personal_body_save_articles_span">我收藏的文章</span>
-								
-								<img class="personal_body_save_articles_img" src="/static/images/save_arrow_nochoose_1.png" alt="">
-							</a>
-						</li>
-						<li class="personal_body_save_comment">
-							<a href="/comment/">
-								<span class="personal_body_save_comment_span">我编写的评论</span>
-								
-								<img class="personal_body_save_comment_img" src="/static/images/save_arrow_nochoose_1.png" alt="">
-							</a>
-						</li>
-						<li class="personal_body_personal_article">
-							<a href="/userArticleList/">
-								<span class="personal_body_personal_article_span">我编写的文章</span>
-								
-								<img class="personal_body_personal_article_img" src="/static/images/save_arrow_nochoose_1.png" alt="">
-							</a>
-						</li>
-
-					</ul>
-				</div>
-
-				<div class="personal_body_write">
-						<a  class="personal_body_write_a" href="/write/">
-						<span class="personal_body_write_span">我要写文章</span>
-						<img  class="personal_body_write_img" src="/static/images/write_aticle_2.png" alt="">
-					</a>
-				</div>
-
-                    {% block content %}
-
-                    {% endblock %}
-
-
-				</div>
+			<div class="search_box">
+				<input class="search_box_input" type="text" placeholder ="请输入关键词">
+				<button class="search_box_button"></button>
+			</div>
+			<div class="nav_log_reg">
+				{% if request.user.is_authenticated %}
+				<span class="personal_center"><a class="personal_center_a" href="/userArticleList/" >个人中心</a></span>
+				<span class="log_out" ><a class="log_out_a" href="/accounts/logout/">注销</a></span>
+				{% else %}
+				<span class="login"><a class="login_a" href="/accounts/login/">登录</a></span>
+				<span class="registration"><a class="registration_a" href="/accounts/register">注册</a></span>
+				{% endif %}
 			</div>
 		</div>
-		<div class="footer">
+		<div class="body">
+			<div class="article_save_tip" style="display: none;">您已成功添加到 个人中心-收藏</div>
+			<div class="body_top">
+				<div class="body_top_inner">
+
+					{% block ul %}
+					<ul class="body_top_nav_list">
+						<li class="body_top_nav"><a class="body_top_nav_a" href="/articleList/hot/1/">热门读刊</a><div class="body_top_nav_arrow"><img src="/static/images/arrow_1_down.png" alt=""></div></li>
+						<li class="body_top_nav"><a class="body_top_nav_a" href="/articleList/new/1/">最新读物</a><div style="display: none;" class="body_top_nav_arrow"><img src="/static/images/arrow_1_down.png" alt=""></div></li>
+						<li class="body_top_nav"><a class="body_top_nav_a" href="/articleList/1/1/">小说</a><div style="display: none;" class="body_top_nav_arrow"><img src="/static/images/arrow_1_down.png" alt=""></div></li>
+						<li class="body_top_nav"><a class="body_top_nav_a" href="/articleList/2/1/">散文</a><div style="display: none;" class="body_top_nav_arrow"><img src="/static/images/arrow_1_down.png" alt=""></div></li>
+						<li class="body_top_nav"><a class="body_top_nav_a" href="/articleList/3/1/">感悟</a><div style="display: none;" class="body_top_nav_arrow"><img src="/static/images/arrow_1_down.png" alt=""></div></li>
+						<li class="body_top_nav"><a class="body_top_nav_a" href="/articleList/4/1/">新闻</a><div style="display: none;" class="body_top_nav_arrow"><img src="/static/images/arrow_1_down.png" alt=""></div></li>
+					</ul>
+					{% endblock %}
+				</div>
+
+			</div>
+			
+			{% block content %}
+
+			{% endblock %}
+
+
+
+
+			<div class="footer">
 			<div class="footer_inner">
 				<div class="footer_nav">
 					<ul class="footer_nav_list">
@@ -99,9 +92,10 @@
 			</div>
 
 		</div>
+		</div>
 	</div>
 </body>
-{% block script %}
+<script src="/static/js/jquery-3.2.1.min.js"></script>
+<script src="/static/js/article_list.js"></script>
 
-{% endblock %}
 </html>

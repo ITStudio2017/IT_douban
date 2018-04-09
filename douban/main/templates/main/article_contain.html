@@ -14,8 +14,8 @@
 		<div class="header">
 			<div class="logo_1"><a href="/"><img src="/static/images/logo.png" alt=""></a></div>
 			<div class="nav_menu">
-				<a href=""><img src="/static/images/book_list_logo.png" alt="shouye.html"></a>
-				<span class="nav_menu_word">豆瓣文章</span>
+				<a href="/articleList/hot/1/"><img src="/static/images/book_list_logo.png" alt="shouye.html">
+				<span class="nav_menu_word">豆瓣文章</span></a>
 <!-- 				<ul class="nav_menu_ul">
 					<li class="nav_book">豆瓣读书</li>
 					<li class="nav_essey">豆瓣文章</li>
@@ -27,8 +27,13 @@
 				<button class="search_box_button"></button>
 			</div>
 			<div class="nav_log_reg">
-				<span class="personal_center"><a class="personal_center_a" href="/userArticleList/">个人中心</a></span>
-				<span class="log_out"><a class="log_out_a" href="/accounts/logout/">注销</a></span>
+				{% if request.user.is_authenticated %}
+				<span class="personal_center"><a class="personal_center_a" href="/userArticleList/" >个人中心</a></span>
+				<span class="log_out" ><a class="log_out_a" href="/accounts/logout/">注销</a></span>
+				{% else %}
+				<span class="login"><a class="login_a" href="/accounts/login/">登录</a></span>
+				<span class="registration"><a class="registration_a" href="/accounts/register">注册</a></span>
+				{% endif %}
 			</div>
 		</div>
 		<!-- <div class=""></div> -->

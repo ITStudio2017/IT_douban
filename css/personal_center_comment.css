@@ -436,7 +436,7 @@ input{
 
 
 .body_comment_content_id_1{
-	font-size: 20px;
+	font-size: 18px;
 	line-height: 36px;
 	letter-spacing: 2px;
 	color: #05668d;
@@ -455,12 +455,12 @@ input{
 	float: left;
 }
 .body_comment_content_time_1{
-	font-size: 20px;
+	font-size: 17px;
 	letter-spacing: 2px;
 	color: #333333;
 	position: absolute;
 	right: 16px;
-	top: 29px;
+	top: 31px;
 }
 .body_comment_content_word_1{
 	width: 615px;
@@ -494,6 +494,15 @@ input{
 	letter-spacing: 1px;
 	font-size: 16px;
 
+}
+.personal_body_save_article_modify{
+	position: absolute;
+	bottom: 18px;
+	right: 16px;
+	color: #89D4DD;
+}
+.personal_body_save_article_modify:hover{
+	cursor: pointer;
 }
 
 @media screen and (max-width: 1006px){

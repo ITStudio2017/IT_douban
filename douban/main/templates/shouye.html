@@ -150,7 +150,7 @@
 					<h2 class="hotbook_title_h">
 						<span class="hotbook_title_name">热门书刊</span>
 						<img class="hotbook_title_dot" src="../images/many_dots_2.png" alt="">
-						<span class="hotbook_title_more"><a class="hotbook_title_more_a" href="book_list.html">更多</a></span>
+						<span class="hotbook_title_more"><a class="hotbook_title_more_a" href="{% url 'book_list' %}">更多</a></span>
 					</h2>
 					<div class="body_hotbook_content">
 						<ul class="body_hotbook_content_list">
@@ -159,7 +159,7 @@
 								<a  class="body_hotbook_a_1" href="{% url 'book_contain' value|key:"id" %}"><img src="{{ value|key:"cover" }}" alt=""></a>
 								<div class="body_hotbook_book_title"><a  class="body_hotbook_book_title_a" href="{% url 'book_contain' value|key:"id" %}">{{ value|key:"bookname" }}</a></div>
 								<div class="body_hotbook_book_want">{{ value|key:"loveCount" }}</div>
-								<div class="body_hotbook_book_love"><img src="../images/love.png" alt=""></div>
+{#								<div class="body_hotbook_book_love"><img src="../images/love.png" alt=""></div>#}
 							</li>
 
 							{% endfor %}

@@ -72,10 +72,14 @@
 						</ul>
 						<div class="body_book_grade_other">
 							<div class="body_book_grade_love">
-								<img src="../images/love.png" alt="">
-							</div>
-							<div class="body_book_grade_share">
-								<img src="../images/share.png" alt="">
+                                {% if collected %}
+								    <img src="../images/grade_love.png" alt="">
+                                {% else %}
+								    <img src="../images/love.png" alt="">
+                                {% endif %}
+                                <input class="collect_sao_operation_collect" style="display: none" value="{% url 'book_collect' book|key:"id" %}">
+                                <input class="collect_sao_operation_uncollect" style="display: none" value="{% url 'book_uncollect' book|key:"id" %}">
+                                <img class="collect_sao_operation" src="" style="display: none">
 							</div>
 						</div>
 

@@ -27,7 +27,7 @@ $(".book_comment_pinfen_star").click(function(){
 	if( star_lock == false)
 {
 	total_star = $(this).index() - 0 + 1;
-	$(".total_star").val(total_star);
+	$(".total_star").html(total_star);
 	star_lock = true;
 
 }
@@ -90,12 +90,15 @@ $(".body_comment_good_pic").click(function(){
 
 //收藏该书
 $(".body_book_grade_love").click(function(){
-	if($(this).find("img").attr('src') == ("../images/love.png")){
-		$(this).find("img").attr('src','../images/grade_love.png')
-	}
-	
+	if($(this).find("img").attr('src') == ("../images/love.png")) {
+        $(this).find("img").attr('src', '../images/grade_love.png');
+        var ur = $(".collect_sao_operation_collect").val();
+        $(".collect_sao_operation").attr('src', ur);
+    }
 	else{
-		$(this).find("img").attr('src','../images/love.png')
+		$(this).find("img").attr('src','../images/love.png');
+        var ur = $(".collect_sao_operation_uncollect").val();
+        $(".collect_sao_operation").attr('src', ur);
 	}
 
 });

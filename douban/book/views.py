@@ -1,17 +1,17 @@
 from django.core.serializers import json
 from django.shortcuts import render, HttpResponse
-from .models import Book, FLabel, SLabel, Comment, Praise
+from .models import Book, FLabel, SLabel, Comment, Praise, Collection
 from django.core.paginator import Paginator
 from .forms import BookFrom, CommentForm
 import json
 import logging
 
 
-def dividePage(reqGetList, input):
+def dividePage(reqGetList, input, cut=4):
     back = {}
     back['pass'] = False
     try:
-        p = Paginator(input, 4)
+        p = Paginator(input, cut)
         back['pageCount'] = p.num_pages
         index = int(reqGetList['page'])
         back['output'] = p.page(index).object_list
@@ -24,7 +24,9 @@ def dividePage(reqGetList, input):
 
 def book_list(request):
     back = {
-        "bookList": {}
+        "bookList": {},
+        "pageCount": 1,
+        "nowPage": 0,
     }
     allBook = Book.objects.all().order_by('-score')
     i = 0
@@ -40,6 +42,11 @@ def book_list(request):
             "press": book.press,
             "score": book.score,
         }
+    result = dividePage(request.GET, bookList, 5)
+    if result["pass"]:
+        bookList = result['output']
+        nowPage = result['index']
+
     back["bookList"] = bookList
     return render(request, "book_list.html", back)
 
@@ -52,6 +59,7 @@ def book_show(request, id):
         "message": "",
         "pageCount": 1,
         "nowPage": 0,
+        "collected": False
     }
 
     try:
@@ -74,6 +82,15 @@ def book_show(request, id):
         getBook.save()
     except:
         return HttpResponse(404)
+
+    try:
+        user = request.user
+        x = Collection.objects.filter(book=getBook, collector=user).count()
+        x = x / x
+        back["collected"] = True
+    except:
+        back["collected"] = False
+
     book = {
         "id": getBook.id,
         "bookname": getBook.bookname,
@@ -137,16 +154,23 @@ def book_show(request, id):
     return render(request, "book_contain.html", back)
 
 
-def book_new(request):
-    return
+def book_collect(request, bookId):
+    book = Book.objects.get(id=bookId)
+    user = request.user
+    try:
+        x = Collection.objects.filter(book=book, collector=user).count()
+        x = x / x
+    except:
+        Collection(book=book, collector=user).save()
+    return HttpResponse(0)
 
 
-def book_change(request):
-    return
-
-
-def book_delete(request):
-    return
+def book_uncollect(request, bookId):
+    book = Book.objects.get(id=bookId)
+    user = request.user
+    Collection.objects.filter(book=book, collector=user).delete()
+    logging.debug(user, book)
+    return HttpResponse(0)
 
 
 # def twice_label_choice(request, fLabelNum):

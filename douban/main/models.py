@@ -16,7 +16,7 @@ class Article(models.Model):
     abstract = models.CharField('摘要',max_length=256,null=True,blank=True)
     article_cate = models.CharField('类别',max_length=5,choices=category,default='小说')
     views = models.PositiveIntegerField(default=0)
-    image = models.ImageField(upload_to='images',storage=ImageStorage())
+    image = models.ImageField(upload_to='article_img',storage=ImageStorage())
 
     def save(self,*args,**kwargs):
         if not self.abstract:

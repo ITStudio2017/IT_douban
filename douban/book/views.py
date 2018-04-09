@@ -51,6 +51,7 @@ def book_show(request, id):
         "form": None,
         "message": "",
         "pageCount": 1,
+        "nowPage": 0,
     }
 
     try:

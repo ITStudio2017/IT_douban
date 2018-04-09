@@ -246,3 +246,12 @@ $(".body_middle_article_left img").each(function(){
 // $("input").blur(function(){
 //   $(this).css('border-color','#D9D9D9')
 // })
+
+$(".personal_body_save_article_title_1 a").each(function(){
+
+  var comment_length = $(this).text().length ;
+  if( comment_length >8){
+    $(this).text($(this).text().substring(0,8))
+    $(this).html($(this).html()+'...');
+  }
+})

@@ -16,13 +16,12 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Dumping data for table `captcha_captchastore`
+-- Dumping data for table `book_comment`
 --
 
-LOCK TABLES `captcha_captchastore` WRITE;
-/*!40000 ALTER TABLE `captcha_captchastore` DISABLE KEYS */;
-INSERT INTO `captcha_captchastore` VALUES (81,'OJXS','ojxs','4a18dc0f0834527e0b4ded3dbe7e2e9b1e248790','2018-04-08 17:11:47.827724');
-/*!40000 ALTER TABLE `captcha_captchastore` ENABLE KEYS */;
+LOCK TABLES `book_comment` WRITE;
+/*!40000 ALTER TABLE `book_comment` DISABLE KEYS */;
+/*!40000 ALTER TABLE `book_comment` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -34,4 +33,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-08 21:05:48
+-- Dump completed on 2018-04-10  6:20:20

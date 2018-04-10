@@ -42,8 +42,8 @@ urlpatterns = [
     url(r'images/(?P<path>.*)', django.views.static.serve, {'document_root': os.path.join(BASE_DIR, 'static', 'images')}),
     url(r'js/(?P<path>.*)', django.views.static.serve, {'document_root': os.path.join(BASE_DIR, 'static', 'js')}),
     url(r'font/(?P<path>.*)', django.views.static.serve, {'document_root': os.path.join(BASE_DIR, 'static', 'font')}),
-    url(r'^media/book_img/(?P<path>.*)', django.views.static.serve, {'document_root': os.path.join(BASE_DIR, 'media', 'book_img')}),
-    url(r'^article_img/(?P<path>.*)', django.views.static.serve, {'document_root': os.path.join(BASE_DIR, 'media', 'article_img')}),
-    url(r'^head_img/(?P<path>.*)', django.views.static.serve, {'document_root': os.path.join(BASE_DIR, 'media', 'head_img')}),
-    url(r'^media/static/img/(?P<path>.*)', django.views.static.serve, {'document_root': os.path.join(BASE_DIR, 'media', 'static','img')}),
+    url(r'media/book_img/(?P<path>.*)', django.views.static.serve, {'document_root': os.path.join(BASE_DIR, 'media', 'book_img')}),
+    url(r'article_img/(?P<path>.*)', django.views.static.serve, {'document_root': os.path.join(BASE_DIR, 'media', 'article_img')}),
+    url(r'head_img/(?P<path>.*)', django.views.static.serve, {'document_root': os.path.join(BASE_DIR, 'media', 'head_img')}),
+    url(r'media/static/img/(?P<path>.*)', django.views.static.serve, {'document_root': os.path.join(BASE_DIR, 'media', 'static','img')}),
 ]

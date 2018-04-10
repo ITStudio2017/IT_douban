@@ -21,10 +21,10 @@
 			
 				
 				<div class="personal_body_perinfo">
-					<div class="personal_bofy_perinfo_pic"><img src="/static/images/head_pic.png" alt=""></div>
+					<div class="personal_bofy_perinfo_pic"><img src="/{{request.user.head_img}}" alt=""></div>
 					<h6 class="personal_body_perinfo_name">{{ request.user.name }}</h6>
 					<img class="personal_body_perinfo_sex" src="/static/images/sex_1.png" alt="">
-					<img class="personal_body_perinfo_write" src="/static/images/write_ar_2.png" alt="">
+					<a href="/informationChange/"><img class="personal_body_perinfo_write" src="/static/images/write_ar_2.png" alt=""></a>
 					<div class="personal_body_perinfo_words">这个人很懒，什么都没留下哦！</div>
 					</div>
 					<div class="personal_body_menu">

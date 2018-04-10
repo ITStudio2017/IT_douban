@@ -7,7 +7,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from .conf import settings
 from .managers import UserInheritanceManager, UserManager
-
+from main.storage import ImageStorage
 
 class AbstractUser(AbstractBaseUser, PermissionsMixin):
     USERS_AUTO_ACTIVATE = not settings.USERS_VERIFY_EMAIL
@@ -67,6 +67,8 @@ class User(AbstractUser):
     name = models.CharField(max_length=20,default="用户")
     sex = models.CharField(max_length=3,default="男")
     first_login = models.BooleanField(default=True)
+    motto = models.CharField(max_length=25,default="")
+    head_img = models.ImageField(upload_to='head_img',storage=ImageStorage(),default="")
     
 
 

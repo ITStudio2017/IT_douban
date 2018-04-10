@@ -57,20 +57,23 @@ def userPage(request):
     logging.debug("11111111111111111111")
 
     if first == True:
-        return render(request, 'main/account_profile.html')
+        return render(request, 'main/personal_change.html')
 
     return render(request, 'shouye.html', back)
 
 
 def userInformation(request):
     if request.method == 'POST':
-        a = json.loads(request.body)
-        b = User.objects.get(email=request.user.email)
-        b.name = a['name']
-        b.sex = a['sex']
-        b.first_login = False
-        b.save()
-    return render(request, 'main/index.html')
+        user = User.objects.get(pk=request.user.id)
+        user.name = request.POST['name']
+        user.sex = request.POST['sex']
+        user.motto = request.POST['motto']
+        user.head_img = request.FILES['image']
+        user.first_login = False
+        user.save()
+    else:
+        return render(request, 'main/personal_change.html')
+    return redirect('/')
 
 
 def WriteArticle(request):

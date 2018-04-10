@@ -44,5 +44,6 @@ urlpatterns = [
     url(r'font/(?P<path>.*)', django.views.static.serve, {'document_root': os.path.join(BASE_DIR, 'static', 'font')}),
     url(r'^media/book_img/(?P<path>.*)', django.views.static.serve, {'document_root': os.path.join(BASE_DIR, 'media', 'book_img')}),
     url(r'^article_img/(?P<path>.*)', django.views.static.serve, {'document_root': os.path.join(BASE_DIR, 'media', 'article_img')}),
-    url(r'^midia/images/(?P<path>.*)', django.views.static.serve, {'document_root': os.path.join(BASE_DIR, 'media', 'images')}),
+    url(r'^head_img/(?P<path>.*)', django.views.static.serve, {'document_root': os.path.join(BASE_DIR, 'media', 'head_img')}),
+    url(r'^media/static/img/(?P<path>.*)', django.views.static.serve, {'document_root': os.path.join(BASE_DIR, 'media', 'static','img')}),
 ]

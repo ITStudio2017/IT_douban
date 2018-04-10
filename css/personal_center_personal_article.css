@@ -75,6 +75,7 @@ li{
 	position: absolute;
 	top: 30px;
 	left: 26px;
+	overflow: hidden;
 }
 .personal_bofy_perinfo_pic img{
 	width: 34px;

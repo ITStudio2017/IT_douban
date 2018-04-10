@@ -3,6 +3,7 @@ from DjangoUeditor.models import UEditorField
 from users.models import User
 from django.utils.html import strip_tags
 from .storage import ImageStorage
+import markdown
 
 
 class Article(models.Model):
@@ -16,6 +17,7 @@ class Article(models.Model):
     article_cate = models.CharField('类别',max_length=5,choices=category,default='小说')
     views = models.PositiveIntegerField(default=0)
     image = models.ImageField(upload_to='article_img',storage=ImageStorage())
+    sort = models.PositiveIntegerField(default="1")
 
     def save(self,*args,**kwargs):
         if not self.abstract:
@@ -32,8 +34,8 @@ class Article(models.Model):
     def __str__(self):
         return self.title
     class Meta:
-        verbose_name = r"所有图书"
-        verbose_name_plural = r"所有图书"
+        verbose_name = r"用户文章"
+        verbose_name_plural = r"用户文章"
 
     
 class comment_article(models.Model):
@@ -42,8 +44,8 @@ class comment_article(models.Model):
     author = models.ForeignKey(User, default="")
     article = models.ForeignKey(Article,default="")
     class Meta:
-        verbose_name = r"图书评论"
-        verbose_name_plural = r"图书评论"
+        verbose_name = r"文章评论"
+        verbose_name_plural = r"文章评论"
         
     
 
@@ -52,7 +54,8 @@ class article_save(models.Model):
     user = models.ForeignKey(User,default="")
     time = models.DateTimeField('时间',auto_now_add=True)
     class Meta:
-        verbose_name = r"图书收藏"
-        verbose_name_plural = r"图书收藏"
+        verbose_name = r"文章收藏"
+        verbose_name_plural = r"文章收藏"
 
-# Create your models here.
+
+

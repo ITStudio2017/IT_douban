@@ -2,8 +2,8 @@ from django.shortcuts import render
 import json
 from django.shortcuts import redirect
 from users.models import User
-from .forms import ArticleForm, Comment_Article_Form
-from .models import Article, comment_article, article_save
+from .forms import *
+from .models import *
 from book.models import Book, Collection
 from django.http import HttpResponse
 from django.template.loader import render_to_string
@@ -14,7 +14,7 @@ import logging
 
 
 def userPage(request):
-    article_list = Article.objects.all().order_by('-views')[:11]
+    article_list = Article.objects.all().order_by('sort')[:11]
     article_1 = article_list[:1]
     article_2 = article_list[1:2]
     article_3 = article_list[2:3]

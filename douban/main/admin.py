@@ -6,7 +6,7 @@ admin.site.site_title = '豆瓣管理'
 
 @admin.register(Article)
 class ArticleAdmin(admin.ModelAdmin):
-	list_display=('title','pub_date','update_time',)
+	list_display=('title','pub_date','update_time')
 	search_fields = ('title','content')
 	list_per_page = 10
 
@@ -19,8 +19,8 @@ class Comment_article(admin.ModelAdmin):
 
 @admin.register(article_save)
 class Save_Article(admin.ModelAdmin):
-	list_display = ('id','user','article')
-	
+	list_display = ('id','user','article')	
+
 
 
 		

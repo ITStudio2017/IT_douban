@@ -154,7 +154,8 @@ def book_show(request, id):
                 "content": comment.content,
                 "score": comment.score,
                 "praise": comment.praise,
-                "time": comment.createTime
+                "time": comment.createTime,
+                "head": comment.owner.head_img.url,
             }
             i = i + 1
             c[str(i)] = details
@@ -199,9 +200,22 @@ def book_uncollect(request, bookId):
 def search(request, st):
     back = {
         "bookList": {},
+        "labelOnTheTop": {},
         "pageCount": 1,
         "nowPage": 0,
     }
+
+    allFLabel = FLabel.objects.all()
+    labelSet = {}
+    i = 0
+    for label in allFLabel:
+        i = i + 1
+        labelSet[str(i)] = {
+            "id": label.id,
+            "name": label.labelName,
+        }
+    back["labelOnTheTop"] = labelSet
+
     s = ""
     try:
         s = st

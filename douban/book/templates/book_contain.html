@@ -150,7 +150,7 @@
 						{% for key,value in comment.items %}
 						<ul class="body_commit_content_list" style="display: block;">
 							<li class="body_comment_content">
-								<div class="body_comment_content_pic"></div>
+                                <img class="body_comment_content_pic" src="{{ value|key:"head" }}"/>
 								<div class="body_comment_content_id">{{ nowPage|add:nowPage|add:nowPage|add:nowPage|add:key }}楼：{{ value|key:"username" }}</div>
 								<div class="body_comment_content_time">{{ value|key:"time" }}</div>
 								<div class="body_comment_star">

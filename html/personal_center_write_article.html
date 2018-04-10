@@ -66,18 +66,34 @@
 					</a>
 				</div>
 				<div class="personal_body_write_article">
+					<form action="." enctype="multipart/form-data" method="post">
 					<div class="personal_body_write_title"><input class="personal_body_write_title_input" placeholder="#请在此添加标题" type="text"></div>
 					<div class="personal_body_write_add_img">
-						<div class="personal_body_write_add_img_tip">#单击此添加图片</div>
+					<!-- <div class="personal_body_write_add_img_tip">#单击此添加图片</div> -->
+						<input type="file" name="image" required id="id_image" >
 
 					</div>
-					<div class="personal_body_write_content"><textarea class="personal_body_write_content_text" value="#请在此添加正文" type="text"></textarea>
+					<div class="personal_body_write_content"><!-- < --><!-- textarea class="personal_body_write_content_text" value="#请在此添加正文" type="text"></textarea> -->
 					<div class="personal_body_write_content_tip" >#请在此添加正文</div>
+					</div>
+					<div class="article_type">
+					<select  name="article_cate" id="id_article_cate">
+					  <option value="小说" selected>小说</option>
+
+					  <option value="散文">散文</option>
+
+					  <option value="感悟">感悟</option>
+
+					  <option value="新闻">新闻</option>
+					</select>
 					</div>
 					<button class="personal_body_write_submit" type="submit">发表</button>
 					
 			
 				</div>
+
+			</form>
+
 			</div>
 			
 		</div>

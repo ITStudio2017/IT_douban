@@ -40,6 +40,9 @@
 						<div class="regist_form_code_word">密码</div>
 						<input name="password2" required id="id_password2" placeholder="请再次输入密码" class="regist_form_code_again_input" type="password">
 					</div>
+					{% if form.errors %}
+			{% include "users/partials/errors.html" %}
+		{% endif %}
 					<div class="regist_form_code">
 						<div class="regist_form_code_word">验证码</div>
 						<div><input type="hidden" name="captcha_0" id="id_captcha_0" value="{{hashkey}}">

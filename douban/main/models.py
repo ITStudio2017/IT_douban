@@ -30,17 +30,30 @@ class Article(models.Model):
         self.views += 1
         self.save(update_fields=['views'])
 
+    def __str__(self):
+        return self.title
+    class Meta:
+        verbose_name = r"所有图书"
+        verbose_name_plural = r"所有图书"
+
     
 class comment_article(models.Model):
     content = models.CharField('内容',max_length=145)
     pub_date = models.DateTimeField('发表时间',auto_now_add=True)
     author = models.ForeignKey(User, default="")
     article = models.ForeignKey(Article,default="")
+    class Meta:
+        verbose_name = r"图书评论"
+        verbose_name_plural = r"图书评论"
+        
     
 
 class article_save(models.Model):
     article = models.ForeignKey(Article,default="")
     user = models.ForeignKey(User,default="")
     time = models.DateTimeField('时间',auto_now_add=True)
+    class Meta:
+        verbose_name = r"图书收藏"
+        verbose_name_plural = r"图书收藏"
 
 # Create your models here.

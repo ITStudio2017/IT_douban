@@ -350,11 +350,11 @@ li{
 	border:1px solid #ffffff;
 	border-radius: 10px;
 	font-size: 20px;
-	letter-spacing: 2px;
+	/*letter-spacing: 2px;*/
 	color: #333333;
 	margin-left: 55px;
 	/*margin:0px auto;*/
-	text-indent: 20px;
+	/*text-indent: 20px;*/
 	margin-top: 20px;
 	outline: none;
 

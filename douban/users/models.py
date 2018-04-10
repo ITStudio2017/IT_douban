@@ -74,3 +74,5 @@ class User(AbstractUser):
 
     class Meta(AbstractUser.Meta):
         swappable = 'AUTH_USER_MODEL'
+        verbose_name = r"用户"
+        verbose_name_plural = r"用户"

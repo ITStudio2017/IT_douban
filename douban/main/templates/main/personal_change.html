@@ -16,11 +16,6 @@
 			<div class="regist_form">
 				<div class="personal_change_title">个人信息修改</div>
 
-				<!-- <ul>
-					<li class="regist_form_login"><a class="regist_form_a_login" href="login.html">用户登录</a></li>
-					<li class="regist_form_regist"><a class="regist_form_a_regist" href="regist.html">新用户注册</a></li>
-					<div style="clear: both;"></div>
-				</ul> -->
 				<form  name="regist_form" enctype="multipart/form-data" method="post" action="/informationChange/">
 					{% csrf_token %}
 				<div class="regist_form_inner">
@@ -34,11 +29,6 @@
 						<input required type="radio" name="sex" value="女">女
 					</div>
 						
-					<!-- <div class="regist_form_verify">
-						<div class="regist_form_verify_word">验证码</div>
-						<input value="请输入正确的邮箱地址" class="regist_form_verify_input" type="text">
-						<div class="regist_form_verify_send">发送验证码</div>
-					</div> -->
 					
 					<div class="personal_change_sign">
 						<div class="personal_change_sign_word">个性签名</div>
@@ -46,24 +36,13 @@
 							<textarea name="motto" id="" cols="35" rows="5" onkeydown="return checkenter()"></textarea>
 						</div>
 					</div>
-					<div class="personal_change_sex">
-						<div class="personal_change_sex_word">头像</div>
-						<input type="file" name="image" value="添加图片" required ></div>
+					<div style="clear: both;"></div>
+
+					<div class="personal_change_tou">
+						<div class="personal_change_tou_word">头像</div>
+						<input type="file" name="image" value="添加图片" required onchange="checkFileExt(this)" ></div>
 					<div style="clear: both;"></div>
 					
-					<!-- <div class="regist_form_code">
-
-						<div class="regist_form_code_word">密码</div>
-						<input value="" class="regist_form_code_input" type="password">
-						<div class="regist_form_code_word_tip">*密码长度必须大于6位</div>
-					</div> -->
-					<!-- <div class="regist_form_code">
-
-						<div class="regist_form_code_again_word">再次输入密码</div>
-						<input value="" class="regist_form_code_again_input" type="password"> -->
-						<!-- <div class="input_code_tip">*请再次输入密码</div>
-						<div class="regist_form_code_again_input_tip">*两次密码不一致，请重新输入</div>
-					</div> -->
 					<div style="clear: both;"></div>
 					<button class="regist_form_verify_button" type="submit" >完成</button>
 					</form>
@@ -103,20 +82,38 @@ function checkenter(){
 	
 }
 
-// 	$(".personal_body_perinfo_write").click(function(){
-// 	$(".personal_body_perinfo_words").removeAttr('disabled');
-// 	$(".personal_body_perinfo_words").removeProp('border')
-// 	console.log("666")
-// 	$(".personal_body_perinfo_words").focus();
+ 
+function checkFileExt(filename)
+{
+ var flag = false; //状态
+ var arr = ["jpg","png","gif"];
+ //取出上传文件的扩展名
+ var index = filename.value.lastIndexOf(".");
+ var ext = filename.value.substr(index+1);
+ ext = ext.toLowerCase()
+ //循环比较
+ for(var i=0;i<arr.length;i++)
+ {
+  if(ext == arr[i])
+  {
+   flag = true; //一旦找到合适的，立即退出循环
+   break;
+  }
+ }
+ //条件判断
+ if(flag)
+ {
+  // document.write("文件名合法");
+ }else
+ {
+  alert("文件不合法");
+  filename.value = "";
+  return false;
+ }
+}
 
-// });
-// $(".personal_body_perinfo_words").blur(function(){
-// 	$(this).attr('disabled','disabled');
-// 	$(this).css({'border':'none'})
-	
-// });
+
 
 </script>
-
 <script src="/static/js/regist.js"></script>
 </html>

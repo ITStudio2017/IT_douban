@@ -209,7 +209,7 @@ def article_shoucang(request, article_id):
 
 
 def saveArticle(request):
-    save_list = article_save.objects.filter(user=request.user).order_by('time')
+    save_list = article_save.objects.filter(user=request.user).order_by('-time')
     return render(request, 'main/personal_center_save_article.html', {'save_list': save_list})
 
 
@@ -219,29 +219,11 @@ def deleteSave(request, article_id):
     saveArticle.delete()
     return redirect('/saveArticle/')
 
+def deleteComment(request,comment_id):
+    comment = comment_article.objects.get(pk=comment_id)
+    comment.delete()
+    return redirect('/comment/')
 
-def article_shoucang(request, article_id):
-    article = Article.objects.get(id=article_id)
-    commentOfArticle = comment_article.objects.filter(article=article).order_by('-pub_date')
-    if not request.user.is_authenticated():
-        message = '请登录后收藏！'
-        return render(request, 'main/article_contain.html',
-                      {'article': article, 'commentOfArticle': commentOfArticle, 'message': message})
-    else:
-        if request.method == 'POST':
-            article_id = request.POST['article_id']
-            article = Article.objects.get(pk=article_id)
-            try:
-                article_save.objects.filter(article=article).get(user=request.user)
-                message = '请勿重复收藏！'
-                return render(request, 'main/article_contain.html', {'article': article, 'message': message})
-            except:
-                isSave = article_save()
-                isSave.user = request.user
-                isSave.article = article
-                isSave.save()
-                message = '收藏成功！'
-                return render(request, 'main/article_contain.html', {'article': article, 'message': message})
 
 
 def display_book_collect(request):

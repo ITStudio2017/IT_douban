@@ -32,7 +32,7 @@ class BookTimeModelFilter(admin.SimpleListFilter):
 
 
 class BookAdmin(admin.ModelAdmin):
-    change_form_template = 'admin/extras/record_change_form.html'
+    # change_form_template = 'admin/extras/record_change_form.html'
     list_display = ['bookname', 'author', 'label', 'owner', 'score']
     list_filter = (BookTimeModelFilter,)
     search_fields = ['bookname', 'author']
@@ -53,16 +53,16 @@ class BookAdmin(admin.ModelAdmin):
         logging.debug(request.user)
         obj.save()
 
-    def label(self, obj):
-        fLabel = obj.get_father_labelname()
-        sLabel = obj.get_secondary_labelname()
-        retstr = ""
-        if fLabel:
-            retstr = retstr + fLabel
-            if sLabel:
-                retstr = retstr + ":" + sLabel
-        return str(retstr)
-    label.short_description = "标签"
+    # def label(self, obj):
+    #     fLabel = obj.get_father_labelname()
+    #     sLabel = obj.get_secondary_labelname()
+    #     retstr = ""
+    #     if fLabel:
+    #         retstr = retstr + fLabel
+    #         if sLabel:
+    #             retstr = retstr + ":" + sLabel
+    #     return str(retstr)
+    # label.short_description = "标签"
 
 
 class CommentAdmin(admin.ModelAdmin):

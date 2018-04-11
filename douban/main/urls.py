@@ -1,7 +1,5 @@
 from django.conf.urls import url
-from .views import (WriteArticle,userInformation,userPage,userArticle,
-        deleteArticle,changeArticle,article_detail,commentList,articleCate,
-        article_shoucang,saveArticle,deleteSave,display_book_collect)
+from .views import *
 
 urlpatterns = [
     url(r'^write/',WriteArticle,name='WriteArticle'),
@@ -18,5 +16,5 @@ urlpatterns = [
     url(r'^saveArticle/$',saveArticle,name='saveArticle'),
     url(r'^saveBook/$',display_book_collect,name='saveBook'),
     url(r'^delete/save/(?P<article_id>[0-9]+)/$',deleteSave,name='deleteSave'),
-    
+    url(r'^delete/comment/(?P<comment_id>[0-9]+)/$',deleteComment,name='deleteComment')
 ]

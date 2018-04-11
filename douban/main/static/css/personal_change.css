@@ -13,6 +13,13 @@ li{
 input{
 	outline: none;
 }
+textarea{
+	outline: none;
+	border: 2px solid #D9D9D9;
+	/*padding-left: 3px;*/
+	/*border-radius: 3px;*/
+	/*font-size: 18px;*/
+}
 input::-webkit-input-placeholder { /* WebKit browsers */ 
 color: #C9C9C9; 
 } 
@@ -57,7 +64,7 @@ h3{
 }
 .regist_form{
 	width: 800px;
-	height: 535px;
+	height: 544px;
 	
 	background-color: white;
 	margin:0px auto;
@@ -262,7 +269,7 @@ h3{
 	text-align: center;
 	background-color: #02C39A;
 	margin: 0px auto;
-	margin-top: 45px;
+	margin-top: 34px;
 	font-size: 20px;
 	letter-spacing: 1px;
 	color: white;
@@ -286,7 +293,9 @@ h3{
 	margin-left: 30px;
 
 }
-
+.personal_change_sex input:hover{
+	cursor: pointer;
+}
 .personal_change_sign_word{
 	color: #00A896;
 	letter-spacing: 2px;
@@ -308,4 +317,21 @@ h3{
 	margin-left: 95px;
 	width: 293px;
 
+}
+.personal_change_tou_word{
+	color: #00A896;
+	letter-spacing: 2px;
+	font-size: 20px;
+	width: 65px;
+	height: 29px;
+	float: left;
+	margin-top: 20px;
+}
+.personal_change_tou input{
+	margin-top: 27px;
+	margin-left: 30px;
+
+}
+.personal_change_tou input:hover{
+	cursor: pointer;
 }

@@ -61,6 +61,9 @@
 						<!-- <div class="input_code_tip">*请再次输入密码</div>
 						<div class="regist_form_code_again_input_tip">*两次密码不一致，请重新输入</div>
 					</div> -->
+					<div class="personal_change_tou">
+						<div class="personal_change_tou_word">头像</div>
+						<input type="file" name="image" value="添加图片" required  onchange="checkFileExt(this)"></div>
 					<div style="clear: both;"></div>
 					<button class="regist_form_verify_button" type="submit" >完成</button>
 					</form>
@@ -73,6 +76,35 @@
 
 <script src="../js/jquery-3.2.1.min.js"></script>
 <script>
+//3、（字符）检查文件上传表单控件，如果含有[jpg,jpeg,gif,png]则显示“文件类型合法”，否则“显示文件类型错误”
+ 
+function checkFileExt(filename)
+{
+ var flag = false; //状态
+ var arr = ["jpg","png","gif"];
+ //取出上传文件的扩展名
+ var index = filename.value.lastIndexOf(".");
+ var ext = filename.value.substr(index+1);
+ //循环比较
+ for(var i=0;i<arr.length;i++)
+ {
+  if(ext == arr[i])
+  {
+   flag = true; //一旦找到合适的，立即退出循环
+   break;
+  }
+ }
+ //条件判断
+ if(flag)
+ {
+  // document.write("文件名合法");
+ }else
+ {
+  alert("文件名不合法");
+  filename.value = "";
+  return false;
+ }
+}
 
 // $(".personal_change_sign_input textarea").each(function(){
 

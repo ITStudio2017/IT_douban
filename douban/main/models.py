@@ -3,7 +3,7 @@ from DjangoUeditor.models import UEditorField
 from users.models import User
 from django.utils.html import strip_tags
 from .storage import ImageStorage
-import markdown
+# import markdown
 
 
 class Article(models.Model):
@@ -12,12 +12,13 @@ class Article(models.Model):
     pub_date = models.DateTimeField('发表时间',auto_now_add=True)
     update_time = models.DateTimeField('更新时间',auto_now=True,null=True)
     content = UEditorField('内容',toolbars="full",upload_settings={"imageMaxSize":1204000},settings={},)
-    author = models.ForeignKey(User,default="",)
+    author = models.ForeignKey(User,verbose_name="作者",default="",null=True,on_delete=models.SET_NULL)
     abstract = models.CharField('摘要',max_length=256,null=True,blank=True)
     article_cate = models.CharField('类别',max_length=5,choices=category,default='小说')
     views = models.PositiveIntegerField(default=0)
-    image = models.ImageField(upload_to='article_img',storage=ImageStorage())
+    image = models.ImageField('封面',upload_to='article_img',storage=ImageStorage())
     isHomeArticle = models.BooleanField(default=False)
+
 
     def save(self,*args,**kwargs):
         if not self.abstract:

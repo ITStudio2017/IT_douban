@@ -17,7 +17,7 @@ class Article(models.Model):
     article_cate = models.CharField('类别',max_length=5,choices=category,default='小说')
     views = models.PositiveIntegerField(default=0)
     image = models.ImageField(upload_to='article_img',storage=ImageStorage())
-    sort = models.PositiveIntegerField(default="1")
+    isHomeArticle = models.BooleanField(default=False)
 
     def save(self,*args,**kwargs):
         if not self.abstract:

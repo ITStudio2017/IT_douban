@@ -14,7 +14,7 @@ import logging
 
 
 def userPage(request):
-    article_list = Article.objects.all().order_by('sort')[:11]
+    article_list = Article.objects.filter(isHomeArticle=True).order_by('-update_time')[:11]
     article_1 = article_list[:1]
     article_2 = article_list[1:2]
     article_3 = article_list[2:3]

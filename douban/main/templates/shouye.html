@@ -131,9 +131,12 @@
 							{% for article in  article_list %}
 							<li class="hotessey_essay hotessey_essay_1">
 								<div class="hotessey_essay_word_1">
+
 									<div class="hotessey_essay_title"><a class="hotessey_essay_title_a" href="/detail/{{article.id}}">{{article.title}}</a></div>
-									<div class="hotessey_essay_user_pic"><img src="/{{request.user.head_img}}" alt=""></div>
-									<span class="hotessey_essay_publish_time">{{article.update_time}}</span>
+									<div class="hotessey_essay_user_pic">
+										<a class="hotessey_essay_title_a" href="/detail/{{article.id}}">
+										<img src="/{{request.user.head_img}}" alt="">
+									</a></div>									<span class="hotessey_essay_publish_time">{{article.update_time}}</span>
 									<div class="hotessey_essay_scan">
 										<img src="/static/images/essey_scan.png" alt="">
 										<span class="hotessey_essay_scan_amount_1">{{article.views}}</span>

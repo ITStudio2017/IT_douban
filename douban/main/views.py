@@ -4,6 +4,7 @@ from django.shortcuts import redirect
 from users.models import User
 from .forms import *
 from .models import *
+from django.db.models import Q
 from book.models import Book, Collection
 from django.http import HttpResponse
 from django.template.loader import render_to_string
@@ -243,4 +244,37 @@ def display_book_collect(request):
         }
     back["book"] = books
     return render(request, 'main/personal_center_save_book.html', back)
+
+def searchArticle(request):
+    try:
+        page = request.GET['page']
+    except:
+        page = 1
+    try:
+        page = int(page)
+    except:
+        return redirect('/')
+    try:
+        st = request.GET['keyword']
+        if st == "":
+            return redirect('/')
+    except:
+        return redirect('/')
+    allArticle = Article.objects.filter(Q(title__contains=st) | Q(content__contains=st))
+    if not allArticle:
+        return render(request,'main/search.html',{'message':"结果为空！"})
+    articleList = allArticle.order_by('-views')
+    paginator = Paginator(articleList, 5)
+    articleList = paginator.page(page)
+    lastPage = page - 1
+    nextPage = page + 1
+    return render(request,'main/search.html',{
+        'articleList':articleList,
+        'keyword':st,
+        'page':page,
+        'lastPage':lastPage,
+        'nextPage':nextPage
+        })
+
+
 # Create your views here.

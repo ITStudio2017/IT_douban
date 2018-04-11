@@ -3,7 +3,7 @@ from DjangoUeditor.models import UEditorField
 from users.models import User
 from django.utils.html import strip_tags
 from .storage import ImageStorage
-# import markdown
+import markdown
 
 
 class Article(models.Model):
@@ -17,7 +17,7 @@ class Article(models.Model):
     article_cate = models.CharField('类别',max_length=5,choices=category,default='小说')
     views = models.PositiveIntegerField(default=0)
     image = models.ImageField('封面',upload_to='article_img',storage=ImageStorage())
-    isHomeArticle = models.BooleanField(default=False)
+    isHomeArticle = models.BooleanField('封面文章',default=False)
 
 
     def save(self,*args,**kwargs):

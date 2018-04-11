@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>豆瓣文章</title>
+	<title>豆瓣搜索</title>
 	<link rel="shortcut icon" href="/static/images/bitbug_favicon.ico">
 	<link rel="stylesheet" href="/static/css/font_csh.css">
 	<link rel="stylesheet" href="/static/css/article_list.css">
+	<link rel="stylesheet" href="/static/css/book_list.css">
 	<link rel="stylesheet" href="/static/css/footer.css">
 	<link rel="stylesheet" href="/static/css/header.css">
 	<!-- 插件部分 -->
@@ -13,22 +14,31 @@
 	
 </head>
 <body>
+	<style>
+		.body_middle_inner{
+			padding-top: 0px;
+		}
+		.search_box{
+			width: 405px;
+			margin-left: 353px;
+		}
+	</style>
 	<div class="container">
 <!-- <div class="tipstutorials">建议图标尺寸：80×80px</div>  
 <em class="tipstutorials">建议图标尺寸：150×100px<br/>背景尺寸：640×200px</em>   -->
 		<div class="header">
 			<div class="logo_1"><a style="display: block;" href="/"><img src="/static/images/logo.png" alt=""></a></div>
-			<div class="nav_menu">
-				<a href="/articleList/1/1/"><img src="/static/images/book_list_logo.png" alt="shouye.html">
+			<!-- <div class="nav_menu"> -->
+				<!-- <a href=""><img src="/static/images/book_list_logo.png" alt="shouye.html">
 				<span class="nav_menu_word">豆瓣文章</span>
 				<div style="clear: both;"></div>
-				</a>
+				</a> -->
 <!-- 				<ul class="nav_menu_ul">
 					<li class="nav_book">豆瓣读书</li>
 					<li class="nav_essey">豆瓣文章</li>
-				</ul> -->
+				</ul>
 
-			</div>
+			</div> -->
 			<div class="search_box">
 				<form action="/search/article/" method="get">
 					{% csrf_token %}
@@ -46,28 +56,60 @@
 				{% endif %}
 			</div>
 		</div>
+
+		{% if message %}
+<div class="body_middle_article_title">{{message}}</div>
+{% else %}
+
 		<div class="body">
 			<div class="article_save_tip" style="display: none;">您已成功添加到 个人中心-收藏</div>
-			<div class="body_top">
-				<div class="body_top_inner">
-
-					{% block ul %}
-					
-					{% endblock %}
-				</div>
-
-			</div>
 			
-			{% block content %}
+			<div class="body_middle">
+				<div class="body_middle_inner">
+					<ul class="body_middle_articleList_1">
+					{% for article in articleList %}
+						<li class="body_middle_article">
+							<div class="body_middle_article_left">
+								<a href="article_contain.html">
+								<img src="/{{article.image}}" alt=""></a>
+								
+								
+							</div>
+							<div class="body_middle_article_right">
+								<div class="body_middle_article_title"><a href="/detail/{{article.id}}/">
+									{{article.title}}
+								</a></div>
+								<span class="body_middle_article_author">{{article.author.name}}</span>
+								<span class="body_middle_article_publishtime">{{article.update_time}}</span>
+								<p class="body_middle_article_info">{{article.abstract}}……</p>
+								
+							</div>
+							
 
-			{% endblock %}
-{% if message %}
-<script>
-	alert('{{message}}')
-</script>
-{% endif %}
+						</li>
+					{% endfor %}
 
 
+					</ul>
+	
+				</div>
+				{% endif %}
+				<div class="body_bottom_page">
+						{% if articleList.has_previous %}
+						<span class="last_page"><a href="?page={{lastPage}}&keyword={{keyword}}"> 上一页</a></span>
+						{% else %}
+						<span class="last_page"> 上一页</span>
+						{% endif %}
+						<span class="first_page"><a href="?page=1&keyword={{keyword}}"> 首页</a></span>
+						{% if articleList.has_next %}
+						<span class="next_page"><a href="?page={{nextPage}}&keyword={{keyword}}"> 下一页</a></span>
+						{% else %}
+						<span class="next_page">下一页</span>
+						{% endif %}
+						<div class="last_page_tip" style="display: none;">已经是最后一页啦~</div>
+						<div class="first_page_tip" style="display: none;">已经是第一页啦~</div>
+					</div>
+			</div>
 			<div class="footer">
 			<div class="footer_inner">
 				<div class="footer_nav">
@@ -93,8 +135,10 @@
 		</div>
 		</div>
 	</div>
+
 </body>
 <script src="/static/js/jquery-3.2.1.min.js"></script>
-<script src="/static/js/article_list.js"></script>
+<script src="/static/js/search.js"></script>
+<!-- <script src="/static/js/book_list.js"></script> -->
 
 </html>

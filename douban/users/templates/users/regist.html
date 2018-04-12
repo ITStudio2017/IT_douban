@@ -28,6 +28,11 @@
 						<div class="regist_form_name_word">用户名</div>
 						<input maxlength="255" name="email" required id="id_email"  placeholder="example@xxx.com" class="regist_form_name_input" type="email">
 						<div class="regist_form_name_input_tip">*请输入正确的邮箱地址</div>
+						{% if errors %}
+						{% for i in errors %}
+						{{ i }}
+						{% endfor %}
+						{% endif %}
 					</div>
 					<div style="clear: both;"></div>
 					

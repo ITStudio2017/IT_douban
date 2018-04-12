@@ -16,12 +16,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Dumping data for table `book_collection`
+-- Dumping data for table `captcha_captchastore`
 --
 
-LOCK TABLES `book_collection` WRITE;
-/*!40000 ALTER TABLE `book_collection` DISABLE KEYS */;
-/*!40000 ALTER TABLE `book_collection` ENABLE KEYS */;
+LOCK TABLES `captcha_captchastore` WRITE;
+/*!40000 ALTER TABLE `captcha_captchastore` DISABLE KEYS */;
+INSERT INTO `captcha_captchastore` VALUES (85,'GFUT','gfut','2cb90384608fd6feea5e8f6fa40095a7a8efd384','2018-04-11 18:37:25.626855');
+/*!40000 ALTER TABLE `captcha_captchastore` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -33,4 +34,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-10  6:20:19
+-- Dump completed on 2018-04-11 21:29:12

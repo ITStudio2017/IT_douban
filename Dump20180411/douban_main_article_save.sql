@@ -16,12 +16,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Dumping data for table `users_user_groups`
+-- Dumping data for table `main_article_save`
 --
 
-LOCK TABLES `users_user_groups` WRITE;
-/*!40000 ALTER TABLE `users_user_groups` DISABLE KEYS */;
-/*!40000 ALTER TABLE `users_user_groups` ENABLE KEYS */;
+LOCK TABLES `main_article_save` WRITE;
+/*!40000 ALTER TABLE `main_article_save` DISABLE KEYS */;
+INSERT INTO `main_article_save` VALUES (40,'2018-04-10 20:46:48.460355',39,2);
+/*!40000 ALTER TABLE `main_article_save` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -33,4 +34,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-10  6:20:19
+-- Dump completed on 2018-04-11 21:29:11

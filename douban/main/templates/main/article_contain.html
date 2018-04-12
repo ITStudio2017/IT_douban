@@ -41,7 +41,7 @@
 
 			<h2 class="body_article_title">{{article.title}}</h2>
 			<div class="body_article_author">
-				<div class="body_article_author_pic"><img src="/{{request.user.head_img}}/" alt=""></div>
+				<div class="body_article_author_pic"><img src="/{{article.author.head_img}}/" alt=""></div>
 				<span class="body_article_author_name">{{request.user.name}}</span>
 				<span class="body_article_author_time">{{article.update_time}}</span>
 				<div class="body_article_author_more">
@@ -80,10 +80,7 @@
 					<span class="body_book_intro_dot_1"><img src="/static/images/half_dots.png" alt=""></span>
 					<span class="body_book_intro_word">网友评论</span>
 					<span class="body_book_intro_dot_2"><img src="/static/images/half_dots.png" alt=""></span>
-					<div class="book_comment_nav">
-						<div class="book_comment_nav_time"><a class="book_comment_nav_time_a" href="">时间</a></div>
-						<div class="book_comment_nav_hot"><a class="book_comment_nav_hot_a" href="">热度</a></div>
-					</div>
+					
 					<form action="/detail/{{article.id}}/" method="post">
 						{% csrf_token %}
 					<div class="book_writecomment">

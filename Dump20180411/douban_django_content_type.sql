@@ -16,12 +16,14 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Dumping events for database 'douban'
+-- Dumping data for table `django_content_type`
 --
 
---
--- Dumping routines for database 'douban'
---
+LOCK TABLES `django_content_type` WRITE;
+/*!40000 ALTER TABLE `django_content_type` DISABLE KEYS */;
+INSERT INTO `django_content_type` VALUES (2,'admin','logentry'),(4,'auth','group'),(3,'auth','permission'),(10,'book','book'),(13,'book','collection'),(11,'book','comment'),(14,'book','flabel'),(12,'book','praise'),(15,'book','slabel'),(9,'captcha','captchastore'),(5,'contenttypes','contenttype'),(7,'main','article'),(16,'main','article_save'),(8,'main','comment_article'),(17,'main','homearticle'),(6,'sessions','session'),(1,'users','user');
+/*!40000 ALTER TABLE `django_content_type` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -32,4 +34,4 @@
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-10  6:20:20
+-- Dump completed on 2018-04-11 21:29:11

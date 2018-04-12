@@ -16,13 +16,12 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Dumping data for table `users_user`
+-- Dumping data for table `book_slabel`
 --
 
-LOCK TABLES `users_user` WRITE;
-/*!40000 ALTER TABLE `users_user` DISABLE KEYS */;
-INSERT INTO `users_user` VALUES (1,'pbkdf2_sha256$36000$X2NK9Wm3lDeD$yN3flzhaRpWCHfhEH9nfkvQZ7XAAMKU76AvJ3NOknjQ=','2018-04-08 21:06:51.505733',1,'superuser@djangoproject.com',1,1,'2018-04-08 21:06:51.505733','用户','男',1,1),(2,'pbkdf2_sha256$36000$O1xSkYq7DmQ6$wbLldSbWkH6AKQBsCmXUKLzAWA/waFbC+yuWkElOs9s=','2018-04-08 22:08:20.755453',1,'330953853@qq.com',1,1,'2018-04-08 22:08:20.755453','用户','男',1,1),(3,'pbkdf2_sha256$36000$O1xSkYq7DmQ6$wbLldSbWkH6AKQBsCmXUKLzAWA/waFbC+yuWkElOs9s=','2018-04-10 02:46:15.858395',0,'alex-zs@foxmail.com',0,1,'2018-04-08 22:08:20.755453','Alex','男',0,1);
-/*!40000 ALTER TABLE `users_user` ENABLE KEYS */;
+LOCK TABLES `book_slabel` WRITE;
+/*!40000 ALTER TABLE `book_slabel` DISABLE KEYS */;
+/*!40000 ALTER TABLE `book_slabel` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -34,4 +33,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-10  6:20:20
+-- Dump completed on 2018-04-11 21:29:12

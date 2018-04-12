@@ -16,13 +16,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Dumping data for table `captcha_captchastore`
+-- Dumping data for table `django_admin_log`
 --
 
-LOCK TABLES `captcha_captchastore` WRITE;
-/*!40000 ALTER TABLE `captcha_captchastore` DISABLE KEYS */;
-INSERT INTO `captcha_captchastore` VALUES (39,'RJPV','rjpv','f2ef9ee22937d989f66395185c8351f76d93ac7b','2018-04-10 02:49:44.450922'),(41,'ZMEY','zmey','eaf8c0f1597bb3a761d74b14c9f89cecc21897b3','2018-04-10 02:49:55.802627'),(42,'AIFF','aiff','e046bf27bbfc011f9b80ff1184e56ef9a2717b30','2018-04-10 02:51:06.801196'),(44,'VUJC','vujc','298aa3b05d7c9c5d85acadf0773ea0df827e57d1','2018-04-10 02:51:15.807163');
-/*!40000 ALTER TABLE `captcha_captchastore` ENABLE KEYS */;
+LOCK TABLES `django_admin_log` WRITE;
+/*!40000 ALTER TABLE `django_admin_log` DISABLE KEYS */;
+INSERT INTO `django_admin_log` VALUES (1,'2018-04-10 19:39:10.282942','11','comment_article object',1,'[{\"added\": {}}]',8,3),(2,'2018-04-10 20:46:48.460812','40','article_save object',1,'[{\"added\": {}}]',16,3),(3,'2018-04-10 21:42:29.660052','58','北大“沈阳事件”：中国高校的“扑火”与“追责”',1,'[{\"added\": {}}]',7,3),(4,'2018-04-10 22:10:45.394684','1','网络“老大哥”无孔不入：我们应当如何抵挡',1,'[{\"added\": {}}]',17,3),(5,'2018-04-10 22:12:52.039784','2','如果医生真能感受到病人的痛苦那会怎样？',1,'[{\"added\": {}}]',17,3);
+/*!40000 ALTER TABLE `django_admin_log` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -34,4 +34,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-10  6:20:20
+-- Dump completed on 2018-04-11 21:29:11

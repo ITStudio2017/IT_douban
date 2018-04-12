@@ -16,12 +16,12 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Dumping data for table `book_comment`
+-- Dumping data for table `users_user_groups`
 --
 
-LOCK TABLES `book_comment` WRITE;
-/*!40000 ALTER TABLE `book_comment` DISABLE KEYS */;
-/*!40000 ALTER TABLE `book_comment` ENABLE KEYS */;
+LOCK TABLES `users_user_groups` WRITE;
+/*!40000 ALTER TABLE `users_user_groups` DISABLE KEYS */;
+/*!40000 ALTER TABLE `users_user_groups` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -33,4 +33,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-10  6:20:20
+-- Dump completed on 2018-04-11 21:29:11

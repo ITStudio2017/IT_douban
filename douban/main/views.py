@@ -191,8 +191,8 @@ def article_shoucang(request, article_id):
     article = Article.objects.get(id=article_id)
     commentOfArticle = comment_article.objects.filter(article=article).order_by('-pub_date')
     if not request.user.is_authenticated():
-        message = '请登录后收藏'
-        return redirect('/detail/' + article_id + '/')
+        message = '请登录后收藏!'
+        return render(request,'main/article_contain.html',{'article':article,'message':message})
     else:
         if request.method == 'POST':
             article_id = request.POST['article_id']

@@ -85,8 +85,10 @@ def WriteArticle(request):
             article.author = request.user
             article.save()
             return render(request, 'main/personal_center_write_article.html')
+        else:
+            return render(request, 'main/personal_center_write_article.html')
     else:
-    	return render(request, 'main/personal_center_write_article.html')
+        return render(request, 'main/personal_center_write_article.html')
 
 
 def userArticle(request):

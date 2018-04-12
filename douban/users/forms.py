@@ -26,8 +26,8 @@ UserModel = get_user_model()
 class UserCreationForm(forms.ModelForm):
 
     error_messages = {
-        'duplicate_email': _('A user with that email already exists.'),
-        'password_mismatch': _('The two password fields didn\'t match.'),
+        'duplicate_email': _('用户已存在'),
+        'password_mismatch': _('两次密码不一致'),
     }
 
     email = UsersEmailField(label=_('Email Address'), max_length=255)
@@ -149,7 +149,6 @@ class AuthenticationForm(forms.Form):
         ),
         'inactive': _("This account is inactive."),
     }
-    captcha = CaptchaField()
     
     def __init__(self, request=None, *args, **kwargs):
         """

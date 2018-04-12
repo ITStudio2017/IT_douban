@@ -7,7 +7,7 @@ import markdown
 
 
 class Article(models.Model):
-    category=(('小说','小说'),('散文','散文'),('戏曲','戏曲'),('剧本','剧本'),('诗歌','诗歌'),('寓言','寓言'),('童话','童话'),('书信','书信'),('议论文','议论文'),('说明文','说明文'),('记叙文','记叙文'),('报告','报告'),('总结','总结'),('新闻','新闻'),)
+    category=(('小说','小说'),('散文','散文'),('感悟','感悟'),('新闻','新闻'),)
     title = models.CharField('标题',max_length=256)
     pub_date = models.DateTimeField('发表时间',auto_now_add=True)
     update_time = models.DateTimeField('更新时间',auto_now=True,null=True)

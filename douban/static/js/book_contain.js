@@ -28,6 +28,10 @@ $(".book_comment_pinfen_star").click(function(){
 {
 	total_star = $(this).index() - 0 + 1;
 	$(".total_star").val(total_star);
+<<<<<<< HEAD
+=======
+	$(".total_star").html($(".total_star").val());
+>>>>>>> ced3b62fedbf2b942485490cf1ca08568e6e008a
 	star_lock = true;
 
 }

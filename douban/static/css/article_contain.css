@@ -462,7 +462,7 @@ color: #C9C9C9;
 	font-size: 19px;
 	color: white;
 }
-.book_comment_publish:hover{
+..book_comment_publish:hover{
 	cursor: pointer;
 }
 .book_comment_publish_a{

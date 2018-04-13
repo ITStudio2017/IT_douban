@@ -259,14 +259,14 @@ $(".body_middle_article_left img").each(function(){
 //   $(this).css('border-color','#D9D9D9')
 // })
 
-// $(".body_middle_article_title a").each(function(){
+$(".body_middle_article_title a").each(function(){
 
-//   var comment_length = $(this).text().length ;
-//   if( comment_length >8){
-//     $(this).text($(this).text().substring(0,8))
-//     $(this).html($(this).html()+'...');
-//   }
-// })
+  var comment_length = $(this).text().length ;
+  if( comment_length >8){
+    $(this).text($(this).text().substring(0,8))
+    $(this).html($(this).html()+'...');
+  }
+})
 
 
 $(".body_middle_article_info").each(function(){

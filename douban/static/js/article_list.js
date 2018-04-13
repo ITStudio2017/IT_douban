@@ -1,12 +1,24 @@
 //导航栏鼠标
-var nav_now=0;
+// $(".body_top_nav_list li").each(function(){
+//   if($(this).css('display','block'))
+//   {
+    
+
+//   }
+// })
+if($(".body_top_nav_list li div").css('display') == 'block')
+{
+  var select_nav = $(".body_top_nav_list li div").index(".body_top_nav_arrow");
+}
+
 $(".body_top_nav_list li").mouseenter(function(){
-	$(this).find("div").css('display', 'block');
-	$("body_top_nav").eq(nav_now).find("div").css('display', 'block');
+  // var num = $(this).index();
+  $(this).find("div").css('display','block');
+  $("body_top_nav").eq(select_nav).find("div").css('display', 'block');
 });
 $(".body_top_nav_list li").mouseleave(function(){
-	$(this).find("div").css('display', 'none');
-	$(".body_top_nav").eq(nav_now).find("div").css('display', 'block');
+  $(this).find("div").css('display','none');
+  $(".body_top_nav").eq(select_nav).find("div").css('display', 'block');
 });
 
 $(".body_top_nav_list li").click(function(){
@@ -247,11 +259,21 @@ $(".body_middle_article_left img").each(function(){
 //   $(this).css('border-color','#D9D9D9')
 // })
 
-$(".personal_body_save_article_title_1 a").each(function(){
+$(".body_middle_article_title a").each(function(){
 
   var comment_length = $(this).text().length ;
   if( comment_length >8){
     $(this).text($(this).text().substring(0,8))
+    $(this).html($(this).html()+'...');
+  }
+})
+
+
+$(".body_middle_article_info").each(function(){
+
+  var comment_length = $(this).text().length ;
+  if( comment_length >80){
+    $(this).text($(this).text().substring(0,80))
     $(this).html($(this).html()+'...');
   }
 })

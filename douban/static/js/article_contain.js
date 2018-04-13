@@ -179,7 +179,7 @@ $(".book_writecomment_input").keyup(function(){
 });
 
 //判断是否登陆
-if($(".book_writecomment_login").length>0)
+if($(".book_writecomment_login").css('display') != 'none')
 {
 	$(".book_writecomment_input").attr('disabled','true');
 }

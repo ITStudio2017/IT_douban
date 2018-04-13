@@ -572,6 +572,7 @@ color: #C9C9C9;
 	position: absolute;
 	top: 32px;
 	left: 33px;
+	background-image: url(../images/head_pic.png);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;

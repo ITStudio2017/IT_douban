@@ -64,7 +64,9 @@
 						<div class="login_form_code_word">密码</div>
 						<input name="password" required id="id_password"  class="login_form_code_input" type="password">
 					</div>
-				
+				{% if form.errors %}
+			{% include "users/partials/errors.html" %}
+		{% endif %}
 					<div class="login_form_verify">
 						<div class="login_form_verify_word">验证码</div>
 
@@ -83,12 +85,6 @@
 	</div>
 	
 </body>
-	{% if form.errors %}
-			
-		
-<script>
-	alert("{{ form.error_messages }}")
-</script>
-{% endif %}
+	
 <script src="/static/js/login.js"></script>
 </html>

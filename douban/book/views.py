@@ -164,13 +164,16 @@ def book_show(request, id):
     if request.method == "POST":
         form = CommentForm(request.POST)
         if form.is_valid():
-            content = form.cleaned_data["content"]
             user = request.user
-            logging.debug(user.name)
-            score = form.cleaned_data["score"]
-            logging.debug(score)
-            newComment = Comment(book=getBook, owner=user, content=content, score=score)
-            newComment.save()
+            try:
+                logging.debug(user.name)
+                score = form.cleaned_data["score"]
+                logging.debug(score)
+                content = form.cleaned_data["content"]
+                newComment = Comment(book=getBook, owner=user, content=content, score=score)
+                newComment.save()
+            except:
+                pass
         # 下面是点赞的
     form = CommentForm()
     back["form"] = form

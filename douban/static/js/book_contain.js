@@ -27,7 +27,8 @@ $(".book_comment_pinfen_star").click(function(){
 	if( star_lock == false)
 {
 	total_star = $(this).index() - 0 + 1;
-	$(".total_star").html(total_star);
+	$(".total_star").val(total_star);
+	$(".total_star").html($(".total_star").val());
 	star_lock = true;
 
 }

@@ -65,6 +65,8 @@ def userPage(request):
 
 
 def userInformation(request):
+    if not request.user.is_authenticated():
+        return redirect('/')
     if request.method == 'POST':
         user = User.objects.get(pk=request.user.id)
         user.name = request.POST['name']
@@ -79,6 +81,8 @@ def userInformation(request):
 
 
 def WriteArticle(request):
+    if not request.user.is_authenticated():
+        return redirect('/')
     if request.method == 'POST':
         form = ArticleForm(request.POST, request.FILES)
         if form.is_valid():
@@ -93,11 +97,15 @@ def WriteArticle(request):
 
 
 def userArticle(request):
+    if not request.user.is_authenticated():
+        return redirect('/')
     article_list = Article.objects.filter(author=request.user).order_by('-update_time')
     return render(request, 'main/personal_center_personal_article.html', {'article_list': article_list})
 
 
 def deleteArticle(request, id):
+    if not request.user.is_authenticated():
+        return redirect('/')
     article = Article.objects.get(id=id)
     comment = comment_article.objects.filter(article=article)
     article.delete()
@@ -106,6 +114,8 @@ def deleteArticle(request, id):
 
 
 def changeArticle(request, id):
+    if not request.user.is_authenticated():
+        return redirect('/')
     article = Article.objects.get(id=id)
     if request.method == 'POST':
         form = ArticleForm(request.POST, instance=article)
@@ -218,17 +228,23 @@ def article_shoucang(request, article_id):
 
 
 def saveArticle(request):
+    if not request.user.is_authenticated():
+        return redirect('/')
     save_list = article_save.objects.filter(user=request.user).order_by('-time')
     return render(request, 'main/personal_center_save_article.html', {'save_list': save_list})
 
 
 def deleteSave(request, article_id):
+    if not request.user.is_authenticated():
+        return redirect('/')
     article = Article.objects.get(id=article_id)
     saveArticle = article_save.objects.get(article=article)
     saveArticle.delete()
     return redirect('/saveArticle/')
 
 def deleteComment(request,comment_id):
+    if not request.user.is_authenticated():
+        return redirect('/')
     comment = comment_article.objects.get(pk=comment_id)
     comment.delete()
     return redirect('/comment/')

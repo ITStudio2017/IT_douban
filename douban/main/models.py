@@ -17,7 +17,8 @@ class Article(models.Model):
     article_cate = models.CharField('类别',max_length=5,choices=category,default='小说')
     views = models.PositiveIntegerField(default=0)
     image = models.ImageField('封面',upload_to='article_img',storage=ImageStorage())
-    isHomeArticle = models.BooleanField('封面文章',default=False)
+    isHomeArticle = models.BooleanField('首页文章',default=False)
+    isDisplay = models.BooleanField('文章展示',default=False)
 
 
     def save(self,*args,**kwargs):

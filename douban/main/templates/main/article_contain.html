@@ -42,7 +42,7 @@
 			<h2 class="body_article_title">{{article.title}}</h2>
 			<div class="body_article_author">
 				<div class="body_article_author_pic"><img src="/{{article.author.head_img}}/" alt=""></div>
-				<span class="body_article_author_name">{{request.user.name}}</span>
+				<span class="body_article_author_name">{{article.author.name}}</span>
 				<span class="body_article_author_time">{{article.update_time}}</span>
 				<div class="body_article_author_more">
 					<form action="/shoucang/{{article.id}}/" method="post">
@@ -113,9 +113,9 @@
 
 					</div>
 					<div class="body_bottom_page">
-						<span class="last_page" >上一页</span>
-						<span class="first_page">首页</span>
-						<span class="next_page">下一页</span>
+						<span class="last_page" ></span>
+						<span class="first_page"></span>
+						<span class="next_page"></span>
 						<div class="last_page_tip" style="display: none;">已经是最后一页啦~</div>
 						<div class="first_page_tip" style="display: none;">已经是第一页啦~</div>
 					</div>

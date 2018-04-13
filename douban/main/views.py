@@ -12,7 +12,8 @@ from django.core.files.base import ContentFile
 from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404
 import logging
-
+from django.core.paginator import EmptyPage
+from django.shortcuts import render_to_response
 
 def userPage(request):
     article_list = Article.objects.filter(isHomeArticle=True).order_by('-update_time')[:11]
@@ -147,20 +148,25 @@ def commentList(request):
 
 def articleCate(request, cate, page):
     if cate == '1':
-        article_list = Article.objects.all().order_by('-views')[:15]
-    if cate == '2':
-        article_list = Article.objects.all().order_by('-update_time')[:15]
-    if cate == '3':
-        article_list = Article.objects.filter(article_cate='小说').order_by('-update_time')[:15]
-    if cate == '4':
-        article_list = Article.objects.filter(article_cate='散文').order_by('-update_time')[:15]
-    if cate == '5':
-        article_list = Article.objects.filter(article_cate='感悟').order_by('-update_time')[:15]
-    if cate == '6':
-        article_list = Article.objects.filter(article_cate='新闻').order_by('-update_time')[:15]
-
+        article_list = Article.objects.all().filter(isDisplay = True).order_by('-views')[:15]
+    elif cate == '2':
+        article_list = Article.objects.all().filter(isDisplay = True).order_by('-update_time')[:15]
+    elif cate == '3':
+        article_list = Article.objects.filter(isDisplay = True).filter(article_cate='小说').order_by('-update_time')[:15]
+    elif cate == '4':
+        article_list = Article.objects.filter(isDisplay = True).filter(article_cate='散文').order_by('-update_time')[:15]
+    elif cate == '5':
+        article_list = Article.objects.filter(isDisplay = True).filter(article_cate='感悟').order_by('-update_time')[:15]
+    elif cate == '6':
+        article_list = Article.objects.filter(isDisplay = True).filter(article_cate='新闻').order_by('-update_time')[:15]
+    else:
+        cate = '1'
     paginator = Paginator(article_list, 5)
-    article_page = paginator.page(page)
+    try:
+        article_page = paginator.page(page)
+    except:
+        page = 1
+        article_page = paginator.page(page)
     if not request.user.is_authenticated():
         if request.method == 'POST':
             message = '请登录后收藏!'
@@ -258,8 +264,6 @@ def searchArticle(request):
         return redirect('/')
     try:
         st = request.GET['keyword']
-        if st == "":
-            return redirect('/')
     except:
         return redirect('/')
     allArticle = Article.objects.filter(Q(title__contains=st) | Q(content__contains=st))
@@ -267,9 +271,16 @@ def searchArticle(request):
         return render(request,'main/search.html',{'message':"结果为空！"})
     articleList = allArticle.order_by('-views')
     paginator = Paginator(articleList, 5)
-    articleList = paginator.page(page)
-    lastPage = page - 1
-    nextPage = page + 1
+    try:
+        articleList = paginator.page(page)
+        lastPage = page - 1
+        nextPage = page + 1
+    except EmptyPage:
+        articleList = paginator.page(1)
+        page = 1
+        lastPage = 1
+        nextPage = 1
+    
     return render(request,'main/search.html',{
         'articleList':articleList,
         'keyword':st,
@@ -278,5 +289,6 @@ def searchArticle(request):
         'nextPage':nextPage
         })
 
-
+def page_not_found(request):
+    return render_to_response('404_error.html')
 # Create your views here.

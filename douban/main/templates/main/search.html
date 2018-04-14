@@ -25,6 +25,9 @@
 		.body_middle_article_title a{
 			color: #333333;
 		}
+		.body_bottom_page a{
+			color: #347898;
+		}
 	</style>
 	<div class="container">
 <!-- <div class="tipstutorials">建议图标尺寸：80×80px</div>  
@@ -99,13 +102,13 @@
 				{% endif %}
 				<div class="body_bottom_page">
 						{% if articleList.has_previous %}
-						<span class="last_page"><a href="?page={{lastPage}}&keyword={{keyword}}"> 上一页</a></span>
+						<a href="?page={{lastPage}}&keyword={{keyword}}"><span class="last_page"> 上一页</span></a>
 						{% else %}
 						<span class="last_page"> 上一页</span>
 						{% endif %}
-						<span class="first_page"><a href="?page=1&keyword={{keyword}}"> 首页</a></span>
+						<a href="?page=1&keyword={{keyword}}"><span class="first_page"> 首页</span></a>
 						{% if articleList.has_next %}
-						<span class="next_page"><a href="?page={{nextPage}}&keyword={{keyword}}"> 下一页</a></span>
+						<a href="?page={{nextPage}}&keyword={{keyword}}"> <span class="next_page">下一页</span></a>
 						{% else %}
 						<span class="next_page">下一页</span>
 						{% endif %}

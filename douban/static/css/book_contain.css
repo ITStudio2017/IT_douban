@@ -10,6 +10,12 @@
 li{
 	list-style-type: none;
 }
+button{
+	outline: none;
+}
+div{
+	word-break:break-all;
+}
 input::-webkit-input-placeholder { /* WebKit browsers */ 
 color: #C9C9C9; 
 } 
@@ -25,6 +31,22 @@ color: #C9C9C9;
 .container{
 	width: 100%;
 	
+}
+.book_writecomment_count_tip_less{
+	position: absolute;
+	bottom: -19px;
+	left: 808px;
+	font-size: 16px;
+	color: #e81a33;
+	display: none;
+}	
+.book_writecomment_count_tip_more{
+	position: absolute;
+	bottom: -19px;
+	left: 808px;
+	font-size: 16px;
+	color: #e81a33;
+	display: none;
 }
 .header{
 	width: 1006px;

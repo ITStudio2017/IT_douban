@@ -125,10 +125,13 @@
                     <form action="{% url "book_contain" book|key:"id" %}" method="post">
                         {% csrf_token %}
                         <div class="book_writecomment">
-                            <textarea class="book_writecomment_input" type="text" placeholder="#请在此输入文字" name="content"></textarea><!-- <input class="book_writecomment_input" type="text" -->
+                            <textarea class="book_writecomment_input" type="text" placeholder="#请在此输入文字" name="content" oninput="count_comment()"></textarea><!-- <input class="book_writecomment_input" type="text" -->
                             <div class="book_writecomment_count"><input type="text" disabled="true" value="0"><span>/140</span></div>
+                            <div class="book_writecomment_count_tip_less">*评论字数不得少于15个字</div>
+						<div class="book_writecomment_count_tip_more">*评论字数不得多于140个字</div>
                            {% if not request.user.is_authenticated %}
 						<div class="book_writecomment_login" >请先登录</div>
+							
 						{% endif %}
                         </div>
                         <div class="book_comment_pinfen">
@@ -144,7 +147,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <button class="book_comment_publish" type="submit">发布评论</button>
+                        <button class="book_comment_publish" type="submit" onclick="return comment();">发布评论</button>
                     </form>
 					<div style="clear: both;"></div>
 					<div class="body_comment_contentout">

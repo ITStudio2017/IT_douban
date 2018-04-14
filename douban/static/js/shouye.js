@@ -1,3 +1,25 @@
+var search = window.location.search;
+if( search == '?reload' ){    //如果有reload参数，则自动刷新一次
+    window.history.pushState({}, 0, '/');    //记得这里去掉参数，否则就会不停刷新
+    window.location.reload();
+}
+
+$(".search_box_input").focus(function(){
+	if($(".search_box_input").val() == "")
+{
+	$(".search_box_button").attr('disabled','disabled');
+
+}
+else{
+	console.log("666")
+	$(".search_box_input").blur(function(){
+		
+		$(".search_box_button").removeAttr('disabled');
+	})
+	
+}
+})
+
 //手风琴
 
 //选中框
@@ -236,13 +258,17 @@ $(".body_top_inner").mouseout(function(){
 // 	}
 // })
 //动态改变图片的大小
-$(".hotessey_essay_pic").each(function(){
+$(".hotessey_essay_pic_div img").each(function(){
   if($(this).width()/$(this).height() >1.157)
  {
    $(this).css({'height':'146px','width':'auto'});
+    var left = ($(this).width()/2 - $(".hotessey_essay_pic_div").width()/2);
+ 	$(this).css('margin-right',-left);
  }
  else{
   $(this).css({'height':'auto','width':'169px'});
+  var height = ($(this).height()/2 - $(".hotessey_essay_pic_div").height()/2);
+ $(this).css('margin-top',-height);
  }
 })
 
@@ -250,9 +276,15 @@ $(".hotessey_photoalbum_1_a_div img").each(function(){
   if($(this).width()/$(this).height() >1.533)
  {
    $(this).css({'height':'298px','width':'auto'});
+   
+    var left = ($(this).width()/2 - $(".hotessey_photoalbum_1_a_div").width()/2);
+ 	$(this).css('margin-left',-left);
+ 	console.log(left)
  }
  else{
   $(this).css({'height':'auto','width':'457px'});
+  var height = ($(this).height()/2 - $(".hotessey_photoalbum_1_a_div").height()/2);
+ $(this).css('margin-top',-height);
  }
 })
 
@@ -260,12 +292,30 @@ $(".body_hotbook_a_1_div img").each(function(){
   if($(this).width()/$(this).height() >0.7107)
  {
    $(this).css({'height':'280px','width':'auto'});
+    var left = ($(this).width()/2 - $(".body_hotbook_a_1_div").width()/2);
+ 	$(this).css('margin-left',-left);
  }
  else{
   $(this).css({'height':'auto','width':'199px'});
+  var height = ($(this).height()/2 - $(".body_hotbook_a_1_div").height()/2);
+ $(this).css('margin-top',-height);
  }
 })
 
+$(".hotessey_essay_user_pic a").each(function(){
+  if($(this).width()/$(this).height() >1)
+ {
+   $(this).css({'height':'50px','width':'auto'});
+   var left = ($(this).width()/2 - $(".hotessey_essay_user_pic").width()/2);
+ 	$(this).css('margin-left',-left);
+ }
+ else{
+  $(this).css({'height':'auto','width':'50px'});
+  var height = ($(this).height()/2 - $(".hotessey_essay_user_pic").height()/2);
+ $(this).css('margin-top',-height);
+ 
+ }
+})
 // $(".body_top_sfq_pic_img").each(function(){
 //   if($(this).width()/$(this).height() > 1.611)
 //  {

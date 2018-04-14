@@ -162,7 +162,7 @@ $(".body_article_author_love").click(function(){
 // })
 
 //评论框字数统计
-
+var comment_commit = true;
 function count_comment(){
 
 	var comment_length = $(".book_writecomment_input").val().length ;
@@ -201,7 +201,7 @@ function count_comment(){
 	$(".book_writecomment_count input").val(comment_length-0);
 
 }
-function comment_commit(){
+function comment(){
 	if(comment_commit == true)
 		return false;
 }
@@ -239,9 +239,13 @@ $(".body_comment_content_pic img").each(function(){
   if($(this).width()/$(this).height() >1)
  {
    $(this).css({'height':'73px','width':'auto'});
+   var left = ($(this).width()/2 - $(".body_comment_content_pic").width()/2);
+ 	$(this).css('margin-left',-left);
  }
  else{
   $(this).css({'height':'auto','width2':'73px'});
+  var height = ($(this).height()/2 - $(".body_comment_content_pic").height()/2);
+ $(this).css('margin-top',-height);
  }
 })
 
@@ -251,8 +255,13 @@ $(".body_article_author_pic img").each(function(){
   if($(this).width()/$(this).height() >1)
  {
    $(this).css({'height':'50px','width':'auto'});
+   var left = ($(this).width()/2 - $(".body_article_author_pic").width()/2);
+ 	$(this).css('margin-left',-left);
  }
  else{
   $(this).css({'height':'auto','width':'50px'});
+  var height = ($(this).height()/2 - $(".body_article_author_pic").height()/2);
+ $(this).css('margin-top',-height);
+ 
  }
 })

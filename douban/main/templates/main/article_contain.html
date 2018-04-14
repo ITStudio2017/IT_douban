@@ -84,7 +84,7 @@
 					<span class="body_book_intro_word">网友评论</span>
 					<span class="body_book_intro_dot_2"><img src="/static/images/half_dots.png" alt=""></span>
 					
-					<form action="/detail/{{article.id}}/" method="post" onsubmit="return comment_commit()">
+					<form action="/detail/{{article.id}}/" method="post">
 						{% csrf_token %}
 					<div class="book_writecomment">
 						<textarea class="book_writecomment_input" name="content" maxlength="140" required id="id_content" type="text" placeholder="#请在此输入文字" oninput="count_comment()"></textarea>
@@ -97,7 +97,7 @@
 					</div>
 					
 
-				<input class="book_comment_publish" value="发布评论" type="submit">
+				<input class="book_comment_publish" value="发布评论" type="submit" onclick="return comment();">
 			</form>
 				<div style="clear: both;"></div>
 					<div class="body_comment_contentout time">
@@ -136,6 +136,15 @@
 						<li class="footer_nav_content_5"><a class="footer_nav_content_a_5"  href="">常见问题</a></li>
 					</ul>
 				</div>
+				<div class="footer_nav_middle">
+                        <ul class="footer_nav_middle_list">
+                            <li class="footer_nav_middle_xinlang"><a class="footer_nav_middle_a_xinlang" href=""><img src="../images/xinlang_lgo.png" alt=""></a></li>
+                            <li class="footer_nav_middle_wechat"><a class="footer_nav_middle_a_wechat" href=""><img src="../images/weixin_logo.jpg" alt=""></a></li>
+                            <li class="footer_nav_middle_chrome"><a class="footer_nav_middle_a_chrome" href=""><img src="../images/liulan——logo.png" alt=""></a></li>
+                        </ul>
+                        <div style="clear: both;"></div>
+                    </div>
+                    <div class="footer_bottom_address">© 2005－2018 douban.com, all rights reserved 北京豆网科技有限公司</div>
 			</div>
 			</div>
 	</div>

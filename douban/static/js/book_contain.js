@@ -2,10 +2,12 @@
 
 
 
+//这里是book_contain里面要替换的关于星星的js
 var star_lock = false;
 var total_star = 0;
 var lock_click = 1;
-$(".book_comment_pinfen_star").hover(function(){
+var click_count = 0;
+$(".book_comment_pinfen_star").mouseover(function(){
 	if(star_lock == false){
 
 	
@@ -18,32 +20,52 @@ $(".book_comment_pinfen_star").hover(function(){
 	for(var j=4;j>total;j--)	
 	{
 		$(".book_comment_pinfen_star").eq(j).find("img").attr('src','../images/stra.png');
-// console.log(i);
+
 	}
 	}
 })
-//点击星星后记录个数
-$(".book_comment_pinfen_star").click(function(){
-	if( star_lock == false)
-{
-	total_star = $(this).index() - 0 + 1;
-	$(".total_star").val(total_star);
-
-	$(".total_star").html($(".total_star").val());
-	star_lock = true;
-
-}
-else{
-
-	star_lock = false;
-	for(var j=5;j>0;j--)	
+$(".book_comment_pinfen").mouseleave(function(){
+	if(total_star == 0)
 	{
-		$(".book_comment_pinfen_star").eq(j).find("img").attr('src','../images/stra.png');
-// console.log(i);
+		for(var i=0;i<=4;i++)
+	{
+		
+		$(".book_comment_pinfen_star").eq(i).find("img").attr('src','../images/stra.png');
+	}
 	}
 
-}
-	
+});
+//点击星星后记录个数
+$(".book_comment_pinfen_star").click(function(){
+	click_count++;
+	if(click_count %2 != 0)
+	{
+		total_star = $(this).index() - 0 + 1;
+		$(".total_star").val(total_star);
+		for(var i=0;i<total_star;i++)
+		{
+			$(".book_comment_pinfen_star").eq(i).find("img").attr('src','../images/star.png');
+
+		}
+		for(var j=4;j>total_star;j--)	
+		{
+			$(".book_comment_pinfen_star").eq(j).find("img").attr('src','../images/stra.png');
+
+		}
+		star_lock = true;
+
+	}
+	else{
+		total_star = 0;
+		for(var i=0;i<=4;i++)
+		{
+			
+			$(".book_comment_pinfen_star").eq(i).find("img").attr('src','../images/stra.png');
+		}
+
+		$(".total_star").val(total_star);
+		star_lock = false
+	}
 });
 //点击后的页body_book_grade_draw面定位
 $(".body_book_comment").click(function(){
@@ -252,19 +274,55 @@ $(".body_book_grade_love").click(function(){
 
 
 
-$(".book_writecomment_input").keyup(function(){
+
+//评论框字数统计
+var comment_commit = true;
+function count_comment(){
 
 	var comment_length = $(".book_writecomment_input").val().length ;
-	if( comment_length >140){
-		$(this).val($(this).val().substring(0,140))
-	}
-	else{
-		$(".book_writecomment_count input").val(comment_length-0);
-	}
 
+		if( comment_length >140){
+		// $(this).val($(this).val().substring(0,140))
+		$(".book_writecomment_count_tip_more").show();
+		$(".book_writecomment_count_tip_less").hide();
+		$(".book_writecomment input").css('color','#e81a33');
+		comment_commit = true;
+
+		}
+		else if(comment_length == 0){
+			$(".book_writecomment input").css('color',' #C9C9C9');
+			 $(".book_writecomment_count_tip_more").hide();
+			$(".book_writecomment_count_tip_less").hide();
+			comment_commit = true;
+			
+		}
+		else if(comment_length <15)
+		{
+			$(".book_writecomment_count_tip_more").hide();
+			$(".book_writecomment_count_tip_less").show();
+			$(".book_writecomment input").css('color','#e81a33');
+			comment_commit = true;
+		}
+
+		else{
+			
+			 $(".book_writecomment input").css('color',' #C9C9C9');
+			 $(".book_writecomment_count_tip_more").hide();
+			$(".book_writecomment_count_tip_less").hide();
+			comment_commit = false;
+		}
 	
+	$(".book_writecomment_count input").val(comment_length-0);
 
-});
+}
+function comment(){
+	if($(".total_star").val() == "0" || $(".total_star").val() == "" )
+	{
+		return false;
+	}
+	if(comment_commit == true)
+		return false;
+}
 
 //判断是否登陆
 if($(".book_writecomment_login").length>0)
@@ -327,18 +385,28 @@ $(".body_book_pic img").each(function(){
   if($(this).width()/$(this).height() >0.704)
  {
    $(this).css({'height':'399px','width':'auto'});
+   var left = ($(this).width()/2 - $(".body_book_pic").width()/2);
+ $(this).css('margin-left',-left);
  }
  else{
   $(this).css({'height':'auto','width':'281px'});
+  var height = ($(this).height()/2 - $(".body_book_pic").height()/2);
+ $(this).css('margin-top',-height);
  }
+ 
+ 
 })
 $(".book_author_pic img").each(function(){
   if($(this).width()/$(this).height() >0.768)
  {
    $(this).css({'height':'350px','width':'auto'});
+   var left = ($(this).width()/2 - $(".book_author_pic").width()/2);
+ 	$(this).css('margin-left',-left);
  }
  else{
   $(this).css({'height':'auto','width':'269px'});
+  var height = ($(this).height()/2 - $(".book_author_pic").height()/2);
+ $(this).css('margin-top',-height);
  }
 })
 
@@ -349,9 +417,13 @@ $(".body_comment_content_pic img").each(function(){
   if($(this).width()/$(this).height() >1)
  {
    $(this).css({'height':'73px','width':'auto'});
+   var left = ($(this).width()/2 - $(".body_comment_content_pic").width()/2);
+ 	$(this).css('margin-left',-left);
  }
  else{
   $(this).css({'height':'auto','width2':'73px'});
+  var height = ($(this).height()/2 - $(".body_comment_content_pic").height()/2);
+ $(this).css('margin-top',-height);
  }
 })
 
@@ -361,8 +433,27 @@ $(".body_article_author_pic img").each(function(){
   if($(this).width()/$(this).height() >1)
  {
    $(this).css({'height':'50px','width':'auto'});
+   var left = ($(this).width()/2 - $(".body_article_author_pic").width()/2);
+ 	$(this).css('margin-left',-left);
+ 
  }
  else{
   $(this).css({'height':'auto','width':'50px'});
+  var height = ($(this).height()/2 - $(".body_article_author_pic").height()/2);
+ $(this).css('margin-top',-height);
+ }
+})
+
+$(".body_comment_content_pic img").each(function(){
+  if($(this).width()/$(this).height() >1)
+ {
+   $(this).css({'height':'73px','width':'auto'});
+   var left = ($(this).width()/2 - $(".body_comment_content_pic").width()/2);
+ 	$(this).css('margin-left',-left);
+ }
+ else{
+  $(this).css({'height':'auto','width':'73px'});
+  var height = ($(this).height()/2 - $(".body_comment_content_pic").height()/2);
+ $(this).css('margin-top',-height);
  }
 })

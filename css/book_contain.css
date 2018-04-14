@@ -452,7 +452,26 @@ color: #C9C9C9;
 	border:none;
 	margin-top: 32px;
 	font-size: 22px;
+	position: relative;
 }
+	
+.book_writecomment_count_tip_less{
+	position: absolute;
+	bottom: -19px;
+	left: 804px;
+	font-size: 16px;
+	color: #e81a33;
+	display: none;
+
+}	
+.book_writecomment_count_tip_more{
+	position: absolute;
+	bottom: -19px;
+	left: 804px;
+	font-size: 16px;
+	color: #e81a33;
+	display: none;
+}	
 .book_comment_pinfen{
 	margin-top: 39px;
 	float: left;
@@ -544,6 +563,7 @@ color: #C9C9C9;
 	text-align: center;
 	font-size: 18px;
 	color:white;
+	outline:none;
 }
 .book_comment_publish:hover{
 	cursor: pointer;

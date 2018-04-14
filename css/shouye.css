@@ -35,7 +35,7 @@ color: #C9C9C9;
 	top: 0px;
 	left: 0px;
 	z-index: 999;
-	background-color: #02C39A;
+	background-color:rgb(0,156,140);
 
 }
 .loading_page_pic img{
@@ -50,8 +50,9 @@ color: #C9C9C9;
 	/*margin-left: -50px;*/
 	
 	margin:0px auto;
-	margin-top: 100px;
+	margin-top: 180px;
 	height: 104px;
+	margin-bottom: 10px;
 }
 .loading_page h2{
 	font-size: 30px;

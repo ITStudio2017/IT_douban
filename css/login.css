@@ -196,6 +196,7 @@ h3{
 }
 .login_form_verify{
 	margin-top: 39px;
+	position: relative;
 }
 .login_form_verify_image{
 	width: 125px;
@@ -227,4 +228,12 @@ h3{
 }
 .login_form_verify_button:hover{
 	cursor: pointer;
+}
+
+.login_form_verify_tip{
+	position: absolute;
+	bottom: -19px;
+	left: 90px;
+	font-size: 16px;
+	color: #e81a33;
 }

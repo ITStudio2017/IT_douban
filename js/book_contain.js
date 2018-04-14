@@ -248,24 +248,51 @@ $(".body_book_grade_love").click(function(){
 
 // });
 
+var comment_commit = false;
 
-
-$(".book_writecomment_input").keyup(function(){
+function count_comment(){
 
 	var comment_length = $(".book_writecomment_input").val().length ;
-	if( comment_length >140){
-		$(this).val($(this).val().substring(0,140))
-	}
-	else{
-		$(".book_writecomment_count input").val(comment_length-0);
-	}
 
+		if( comment_length >140){
+		// $(this).val($(this).val().substring(0,140))
+		$(".book_writecomment_count_tip_more").show();
+		$(".book_writecomment_count_tip_less").hide();
+		$(".book_writecomment input").css('color','#e81a33');
+		comment_commit = true;
+
+		}
+		else if(comment_length <15)
+		{
+			$(".book_writecomment_count_tip_more").hide();
+			$(".book_writecomment_count_tip_less").show();
+			$(".book_writecomment input").css('color','#e81a33');
+			comment_commit = true;
+		}
+		else{
+			
+			 $(".book_writecomment input").css('color',' #C9C9C9');
+			 $(".book_writecomment_count_tip_more").hide();
+			$(".book_writecomment_count_tip_less").hide();
+			comment_commit = false;
+		}
 	
+	$(".book_writecomment_count input").val(comment_length-0);
 
-});
+}
+function comment_commit(){
+	if(comment_commit == true)
+		return false;
+}
+// $(".book_writecomment_input").keydown(function(){
+// 	var comment_length = $(".book_writecomment_input").val().length ;
 
+// 		$(".book_writecomment_count input").val(comment_length-0);
+
+
+// })
 //判断是否登陆
-if($(".book_writecomment_login").css('display') != 'none')
+if($(".book_writecomment_login").length>0)
 {
 	$(".book_writecomment_input").attr('disabled','true');
 }

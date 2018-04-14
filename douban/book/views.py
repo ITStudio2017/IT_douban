@@ -209,7 +209,7 @@ def book_uncollect(request, bookId):
 def comment_delete(request, id):
     try:
         user = request.user
-        comment = Comment.objects.get(id=id,user=user)
+        comment = Comment.objects.get(id=id,owner=user)
         comment.delete()
         return HttpResponse("<script>window.location.href = document.referrer;</script>")
     except:

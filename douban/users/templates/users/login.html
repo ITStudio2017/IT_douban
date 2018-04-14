@@ -33,7 +33,7 @@
             if(data['status']){ //status返回1为验证码正确， status返回0为验证码错误， 在输入框的后面写入提示信息
                 $('#id_img_1').after('<span id="captcha_status" ></span>')
             }else{
-                 $('#id_img_1').after('<span id="captcha_status" >验证码错误</span>')
+                 $('#id_img_1').after('<span id="captcha_status" >*验证码错误!</span>')
             }
         });
     });

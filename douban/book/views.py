@@ -206,6 +206,16 @@ def book_uncollect(request, bookId):
     return HttpResponse('<script>window.location.href = document.referrer;</script>')
 
 
+def comment_delete(request, id):
+    try:
+        user = request.user
+        comment = Comment.objects.get(id=id,user=user)
+        comment.delete()
+        return HttpResponse("<script>window.location.href = document.referrer;</script>")
+    except:
+        return HttpResponse("<script>window.location.href = document.referrer;</script>")
+
+
 def search(request, st):
     back = {
         "bookList": {},

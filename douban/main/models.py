@@ -3,7 +3,7 @@ from DjangoUeditor.models import UEditorField
 from users.models import User
 from django.utils.html import strip_tags
 from .storage import ImageStorage
-# import markdown
+import markdown
 
 
 class Article(models.Model):

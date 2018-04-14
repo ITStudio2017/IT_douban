@@ -28,10 +28,8 @@ $(".book_comment_pinfen_star").click(function(){
 {
 	total_star = $(this).index() - 0 + 1;
 	$(".total_star").val(total_star);
-<<<<<<< HEAD
-=======
+
 	$(".total_star").html($(".total_star").val());
->>>>>>> ced3b62fedbf2b942485490cf1ca08568e6e008a
 	star_lock = true;
 
 }
@@ -269,7 +267,7 @@ $(".book_writecomment_input").keyup(function(){
 });
 
 //判断是否登陆
-if($(".book_writecomment_login").css('display') != 'none')
+if($(".book_writecomment_login").length>0)
 {
 	$(".book_writecomment_input").attr('disabled','true');
 }
@@ -341,5 +339,30 @@ $(".book_author_pic img").each(function(){
  }
  else{
   $(this).css({'height':'auto','width':'269px'});
+ }
+})
+
+
+
+//控制个人头像大小
+$(".body_comment_content_pic img").each(function(){
+  if($(this).width()/$(this).height() >1)
+ {
+   $(this).css({'height':'73px','width':'auto'});
+ }
+ else{
+  $(this).css({'height':'auto','width2':'73px'});
+ }
+})
+
+
+
+$(".body_article_author_pic img").each(function(){
+  if($(this).width()/$(this).height() >1)
+ {
+   $(this).css({'height':'50px','width':'auto'});
+ }
+ else{
+  $(this).css({'height':'auto','width':'50px'});
  }
 })

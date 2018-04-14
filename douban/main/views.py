@@ -14,6 +14,7 @@ from django.shortcuts import get_object_or_404
 import logging
 from django.core.paginator import EmptyPage
 from django.shortcuts import render_to_response
+from book.models import Comment as bookComment
 
 def userPage(request):
     article_list = Article.objects.filter(isHomeArticle=True).order_by('-update_time')[:11]
@@ -106,7 +107,8 @@ def userArticle(request):
 def deleteArticle(request, id):
     if not request.user.is_authenticated():
         return redirect('/')
-    article = Article.objects.get(id=id)
+    user = request.user
+    article = Article.objects.get(id=id,author=user)
     comment = comment_article.objects.filter(article=article)
     article.delete()
     comment.delete()
@@ -152,8 +154,11 @@ def article_detail(request, id):
 
 
 def commentList(request):
-    commentList = comment_article.objects.filter(author=request.user).order_by('-pub_date')
-    return render(request, 'main/personal_center_comment.html', {'commentList': commentList})
+    articleCommentList = comment_article.objects.filter(author=request.user).order_by('-pub_date')
+    bookCommentList = bookComment.objects.filter(owner_id=request.user.id).order_by('-createTime')
+    return render(request, 'main/personal_center_comment.html', {
+        'articleCommentList': articleCommentList,
+        'bookCommentList':bookCommentList})
 
 
 def articleCate(request, cate, page):

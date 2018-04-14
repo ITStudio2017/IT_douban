@@ -120,7 +120,7 @@ def changeArticle(request, id):
         return redirect('/')
     article = Article.objects.get(id=id)
     if request.method == 'POST':
-        form = ArticleForm(request.POST, instance=article)
+        form = ArticleForm(request.POST,request.FILES, instance=article)
         if form.is_valid():
             j = form.save(commit=False)
             j.save()

@@ -29,6 +29,7 @@ def book_list(request, labelId=0, sort=0):
         "labelOnTheTop": {},
         "pageCount": 1,
         "nowPage": 0,
+        "upArrow": 0,
     }
 
     allFLabel = FLabel.objects.all()
@@ -40,6 +41,8 @@ def book_list(request, labelId=0, sort=0):
             "id": label.id,
             "name": label.labelName,
         }
+        if label.id == int(labelId):
+            back["upArrow"] = i + 2
     back["labelOnTheTop"] = labelSet
 
     nowlabel = None
@@ -54,9 +57,13 @@ def book_list(request, labelId=0, sort=0):
     logging.debug(sort)
     if int(sort) == 0:
         allBook = allBook.order_by('-score')
+        if back["upArrow"] == 0:
+            back["upArrow"] = 1
         logging.debug(sort)
     elif int(sort) == 1:
         allBook = allBook.order_by('-createTime')
+        if back["upArrow"] == 0:
+            back["upArrow"] = 2
         logging.debug(sort)
     i = 0
     bookList = {}

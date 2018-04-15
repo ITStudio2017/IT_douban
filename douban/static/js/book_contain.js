@@ -342,4 +342,5 @@ $(".book_author_pic img").each(function(){
  else{
   $(this).css({'height':'auto','width':'269px'});
  }
-})
+});
+

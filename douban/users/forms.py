@@ -220,7 +220,7 @@ class AuthenticationForm(forms.Form):
 
 class PasswordResetForm(forms.Form):
     email = forms.EmailField(label=_("Email"), max_length=254)
-    
+    captcha = CaptchaField(error_messages={"invalid":u"验证码错误"})
     
     def send_mail(self, subject_template_name, email_template_name,
                   context, from_email, to_email, html_email_template_name=None):

@@ -213,10 +213,10 @@
                     if (page > {{ pageCount }}) {
                         window.location.href = location.origin + location.pathname + "?page={{ pageCount }}";
                     }
+                    var time_set=true;
                     document.getElementById("pageNum").value = page;
 
                     function prePage() {
-                        var time_set=true;
                         if (page === "1") {
 
                             if (time_set == true) {
@@ -242,7 +242,6 @@
                             window.location.href = location.origin + location.pathname + "?page=" + (parseInt(page) - 1).toString() + "#firstAnchor";
                     }
                     function nextPage() {
-                        var time_set=true;
                         if (page === "{{ pageCount }}") {
                             if (time_set == true) {
 

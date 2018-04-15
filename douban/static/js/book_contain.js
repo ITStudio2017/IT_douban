@@ -10,14 +10,14 @@ var click_count = 0;
 $(".book_comment_pinfen_star").mouseover(function(){
 	if(star_lock == false){
 
-	
+
 	var total=$(this).index();
 	for(var i=0;i<=total;i++)
 	{
 		$(".book_comment_pinfen_star").eq(i).find("img").attr('src','../images/star.png');
 
 	}
-	for(var j=4;j>total;j--)	
+	for(var j=4;j>total;j--)
 	{
 		$(".book_comment_pinfen_star").eq(j).find("img").attr('src','../images/stra.png');
 
@@ -37,6 +37,7 @@ $(".book_comment_pinfen").mouseleave(function(){
 });
 //点击星星后记录个数
 $(".book_comment_pinfen_star").click(function(){
+<<<<<<< HEAD
 	click_count++;
 	if(click_count %2 != 0)
 	{
@@ -45,6 +46,14 @@ $(".book_comment_pinfen_star").click(function(){
 		for(var i=0;i<total_star;i++)
 		{
 			$(".book_comment_pinfen_star").eq(i).find("img").attr('src','../images/star.png');
+=======
+	if( star_lock == false)
+{
+	total_star = $(this).index() - 0 + 1;
+	$(".total_star").val(total_star);
+	$(".total_star").html($(".total_star").val());
+	star_lock = true;
+>>>>>>> 004aaefccbc56c56027af31e28bce803fb6ffd9f
 
 		}
 		for(var j=4;j>total_star;j--)	
@@ -54,6 +63,14 @@ $(".book_comment_pinfen_star").click(function(){
 		}
 		star_lock = true;
 
+<<<<<<< HEAD
+=======
+	star_lock = false;
+	for(var j=5;j>0;j--)
+	{
+		$(".book_comment_pinfen_star").eq(j).find("img").attr('src','../images/stra.png');
+// console.log(i);
+>>>>>>> 004aaefccbc56c56027af31e28bce803fb6ffd9f
 	}
 	else{
 		total_star = 0;
@@ -63,14 +80,19 @@ $(".book_comment_pinfen_star").click(function(){
 			$(".book_comment_pinfen_star").eq(i).find("img").attr('src','../images/stra.png');
 		}
 
+<<<<<<< HEAD
 		$(".total_star").val(total_star);
 		star_lock = false
 	}
+=======
+}
+
+>>>>>>> 004aaefccbc56c56027af31e28bce803fb6ffd9f
 });
 //点击后的页body_book_grade_draw面定位
 $(".body_book_comment").click(function(){
 	// window.location.hash = "#abc";
-	 location.href = "#firstAnchor";      
+	 location.href = "#firstAnchor";
 });
 
 
@@ -92,13 +114,13 @@ $(".body_book_comment").click(function(){
 // 		var pre=$(".body_comment_good_amount_1").html();
 // 		$(".body_comment_good_amount_1").html(pre-0-1);
 // 	}
-	
+
 // })
 $(".body_comment_good_pic").click(function(){
 	var index = $(".body_comment_good_pic").index(this);
 
 	console.log(index);
-		var num = parseInt($(".body_comment_good_amount").html()); 
+		var num = parseInt($(".body_comment_good_amount").html());
 	if($(this).find("img").attr('src') == ('../images/goog.png')){
 		$(this).find("img").attr('src','../images/good_red.png');
 		var pre=$(".body_comment_good_amount").eq(index).html();
@@ -114,12 +136,15 @@ $(".body_comment_good_pic").click(function(){
 
 //收藏该书
 $(".body_book_grade_love").click(function(){
-	if($(this).find("img").attr('src') == ("../images/love.png")){
-		$(this).find("img").attr('src','../images/grade_love.png')
-	}
-	
+	if($(this).find("img").attr('src') == ("../images/love.png")) {
+        $(this).find("img").attr('src', '../images/grade_love.png');
+        var ur = $(".collect_sao_operation_collect").val();
+        $(".collect_sao_operation").attr('src', ur);
+    }
 	else{
-		$(this).find("img").attr('src','../images/love.png')
+		$(this).find("img").attr('src','../images/love.png');
+        var ur = $(".collect_sao_operation_uncollect").val();
+        $(".collect_sao_operation").attr('src', ur);
 	}
 
 });
@@ -142,7 +167,7 @@ $(".body_book_grade_love").click(function(){
 
 // }
 // else{
-		
+
 // 		if(time_set==true)
 // 		{
 
@@ -151,17 +176,17 @@ $(".body_book_grade_love").click(function(){
 
 // 			var time_1=setInterval(function(){
 // 				console.log(time_set);
-				
-// 			},2000)	
-	
+
+// 			},2000)
+
 // 			$(".last_page_tip").delay(1000).fadeOut(function(){
 // 				clearInterval(time_1);
 // 				time_set=true;
-			
+
 // 			});
-		
-// 		}	
-	
+
+// 		}
+
 // 		}
 
 // });
@@ -169,13 +194,13 @@ $(".body_book_grade_love").click(function(){
 // //上一页
 
 // $(".last_page").click(function(){
-// 	if(now_page>0){	
+// 	if(now_page>0){
 // 		now_page-=1;
 // 		$(".body_commit_content_list").eq(now_page).css('display','block');
 // 		$(".body_commit_content_list").eq(now_page).siblings().css('display','none');
 // 	}
 // 	else{
-		
+
 // 		if(time_set==true)
 // 		{
 
@@ -184,17 +209,17 @@ $(".body_book_grade_love").click(function(){
 
 // 			var time_1=setInterval(function(){
 // 				console.log(time_set);
-				
-// 			},2000)	
-	
+
+// 			},2000)
+
 // 			$(".first_page_tip").delay(1000).fadeOut(function(){
 // 				clearInterval(time_1);
 // 				time_set=true;
-			
+
 // 			});
-		
-// 		}	
-	
+
+// 		}
+
 // 		}
 
 // 	});
@@ -207,14 +232,14 @@ $(".body_book_grade_love").click(function(){
 
 // 			time_set=false;
 // 			$(".first_page_tip").fadeIn(function(){
-// 			var time_1=setInterval(1500)	
+// 			var time_1=setInterval(1500)
 // 			});
 // 			$(".first_page_tip").delay(1000).fadeOut(function(){
 // 			time_set=true;
 // 			// console.log(time_set);
 // 			});
-		
-// 		}	
+
+// 		}
 
 // }
 // now_page=0;

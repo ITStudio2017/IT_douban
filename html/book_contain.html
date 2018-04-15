@@ -145,6 +145,7 @@
 						<div class="book_comment_nav_hot"><a class="book_comment_nav_hot_a" href="">热度</a></div>
 						<div class="book_comment_nav_write"><a class="book_comment_nav_write_a" href="">我来写评论</a></div>
 					</div>
+					<form action="login.html">
 					<div class="book_writecomment">
 						<textarea class="book_writecomment_input" type="text" placeholder="#请在此输入文字" oninput="count_comment()"></textarea><!-- <input class="book_writecomment_input" type="text" -->
 						<div class="book_writecomment_count"><input type="text" disabled="true" value="0"><span>/140</span></div>
@@ -165,7 +166,8 @@
 							</ul>
 						</div>
 					</div>
-					<button class="book_comment_publish" type="submit" onsubmit="comment_commit()">发布评论</button>
+					<button class="book_comment_publish" type="submit" onclick="return comment()">发布评论</button>
+					</form>
 					<div style="clear: both;"></div>
 					<div class="body_comment_contentout">
 						<ul class="body_commit_content_list" style="display: block;">
@@ -186,7 +188,7 @@
 								</div>
 							</li> -->
 							<li class="body_comment_content">
-								<div class="body_comment_content_pic"></div>
+								<div class="body_comment_content_pic"><img src="../images/head_pic.png" alt=""></div>
 								<div class="body_comment_content_id">阿浦爱曼联</div>
 								<div class="body_comment_content_time">2018年3月18日</div>
 								<div class="body_comment_star">

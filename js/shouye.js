@@ -250,6 +250,8 @@ $(".hotessey_photoalbum_1_a_div img").each(function(){
   if($(this).width()/$(this).height() >1.533)
  {
    $(this).css({'height':'298px','width':'auto'});
+   var left = ($(this).width()/2- $(".hotessey_photoalbum_1_a_div").width()/2)
+   $(this).css('margin-left',-left)
  }
  else{
   $(this).css({'height':'auto','width':'457px'});
@@ -275,3 +277,15 @@ $(".body_hotbook_a_1_div img").each(function(){
 //   $(this).css({'height':'auto','width':'527px'});
 //  }
 // })
+function input(){
+
+
+if($(".search_box_input").val() == "")
+{
+	$(".search_box_button").attr('disabled','disabled');
+}
+else{
+	console.log("999")
+	$(".search_box_button").removeAttr('disabled');
+}
+}

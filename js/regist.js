@@ -28,24 +28,24 @@ $(".regist_form_verify_input").blur(function(){
 });
 
 //input name
-$(".regist_form_name_input").focus(function(){
-  $(this).attr("value","");
-  $(this).css({'color':'black'});
+// $(".regist_form_name_input").focus(function(){
+//   $(this).attr("value","");
+//   $(this).css({'color':'black'});
 
   
-});
-$(".regist_form_name_input").blur(function(){
+// });
+// $(".regist_form_name_input").blur(function(){
 
-    var content=$(this).val();
-  	if(content==""){
-  		$(this).css({'color':'#C9C9C9'});
-  		$(this).attr("value","example@xxx.com");
-	}
-	else{
-		$(this).css({'color':'black'});
-	}
+//     var content=$(this).val();
+//   	if(content==""){
+//   		$(this).css({'color':'#C9C9C9'});
+//   		$(this).attr("value","example@xxx.com");
+// 	}
+// 	else{
+// 		$(this).css({'color':'black'});
+// 	}
 
-});
+// });
 
 //input code
 

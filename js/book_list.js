@@ -110,25 +110,25 @@ $(document).ready(function(){
 
 
 //导航栏鼠标
-if($(".body_top_nav_list li div").css('display') == 'block')
-{
-  var select_nav = $(".body_top_nav_list li div").index(".body_top_nav_arrow");
-}
+var index = $(".body_top_input").val() - 0;
+$(".body_top_nav_arrow").eq(index).siblings('div').css('display','none');
+$(".body_top_nav_arrow").eq(index).css('display','block');
+
+// if($(".body_top_nav_list li div").css('display') == 'block')
+// {
+//   var select_nav = $(".body_top_nav_list li div").index(".body_top_nav_arrow");
+// }
 
 $(".body_top_nav_list li").mouseenter(function(){
   // var num = $(this).index();
   $(this).find("div").css('display','block');
-  $("body_top_nav").eq(select_nav).find("div").css('display', 'block');
+  $("body_top_nav").eq(index).find("div").css('display', 'block');
 });
 $(".body_top_nav_list li").mouseleave(function(){
   $(this).find("div").css('display','none');
-  $(".body_top_nav").eq(select_nav).find("div").css('display', 'block');
+  $(".body_top_nav").eq(index).find("div").css('display', 'block');
 });
 
-$(".body_top_nav_list li").click(function(){
-  $(this).find("div").css('display', 'block');
-  $(this).siblings('').find("div").css('display', 'none');
-})
 
 //搜索框
 $(".search_box_input").focus(function(){

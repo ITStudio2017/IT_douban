@@ -19,7 +19,7 @@
     <div class="body">
 			<div class="body_top">
 				<div class="body_book_info">
-					<div class="body_book_pic"><img src="{{ book|key:"cover" }}" alt=""></div>
+					<div class="body_book_pic"><img class="cover" src="{{ book|key:"cover" }}" alt=""></div>
 					<div class="body_book_word">
 						<h5 class="body_book_title">{{ book|key:"bookname" }}</h5>
 						<div class="body_book_author">作者：<span>{{ book|key:"author" }}</span></div>
@@ -102,7 +102,7 @@
 				<span class="body_author_intro_word">作者简介</span>
 				<span class="body_author_intro_dot_1"><img src="../images/many_dots_4.png" alt=""></span>
 {#                {% if book|key:"authorPhoto" !=  %}#}
-				    <div class="book_author_pic"><img src="{{ book|key:"authorPhoto" }}" alt=""></div>
+				    <div class="book_author_pic"><img class="cover" src="{{ book|key:"authorPhoto" }}" alt=""></div>
 {#                {% endif %}#}
                 <div class="book_author_info"> {{ book|key:"authorInfo" }}
 				</div>
@@ -155,7 +155,7 @@
 						{% for key,value in comment.items %}
 						<ul class="body_commit_content_list" style="display: block;">
 							<li class="body_comment_content">
-                                <img class="body_comment_content_pic" src="{{ value|key:"head" }}"/>
+                                <div class="body_comment_content_pic_div"><img class="body_comment_content_pic cover" src="{{ value|key:"head" }}"/></div>
 								<div class="body_comment_content_id">{{ nowPage|add:nowPage|add:nowPage|add:nowPage|add:key }}楼：{{ value|key:"username" }}</div>
 								<div class="body_comment_content_time">{{ value|key:"time" }}</div>
 								<div class="body_comment_star">

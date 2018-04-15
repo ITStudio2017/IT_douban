@@ -37,7 +37,7 @@ $(".book_comment_pinfen").mouseleave(function(){
 });
 //点击星星后记录个数
 $(".book_comment_pinfen_star").click(function(){
-<<<<<<< HEAD
+
 	click_count++;
 	if(click_count %2 != 0)
 	{
@@ -46,14 +46,7 @@ $(".book_comment_pinfen_star").click(function(){
 		for(var i=0;i<total_star;i++)
 		{
 			$(".book_comment_pinfen_star").eq(i).find("img").attr('src','../images/star.png');
-=======
-	if( star_lock == false)
-{
-	total_star = $(this).index() - 0 + 1;
-	$(".total_star").val(total_star);
-	$(".total_star").html($(".total_star").val());
-	star_lock = true;
->>>>>>> 004aaefccbc56c56027af31e28bce803fb6ffd9f
+
 
 		}
 		for(var j=4;j>total_star;j--)	
@@ -63,14 +56,6 @@ $(".book_comment_pinfen_star").click(function(){
 		}
 		star_lock = true;
 
-<<<<<<< HEAD
-=======
-	star_lock = false;
-	for(var j=5;j>0;j--)
-	{
-		$(".book_comment_pinfen_star").eq(j).find("img").attr('src','../images/stra.png');
-// console.log(i);
->>>>>>> 004aaefccbc56c56027af31e28bce803fb6ffd9f
 	}
 	else{
 		total_star = 0;
@@ -80,14 +65,11 @@ $(".book_comment_pinfen_star").click(function(){
 			$(".book_comment_pinfen_star").eq(i).find("img").attr('src','../images/stra.png');
 		}
 
-<<<<<<< HEAD
+
 		$(".total_star").val(total_star);
 		star_lock = false
 	}
-=======
-}
 
->>>>>>> 004aaefccbc56c56027af31e28bce803fb6ffd9f
 });
 //点击后的页body_book_grade_draw面定位
 $(".body_book_comment").click(function(){
@@ -405,7 +387,13 @@ $(".body_book_grade_draw").eq(i).width( book_people[i] / total_people * 217 )
 // $("input").blur(function(){
 // 	$(this).css('border-color','#D9D9D9')
 // })
+//动态改变图片的大小
+var t_img; // 定时器
+var isLoad = true; // 控制变量
 
+// 判断图片加载状况，加载完成后回调
+isImgLoad(function(){
+    // 加载完成
 $(".body_book_pic img").each(function(){
   if($(this).width()/$(this).height() >0.704)
  {
@@ -438,47 +426,45 @@ $(".book_author_pic img").each(function(){
 
 
 //控制个人头像大小
-$(".body_comment_content_pic img").each(function(){
+$(".body_comment_content_pic_div img").each(function(){
   if($(this).width()/$(this).height() >1)
  {
    $(this).css({'height':'73px','width':'auto'});
-   var left = ($(this).width()/2 - $(".body_comment_content_pic").width()/2);
+   var left = ($(this).width()/2 - $(".body_comment_content_pic_div").width()/2);
  	$(this).css('margin-left',-left);
  }
  else{
   $(this).css({'height':'auto','width2':'73px'});
-  var height = ($(this).height()/2 - $(".body_comment_content_pic").height()/2);
+  var height = ($(this).height()/2 - $(".body_comment_content_pic_div").height()/2);
  $(this).css('margin-top',-height);
  }
 })
 
 
 
-$(".body_article_author_pic img").each(function(){
-  if($(this).width()/$(this).height() >1)
- {
-   $(this).css({'height':'50px','width':'auto'});
-   var left = ($(this).width()/2 - $(".body_article_author_pic").width()/2);
- 	$(this).css('margin-left',-left);
- 
- }
- else{
-  $(this).css({'height':'auto','width':'50px'});
-  var height = ($(this).height()/2 - $(".body_article_author_pic").height()/2);
- $(this).css('margin-top',-height);
- }
 })
 
-$(".body_comment_content_pic img").each(function(){
-  if($(this).width()/$(this).height() >1)
- {
-   $(this).css({'height':'73px','width':'auto'});
-   var left = ($(this).width()/2 - $(".body_comment_content_pic").width()/2);
- 	$(this).css('margin-left',-left);
- }
- else{
-  $(this).css({'height':'auto','width':'73px'});
-  var height = ($(this).height()/2 - $(".body_comment_content_pic").height()/2);
- $(this).css('margin-top',-height);
- }
-})
+// 判断图片加载的函数
+function isImgLoad(callback){
+    // 注意我的图片类名都是cover，因为我只需要处理cover。其它图片可以不管。
+    // 查找所有封面图，迭代处理
+    $('.cover').each(function(){
+        // 找到为0就将isLoad设为false，并退出each
+        if(this.height === 0){
+            isLoad = false;
+            return false;
+        }
+    });
+    // 为true，没有发现为0的。加载完毕
+    if(isLoad){
+        clearTimeout(t_img); // 清除定时器
+        // 回调函数
+        callback();
+    // 为false，因为找到了没有加载完成的图，将调用定时器递归
+    }else{
+        isLoad = true;
+        t_img = setTimeout(function(){
+            isImgLoad(callback); // 递归扫描
+        },300); // 我这里设置的是500毫秒就扫描一次，可以自己调整
+    }
+}

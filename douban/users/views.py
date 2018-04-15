@@ -1,6 +1,7 @@
 
 import functools
 import warnings
+from django.shortcuts import render
 
 from django.conf import settings
 # Avoid shadowing the login() and logout() views below.
@@ -109,6 +110,23 @@ def register(request,
                 send_activation_email(**opts)
                 user_registered.send(sender=user.__class__, request=request, user=user)
             return redirect(post_registration_redirect)
+        else:
+            current_site = get_current_site(request)
+            hashkey = CaptchaStore.generate_key()
+            image_url = captcha_image_url(hashkey)
+            context = {
+                'form': form,
+                'site': current_site,
+                'site_name': current_site.name,
+                'title': _('Register'),
+                'image_url':image_url,
+                'hashkey':hashkey,
+                }
+
+            if extra_context is not None: 
+                context.update(extra_context)
+            return render(request, template_name, context)
+
     else:
         form = registration_form()
 

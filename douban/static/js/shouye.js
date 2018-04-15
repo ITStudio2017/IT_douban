@@ -1,24 +1,24 @@
-var search = window.location.search;
-if( search == '?reload' ){    //如果有reload参数，则自动刷新一次
-    window.history.pushState({}, 0, '/');    //记得这里去掉参数，否则就会不停刷新
-    window.location.reload();
-}
+// var search = window.location.search;
+// if( search == '?reload' ){    //如果有reload参数，则自动刷新一次
+//     window.history.pushState({}, 0, '/');    //记得这里去掉参数，否则就会不停刷新
+//     window.location.reload();
+// }
 
-$(".search_box_input").focus(function(){
-	if($(".search_box_input").val() == "")
-{
-	$(".search_box_button").attr('disabled','disabled');
+// $(".search_box_input").focus(function(){
+// 	if($(".search_box_input").val() == "")
+// {
+// 	$(".search_box_button").attr('disabled','disabled');
 
-}
-else{
-	console.log("666")
-	$(".search_box_input").blur(function(){
+// }
+// else{
+// 	console.log("666")
+// 	$(".search_box_input").blur(function(){
 		
-		$(".search_box_button").removeAttr('disabled');
-	})
+// 		$(".search_box_button").removeAttr('disabled');
+// 	})
 	
-}
-})
+// }
+// })
 
 //手风琴
 
@@ -258,7 +258,13 @@ $(".body_top_inner").mouseout(function(){
 // 	}
 // })
 //动态改变图片的大小
-$(".hotessey_essay_pic_div img").each(function(){
+var t_img; // 定时器
+var isLoad = true; // 控制变量
+
+// 判断图片加载状况，加载完成后回调
+isImgLoad(function(){
+    // 加载完成
+    $(".hotessey_essay_pic_div img").each(function(){
   if($(this).width()/$(this).height() >1.157)
  {
    $(this).css({'height':'146px','width':'auto'});
@@ -271,8 +277,7 @@ $(".hotessey_essay_pic_div img").each(function(){
  $(this).css('margin-top',-height);
  }
 })
-
-$(".hotessey_photoalbum_1_a_div img").each(function(){
+    $(".hotessey_photoalbum_1_a_div img").each(function(){
   if($(this).width()/$(this).height() >1.533)
  {
    $(this).css({'height':'298px','width':'auto'});
@@ -302,7 +307,7 @@ $(".body_hotbook_a_1_div img").each(function(){
  }
 })
 
-$(".hotessey_essay_user_pic a").each(function(){
+$(".hotessey_essay_user_pic img").each(function(){
   if($(this).width()/$(this).height() >1)
  {
    $(this).css({'height':'50px','width':'auto'});
@@ -316,12 +321,41 @@ $(".hotessey_essay_user_pic a").each(function(){
  
  }
 })
-// $(".body_top_sfq_pic_img").each(function(){
-//   if($(this).width()/$(this).height() > 1.611)
-//  {
-//    $(this).css({'height':'327px','width':'auto'});
-//  }
-//  else{
-//   $(this).css({'height':'auto','width':'527px'});
-//  }
-// })
+});
+
+// 判断图片加载的函数
+function isImgLoad(callback){
+    // 注意我的图片类名都是cover，因为我只需要处理cover。其它图片可以不管。
+    // 查找所有封面图，迭代处理
+    $('.cover').each(function(){
+        // 找到为0就将isLoad设为false，并退出each
+        if(this.height === 0){
+            isLoad = false;
+            return false;
+        }
+    });
+    // 为true，没有发现为0的。加载完毕
+    if(isLoad){
+        clearTimeout(t_img); // 清除定时器
+        // 回调函数
+        callback();
+    // 为false，因为找到了没有加载完成的图，将调用定时器递归
+    }else{
+        isLoad = true;
+        t_img = setTimeout(function(){
+            isImgLoad(callback); // 递归扫描
+        },300); // 我这里设置的是500毫秒就扫描一次，可以自己调整
+    }
+}
+function input(){
+
+
+if($(".search_box_input").val() == "")
+{
+	return false;
+}
+else{
+	return true;
+}
+
+}

@@ -436,7 +436,7 @@ color: #C9C9C9;
 }
 .hotessey_photoalbum_1 img,.hotessey_photoalbum_2 img{
 	width: 457px;
-	height: auto;
+	height: 298px;
 
 }
 .hotessey_photoalbum_1:hover{
@@ -538,8 +538,8 @@ color: #C9C9C9;
 
 }
 .hotessey_essay_pic{
-	width: auto;
-	height: auto;
+	width: 169px;
+	height: 146px;
 	position: absolute;
 	top: 0px;
 	right: 0px;
@@ -601,7 +601,10 @@ color: #C9C9C9;
 	height: 280px;
 	overflow: hidden;
 }
-
+.body_hotbook_a_1_div img{
+	width: 199px;
+	height: 280px;
+}
 .body_hotbook_book{
 	float: left;
 	height: 369px;

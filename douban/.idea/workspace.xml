@@ -27,38 +27,18 @@
       <file leaf-file-name="book_list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/book/templates/book_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="587">
-              <caret line="26" column="67" lean-forward="false" selection-start-line="26" selection-start-column="67" selection-end-line="26" selection-end-column="67" />
+            <state relative-caret-position="414">
+              <caret line="140" column="45" lean-forward="false" selection-start-line="140" selection-start-column="45" selection-end-line="140" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/book/models.py">
+      <file leaf-file-name="book_contain.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/book/templates/book_contain.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="42" column="57" lean-forward="true" selection-start-line="42" selection-start-column="57" selection-end-line="42" selection-end-column="57" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/book/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="9" column="67" lean-forward="false" selection-start-line="9" selection-start-column="67" selection-end-line="9" selection-end-column="67" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/book/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="59" column="27" lean-forward="false" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
+            <state relative-caret-position="444">
+              <caret line="238" column="41" lean-forward="false" selection-start-line="238" selection-start-column="41" selection-end-line="238" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -99,7 +79,6 @@
         <option value="$PROJECT_DIR$/main/templates/user_base.html" />
         <option value="$PROJECT_DIR$/book/templates/book_matherpage.html" />
         <option value="$PROJECT_DIR$/main/static/css/book_contain.css" />
-        <option value="$PROJECT_DIR$/book/templates/book_contain.html" />
         <option value="$PROJECT_DIR$/static/css/book_contain.css" />
         <option value="$PROJECT_DIR$/main/static/css/article_contain.css" />
         <option value="$PROJECT_DIR$/douban/urls.py" />
@@ -107,11 +86,12 @@
         <option value="$PROJECT_DIR$/main/admin.py" />
         <option value="$PROJECT_DIR$/main/models.py" />
         <option value="$PROJECT_DIR$/book/urls.py" />
-        <option value="$PROJECT_DIR$/book/templates/book_list.html" />
         <option value="$PROJECT_DIR$/book/views.py" />
         <option value="$PROJECT_DIR$/douban/settings.py" />
         <option value="$PROJECT_DIR$/static/js/book_contain.js" />
         <option value="$PROJECT_DIR$/book/models.py" />
+        <option value="$PROJECT_DIR$/book/templates/book_list.html" />
+        <option value="$PROJECT_DIR$/book/templates/book_contain.html" />
       </list>
     </option>
   </component>
@@ -441,6 +421,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -448,6 +429,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -469,13 +451,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/book_list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="47" column="37" lean-forward="true" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -505,6 +480,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="33" column="80" lean-forward="false" selection-start-line="33" selection-start-column="80" selection-end-line="33" selection-end-column="80" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -634,22 +610,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/book/templates/book_contain.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="132" column="36" lean-forward="false" selection-start-line="132" selection-start-column="36" selection-end-line="132" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/book/templates/book_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="587">
-          <caret line="26" column="67" lean-forward="false" selection-start-line="26" selection-start-column="67" selection-end-line="26" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/book_contain.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="443">
@@ -670,6 +630,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
           <caret line="42" column="57" lean-forward="true" selection-start-line="42" selection-start-column="57" selection-end-line="42" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/book_list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1081">
+          <caret line="47" column="37" lean-forward="true" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/book/templates/book_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="140" column="45" lean-forward="false" selection-start-line="140" selection-start-column="45" selection-end-line="140" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/book/templates/book_contain.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="238" column="41" lean-forward="false" selection-start-line="238" selection-start-column="41" selection-end-line="238" selection-end-column="41" />
           <folding />
         </state>
       </provider>
